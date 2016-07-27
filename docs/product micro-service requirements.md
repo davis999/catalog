@@ -1,6 +1,5 @@
 # Product Service Requirement
 
-[TOC]
 
 This is the requirement document of the product micro-service.
 
