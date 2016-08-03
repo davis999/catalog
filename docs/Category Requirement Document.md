@@ -14,18 +14,16 @@ Including modules as follows:
 ##2. Category Management
 The module is responsible for managing category.
 Category has following attributes:
-* general
-  name,url,long description,active start date,active end date,tax code
-* marketing
+* general:name,url,long description,active start date,active end date,tax code
+* marketing:
   featured products,cross sale products,upsale products
-* media
+* media:
   media assets
-* facets
+* facets:
   category search facets,excluded search facets
-* advanced
+* advanced:
   display template,default inventory type,default fulfillment type,external id,child categories,category attributes
 * products
-  products
 
 The module provides functions as follows:
 * add category
@@ -49,19 +47,19 @@ The module is responsible for managing product,product bundle and product option
 Providing functions as follows:
 ###3.1 product
 Product has following attributes
-* general
+* general:
   name, primary image, description, parent category, manufacturer, url,retail price, sale price,start date, end date,taxable,tax code
-* marketing
+* marketing:
   is featured product, cross sale products, upsale products
-* media
+* media:
   product media
-* product options
+* product options:
   additional skus, product options
-* inventory
+* inventory:
   inventory type, quantity available
-* shipping
+* shipping:
   fulfillment type, width, height, depth, girth, container size, container type,dimension units, weight, is machine sortable, weight units
-* advanced
+* advanced:
   discountable, upc, can sell without options, display template, model, external id,product attributes
 
 The module provides functions as follows:
@@ -87,17 +85,17 @@ The module provides functions as follows:
 
 ###3.2 product bundle
 Product bundle has following attributes:
-* general
+* general:
   name, primary image, description, parent category, manufacturer, url,pricing model, retail price,sale price,start date,end date,taxable,tax code,sku bundle items
-* marketing
+* marketing:
   is featured product, cross sale products, upscale products
-* media
+* media:
   product media
-* inventory
+* inventory:
   inventory type,quantity available
-* shipping
+* shipping:
   fulfillment type, width, height, depth, girth, container size, container type,dimension units, weight, is machine sortable, weight units
-* advanced
+* advanced:
   discountable, upc, can sell without options, display template, model, external id,product attributes
 
 The module provides following functions:
@@ -122,9 +120,9 @@ The module provides following functions:
 
 ###3.3 product options
 Product options have following attributes:
-* general
+* general:
   Label, Required, Type, Use in Sku generation, Display Order, Attribute Name
-* validation
+* validation:
   Error Code, Error Message, Validation String Expression, Validation Strategy, Validation Type
 
 The module provides following functions:
@@ -159,11 +157,11 @@ Providing functions as follows:
 ##5. Promotions Management
 The module is responsible for managing promotions.
 promotions has following attributes:
-* general
+* general:
   name, description, type, automatically considered, marketing message, discount type, value, start date, end date, time rule, Should this offer target specific customers, Should this offer target specific orders, Should this offer target orders with specific items (e.g. Buy X get Y), item discount rule
-* codes
+* codes:
   offer codes
-* advanced
+* advanced:
   max uses per order, priority, max uses per customer, apply to sale price, item qualifier rule, item target rule, combinable, target system, qualifying item subtotal, targets and qualifiers must be related
 
 The module providing functions as follows:
