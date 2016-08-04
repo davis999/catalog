@@ -38,9 +38,9 @@ The module provides functions as follows:
   * edit advanced attributes
   * edit products
 * search category
-  \nsearch category by name or url
+ search category by name or url
 * view category
-  view all attributes of category
+ view all attributes of category
 * delete category
 
 ##3. Product Management
