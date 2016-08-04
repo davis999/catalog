@@ -15,6 +15,7 @@ Including modules as follows:
 The module is responsible for managing category.
 Category has following attributes:
 * general:
+
   name,url,long description,active start date,active end date,tax code
 * marketing:
   featured products,cross sale products,upsale products
@@ -38,9 +39,9 @@ The module provides functions as follows:
   * edit advanced attributes
   * edit products
 * search category
- search category by name or url
+  search category by name or url
 * view category
- view all attributes of category
+  view all attributes of category
 * delete category
 
 ##3. Product Management
