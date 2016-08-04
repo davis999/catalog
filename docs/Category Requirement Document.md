@@ -15,7 +15,6 @@ Including modules as follows:
 The module is responsible for managing category.
 Category has following attributes:
 * general:
-
   name,url,long description,active start date,active end date,tax code
 * marketing:
   featured products,cross sale products,upsale products
@@ -39,8 +38,10 @@ The module provides functions as follows:
   * edit advanced attributes
   * edit products
 * search category
-  search category by name or url
+ 
+ search category by name or url
 * view category
+
   view all attributes of category
 * delete category
 
@@ -80,9 +81,11 @@ The module provides functions as follows:
   * edit shipping attributes
   * edit advanced attributes
 * search product
-  search product by name or url, manufacture, price, parent category
+ 
+ search product by name or url, manufacture, price, parent category
 * view product
-  view all attributes of product
+ 
+ view all attributes of product
 * delete product
 
 ###3.2 product bundle
@@ -115,9 +118,11 @@ The module provides following functions:
   * edit shipping attributes
   * edit advanced attributes
 * search product bundle
-  search product bundle by name or url, manufacture, price, parent category
+ 
+ search product bundle by name or url, manufacture, price, parent category
 * view product bundle
-  view all attributes of product bundle
+ 
+ view all attributes of product bundle
 * delete product bundle
 
 ###3.3 product options
@@ -136,9 +141,11 @@ The module provides following functions:
   * edit validation attributes
   * edit(add) allowed values
 * search product options
-  search product options by option label or required
+ 
+ search product options by option label or required
 * view product options
-  view all attributes of product options
+ 
+ view all attributes of product options
 * delete product options
 
 ##4. Media Assets Management
