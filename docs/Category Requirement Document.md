@@ -1,6 +1,6 @@
-#Category Requirement Document
+#Catelog Requirement Document
 ##1. Introduce
-The project provides other services with funtions of category.
+The project provides other services with funtions of catelog.
 Including modules as follows:
 * category management
 * product management
@@ -14,7 +14,8 @@ Including modules as follows:
 ##2. Category Management
 The module is responsible for managing category.
 Category has following attributes:
-* general:name,url,long description,active start date,active end date,tax code
+* general:
+  name,url,long description,active start date,active end date,tax code
 * marketing:
   featured products,cross sale products,upsale products
 * media:
