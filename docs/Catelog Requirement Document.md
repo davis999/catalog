@@ -38,7 +38,8 @@ The module provides functions as follows:
   * edit advanced attributes
   * edit products
 * search category
-  search category by name or url
+ 
+ search category by name or url
 * view category
 
   view all attributes of category
