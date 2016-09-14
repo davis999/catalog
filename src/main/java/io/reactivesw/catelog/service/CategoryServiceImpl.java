@@ -3,11 +3,10 @@ package io.reactivesw.catelog.service;
 import io.reactivesw.catelog.domain.Category;
 import io.reactivesw.catelog.repository.CategoryRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import javax.annotation.Resource;
 
 /**
  * this is service class for category.
@@ -25,7 +24,7 @@ public class CategoryServiceImpl implements CategoryService {
   /**
    * category repository.
    */
-  @Resource(name = "categoryRepository")
+  @Autowired
   private transient CategoryRepository categoryRepository;
 
   /**

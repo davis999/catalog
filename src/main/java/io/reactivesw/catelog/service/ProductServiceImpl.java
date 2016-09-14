@@ -3,11 +3,10 @@ package io.reactivesw.catelog.service;
 import io.reactivesw.catelog.domain.Product;
 import io.reactivesw.catelog.repository.ProductRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import javax.annotation.Resource;
 
 /**
  * this is service class for product.
@@ -21,7 +20,7 @@ public class ProductServiceImpl implements ProductService {
   /**
    * product repository.
    */
-  @Resource(name = "productRepository")
+  @Autowired
   private transient ProductRepository productRepository;
 
   /**

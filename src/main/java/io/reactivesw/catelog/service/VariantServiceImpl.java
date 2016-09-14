@@ -4,7 +4,6 @@ import io.reactivesw.catelog.domain.Variant;
 import io.reactivesw.catelog.repository.VariantRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +20,6 @@ public class VariantServiceImpl implements VariantService {
    * variant repository.
    */
   @Autowired
-  @Qualifier("variantRepository")
   private transient VariantRepository variantRepository;
 
   /**

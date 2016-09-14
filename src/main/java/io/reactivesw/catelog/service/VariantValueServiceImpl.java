@@ -3,9 +3,8 @@ package io.reactivesw.catelog.service;
 import io.reactivesw.catelog.domain.VariantValue;
 import io.reactivesw.catelog.repository.VariantValueRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * this is service class for variant value.
@@ -18,7 +17,7 @@ public class VariantValueServiceImpl implements VariantValueService {
   /**
    * variant value repository.
    */
-  @Resource(name = "variantValueRepository")
+  @Autowired
   private transient VariantValueRepository variantValueRepository;
 
   /**

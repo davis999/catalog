@@ -18,10 +18,9 @@ import io.reactivesw.catelog.service.CategoryService;
 import io.reactivesw.catelog.service.ProductService;
 
 import org.lognet.springboot.grpc.GRpcService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-
-import javax.annotation.Resource;
 
 /**
  * this is gRPC server for catelog.
@@ -35,13 +34,13 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
   /**
    * category service.
    */
-  @Resource(name = "categoryService")
+  @Autowired
   private transient CategoryService categoryService;
 
   /**
    * product service.
    */
-  @Resource(name = "productService")
+  @Autowired
   private transient ProductService productService;
 
   /**
@@ -52,7 +51,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
     // TODO Auto-generated method stub
     final long productId = request.getValue();
     final Product product = productService.queryProductById(productId);
-    if (null == product) {
+    if (product == null) {
       final Status status = Status.NOT_FOUND.withDescription("query product fail, not found");
       throw new StatusRuntimeException(status);
     }
@@ -70,7 +69,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
     final List<Product> products = productService.queryProductsByCategoryId(categoryId);
-    if (null == products) {
+    if (products == null) {
       final Status status = Status.NOT_FOUND.withDescription("query product list fail, not found");
       throw new StatusRuntimeException(status);
     }
@@ -85,7 +84,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
     final List<Category> categories = categoryService.findAllTopCategories();
-    if (null == categories) {
+    if (categories == null) {
       final Status status =
           Status.NOT_FOUND.withDescription("query all categories fail, no categories");
       throw new StatusRuntimeException(status);
