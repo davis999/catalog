@@ -18,6 +18,8 @@ import io.reactivesw.catelog.service.CategoryService;
 import io.reactivesw.catelog.service.ProductService;
 
 import org.lognet.springboot.grpc.GRpcService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -30,6 +32,12 @@ import java.util.List;
  */
 @GRpcService
 public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase {
+
+
+  /**
+   * log.
+   */
+  private static final Logger LOG = LoggerFactory.getLogger(CatelogRmiServer.class);
 
   /**
    * category service.
@@ -48,10 +56,11 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
    */
   @Override
   public void queryProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
-    // TODO Auto-generated method stub
     final long productId = request.getValue();
+    LOG.debug("enter queryProductDetial, product id is {}", productId);
     final Product product = productService.queryProductById(productId);
     if (product == null) {
+      LOG.error("product is null, query id is {}", productId);
       final Status status = Status.NOT_FOUND.withDescription("query product fail, not found");
       throw new StatusRuntimeException(status);
     }
@@ -59,6 +68,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
     final GrpcProduct reply = ProductTransfer.transferToProductInfo(product);
 
     completeResponse(responseObserver, reply);
+    LOG.info("end queryProductDetial.");
   }
 
   /**
@@ -68,14 +78,17 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
   public void queryProductsByCategory(Int64Value request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
+    LOG.debug("enter queryProductsByCategory, category id is {}", categoryId);
     final List<Product> products = productService.queryProductsByCategoryId(categoryId);
     if (products == null) {
+      LOG.debug("cann't query product by category id {}", categoryId);
       final Status status = Status.NOT_FOUND.withDescription("query product list fail, not found");
       throw new StatusRuntimeException(status);
     }
     final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
 
     completeResponse(responseObserver, reply);
+    LOG.debug("end queryProductsByCategory");
   }
 
   /**
@@ -83,8 +96,10 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
    */
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
+    LOG.debug("enter getCategories.");
     final List<Category> categories = categoryService.findAllTopCategories();
     if (categories == null) {
+      LOG.debug("query top categories fail, result is null");
       final Status status =
           Status.NOT_FOUND.withDescription("query all categories fail, no categories");
       throw new StatusRuntimeException(status);
@@ -93,6 +108,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
     final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
 
     completeResponse(responseObserver, reply);
+    LOG.debug("end getCategories.");
   }
 
   /**
