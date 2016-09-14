@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.reactivesw.catelog.grpc.infrastructure";
+//option java_outer_classname = "ICatelogGrpcService";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+package io.reactivesw.catelog.grpc;
+
+/**
+ * define catelog rpc service.
+ */
+service CatelogService {
+  //query all categories and subcategories.
+  rpc getCategories (google.protobuf.Empty) returns (CategoryList){}
+
+  //query all products by id of category
+  rpc queryProductsByCategory (google.protobuf.Int64Value) returns
+  (ProductBriefList){}
+
+  //query product's detail by id of product
+  rpc queryProductDetial (google.protobuf.Int64Value) returns (ProductInfo){}
+}
+
+/**
+ * response when call queryAllCategories.
+ */
+message CategoryList{
+  repeated CategoryInfo categoryInfo = 1;
+}
+
+/**
+ *  response when call queryAllProductsByCategory.
+ */
+message ProductBriefList{
+  repeated ProductBriefInfo productBriefInfo = 3;
+}
+
+message CategoryInfo {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int32 displayOrder = 4;
+  repeated CategoryInfo subCategoryInfos = 5;
+}
+
+message AttributeInfo{
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  string value = 4;
+  string type = 5;
+  int32 displayOrder = 6;
+}
+
+message FeatureInfo {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int32 displayOrder = 4;
+}
+
+message VariantValueInfo {
+  int64 id = 1;
+  string value = 2;
+  int32 displayOrder = 3;
+  string priceAdjustment = 4;
+}
+
+message VariantInfo {
+  int64 id = 1;
+  string name = 2;
+  int32 displayOrder = 3;
+  repeated VariantValueInfo variantValue = 4;
+}
+
+message MediaInfo {
+  int64 id = 1;
+  string type = 2;
+  string title = 3;
+  string url = 4;
+  int32 displayOrder = 5;
+}
+
+message SkuInfo {
+  int64 id = 1;
+  string skuNumber = 2;
+  bool isActive = 3;
+  int32 quatity = 4;
+  string upc = 5;
+  int32 displayOrder = 6;
+  repeated MediaInfo media = 7;
+  repeated VariantValueInfo variantValue = 8;
+}
+
+message ProductInfo{
+  int64 id = 1;
+  string manufacturer = 2;
+  string brand = 3;
+  string model = 4;
+  string name = 5;
+  string price = 6;
+  int32 displayOrder = 7;
+  string description = 8;
+  string detail = 9;
+  bool isDisplayed = 10;
+  bool isDeleted = 11;
+  repeated AttributeInfo attribute = 12;
+  repeated SkuInfo sku = 13;
+  repeated VariantInfo variant = 14;
+  repeated FeatureInfo feature = 15;
+}
+
+message ProductBriefInfo{
+  int64 id = 1;
+  string name = 2;
+  string price = 3;
+  int32 displayOrder = 4;
+  string mediaURL = 5;
+}
