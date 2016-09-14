@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-			</pattern>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{HH:mm:ss.SSS} %-5level %logger{80} - %msg%n</Pattern>
 		</encoder>
 	</appender>
-	<appender name="LOGFILE"
+	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>log/demo.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>log/%d{yyyy-MM-dd}_demo.log.zip</FileNamePattern>
+			<FileNamePattern>logpath</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
 		</rollingPolicy>
-		<layout class="ch.qos.logback.classic.PatternLayout">
+		<encoder>
 			<pattern>%date [%thread] %-5level %logger{80} - %msg%n</pattern>
-		</layout>
+		</encoder>
 	</appender>
-	<root level="info">
-		<appender-ref ref="LOGFILE" />
+	<root>
+		<level value="INFO" />
+		<!-- <appender-ref ref="FILE" /> -->
+		<appender-ref ref="STDOUT" />
 	</root>
-	<logger name="demo">
-		<level value="DEBUG" />
-	</logger>
 </configuration>
