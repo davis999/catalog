@@ -3,8 +3,8 @@
 
 package io.reactivesw.catelog.infrastructure;
 
-public interface MediaInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.MediaInfo)
+public interface GrpcMediaOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.GrpcMedia)
     com.google.protobuf.MessageOrBuilder {
 
   /**

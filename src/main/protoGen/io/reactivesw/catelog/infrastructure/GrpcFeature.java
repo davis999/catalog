@@ -4,22 +4,20 @@
 package io.reactivesw.catelog.infrastructure;
 
 /**
- * Protobuf type {@code io.reactivesw.catelog.grpc.AttributeInfo}
+ * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcFeature}
  */
-public  final class AttributeInfo extends
+public  final class GrpcFeature extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.AttributeInfo)
-    AttributeInfoOrBuilder {
-  // Use AttributeInfo.newBuilder() to construct.
-  private AttributeInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.GrpcFeature)
+    GrpcFeatureOrBuilder {
+  // Use GrpcFeature.newBuilder() to construct.
+  private GrpcFeature(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private AttributeInfo() {
+  private GrpcFeature() {
     id_ = 0L;
     name_ = "";
     description_ = "";
-    value_ = "";
-    type_ = "";
     displayOrder_ = 0;
   }
 
@@ -28,7 +26,7 @@ public  final class AttributeInfo extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private AttributeInfo(
+  private GrpcFeature(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,19 +63,7 @@ public  final class AttributeInfo extends
             description_ = s;
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            value_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
-            break;
-          }
-          case 48: {
+          case 32: {
 
             displayOrder_ = input.readInt32();
             break;
@@ -95,14 +81,14 @@ public  final class AttributeInfo extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor;
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_AttributeInfo_fieldAccessorTable
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcFeature_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.reactivesw.catelog.infrastructure.AttributeInfo.class, io.reactivesw.catelog.infrastructure.AttributeInfo.Builder.class);
+            io.reactivesw.catelog.infrastructure.GrpcFeature.class, io.reactivesw.catelog.infrastructure.GrpcFeature.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -182,78 +168,10 @@ public  final class AttributeInfo extends
     }
   }
 
-  public static final int VALUE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object value_;
-  /**
-   * <code>optional string value = 4;</code>
-   */
-  public java.lang.String getValue() {
-    java.lang.Object ref = value_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      value_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string value = 4;</code>
-   */
-  public com.google.protobuf.ByteString
-      getValueBytes() {
-    java.lang.Object ref = value_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      value_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object type_;
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DISPLAYORDER_FIELD_NUMBER = 6;
+  public static final int DISPLAYORDER_FIELD_NUMBER = 4;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 displayOrder = 4;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -280,14 +198,8 @@ public  final class AttributeInfo extends
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, description_);
     }
-    if (!getValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, value_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, type_);
-    }
     if (displayOrder_ != 0) {
-      output.writeInt32(6, displayOrder_);
+      output.writeInt32(4, displayOrder_);
     }
   }
 
@@ -306,73 +218,67 @@ public  final class AttributeInfo extends
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, description_);
     }
-    if (!getValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, value_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, type_);
-    }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, displayOrder_);
+        .computeInt32Size(4, displayOrder_);
     }
     memoizedSize = size;
     return size;
   }
 
   private static final long serialVersionUID = 0L;
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(byte[] data)
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseDelimitedFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseDelimitedFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -384,7 +290,7 @@ public  final class AttributeInfo extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.AttributeInfo prototype) {
+  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.GrpcFeature prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -399,25 +305,25 @@ public  final class AttributeInfo extends
     return builder;
   }
   /**
-   * Protobuf type {@code io.reactivesw.catelog.grpc.AttributeInfo}
+   * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcFeature}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.AttributeInfo)
-      io.reactivesw.catelog.infrastructure.AttributeInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.GrpcFeature)
+      io.reactivesw.catelog.infrastructure.GrpcFeatureOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_AttributeInfo_fieldAccessorTable
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcFeature_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.reactivesw.catelog.infrastructure.AttributeInfo.class, io.reactivesw.catelog.infrastructure.AttributeInfo.Builder.class);
+              io.reactivesw.catelog.infrastructure.GrpcFeature.class, io.reactivesw.catelog.infrastructure.GrpcFeature.Builder.class);
     }
 
-    // Construct using io.reactivesw.catelog.infrastructure.AttributeInfo.newBuilder()
+    // Construct using io.reactivesw.catelog.infrastructure.GrpcFeature.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -439,10 +345,6 @@ public  final class AttributeInfo extends
 
       description_ = "";
 
-      value_ = "";
-
-      type_ = "";
-
       displayOrder_ = 0;
 
       return this;
@@ -450,44 +352,42 @@ public  final class AttributeInfo extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor;
     }
 
-    public io.reactivesw.catelog.infrastructure.AttributeInfo getDefaultInstanceForType() {
-      return io.reactivesw.catelog.infrastructure.AttributeInfo.getDefaultInstance();
+    public io.reactivesw.catelog.infrastructure.GrpcFeature getDefaultInstanceForType() {
+      return io.reactivesw.catelog.infrastructure.GrpcFeature.getDefaultInstance();
     }
 
-    public io.reactivesw.catelog.infrastructure.AttributeInfo build() {
-      io.reactivesw.catelog.infrastructure.AttributeInfo result = buildPartial();
+    public io.reactivesw.catelog.infrastructure.GrpcFeature build() {
+      io.reactivesw.catelog.infrastructure.GrpcFeature result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.reactivesw.catelog.infrastructure.AttributeInfo buildPartial() {
-      io.reactivesw.catelog.infrastructure.AttributeInfo result = new io.reactivesw.catelog.infrastructure.AttributeInfo(this);
+    public io.reactivesw.catelog.infrastructure.GrpcFeature buildPartial() {
+      io.reactivesw.catelog.infrastructure.GrpcFeature result = new io.reactivesw.catelog.infrastructure.GrpcFeature(this);
       result.id_ = id_;
       result.name_ = name_;
       result.description_ = description_;
-      result.value_ = value_;
-      result.type_ = type_;
       result.displayOrder_ = displayOrder_;
       onBuilt();
       return result;
     }
 
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.reactivesw.catelog.infrastructure.AttributeInfo) {
-        return mergeFrom((io.reactivesw.catelog.infrastructure.AttributeInfo)other);
+      if (other instanceof io.reactivesw.catelog.infrastructure.GrpcFeature) {
+        return mergeFrom((io.reactivesw.catelog.infrastructure.GrpcFeature)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.AttributeInfo other) {
-      if (other == io.reactivesw.catelog.infrastructure.AttributeInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.GrpcFeature other) {
+      if (other == io.reactivesw.catelog.infrastructure.GrpcFeature.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -497,14 +397,6 @@ public  final class AttributeInfo extends
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        onChanged();
-      }
-      if (!other.getValue().isEmpty()) {
-        value_ = other.value_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
         onChanged();
       }
       if (other.getDisplayOrder() != 0) {
@@ -522,11 +414,11 @@ public  final class AttributeInfo extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.reactivesw.catelog.infrastructure.AttributeInfo parsedMessage = null;
+      io.reactivesw.catelog.infrastructure.GrpcFeature parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.reactivesw.catelog.infrastructure.AttributeInfo) e.getUnfinishedMessage();
+        parsedMessage = (io.reactivesw.catelog.infrastructure.GrpcFeature) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -700,153 +592,15 @@ public  final class AttributeInfo extends
       return this;
     }
 
-    private java.lang.Object value_ = "";
-    /**
-     * <code>optional string value = 4;</code>
-     */
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        value_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string value = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string value = 4;</code>
-     */
-    public Builder setValue(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      value_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string value = 4;</code>
-     */
-    public Builder clearValue() {
-      
-      value_ = getDefaultInstance().getValue();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string value = 4;</code>
-     */
-    public Builder setValueBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      value_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <code>optional string type = 5;</code>
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string type = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string type = 5;</code>
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string type = 5;</code>
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string type = 5;</code>
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
-      onChanged();
-      return this;
-    }
-
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -855,7 +609,7 @@ public  final class AttributeInfo extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public Builder clearDisplayOrder() {
       
@@ -874,39 +628,39 @@ public  final class AttributeInfo extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.AttributeInfo)
+    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.GrpcFeature)
   }
 
-  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.AttributeInfo)
-  private static final io.reactivesw.catelog.infrastructure.AttributeInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.GrpcFeature)
+  private static final io.reactivesw.catelog.infrastructure.GrpcFeature DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.AttributeInfo();
+    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.GrpcFeature();
   }
 
-  public static io.reactivesw.catelog.infrastructure.AttributeInfo getDefaultInstance() {
+  public static io.reactivesw.catelog.infrastructure.GrpcFeature getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AttributeInfo>
-      PARSER = new com.google.protobuf.AbstractParser<AttributeInfo>() {
-    public AttributeInfo parsePartialFrom(
+  private static final com.google.protobuf.Parser<GrpcFeature>
+      PARSER = new com.google.protobuf.AbstractParser<GrpcFeature>() {
+    public GrpcFeature parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AttributeInfo(input, extensionRegistry);
+        return new GrpcFeature(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<AttributeInfo> parser() {
+  public static com.google.protobuf.Parser<GrpcFeature> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AttributeInfo> getParserForType() {
+  public com.google.protobuf.Parser<GrpcFeature> getParserForType() {
     return PARSER;
   }
 
-  public io.reactivesw.catelog.infrastructure.AttributeInfo getDefaultInstanceForType() {
+  public io.reactivesw.catelog.infrastructure.GrpcFeature getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

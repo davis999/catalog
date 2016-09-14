@@ -12,8 +12,8 @@ import io.reactivesw.catelog.dto.CategoryTransfer;
 import io.reactivesw.catelog.dto.ProductTransfer;
 import io.reactivesw.catelog.infrastructure.CategoryList;
 import io.reactivesw.catelog.infrastructure.CatelogServiceGrpc;
+import io.reactivesw.catelog.infrastructure.GrpcProduct;
 import io.reactivesw.catelog.infrastructure.ProductBriefList;
-import io.reactivesw.catelog.infrastructure.ProductInfo;
 import io.reactivesw.catelog.service.CategoryService;
 import io.reactivesw.catelog.service.ProductService;
 
@@ -48,7 +48,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
    * get product detail.
    */
   @Override
-  public void queryProductDetial(Int64Value request, StreamObserver<ProductInfo> responseObserver) {
+  public void queryProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
     // TODO Auto-generated method stub
     final long productId = request.getValue();
     final Product product = productService.queryProductById(productId);
@@ -57,7 +57,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
       throw new StatusRuntimeException(status);
     }
 
-    final ProductInfo reply = ProductTransfer.transferToProductInfo(product);
+    final GrpcProduct reply = ProductTransfer.transferToProductInfo(product);
 
     completeResponse(responseObserver, reply);
   }

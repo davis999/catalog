@@ -2,7 +2,7 @@ package io.reactivesw.catelog.dto;
 
 import io.reactivesw.catelog.domain.Attribute;
 import io.reactivesw.catelog.domain.AttributeValue;
-import io.reactivesw.catelog.infrastructure.AttributeInfo;
+import io.reactivesw.catelog.infrastructure.GrpcAttribute;
 
 /**
  * this is transfer class for Vttribute and AttributeValue.
@@ -17,13 +17,13 @@ public final class AttributeTransfer {
   private AttributeTransfer() {}
 
   /**
-   * transfer AttributeValue to AttributeInfo.
+   * transfer AttributeValue to GrpcAttribute.
    * 
    * @param attributeValue AttributeValue
-   * @return AttributeInfo
+   * @return GrpcAttribute
    */
-  public static AttributeInfo transferToAttributeInfo(AttributeValue attributeValue) {
-    final AttributeInfo.Builder builder = AttributeInfo.newBuilder();
+  public static GrpcAttribute transferToAttributeInfo(AttributeValue attributeValue) {
+    final GrpcAttribute.Builder builder = GrpcAttribute.newBuilder();
 
     final Attribute attribute = attributeValue.getAttribute();
 

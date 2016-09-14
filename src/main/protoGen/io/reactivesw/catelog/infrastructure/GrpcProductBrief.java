@@ -4,17 +4,17 @@
 package io.reactivesw.catelog.infrastructure;
 
 /**
- * Protobuf type {@code io.reactivesw.catelog.grpc.ProductBriefInfo}
+ * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcProductBrief}
  */
-public  final class ProductBriefInfo extends
+public  final class GrpcProductBrief extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.ProductBriefInfo)
-    ProductBriefInfoOrBuilder {
-  // Use ProductBriefInfo.newBuilder() to construct.
-  private ProductBriefInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.GrpcProductBrief)
+    GrpcProductBriefOrBuilder {
+  // Use GrpcProductBrief.newBuilder() to construct.
+  private GrpcProductBrief(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private ProductBriefInfo() {
+  private GrpcProductBrief() {
     id_ = 0L;
     name_ = "";
     price_ = "";
@@ -27,7 +27,7 @@ public  final class ProductBriefInfo extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private ProductBriefInfo(
+  private GrpcProductBrief(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -88,14 +88,14 @@ public  final class ProductBriefInfo extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor;
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_fieldAccessorTable
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.reactivesw.catelog.infrastructure.ProductBriefInfo.class, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder.class);
+            io.reactivesw.catelog.infrastructure.GrpcProductBrief.class, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -274,58 +274,58 @@ public  final class ProductBriefInfo extends
   }
 
   private static final long serialVersionUID = 0L;
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(byte[] data)
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseDelimitedFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseDelimitedFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -337,7 +337,7 @@ public  final class ProductBriefInfo extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.ProductBriefInfo prototype) {
+  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.GrpcProductBrief prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -352,25 +352,25 @@ public  final class ProductBriefInfo extends
     return builder;
   }
   /**
-   * Protobuf type {@code io.reactivesw.catelog.grpc.ProductBriefInfo}
+   * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcProductBrief}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.ProductBriefInfo)
-      io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.GrpcProductBrief)
+      io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_fieldAccessorTable
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.reactivesw.catelog.infrastructure.ProductBriefInfo.class, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder.class);
+              io.reactivesw.catelog.infrastructure.GrpcProductBrief.class, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder.class);
     }
 
-    // Construct using io.reactivesw.catelog.infrastructure.ProductBriefInfo.newBuilder()
+    // Construct using io.reactivesw.catelog.infrastructure.GrpcProductBrief.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -401,23 +401,23 @@ public  final class ProductBriefInfo extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor;
     }
 
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo getDefaultInstanceForType() {
-      return io.reactivesw.catelog.infrastructure.ProductBriefInfo.getDefaultInstance();
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief getDefaultInstanceForType() {
+      return io.reactivesw.catelog.infrastructure.GrpcProductBrief.getDefaultInstance();
     }
 
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo build() {
-      io.reactivesw.catelog.infrastructure.ProductBriefInfo result = buildPartial();
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief build() {
+      io.reactivesw.catelog.infrastructure.GrpcProductBrief result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo buildPartial() {
-      io.reactivesw.catelog.infrastructure.ProductBriefInfo result = new io.reactivesw.catelog.infrastructure.ProductBriefInfo(this);
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief buildPartial() {
+      io.reactivesw.catelog.infrastructure.GrpcProductBrief result = new io.reactivesw.catelog.infrastructure.GrpcProductBrief(this);
       result.id_ = id_;
       result.name_ = name_;
       result.price_ = price_;
@@ -428,16 +428,16 @@ public  final class ProductBriefInfo extends
     }
 
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.reactivesw.catelog.infrastructure.ProductBriefInfo) {
-        return mergeFrom((io.reactivesw.catelog.infrastructure.ProductBriefInfo)other);
+      if (other instanceof io.reactivesw.catelog.infrastructure.GrpcProductBrief) {
+        return mergeFrom((io.reactivesw.catelog.infrastructure.GrpcProductBrief)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.ProductBriefInfo other) {
-      if (other == io.reactivesw.catelog.infrastructure.ProductBriefInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.GrpcProductBrief other) {
+      if (other == io.reactivesw.catelog.infrastructure.GrpcProductBrief.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -468,11 +468,11 @@ public  final class ProductBriefInfo extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.reactivesw.catelog.infrastructure.ProductBriefInfo parsedMessage = null;
+      io.reactivesw.catelog.infrastructure.GrpcProductBrief parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.reactivesw.catelog.infrastructure.ProductBriefInfo) e.getUnfinishedMessage();
+        parsedMessage = (io.reactivesw.catelog.infrastructure.GrpcProductBrief) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -751,39 +751,39 @@ public  final class ProductBriefInfo extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.ProductBriefInfo)
+    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.GrpcProductBrief)
   }
 
-  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.ProductBriefInfo)
-  private static final io.reactivesw.catelog.infrastructure.ProductBriefInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.GrpcProductBrief)
+  private static final io.reactivesw.catelog.infrastructure.GrpcProductBrief DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.ProductBriefInfo();
+    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.GrpcProductBrief();
   }
 
-  public static io.reactivesw.catelog.infrastructure.ProductBriefInfo getDefaultInstance() {
+  public static io.reactivesw.catelog.infrastructure.GrpcProductBrief getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ProductBriefInfo>
-      PARSER = new com.google.protobuf.AbstractParser<ProductBriefInfo>() {
-    public ProductBriefInfo parsePartialFrom(
+  private static final com.google.protobuf.Parser<GrpcProductBrief>
+      PARSER = new com.google.protobuf.AbstractParser<GrpcProductBrief>() {
+    public GrpcProductBrief parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProductBriefInfo(input, extensionRegistry);
+        return new GrpcProductBrief(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ProductBriefInfo> parser() {
+  public static com.google.protobuf.Parser<GrpcProductBrief> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ProductBriefInfo> getParserForType() {
+  public com.google.protobuf.Parser<GrpcProductBrief> getParserForType() {
     return PARSER;
   }
 
-  public io.reactivesw.catelog.infrastructure.ProductBriefInfo getDefaultInstanceForType() {
+  public io.reactivesw.catelog.infrastructure.GrpcProductBrief getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -3,7 +3,7 @@ package io.reactivesw.catelog.dto;
 import io.reactivesw.catelog.domain.Media;
 import io.reactivesw.catelog.domain.Sku;
 import io.reactivesw.catelog.domain.VariantValue;
-import io.reactivesw.catelog.infrastructure.SkuInfo;
+import io.reactivesw.catelog.infrastructure.GrpcSku;
 
 import java.util.Set;
 
@@ -21,13 +21,13 @@ public final class SkuTransfer {
   private SkuTransfer(){}
 
   /**
-   * transfer Sku to SkuInfo.
+   * transfer Sku to GrpcSku.
    * 
    * @param sku sku
-   * @return SkuInfo
+   * @return GrpcSku
    */
-  public static SkuInfo transferToSkuInfo(Sku sku) {
-    final SkuInfo.Builder builder = SkuInfo.newBuilder();
+  public static GrpcSku transferToSkuInfo(Sku sku) {
+    final GrpcSku.Builder builder = GrpcSku.newBuilder();
 
     builder.setId(sku.getId());
     builder.setSkuNumber(sku.getSkuNumber());

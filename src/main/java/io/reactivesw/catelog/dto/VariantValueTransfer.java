@@ -1,7 +1,7 @@
 package io.reactivesw.catelog.dto;
 
 import io.reactivesw.catelog.domain.VariantValue;
-import io.reactivesw.catelog.infrastructure.VariantValueInfo;
+import io.reactivesw.catelog.infrastructure.GrpcVariantValue;
 
 /**
  * this is transfer class for VariantValue.
@@ -17,13 +17,13 @@ public final class VariantValueTransfer {
   private VariantValueTransfer() {}
 
   /**
-   * transfer VariantValue to VariantValueInfo.
+   * transfer VariantValue to GrpcVariantValue.
    * 
    * @param variantValue variant value
-   * @return VariantValueInfo
+   * @return GrpcVariantValue
    */
-  public static VariantValueInfo transferToVariantValue(VariantValue variantValue) {
-    final VariantValueInfo.Builder builder = VariantValueInfo.newBuilder();
+  public static GrpcVariantValue transferToVariantValue(VariantValue variantValue) {
+    final GrpcVariantValue.Builder builder = GrpcVariantValue.newBuilder();
 
     builder.setId(variantValue.getId());
     builder.setValue(variantValue.getValue());

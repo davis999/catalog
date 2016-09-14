@@ -1,8 +1,8 @@
 package io.reactivesw.catelog.dto;
 
 import io.reactivesw.catelog.domain.Category;
-import io.reactivesw.catelog.infrastructure.CategoryInfo;
 import io.reactivesw.catelog.infrastructure.CategoryList;
+import io.reactivesw.catelog.infrastructure.GrpcCategory;
 
 import java.util.List;
 
@@ -17,13 +17,13 @@ public final class CategoryTransfer {
   private CategoryTransfer() {}
 
   /**
-   * transfer Category to CategoryInfo.
+   * transfer Category to GrpcCategory.
    * 
    * @param category category
-   * @return CategoryInfo
+   * @return GrpcCategory
    */
-  public static CategoryInfo transferToCategoryInfo(Category category) {
-    CategoryInfo.Builder builder = CategoryInfo.newBuilder();
+  public static GrpcCategory transferToCategoryInfo(Category category) {
+    GrpcCategory.Builder builder = GrpcCategory.newBuilder();
     builder = builder.setDescription(category.getDescription()).setName(category.getName())
         .setId(category.getId()).setDisplayOrder(category.getDisplayOrder());
 
@@ -38,16 +38,16 @@ public final class CategoryTransfer {
   }
 
   /**
-   * transfer list category to CategoryMap.
+   * transfer list category to CategoryList.
    * 
    * @param categories list of category.
-   * @return CategoryMap category.
+   * @return CategoryList
    */
   public static CategoryList transferToCategoryList(List<Category> categories) {
     CategoryList.Builder builder = CategoryList.newBuilder();
     if (categories != null) {
       for (int index = 0; index < categories.size(); index++) {
-        builder = builder.addCategoryInfo(transferToCategoryInfo(categories.get(index)));
+        builder = builder.addCategory(transferToCategoryInfo(categories.get(index)));
       }
     }
     return builder.build();

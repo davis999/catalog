@@ -8,26 +8,26 @@ public interface ProductBriefListOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo> 
-      getProductBriefInfoList();
+  java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief> 
+      getProductBriefList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  io.reactivesw.catelog.infrastructure.ProductBriefInfo getProductBriefInfo(int index);
+  io.reactivesw.catelog.infrastructure.GrpcProductBrief getProductBrief(int index);
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  int getProductBriefInfoCount();
+  int getProductBriefCount();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  java.util.List<? extends io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder> 
-      getProductBriefInfoOrBuilderList();
+  java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder> 
+      getProductBriefOrBuilderList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder getProductBriefInfoOrBuilder(
+  io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder getProductBriefOrBuilder(
       int index);
 }

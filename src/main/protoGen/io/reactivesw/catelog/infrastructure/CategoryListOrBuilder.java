@@ -8,26 +8,26 @@ public interface CategoryListOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> 
-      getCategoryInfoList();
+  java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> 
+      getCategoryList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  io.reactivesw.catelog.infrastructure.CategoryInfo getCategoryInfo(int index);
+  io.reactivesw.catelog.infrastructure.GrpcCategory getCategory(int index);
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  int getCategoryInfoCount();
+  int getCategoryCount();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  java.util.List<? extends io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> 
-      getCategoryInfoOrBuilderList();
+  java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
+      getCategoryOrBuilderList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
+  io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getCategoryOrBuilder(
       int index);
 }

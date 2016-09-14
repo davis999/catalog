@@ -4,17 +4,17 @@
 package io.reactivesw.catelog.infrastructure;
 
 /**
- * Protobuf type {@code io.reactivesw.catelog.grpc.VariantInfo}
+ * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcVariant}
  */
-public  final class VariantInfo extends
+public  final class GrpcVariant extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.VariantInfo)
-    VariantInfoOrBuilder {
-  // Use VariantInfo.newBuilder() to construct.
-  private VariantInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.GrpcVariant)
+    GrpcVariantOrBuilder {
+  // Use GrpcVariant.newBuilder() to construct.
+  private GrpcVariant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private VariantInfo() {
+  private GrpcVariant() {
     id_ = 0L;
     name_ = "";
     displayOrder_ = 0;
@@ -26,7 +26,7 @@ public  final class VariantInfo extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private VariantInfo(
+  private GrpcVariant(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -64,10 +64,10 @@ public  final class VariantInfo extends
           }
           case 34: {
             if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.VariantValueInfo>();
+              variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcVariantValue>();
               mutable_bitField0_ |= 0x00000008;
             }
-            variantValue_.add(input.readMessage(io.reactivesw.catelog.infrastructure.VariantValueInfo.parser(), extensionRegistry));
+            variantValue_.add(input.readMessage(io.reactivesw.catelog.infrastructure.GrpcVariantValue.parser(), extensionRegistry));
             break;
           }
         }
@@ -86,14 +86,14 @@ public  final class VariantInfo extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor;
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantInfo_fieldAccessorTable
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariant_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.reactivesw.catelog.infrastructure.VariantInfo.class, io.reactivesw.catelog.infrastructure.VariantInfo.Builder.class);
+            io.reactivesw.catelog.infrastructure.GrpcVariant.class, io.reactivesw.catelog.infrastructure.GrpcVariant.Builder.class);
   }
 
   private int bitField0_;
@@ -150,36 +150,36 @@ public  final class VariantInfo extends
   }
 
   public static final int VARIANTVALUE_FIELD_NUMBER = 4;
-  private java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> variantValue_;
+  private java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> variantValue_;
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
    */
-  public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> getVariantValueList() {
+  public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
    */
-  public java.util.List<? extends io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+  public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
       getVariantValueOrBuilderList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
    */
   public int getVariantValueCount() {
     return variantValue_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
    */
-  public io.reactivesw.catelog.infrastructure.VariantValueInfo getVariantValue(int index) {
+  public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
     return variantValue_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
    */
-  public io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder getVariantValueOrBuilder(
+  public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
       int index) {
     return variantValue_.get(index);
   }
@@ -235,58 +235,58 @@ public  final class VariantInfo extends
   }
 
   private static final long serialVersionUID = 0L;
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(byte[] data)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseDelimitedFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseDelimitedFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -298,7 +298,7 @@ public  final class VariantInfo extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.VariantInfo prototype) {
+  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.GrpcVariant prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -313,25 +313,25 @@ public  final class VariantInfo extends
     return builder;
   }
   /**
-   * Protobuf type {@code io.reactivesw.catelog.grpc.VariantInfo}
+   * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcVariant}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.VariantInfo)
-      io.reactivesw.catelog.infrastructure.VariantInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.GrpcVariant)
+      io.reactivesw.catelog.infrastructure.GrpcVariantOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantInfo_fieldAccessorTable
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariant_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.reactivesw.catelog.infrastructure.VariantInfo.class, io.reactivesw.catelog.infrastructure.VariantInfo.Builder.class);
+              io.reactivesw.catelog.infrastructure.GrpcVariant.class, io.reactivesw.catelog.infrastructure.GrpcVariant.Builder.class);
     }
 
-    // Construct using io.reactivesw.catelog.infrastructure.VariantInfo.newBuilder()
+    // Construct using io.reactivesw.catelog.infrastructure.GrpcVariant.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -365,23 +365,23 @@ public  final class VariantInfo extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor;
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantInfo getDefaultInstanceForType() {
-      return io.reactivesw.catelog.infrastructure.VariantInfo.getDefaultInstance();
+    public io.reactivesw.catelog.infrastructure.GrpcVariant getDefaultInstanceForType() {
+      return io.reactivesw.catelog.infrastructure.GrpcVariant.getDefaultInstance();
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantInfo build() {
-      io.reactivesw.catelog.infrastructure.VariantInfo result = buildPartial();
+    public io.reactivesw.catelog.infrastructure.GrpcVariant build() {
+      io.reactivesw.catelog.infrastructure.GrpcVariant result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantInfo buildPartial() {
-      io.reactivesw.catelog.infrastructure.VariantInfo result = new io.reactivesw.catelog.infrastructure.VariantInfo(this);
+    public io.reactivesw.catelog.infrastructure.GrpcVariant buildPartial() {
+      io.reactivesw.catelog.infrastructure.GrpcVariant result = new io.reactivesw.catelog.infrastructure.GrpcVariant(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.id_ = id_;
@@ -402,16 +402,16 @@ public  final class VariantInfo extends
     }
 
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.reactivesw.catelog.infrastructure.VariantInfo) {
-        return mergeFrom((io.reactivesw.catelog.infrastructure.VariantInfo)other);
+      if (other instanceof io.reactivesw.catelog.infrastructure.GrpcVariant) {
+        return mergeFrom((io.reactivesw.catelog.infrastructure.GrpcVariant)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.VariantInfo other) {
-      if (other == io.reactivesw.catelog.infrastructure.VariantInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.GrpcVariant other) {
+      if (other == io.reactivesw.catelog.infrastructure.GrpcVariant.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -460,11 +460,11 @@ public  final class VariantInfo extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.reactivesw.catelog.infrastructure.VariantInfo parsedMessage = null;
+      io.reactivesw.catelog.infrastructure.GrpcVariant parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.reactivesw.catelog.infrastructure.VariantInfo) e.getUnfinishedMessage();
+        parsedMessage = (io.reactivesw.catelog.infrastructure.GrpcVariant) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -596,22 +596,22 @@ public  final class VariantInfo extends
       return this;
     }
 
-    private java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> variantValue_ =
+    private java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> variantValue_ =
       java.util.Collections.emptyList();
     private void ensureVariantValueIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.VariantValueInfo>(variantValue_);
+        variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcVariantValue>(variantValue_);
         bitField0_ |= 0x00000008;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> variantValueBuilder_;
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> variantValueBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> getVariantValueList() {
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
       if (variantValueBuilder_ == null) {
         return java.util.Collections.unmodifiableList(variantValue_);
       } else {
@@ -619,7 +619,7 @@ public  final class VariantInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public int getVariantValueCount() {
       if (variantValueBuilder_ == null) {
@@ -629,9 +629,9 @@ public  final class VariantInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo getVariantValue(int index) {
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
       if (variantValueBuilder_ == null) {
         return variantValue_.get(index);
       } else {
@@ -639,10 +639,10 @@ public  final class VariantInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder setVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -656,10 +656,10 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder setVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.set(index, builderForValue.build());
@@ -670,9 +670,9 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public Builder addVariantValue(io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+    public Builder addVariantValue(io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -686,10 +686,10 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder addVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -703,10 +703,10 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder addVariantValue(
-        io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.add(builderForValue.build());
@@ -717,10 +717,10 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder addVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.add(index, builderForValue.build());
@@ -731,10 +731,10 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder addAllVariantValue(
-        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.VariantValueInfo> values) {
+        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValue> values) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -746,7 +746,7 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder clearVariantValue() {
       if (variantValueBuilder_ == null) {
@@ -759,7 +759,7 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
     public Builder removeVariantValue(int index) {
       if (variantValueBuilder_ == null) {
@@ -772,16 +772,16 @@ public  final class VariantInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder getVariantValueBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder getVariantValueBuilder(
         int index) {
       return getVariantValueFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder getVariantValueOrBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
         int index) {
       if (variantValueBuilder_ == null) {
         return variantValue_.get(index);  } else {
@@ -789,9 +789,9 @@ public  final class VariantInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public java.util.List<? extends io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+    public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
          getVariantValueOrBuilderList() {
       if (variantValueBuilder_ != null) {
         return variantValueBuilder_.getMessageOrBuilderList();
@@ -800,33 +800,33 @@ public  final class VariantInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder addVariantValueBuilder() {
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder() {
       return getVariantValueFieldBuilder().addBuilder(
-          io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance());
+          io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder addVariantValueBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder(
         int index) {
       return getVariantValueFieldBuilder().addBuilder(
-          index, io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance());
+          index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 4;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 4;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder> 
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder> 
          getVariantValueBuilderList() {
       return getVariantValueFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
         getVariantValueFieldBuilder() {
       if (variantValueBuilder_ == null) {
         variantValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder>(
+            io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder>(
                 variantValue_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -846,39 +846,39 @@ public  final class VariantInfo extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.VariantInfo)
+    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.GrpcVariant)
   }
 
-  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.VariantInfo)
-  private static final io.reactivesw.catelog.infrastructure.VariantInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.GrpcVariant)
+  private static final io.reactivesw.catelog.infrastructure.GrpcVariant DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.VariantInfo();
+    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.GrpcVariant();
   }
 
-  public static io.reactivesw.catelog.infrastructure.VariantInfo getDefaultInstance() {
+  public static io.reactivesw.catelog.infrastructure.GrpcVariant getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VariantInfo>
-      PARSER = new com.google.protobuf.AbstractParser<VariantInfo>() {
-    public VariantInfo parsePartialFrom(
+  private static final com.google.protobuf.Parser<GrpcVariant>
+      PARSER = new com.google.protobuf.AbstractParser<GrpcVariant>() {
+    public GrpcVariant parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VariantInfo(input, extensionRegistry);
+        return new GrpcVariant(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<VariantInfo> parser() {
+  public static com.google.protobuf.Parser<GrpcVariant> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VariantInfo> getParserForType() {
+  public com.google.protobuf.Parser<GrpcVariant> getParserForType() {
     return PARSER;
   }
 
-  public io.reactivesw.catelog.infrastructure.VariantInfo getDefaultInstanceForType() {
+  public io.reactivesw.catelog.infrastructure.GrpcVariant getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

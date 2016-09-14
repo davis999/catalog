@@ -3,8 +3,8 @@
 
 package io.reactivesw.catelog.infrastructure;
 
-public interface AttributeInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.AttributeInfo)
+public interface GrpcFeatureOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.GrpcFeature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -33,27 +33,7 @@ public interface AttributeInfoOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>optional string value = 4;</code>
-   */
-  java.lang.String getValue();
-  /**
-   * <code>optional string value = 4;</code>
-   */
-  com.google.protobuf.ByteString
-      getValueBytes();
-
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  java.lang.String getType();
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 displayOrder = 4;</code>
    */
   int getDisplayOrder();
 }

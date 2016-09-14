@@ -20,32 +20,32 @@ service CatelogService {
   (ProductBriefList){}
 
   //query product's detail by id of product
-  rpc queryProductDetial (google.protobuf.Int64Value) returns (ProductInfo){}
+  rpc queryProductDetial (google.protobuf.Int64Value) returns (GrpcProduct){}
 }
 
 /**
  * response when call queryAllCategories.
  */
 message CategoryList{
-  repeated CategoryInfo categoryInfo = 1;
+  repeated GrpcCategory category = 1;
 }
 
 /**
  *  response when call queryAllProductsByCategory.
  */
 message ProductBriefList{
-  repeated ProductBriefInfo productBriefInfo = 3;
+  repeated GrpcProductBrief productBrief = 3;
 }
 
-message CategoryInfo {
+message GrpcCategory {
   int64 id = 1;
   string name = 2;
   string description = 3;
   int32 displayOrder = 4;
-  repeated CategoryInfo subCategoryInfos = 5;
+  repeated GrpcCategory subCategoryInfos = 5;
 }
 
-message AttributeInfo{
+message GrpcAttribute{
   int64 id = 1;
   string name = 2;
   string description = 3;
@@ -54,28 +54,28 @@ message AttributeInfo{
   int32 displayOrder = 6;
 }
 
-message FeatureInfo {
+message GrpcFeature {
   int64 id = 1;
   string name = 2;
   string description = 3;
   int32 displayOrder = 4;
 }
 
-message VariantValueInfo {
+message GrpcVariantValue {
   int64 id = 1;
   string value = 2;
   int32 displayOrder = 3;
   string priceAdjustment = 4;
 }
 
-message VariantInfo {
+message GrpcVariant {
   int64 id = 1;
   string name = 2;
   int32 displayOrder = 3;
-  repeated VariantValueInfo variantValue = 4;
+  repeated GrpcVariantValue variantValue = 4;
 }
 
-message MediaInfo {
+message GrpcMedia {
   int64 id = 1;
   string type = 2;
   string title = 3;
@@ -83,18 +83,18 @@ message MediaInfo {
   int32 displayOrder = 5;
 }
 
-message SkuInfo {
+message GrpcSku {
   int64 id = 1;
   string skuNumber = 2;
   bool isActive = 3;
   int32 quatity = 4;
   string upc = 5;
   int32 displayOrder = 6;
-  repeated MediaInfo media = 7;
-  repeated VariantValueInfo variantValue = 8;
+  repeated GrpcMedia media = 7;
+  repeated GrpcVariantValue variantValue = 8;
 }
 
-message ProductInfo{
+message GrpcProduct{
   int64 id = 1;
   string manufacturer = 2;
   string brand = 3;
@@ -106,13 +106,13 @@ message ProductInfo{
   string detail = 9;
   bool isDisplayed = 10;
   bool isDeleted = 11;
-  repeated AttributeInfo attribute = 12;
-  repeated SkuInfo sku = 13;
-  repeated VariantInfo variant = 14;
-  repeated FeatureInfo feature = 15;
+  repeated GrpcAttribute attribute = 12;
+  repeated GrpcSku sku = 13;
+  repeated GrpcVariant variant = 14;
+  repeated GrpcFeature feature = 15;
 }
 
-message ProductBriefInfo{
+message GrpcProductBrief{
   int64 id = 1;
   string name = 2;
   string price = 3;

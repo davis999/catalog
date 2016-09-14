@@ -51,13 +51,13 @@ public class CatelogServiceGrpc {
           io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catelog.infrastructure.ProductBriefList.getDefaultInstance()));
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<com.google.protobuf.Int64Value,
-      io.reactivesw.catelog.infrastructure.ProductInfo> METHOD_QUERY_PRODUCT_DETIAL =
+      io.reactivesw.catelog.infrastructure.GrpcProduct> METHOD_QUERY_PRODUCT_DETIAL =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "io.reactivesw.catelog.grpc.CatelogService", "queryProductDetial"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catelog.infrastructure.ProductInfo.getDefaultInstance()));
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catelog.infrastructure.GrpcProduct.getDefaultInstance()));
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -112,7 +112,7 @@ public class CatelogServiceGrpc {
      * </pre>
      */
     public void queryProductDetial(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.ProductInfo> responseObserver);
+        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.GrpcProduct> responseObserver);
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1469")
@@ -132,7 +132,7 @@ public class CatelogServiceGrpc {
 
     @java.lang.Override
     public void queryProductDetial(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.ProductInfo> responseObserver) {
+        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.GrpcProduct> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_QUERY_PRODUCT_DETIAL, responseObserver);
     }
 
@@ -168,7 +168,7 @@ public class CatelogServiceGrpc {
      *query product's detail by id of product
      * </pre>
      */
-    public io.reactivesw.catelog.infrastructure.ProductInfo queryProductDetial(com.google.protobuf.Int64Value request);
+    public io.reactivesw.catelog.infrastructure.GrpcProduct queryProductDetial(com.google.protobuf.Int64Value request);
   }
 
   /**
@@ -200,7 +200,7 @@ public class CatelogServiceGrpc {
      *query product's detail by id of product
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catelog.infrastructure.ProductInfo> queryProductDetial(
+    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catelog.infrastructure.GrpcProduct> queryProductDetial(
         com.google.protobuf.Int64Value request);
   }
 
@@ -237,7 +237,7 @@ public class CatelogServiceGrpc {
 
     @java.lang.Override
     public void queryProductDetial(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.ProductInfo> responseObserver) {
+        io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.GrpcProduct> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_QUERY_PRODUCT_DETIAL, getCallOptions()), request, responseObserver);
     }
@@ -273,7 +273,7 @@ public class CatelogServiceGrpc {
     }
 
     @java.lang.Override
-    public io.reactivesw.catelog.infrastructure.ProductInfo queryProductDetial(com.google.protobuf.Int64Value request) {
+    public io.reactivesw.catelog.infrastructure.GrpcProduct queryProductDetial(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_PRODUCT_DETIAL, getCallOptions(), request);
     }
@@ -311,7 +311,7 @@ public class CatelogServiceGrpc {
     }
 
     @java.lang.Override
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catelog.infrastructure.ProductInfo> queryProductDetial(
+    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catelog.infrastructure.GrpcProduct> queryProductDetial(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_PRODUCT_DETIAL, getCallOptions()), request);
@@ -351,7 +351,7 @@ public class CatelogServiceGrpc {
           break;
         case METHODID_QUERY_PRODUCT_DETIAL:
           serviceImpl.queryProductDetial((com.google.protobuf.Int64Value) request,
-              (io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.ProductInfo>) responseObserver);
+              (io.grpc.stub.StreamObserver<io.reactivesw.catelog.infrastructure.GrpcProduct>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -398,7 +398,7 @@ public class CatelogServiceGrpc {
           asyncUnaryCall(
             new MethodHandlers<
               com.google.protobuf.Int64Value,
-              io.reactivesw.catelog.infrastructure.ProductInfo>(
+              io.reactivesw.catelog.infrastructure.GrpcProduct>(
                 serviceImpl, METHODID_QUERY_PRODUCT_DETIAL)))
         .build();
   }

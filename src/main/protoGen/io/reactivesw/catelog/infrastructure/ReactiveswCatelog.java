@@ -19,50 +19,50 @@ public final class ReactiveswCatelog {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_io_reactivesw_catelog_grpc_ProductBriefList_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_CategoryInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcCategory_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_CategoryInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcCategory_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcAttribute_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_AttributeInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcAttribute_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_FeatureInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_FeatureInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcFeature_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_VariantInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcVariant_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_MediaInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcMedia_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_MediaInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcMedia_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_SkuInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcSku_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_ProductInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcProduct_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_ProductInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcProduct_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor;
+    internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_fieldAccessorTable;
+      internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -74,56 +74,56 @@ public final class ReactiveswCatelog {
     java.lang.String[] descriptorData = {
       "\n\030reactivesw-catelog.proto\022\032io.reactives" +
       "w.catelog.grpc\032\033google/protobuf/empty.pr" +
-      "oto\032\036google/protobuf/wrappers.proto\"N\n\014C" +
-      "ategoryList\022>\n\014categoryInfo\030\001 \003(\0132(.io.r" +
-      "eactivesw.catelog.grpc.CategoryInfo\"Z\n\020P" +
-      "roductBriefList\022F\n\020productBriefInfo\030\003 \003(" +
-      "\0132,.io.reactivesw.catelog.grpc.ProductBr" +
-      "iefInfo\"\227\001\n\014CategoryInfo\022\n\n\002id\030\001 \001(\003\022\014\n\004" +
-      "name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\024\n\014displ" +
-      "ayOrder\030\004 \001(\005\022B\n\020subCategoryInfos\030\005 \003(\0132",
-      "(.io.reactivesw.catelog.grpc.CategoryInf" +
-      "o\"q\n\rAttributeInfo\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002" +
-      " \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005value\030\004 \001(\t" +
-      "\022\014\n\004type\030\005 \001(\t\022\024\n\014displayOrder\030\006 \001(\005\"R\n\013" +
-      "FeatureInfo\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n" +
-      "\013description\030\003 \001(\t\022\024\n\014displayOrder\030\004 \001(\005" +
-      "\"\\\n\020VariantValueInfo\022\n\n\002id\030\001 \001(\003\022\r\n\005valu" +
-      "e\030\002 \001(\t\022\024\n\014displayOrder\030\003 \001(\005\022\027\n\017priceAd" +
-      "justment\030\004 \001(\t\"\201\001\n\013VariantInfo\022\n\n\002id\030\001 \001" +
-      "(\003\022\014\n\004name\030\002 \001(\t\022\024\n\014displayOrder\030\003 \001(\005\022B",
-      "\n\014variantValue\030\004 \003(\0132,.io.reactivesw.cat" +
-      "elog.grpc.VariantValueInfo\"W\n\tMediaInfo\022" +
-      "\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\t\022\r\n\005title\030\003 \001(\t" +
-      "\022\013\n\003url\030\004 \001(\t\022\024\n\014displayOrder\030\005 \001(\005\"\350\001\n\007" +
-      "SkuInfo\022\n\n\002id\030\001 \001(\003\022\021\n\tskuNumber\030\002 \001(\t\022\020" +
-      "\n\010isActive\030\003 \001(\010\022\017\n\007quatity\030\004 \001(\005\022\013\n\003upc" +
-      "\030\005 \001(\t\022\024\n\014displayOrder\030\006 \001(\005\0224\n\005media\030\007 " +
-      "\003(\0132%.io.reactivesw.catelog.grpc.MediaIn" +
-      "fo\022B\n\014variantValue\030\010 \003(\0132,.io.reactivesw" +
-      ".catelog.grpc.VariantValueInfo\"\261\003\n\013Produ",
-      "ctInfo\022\n\n\002id\030\001 \001(\003\022\024\n\014manufacturer\030\002 \001(\t" +
-      "\022\r\n\005brand\030\003 \001(\t\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005" +
-      " \001(\t\022\r\n\005price\030\006 \001(\t\022\024\n\014displayOrder\030\007 \001(" +
-      "\005\022\023\n\013description\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022\023" +
-      "\n\013isDisplayed\030\n \001(\010\022\021\n\tisDeleted\030\013 \001(\010\022<" +
-      "\n\tattribute\030\014 \003(\0132).io.reactivesw.catelo" +
-      "g.grpc.AttributeInfo\0220\n\003sku\030\r \003(\0132#.io.r" +
-      "eactivesw.catelog.grpc.SkuInfo\0228\n\007varian" +
-      "t\030\016 \003(\0132\'.io.reactivesw.catelog.grpc.Var" +
-      "iantInfo\0228\n\007feature\030\017 \003(\0132\'.io.reactives",
-      "w.catelog.grpc.FeatureInfo\"c\n\020ProductBri" +
-      "efInfo\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005pric" +
-      "e\030\003 \001(\t\022\024\n\014displayOrder\030\004 \001(\005\022\020\n\010mediaUR" +
-      "L\030\005 \001(\t2\253\002\n\016CatelogService\022S\n\rgetCategor" +
-      "ies\022\026.google.protobuf.Empty\032(.io.reactiv" +
-      "esw.catelog.grpc.CategoryList\"\000\022f\n\027query" +
-      "ProductsByCategory\022\033.google.protobuf.Int" +
-      "64Value\032,.io.reactivesw.catelog.grpc.Pro" +
-      "ductBriefList\"\000\022\\\n\022queryProductDetial\022\033." +
-      "google.protobuf.Int64Value\032\'.io.reactive",
-      "sw.catelog.grpc.ProductInfo\"\000B(\n$io.reac" +
-      "tivesw.catelog.infrastructureP\001b\006proto3"
+      "oto\032\036google/protobuf/wrappers.proto\"J\n\014C" +
+      "ategoryList\022:\n\010category\030\001 \003(\0132(.io.react" +
+      "ivesw.catelog.grpc.GrpcCategory\"V\n\020Produ" +
+      "ctBriefList\022B\n\014productBrief\030\003 \003(\0132,.io.r" +
+      "eactivesw.catelog.grpc.GrpcProductBrief\"" +
+      "\227\001\n\014GrpcCategory\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001" +
+      "(\t\022\023\n\013description\030\003 \001(\t\022\024\n\014displayOrder\030" +
+      "\004 \001(\005\022B\n\020subCategoryInfos\030\005 \003(\0132(.io.rea",
+      "ctivesw.catelog.grpc.GrpcCategory\"q\n\rGrp" +
+      "cAttribute\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013" +
+      "description\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\014\n\004type" +
+      "\030\005 \001(\t\022\024\n\014displayOrder\030\006 \001(\005\"R\n\013GrpcFeat" +
+      "ure\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descrip" +
+      "tion\030\003 \001(\t\022\024\n\014displayOrder\030\004 \001(\005\"\\\n\020Grpc" +
+      "VariantValue\022\n\n\002id\030\001 \001(\003\022\r\n\005value\030\002 \001(\t\022" +
+      "\024\n\014displayOrder\030\003 \001(\005\022\027\n\017priceAdjustment" +
+      "\030\004 \001(\t\"\201\001\n\013GrpcVariant\022\n\n\002id\030\001 \001(\003\022\014\n\004na" +
+      "me\030\002 \001(\t\022\024\n\014displayOrder\030\003 \001(\005\022B\n\014varian",
+      "tValue\030\004 \003(\0132,.io.reactivesw.catelog.grp" +
+      "c.GrpcVariantValue\"W\n\tGrpcMedia\022\n\n\002id\030\001 " +
+      "\001(\003\022\014\n\004type\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\013\n\003url\030" +
+      "\004 \001(\t\022\024\n\014displayOrder\030\005 \001(\005\"\350\001\n\007GrpcSku\022" +
+      "\n\n\002id\030\001 \001(\003\022\021\n\tskuNumber\030\002 \001(\t\022\020\n\010isActi" +
+      "ve\030\003 \001(\010\022\017\n\007quatity\030\004 \001(\005\022\013\n\003upc\030\005 \001(\t\022\024" +
+      "\n\014displayOrder\030\006 \001(\005\0224\n\005media\030\007 \003(\0132%.io" +
+      ".reactivesw.catelog.grpc.GrpcMedia\022B\n\014va" +
+      "riantValue\030\010 \003(\0132,.io.reactivesw.catelog" +
+      ".grpc.GrpcVariantValue\"\261\003\n\013GrpcProduct\022\n",
+      "\n\002id\030\001 \001(\003\022\024\n\014manufacturer\030\002 \001(\t\022\r\n\005bran" +
+      "d\030\003 \001(\t\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005" +
+      "price\030\006 \001(\t\022\024\n\014displayOrder\030\007 \001(\005\022\023\n\013des" +
+      "cription\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022\023\n\013isDisp" +
+      "layed\030\n \001(\010\022\021\n\tisDeleted\030\013 \001(\010\022<\n\tattrib" +
+      "ute\030\014 \003(\0132).io.reactivesw.catelog.grpc.G" +
+      "rpcAttribute\0220\n\003sku\030\r \003(\0132#.io.reactives" +
+      "w.catelog.grpc.GrpcSku\0228\n\007variant\030\016 \003(\0132" +
+      "\'.io.reactivesw.catelog.grpc.GrpcVariant" +
+      "\0228\n\007feature\030\017 \003(\0132\'.io.reactivesw.catelo",
+      "g.grpc.GrpcFeature\"c\n\020GrpcProductBrief\022\n" +
+      "\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022" +
+      "\024\n\014displayOrder\030\004 \001(\005\022\020\n\010mediaURL\030\005 \001(\t2" +
+      "\253\002\n\016CatelogService\022S\n\rgetCategories\022\026.go" +
+      "ogle.protobuf.Empty\032(.io.reactivesw.cate" +
+      "log.grpc.CategoryList\"\000\022f\n\027queryProducts" +
+      "ByCategory\022\033.google.protobuf.Int64Value\032" +
+      ",.io.reactivesw.catelog.grpc.ProductBrie" +
+      "fList\"\000\022\\\n\022queryProductDetial\022\033.google.p" +
+      "rotobuf.Int64Value\032\'.io.reactivesw.catel",
+      "og.grpc.GrpcProduct\"\000B(\n$io.reactivesw.c" +
+      "atelog.infrastructureP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -144,66 +144,66 @@ public final class ReactiveswCatelog {
     internal_static_io_reactivesw_catelog_grpc_CategoryList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catelog_grpc_CategoryList_descriptor,
-        new java.lang.String[] { "CategoryInfo", });
+        new java.lang.String[] { "Category", });
     internal_static_io_reactivesw_catelog_grpc_ProductBriefList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_io_reactivesw_catelog_grpc_ProductBriefList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catelog_grpc_ProductBriefList_descriptor,
-        new java.lang.String[] { "ProductBriefInfo", });
-    internal_static_io_reactivesw_catelog_grpc_CategoryInfo_descriptor =
+        new java.lang.String[] { "ProductBrief", });
+    internal_static_io_reactivesw_catelog_grpc_GrpcCategory_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_io_reactivesw_catelog_grpc_CategoryInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_CategoryInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcCategory_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", "SubCategoryInfos", });
-    internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcAttribute_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_io_reactivesw_catelog_grpc_AttributeInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_AttributeInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcAttribute_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "Value", "Type", "DisplayOrder", });
-    internal_static_io_reactivesw_catelog_grpc_FeatureInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_io_reactivesw_catelog_grpc_FeatureInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcFeature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_FeatureInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcFeature_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", });
-    internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor,
         new java.lang.String[] { "Id", "Value", "DisplayOrder", "PriceAdjustment", });
-    internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_io_reactivesw_catelog_grpc_VariantInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcVariant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_VariantInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcVariant_descriptor,
         new java.lang.String[] { "Id", "Name", "DisplayOrder", "VariantValue", });
-    internal_static_io_reactivesw_catelog_grpc_MediaInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcMedia_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_io_reactivesw_catelog_grpc_MediaInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcMedia_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_MediaInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcMedia_descriptor,
         new java.lang.String[] { "Id", "Type", "Title", "Url", "DisplayOrder", });
-    internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_io_reactivesw_catelog_grpc_SkuInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcSku_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor,
         new java.lang.String[] { "Id", "SkuNumber", "IsActive", "Quatity", "Upc", "DisplayOrder", "Media", "VariantValue", });
-    internal_static_io_reactivesw_catelog_grpc_ProductInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcProduct_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_io_reactivesw_catelog_grpc_ProductInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_ProductInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcProduct_descriptor,
         new java.lang.String[] { "Id", "Manufacturer", "Brand", "Model", "Name", "Price", "DisplayOrder", "Description", "Detail", "IsDisplayed", "IsDeleted", "Attribute", "Sku", "Variant", "Feature", });
-    internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor =
+    internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_fieldAccessorTable = new
+    internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_io_reactivesw_catelog_grpc_ProductBriefInfo_descriptor,
+        internal_static_io_reactivesw_catelog_grpc_GrpcProductBrief_descriptor,
         new java.lang.String[] { "Id", "Name", "Price", "DisplayOrder", "MediaURL", });
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

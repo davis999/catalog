@@ -3,8 +3,8 @@
 
 package io.reactivesw.catelog.infrastructure;
 
-public interface VariantValueInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.VariantValueInfo)
+public interface GrpcVariantValueOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.GrpcVariantValue)
     com.google.protobuf.MessageOrBuilder {
 
   /**

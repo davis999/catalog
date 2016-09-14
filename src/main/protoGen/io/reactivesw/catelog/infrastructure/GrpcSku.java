@@ -4,17 +4,17 @@
 package io.reactivesw.catelog.infrastructure;
 
 /**
- * Protobuf type {@code io.reactivesw.catelog.grpc.SkuInfo}
+ * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcSku}
  */
-public  final class SkuInfo extends
+public  final class GrpcSku extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.SkuInfo)
-    SkuInfoOrBuilder {
-  // Use SkuInfo.newBuilder() to construct.
-  private SkuInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.GrpcSku)
+    GrpcSkuOrBuilder {
+  // Use GrpcSku.newBuilder() to construct.
+  private GrpcSku(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private SkuInfo() {
+  private GrpcSku() {
     id_ = 0L;
     skuNumber_ = "";
     isActive_ = false;
@@ -30,7 +30,7 @@ public  final class SkuInfo extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private SkuInfo(
+  private GrpcSku(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -84,18 +84,18 @@ public  final class SkuInfo extends
           }
           case 58: {
             if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              media_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.MediaInfo>();
+              media_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcMedia>();
               mutable_bitField0_ |= 0x00000040;
             }
-            media_.add(input.readMessage(io.reactivesw.catelog.infrastructure.MediaInfo.parser(), extensionRegistry));
+            media_.add(input.readMessage(io.reactivesw.catelog.infrastructure.GrpcMedia.parser(), extensionRegistry));
             break;
           }
           case 66: {
             if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.VariantValueInfo>();
+              variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcVariantValue>();
               mutable_bitField0_ |= 0x00000080;
             }
-            variantValue_.add(input.readMessage(io.reactivesw.catelog.infrastructure.VariantValueInfo.parser(), extensionRegistry));
+            variantValue_.add(input.readMessage(io.reactivesw.catelog.infrastructure.GrpcVariantValue.parser(), extensionRegistry));
             break;
           }
         }
@@ -117,14 +117,14 @@ public  final class SkuInfo extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor;
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_SkuInfo_fieldAccessorTable
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcSku_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.reactivesw.catelog.infrastructure.SkuInfo.class, io.reactivesw.catelog.infrastructure.SkuInfo.Builder.class);
+            io.reactivesw.catelog.infrastructure.GrpcSku.class, io.reactivesw.catelog.infrastructure.GrpcSku.Builder.class);
   }
 
   private int bitField0_;
@@ -233,71 +233,71 @@ public  final class SkuInfo extends
   }
 
   public static final int MEDIA_FIELD_NUMBER = 7;
-  private java.util.List<io.reactivesw.catelog.infrastructure.MediaInfo> media_;
+  private java.util.List<io.reactivesw.catelog.infrastructure.GrpcMedia> media_;
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
    */
-  public java.util.List<io.reactivesw.catelog.infrastructure.MediaInfo> getMediaList() {
+  public java.util.List<io.reactivesw.catelog.infrastructure.GrpcMedia> getMediaList() {
     return media_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
    */
-  public java.util.List<? extends io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder> 
+  public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder> 
       getMediaOrBuilderList() {
     return media_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
    */
   public int getMediaCount() {
     return media_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
    */
-  public io.reactivesw.catelog.infrastructure.MediaInfo getMedia(int index) {
+  public io.reactivesw.catelog.infrastructure.GrpcMedia getMedia(int index) {
     return media_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
    */
-  public io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder getMediaOrBuilder(
+  public io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder getMediaOrBuilder(
       int index) {
     return media_.get(index);
   }
 
   public static final int VARIANTVALUE_FIELD_NUMBER = 8;
-  private java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> variantValue_;
+  private java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> variantValue_;
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
    */
-  public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> getVariantValueList() {
+  public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
    */
-  public java.util.List<? extends io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+  public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
       getVariantValueOrBuilderList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
    */
   public int getVariantValueCount() {
     return variantValue_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
    */
-  public io.reactivesw.catelog.infrastructure.VariantValueInfo getVariantValue(int index) {
+  public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
     return variantValue_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
    */
-  public io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder getVariantValueOrBuilder(
+  public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
       int index) {
     return variantValue_.get(index);
   }
@@ -380,58 +380,58 @@ public  final class SkuInfo extends
   }
 
   private static final long serialVersionUID = 0L;
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(byte[] data)
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseDelimitedFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseDelimitedFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.SkuInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcSku parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -443,7 +443,7 @@ public  final class SkuInfo extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.SkuInfo prototype) {
+  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.GrpcSku prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -458,25 +458,25 @@ public  final class SkuInfo extends
     return builder;
   }
   /**
-   * Protobuf type {@code io.reactivesw.catelog.grpc.SkuInfo}
+   * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcSku}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.SkuInfo)
-      io.reactivesw.catelog.infrastructure.SkuInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.GrpcSku)
+      io.reactivesw.catelog.infrastructure.GrpcSkuOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_SkuInfo_fieldAccessorTable
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcSku_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.reactivesw.catelog.infrastructure.SkuInfo.class, io.reactivesw.catelog.infrastructure.SkuInfo.Builder.class);
+              io.reactivesw.catelog.infrastructure.GrpcSku.class, io.reactivesw.catelog.infrastructure.GrpcSku.Builder.class);
     }
 
-    // Construct using io.reactivesw.catelog.infrastructure.SkuInfo.newBuilder()
+    // Construct using io.reactivesw.catelog.infrastructure.GrpcSku.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -523,23 +523,23 @@ public  final class SkuInfo extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_SkuInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcSku_descriptor;
     }
 
-    public io.reactivesw.catelog.infrastructure.SkuInfo getDefaultInstanceForType() {
-      return io.reactivesw.catelog.infrastructure.SkuInfo.getDefaultInstance();
+    public io.reactivesw.catelog.infrastructure.GrpcSku getDefaultInstanceForType() {
+      return io.reactivesw.catelog.infrastructure.GrpcSku.getDefaultInstance();
     }
 
-    public io.reactivesw.catelog.infrastructure.SkuInfo build() {
-      io.reactivesw.catelog.infrastructure.SkuInfo result = buildPartial();
+    public io.reactivesw.catelog.infrastructure.GrpcSku build() {
+      io.reactivesw.catelog.infrastructure.GrpcSku result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.reactivesw.catelog.infrastructure.SkuInfo buildPartial() {
-      io.reactivesw.catelog.infrastructure.SkuInfo result = new io.reactivesw.catelog.infrastructure.SkuInfo(this);
+    public io.reactivesw.catelog.infrastructure.GrpcSku buildPartial() {
+      io.reactivesw.catelog.infrastructure.GrpcSku result = new io.reactivesw.catelog.infrastructure.GrpcSku(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.id_ = id_;
@@ -572,16 +572,16 @@ public  final class SkuInfo extends
     }
 
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.reactivesw.catelog.infrastructure.SkuInfo) {
-        return mergeFrom((io.reactivesw.catelog.infrastructure.SkuInfo)other);
+      if (other instanceof io.reactivesw.catelog.infrastructure.GrpcSku) {
+        return mergeFrom((io.reactivesw.catelog.infrastructure.GrpcSku)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.SkuInfo other) {
-      if (other == io.reactivesw.catelog.infrastructure.SkuInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.GrpcSku other) {
+      if (other == io.reactivesw.catelog.infrastructure.GrpcSku.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -666,11 +666,11 @@ public  final class SkuInfo extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.reactivesw.catelog.infrastructure.SkuInfo parsedMessage = null;
+      io.reactivesw.catelog.infrastructure.GrpcSku parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.reactivesw.catelog.infrastructure.SkuInfo) e.getUnfinishedMessage();
+        parsedMessage = (io.reactivesw.catelog.infrastructure.GrpcSku) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -923,22 +923,22 @@ public  final class SkuInfo extends
       return this;
     }
 
-    private java.util.List<io.reactivesw.catelog.infrastructure.MediaInfo> media_ =
+    private java.util.List<io.reactivesw.catelog.infrastructure.GrpcMedia> media_ =
       java.util.Collections.emptyList();
     private void ensureMediaIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-        media_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.MediaInfo>(media_);
+        media_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcMedia>(media_);
         bitField0_ |= 0x00000040;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.MediaInfo, io.reactivesw.catelog.infrastructure.MediaInfo.Builder, io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder> mediaBuilder_;
+        io.reactivesw.catelog.infrastructure.GrpcMedia, io.reactivesw.catelog.infrastructure.GrpcMedia.Builder, io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder> mediaBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.MediaInfo> getMediaList() {
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcMedia> getMediaList() {
       if (mediaBuilder_ == null) {
         return java.util.Collections.unmodifiableList(media_);
       } else {
@@ -946,7 +946,7 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public int getMediaCount() {
       if (mediaBuilder_ == null) {
@@ -956,9 +956,9 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public io.reactivesw.catelog.infrastructure.MediaInfo getMedia(int index) {
+    public io.reactivesw.catelog.infrastructure.GrpcMedia getMedia(int index) {
       if (mediaBuilder_ == null) {
         return media_.get(index);
       } else {
@@ -966,10 +966,10 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder setMedia(
-        int index, io.reactivesw.catelog.infrastructure.MediaInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcMedia value) {
       if (mediaBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -983,10 +983,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder setMedia(
-        int index, io.reactivesw.catelog.infrastructure.MediaInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcMedia.Builder builderForValue) {
       if (mediaBuilder_ == null) {
         ensureMediaIsMutable();
         media_.set(index, builderForValue.build());
@@ -997,9 +997,9 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public Builder addMedia(io.reactivesw.catelog.infrastructure.MediaInfo value) {
+    public Builder addMedia(io.reactivesw.catelog.infrastructure.GrpcMedia value) {
       if (mediaBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1013,10 +1013,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder addMedia(
-        int index, io.reactivesw.catelog.infrastructure.MediaInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcMedia value) {
       if (mediaBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1030,10 +1030,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder addMedia(
-        io.reactivesw.catelog.infrastructure.MediaInfo.Builder builderForValue) {
+        io.reactivesw.catelog.infrastructure.GrpcMedia.Builder builderForValue) {
       if (mediaBuilder_ == null) {
         ensureMediaIsMutable();
         media_.add(builderForValue.build());
@@ -1044,10 +1044,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder addMedia(
-        int index, io.reactivesw.catelog.infrastructure.MediaInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcMedia.Builder builderForValue) {
       if (mediaBuilder_ == null) {
         ensureMediaIsMutable();
         media_.add(index, builderForValue.build());
@@ -1058,10 +1058,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder addAllMedia(
-        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.MediaInfo> values) {
+        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcMedia> values) {
       if (mediaBuilder_ == null) {
         ensureMediaIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1073,7 +1073,7 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder clearMedia() {
       if (mediaBuilder_ == null) {
@@ -1086,7 +1086,7 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
     public Builder removeMedia(int index) {
       if (mediaBuilder_ == null) {
@@ -1099,16 +1099,16 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public io.reactivesw.catelog.infrastructure.MediaInfo.Builder getMediaBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcMedia.Builder getMediaBuilder(
         int index) {
       return getMediaFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder getMediaOrBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder getMediaOrBuilder(
         int index) {
       if (mediaBuilder_ == null) {
         return media_.get(index);  } else {
@@ -1116,9 +1116,9 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public java.util.List<? extends io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder> 
+    public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder> 
          getMediaOrBuilderList() {
       if (mediaBuilder_ != null) {
         return mediaBuilder_.getMessageOrBuilderList();
@@ -1127,33 +1127,33 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public io.reactivesw.catelog.infrastructure.MediaInfo.Builder addMediaBuilder() {
+    public io.reactivesw.catelog.infrastructure.GrpcMedia.Builder addMediaBuilder() {
       return getMediaFieldBuilder().addBuilder(
-          io.reactivesw.catelog.infrastructure.MediaInfo.getDefaultInstance());
+          io.reactivesw.catelog.infrastructure.GrpcMedia.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public io.reactivesw.catelog.infrastructure.MediaInfo.Builder addMediaBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcMedia.Builder addMediaBuilder(
         int index) {
       return getMediaFieldBuilder().addBuilder(
-          index, io.reactivesw.catelog.infrastructure.MediaInfo.getDefaultInstance());
+          index, io.reactivesw.catelog.infrastructure.GrpcMedia.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.MediaInfo media = 7;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcMedia media = 7;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.MediaInfo.Builder> 
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcMedia.Builder> 
          getMediaBuilderList() {
       return getMediaFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.MediaInfo, io.reactivesw.catelog.infrastructure.MediaInfo.Builder, io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder> 
+        io.reactivesw.catelog.infrastructure.GrpcMedia, io.reactivesw.catelog.infrastructure.GrpcMedia.Builder, io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder> 
         getMediaFieldBuilder() {
       if (mediaBuilder_ == null) {
         mediaBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catelog.infrastructure.MediaInfo, io.reactivesw.catelog.infrastructure.MediaInfo.Builder, io.reactivesw.catelog.infrastructure.MediaInfoOrBuilder>(
+            io.reactivesw.catelog.infrastructure.GrpcMedia, io.reactivesw.catelog.infrastructure.GrpcMedia.Builder, io.reactivesw.catelog.infrastructure.GrpcMediaOrBuilder>(
                 media_,
                 ((bitField0_ & 0x00000040) == 0x00000040),
                 getParentForChildren(),
@@ -1163,22 +1163,22 @@ public  final class SkuInfo extends
       return mediaBuilder_;
     }
 
-    private java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> variantValue_ =
+    private java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> variantValue_ =
       java.util.Collections.emptyList();
     private void ensureVariantValueIsMutable() {
       if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.VariantValueInfo>(variantValue_);
+        variantValue_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcVariantValue>(variantValue_);
         bitField0_ |= 0x00000080;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> variantValueBuilder_;
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> variantValueBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo> getVariantValueList() {
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
       if (variantValueBuilder_ == null) {
         return java.util.Collections.unmodifiableList(variantValue_);
       } else {
@@ -1186,7 +1186,7 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public int getVariantValueCount() {
       if (variantValueBuilder_ == null) {
@@ -1196,9 +1196,9 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo getVariantValue(int index) {
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
       if (variantValueBuilder_ == null) {
         return variantValue_.get(index);
       } else {
@@ -1206,10 +1206,10 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder setVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1223,10 +1223,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder setVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.set(index, builderForValue.build());
@@ -1237,9 +1237,9 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public Builder addVariantValue(io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+    public Builder addVariantValue(io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1253,10 +1253,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder addVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo value) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1270,10 +1270,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder addVariantValue(
-        io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.add(builderForValue.build());
@@ -1284,10 +1284,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder addVariantValue(
-        int index, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder builderForValue) {
+        int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         variantValue_.add(index, builderForValue.build());
@@ -1298,10 +1298,10 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder addAllVariantValue(
-        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.VariantValueInfo> values) {
+        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValue> values) {
       if (variantValueBuilder_ == null) {
         ensureVariantValueIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1313,7 +1313,7 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder clearVariantValue() {
       if (variantValueBuilder_ == null) {
@@ -1326,7 +1326,7 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
     public Builder removeVariantValue(int index) {
       if (variantValueBuilder_ == null) {
@@ -1339,16 +1339,16 @@ public  final class SkuInfo extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder getVariantValueBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder getVariantValueBuilder(
         int index) {
       return getVariantValueFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder getVariantValueOrBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
         int index) {
       if (variantValueBuilder_ == null) {
         return variantValue_.get(index);  } else {
@@ -1356,9 +1356,9 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public java.util.List<? extends io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+    public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
          getVariantValueOrBuilderList() {
       if (variantValueBuilder_ != null) {
         return variantValueBuilder_.getMessageOrBuilderList();
@@ -1367,33 +1367,33 @@ public  final class SkuInfo extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder addVariantValueBuilder() {
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder() {
       return getVariantValueFieldBuilder().addBuilder(
-          io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance());
+          io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder addVariantValueBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder(
         int index) {
       return getVariantValueFieldBuilder().addBuilder(
-          index, io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance());
+          index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.VariantValueInfo variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcVariantValue variantValue = 8;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder> 
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder> 
          getVariantValueBuilderList() {
       return getVariantValueFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder> 
+        io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
         getVariantValueFieldBuilder() {
       if (variantValueBuilder_ == null) {
         variantValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catelog.infrastructure.VariantValueInfo, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder, io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder>(
+            io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder>(
                 variantValue_,
                 ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
@@ -1413,39 +1413,39 @@ public  final class SkuInfo extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.SkuInfo)
+    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.GrpcSku)
   }
 
-  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.SkuInfo)
-  private static final io.reactivesw.catelog.infrastructure.SkuInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.GrpcSku)
+  private static final io.reactivesw.catelog.infrastructure.GrpcSku DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.SkuInfo();
+    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.GrpcSku();
   }
 
-  public static io.reactivesw.catelog.infrastructure.SkuInfo getDefaultInstance() {
+  public static io.reactivesw.catelog.infrastructure.GrpcSku getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SkuInfo>
-      PARSER = new com.google.protobuf.AbstractParser<SkuInfo>() {
-    public SkuInfo parsePartialFrom(
+  private static final com.google.protobuf.Parser<GrpcSku>
+      PARSER = new com.google.protobuf.AbstractParser<GrpcSku>() {
+    public GrpcSku parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SkuInfo(input, extensionRegistry);
+        return new GrpcSku(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SkuInfo> parser() {
+  public static com.google.protobuf.Parser<GrpcSku> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SkuInfo> getParserForType() {
+  public com.google.protobuf.Parser<GrpcSku> getParserForType() {
     return PARSER;
   }
 
-  public io.reactivesw.catelog.infrastructure.SkuInfo getDefaultInstanceForType() {
+  public io.reactivesw.catelog.infrastructure.GrpcSku getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

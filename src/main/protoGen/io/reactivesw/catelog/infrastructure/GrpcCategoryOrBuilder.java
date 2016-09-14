@@ -3,8 +3,8 @@
 
 package io.reactivesw.catelog.infrastructure;
 
-public interface CategoryInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.CategoryInfo)
+public interface GrpcCategoryOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.GrpcCategory)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -38,26 +38,26 @@ public interface CategoryInfoOrBuilder extends
   int getDisplayOrder();
 
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory subCategoryInfos = 5;</code>
    */
-  java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> 
+  java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> 
       getSubCategoryInfosList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory subCategoryInfos = 5;</code>
    */
-  io.reactivesw.catelog.infrastructure.CategoryInfo getSubCategoryInfos(int index);
+  io.reactivesw.catelog.infrastructure.GrpcCategory getSubCategoryInfos(int index);
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory subCategoryInfos = 5;</code>
    */
   int getSubCategoryInfosCount();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory subCategoryInfos = 5;</code>
    */
-  java.util.List<? extends io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> 
+  java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
       getSubCategoryInfosOrBuilderList();
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory subCategoryInfos = 5;</code>
    */
-  io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder getSubCategoryInfosOrBuilder(
+  io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getSubCategoryInfosOrBuilder(
       int index);
 }

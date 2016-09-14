@@ -1,7 +1,7 @@
 package io.reactivesw.catelog.dto;
 
 import io.reactivesw.catelog.domain.Feature;
-import io.reactivesw.catelog.infrastructure.FeatureInfo;
+import io.reactivesw.catelog.infrastructure.GrpcFeature;
 
 /**
  * this is transfer class for feature.
@@ -17,13 +17,13 @@ public final class FeatureTransfer {
   private FeatureTransfer() {}
 
   /**
-   * transfer Feature to FeatureInfo.
+   * transfer Feature to GrpcFeature.
    * 
    * @param feature feature
-   * @return FeatureInfo
+   * @return GrpcFeature
    */
-  public static FeatureInfo transferToFeatureInfo(Feature feature) {
-    final FeatureInfo.Builder builder = FeatureInfo.newBuilder();
+  public static GrpcFeature transferToFeatureInfo(Feature feature) {
+    final GrpcFeature.Builder builder = GrpcFeature.newBuilder();
 
     builder.setId(feature.getId());
     builder.setName(feature.getName());

@@ -5,9 +5,9 @@ import io.reactivesw.catelog.domain.Feature;
 import io.reactivesw.catelog.domain.Media;
 import io.reactivesw.catelog.domain.Product;
 import io.reactivesw.catelog.domain.Sku;
-import io.reactivesw.catelog.infrastructure.ProductBriefInfo;
+import io.reactivesw.catelog.infrastructure.GrpcProduct;
+import io.reactivesw.catelog.infrastructure.GrpcProductBrief;
 import io.reactivesw.catelog.infrastructure.ProductBriefList;
-import io.reactivesw.catelog.infrastructure.ProductInfo;
 
 import java.util.List;
 import java.util.Set;
@@ -31,24 +31,24 @@ public final class ProductTransfer {
    * @param product src product
    * @return ProductInfo
    */
-  public static ProductInfo transferToProductInfo(Product product) {
-    final ProductInfo.Builder builder = ProductInfo.newBuilder();
+  public static GrpcProduct transferToProductInfo(Product product) {
+    final GrpcProduct.Builder builder = GrpcProduct.newBuilder();
 
     builder.setId(product.getId());
     builder.setManufacturer(product.getManufacturer());
     builder.setBrand(product.getBrand());
     builder.setModel(product.getModel());
     builder.setName(product.getName());
-    final Set<Sku> skus = product.getSkus();
-    for (final Sku sku : skus) {
-      builder.addSku(SkuTransfer.transferToSkuInfo(sku));
-    }
-    final Sku defaultSku = skus.iterator().next();
-    builder.setPrice(defaultSku.getPrice().toString());
     builder.setDisplayOrder(product.getDisplayOrder());
     builder.setDescription(product.getDescription());
     builder.setDetail(product.getDetail());
     builder.setIsDisplayed(product.isDisplayed());
+    final Set<Sku> skus = product.getSkus();
+    final Sku defaultSku = skus.iterator().next();
+    builder.setPrice(defaultSku.getPrice().toString());
+    for (final Sku sku : skus) {
+      builder.addSku(SkuTransfer.transferToSkuInfo(sku));
+    }
     for (final Feature feature : product.getFeatures()) {
       builder.addFeature(FeatureTransfer.transferToFeatureInfo(feature));
     }
@@ -66,24 +66,23 @@ public final class ProductTransfer {
    * @return ProductBriefList
    */
   public static ProductBriefList transferToProductBriefList(List<Product> products) {
-    // TODO: transfer work need other transfers
     final ProductBriefList.Builder builder = ProductBriefList.newBuilder();
 
     for (final Product product : products) {
-      builder.addProductBriefInfo(transferToProductBriefInfo(product));
+      builder.addProductBrief(transferToGrpcProductBrief(product));
     }
 
     return builder.build();
   }
 
   /**
-   * transfer Product to ProductBriefInfo.
+   * transfer Product to GrpcProductBrief.
    * 
    * @param product src product
-   * @return ProductBriefInfo
+   * @return GrpcProductBrief
    */
-  public static ProductBriefInfo transferToProductBriefInfo(Product product) {
-    final ProductBriefInfo.Builder builder = ProductBriefInfo.newBuilder();
+  public static GrpcProductBrief transferToGrpcProductBrief(Product product) {
+    final GrpcProductBrief.Builder builder = GrpcProductBrief.newBuilder();
 
     final Sku defaultSku = product.getSkus().iterator().next();
     final Media defaultMedia = defaultSku.getMedias().iterator().next();

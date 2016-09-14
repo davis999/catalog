@@ -4,17 +4,17 @@
 package io.reactivesw.catelog.infrastructure;
 
 /**
- * Protobuf type {@code io.reactivesw.catelog.grpc.VariantValueInfo}
+ * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcVariantValue}
  */
-public  final class VariantValueInfo extends
+public  final class GrpcVariantValue extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.VariantValueInfo)
-    VariantValueInfoOrBuilder {
-  // Use VariantValueInfo.newBuilder() to construct.
-  private VariantValueInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:io.reactivesw.catelog.grpc.GrpcVariantValue)
+    GrpcVariantValueOrBuilder {
+  // Use GrpcVariantValue.newBuilder() to construct.
+  private GrpcVariantValue(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private VariantValueInfo() {
+  private GrpcVariantValue() {
     id_ = 0L;
     value_ = "";
     displayOrder_ = 0;
@@ -26,7 +26,7 @@ public  final class VariantValueInfo extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private VariantValueInfo(
+  private GrpcVariantValue(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -81,14 +81,14 @@ public  final class VariantValueInfo extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor;
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_fieldAccessorTable
+    return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.reactivesw.catelog.infrastructure.VariantValueInfo.class, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder.class);
+            io.reactivesw.catelog.infrastructure.GrpcVariantValue.class, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -227,58 +227,58 @@ public  final class VariantValueInfo extends
   }
 
   private static final long serialVersionUID = 0L;
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(byte[] data)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseDelimitedFrom(java.io.InputStream input)
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseDelimitedFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo parseFrom(
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -290,7 +290,7 @@ public  final class VariantValueInfo extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.VariantValueInfo prototype) {
+  public static Builder newBuilder(io.reactivesw.catelog.infrastructure.GrpcVariantValue prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -305,25 +305,25 @@ public  final class VariantValueInfo extends
     return builder;
   }
   /**
-   * Protobuf type {@code io.reactivesw.catelog.grpc.VariantValueInfo}
+   * Protobuf type {@code io.reactivesw.catelog.grpc.GrpcVariantValue}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.VariantValueInfo)
-      io.reactivesw.catelog.infrastructure.VariantValueInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:io.reactivesw.catelog.grpc.GrpcVariantValue)
+      io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_fieldAccessorTable
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.reactivesw.catelog.infrastructure.VariantValueInfo.class, io.reactivesw.catelog.infrastructure.VariantValueInfo.Builder.class);
+              io.reactivesw.catelog.infrastructure.GrpcVariantValue.class, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder.class);
     }
 
-    // Construct using io.reactivesw.catelog.infrastructure.VariantValueInfo.newBuilder()
+    // Construct using io.reactivesw.catelog.infrastructure.GrpcVariantValue.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -352,23 +352,23 @@ public  final class VariantValueInfo extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_VariantValueInfo_descriptor;
+      return io.reactivesw.catelog.infrastructure.ReactiveswCatelog.internal_static_io_reactivesw_catelog_grpc_GrpcVariantValue_descriptor;
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo getDefaultInstanceForType() {
-      return io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance();
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue getDefaultInstanceForType() {
+      return io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance();
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo build() {
-      io.reactivesw.catelog.infrastructure.VariantValueInfo result = buildPartial();
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue build() {
+      io.reactivesw.catelog.infrastructure.GrpcVariantValue result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.reactivesw.catelog.infrastructure.VariantValueInfo buildPartial() {
-      io.reactivesw.catelog.infrastructure.VariantValueInfo result = new io.reactivesw.catelog.infrastructure.VariantValueInfo(this);
+    public io.reactivesw.catelog.infrastructure.GrpcVariantValue buildPartial() {
+      io.reactivesw.catelog.infrastructure.GrpcVariantValue result = new io.reactivesw.catelog.infrastructure.GrpcVariantValue(this);
       result.id_ = id_;
       result.value_ = value_;
       result.displayOrder_ = displayOrder_;
@@ -378,16 +378,16 @@ public  final class VariantValueInfo extends
     }
 
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.reactivesw.catelog.infrastructure.VariantValueInfo) {
-        return mergeFrom((io.reactivesw.catelog.infrastructure.VariantValueInfo)other);
+      if (other instanceof io.reactivesw.catelog.infrastructure.GrpcVariantValue) {
+        return mergeFrom((io.reactivesw.catelog.infrastructure.GrpcVariantValue)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.VariantValueInfo other) {
-      if (other == io.reactivesw.catelog.infrastructure.VariantValueInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.reactivesw.catelog.infrastructure.GrpcVariantValue other) {
+      if (other == io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -414,11 +414,11 @@ public  final class VariantValueInfo extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.reactivesw.catelog.infrastructure.VariantValueInfo parsedMessage = null;
+      io.reactivesw.catelog.infrastructure.GrpcVariantValue parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.reactivesw.catelog.infrastructure.VariantValueInfo) e.getUnfinishedMessage();
+        parsedMessage = (io.reactivesw.catelog.infrastructure.GrpcVariantValue) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -628,39 +628,39 @@ public  final class VariantValueInfo extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.VariantValueInfo)
+    // @@protoc_insertion_point(builder_scope:io.reactivesw.catelog.grpc.GrpcVariantValue)
   }
 
-  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.VariantValueInfo)
-  private static final io.reactivesw.catelog.infrastructure.VariantValueInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:io.reactivesw.catelog.grpc.GrpcVariantValue)
+  private static final io.reactivesw.catelog.infrastructure.GrpcVariantValue DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.VariantValueInfo();
+    DEFAULT_INSTANCE = new io.reactivesw.catelog.infrastructure.GrpcVariantValue();
   }
 
-  public static io.reactivesw.catelog.infrastructure.VariantValueInfo getDefaultInstance() {
+  public static io.reactivesw.catelog.infrastructure.GrpcVariantValue getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VariantValueInfo>
-      PARSER = new com.google.protobuf.AbstractParser<VariantValueInfo>() {
-    public VariantValueInfo parsePartialFrom(
+  private static final com.google.protobuf.Parser<GrpcVariantValue>
+      PARSER = new com.google.protobuf.AbstractParser<GrpcVariantValue>() {
+    public GrpcVariantValue parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VariantValueInfo(input, extensionRegistry);
+        return new GrpcVariantValue(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<VariantValueInfo> parser() {
+  public static com.google.protobuf.Parser<GrpcVariantValue> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VariantValueInfo> getParserForType() {
+  public com.google.protobuf.Parser<GrpcVariantValue> getParserForType() {
     return PARSER;
   }
 
-  public io.reactivesw.catelog.infrastructure.VariantValueInfo getDefaultInstanceForType() {
+  public io.reactivesw.catelog.infrastructure.GrpcVariantValue getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

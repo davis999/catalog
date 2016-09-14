@@ -20,7 +20,7 @@ public  final class CategoryList extends
     super(builder);
   }
   private CategoryList() {
-    categoryInfo_ = java.util.Collections.emptyList();
+    category_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -50,10 +50,10 @@ public  final class CategoryList extends
           }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              categoryInfo_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.CategoryInfo>();
+              category_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcCategory>();
               mutable_bitField0_ |= 0x00000001;
             }
-            categoryInfo_.add(input.readMessage(io.reactivesw.catelog.infrastructure.CategoryInfo.parser(), extensionRegistry));
+            category_.add(input.readMessage(io.reactivesw.catelog.infrastructure.GrpcCategory.parser(), extensionRegistry));
             break;
           }
         }
@@ -65,7 +65,7 @@ public  final class CategoryList extends
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        categoryInfo_ = java.util.Collections.unmodifiableList(categoryInfo_);
+        category_ = java.util.Collections.unmodifiableList(category_);
       }
       makeExtensionsImmutable();
     }
@@ -82,39 +82,39 @@ public  final class CategoryList extends
             io.reactivesw.catelog.infrastructure.CategoryList.class, io.reactivesw.catelog.infrastructure.CategoryList.Builder.class);
   }
 
-  public static final int CATEGORYINFO_FIELD_NUMBER = 1;
-  private java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> categoryInfo_;
+  public static final int CATEGORY_FIELD_NUMBER = 1;
+  private java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> category_;
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  public java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> getCategoryInfoList() {
-    return categoryInfo_;
+  public java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> getCategoryList() {
+    return category_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  public java.util.List<? extends io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> 
-      getCategoryInfoOrBuilderList() {
-    return categoryInfo_;
+  public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
+      getCategoryOrBuilderList() {
+    return category_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  public int getCategoryInfoCount() {
-    return categoryInfo_.size();
+  public int getCategoryCount() {
+    return category_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  public io.reactivesw.catelog.infrastructure.CategoryInfo getCategoryInfo(int index) {
-    return categoryInfo_.get(index);
+  public io.reactivesw.catelog.infrastructure.GrpcCategory getCategory(int index) {
+    return category_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
    */
-  public io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
+  public io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getCategoryOrBuilder(
       int index) {
-    return categoryInfo_.get(index);
+    return category_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -129,8 +129,8 @@ public  final class CategoryList extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < categoryInfo_.size(); i++) {
-      output.writeMessage(1, categoryInfo_.get(i));
+    for (int i = 0; i < category_.size(); i++) {
+      output.writeMessage(1, category_.get(i));
     }
   }
 
@@ -139,9 +139,9 @@ public  final class CategoryList extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < categoryInfo_.size(); i++) {
+    for (int i = 0; i < category_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, categoryInfo_.get(i));
+        .computeMessageSize(1, category_.get(i));
     }
     memoizedSize = size;
     return size;
@@ -261,16 +261,16 @@ public  final class CategoryList extends
     }
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        getCategoryInfoFieldBuilder();
+        getCategoryFieldBuilder();
       }
     }
     public Builder clear() {
       super.clear();
-      if (categoryInfoBuilder_ == null) {
-        categoryInfo_ = java.util.Collections.emptyList();
+      if (categoryBuilder_ == null) {
+        category_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        categoryInfoBuilder_.clear();
+        categoryBuilder_.clear();
       }
       return this;
     }
@@ -295,14 +295,14 @@ public  final class CategoryList extends
     public io.reactivesw.catelog.infrastructure.CategoryList buildPartial() {
       io.reactivesw.catelog.infrastructure.CategoryList result = new io.reactivesw.catelog.infrastructure.CategoryList(this);
       int from_bitField0_ = bitField0_;
-      if (categoryInfoBuilder_ == null) {
+      if (categoryBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          categoryInfo_ = java.util.Collections.unmodifiableList(categoryInfo_);
+          category_ = java.util.Collections.unmodifiableList(category_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.categoryInfo_ = categoryInfo_;
+        result.category_ = category_;
       } else {
-        result.categoryInfo_ = categoryInfoBuilder_.build();
+        result.category_ = categoryBuilder_.build();
       }
       onBuilt();
       return result;
@@ -319,29 +319,29 @@ public  final class CategoryList extends
 
     public Builder mergeFrom(io.reactivesw.catelog.infrastructure.CategoryList other) {
       if (other == io.reactivesw.catelog.infrastructure.CategoryList.getDefaultInstance()) return this;
-      if (categoryInfoBuilder_ == null) {
-        if (!other.categoryInfo_.isEmpty()) {
-          if (categoryInfo_.isEmpty()) {
-            categoryInfo_ = other.categoryInfo_;
+      if (categoryBuilder_ == null) {
+        if (!other.category_.isEmpty()) {
+          if (category_.isEmpty()) {
+            category_ = other.category_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureCategoryInfoIsMutable();
-            categoryInfo_.addAll(other.categoryInfo_);
+            ensureCategoryIsMutable();
+            category_.addAll(other.category_);
           }
           onChanged();
         }
       } else {
-        if (!other.categoryInfo_.isEmpty()) {
-          if (categoryInfoBuilder_.isEmpty()) {
-            categoryInfoBuilder_.dispose();
-            categoryInfoBuilder_ = null;
-            categoryInfo_ = other.categoryInfo_;
+        if (!other.category_.isEmpty()) {
+          if (categoryBuilder_.isEmpty()) {
+            categoryBuilder_.dispose();
+            categoryBuilder_ = null;
+            category_ = other.category_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            categoryInfoBuilder_ = 
+            categoryBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getCategoryInfoFieldBuilder() : null;
+                 getCategoryFieldBuilder() : null;
           } else {
-            categoryInfoBuilder_.addAllMessages(other.categoryInfo_);
+            categoryBuilder_.addAllMessages(other.category_);
           }
         }
       }
@@ -372,244 +372,244 @@ public  final class CategoryList extends
     }
     private int bitField0_;
 
-    private java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> categoryInfo_ =
+    private java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> category_ =
       java.util.Collections.emptyList();
-    private void ensureCategoryInfoIsMutable() {
+    private void ensureCategoryIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        categoryInfo_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.CategoryInfo>(categoryInfo_);
+        category_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcCategory>(category_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.CategoryInfo, io.reactivesw.catelog.infrastructure.CategoryInfo.Builder, io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> categoryInfoBuilder_;
+        io.reactivesw.catelog.infrastructure.GrpcCategory, io.reactivesw.catelog.infrastructure.GrpcCategory.Builder, io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> categoryBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo> getCategoryInfoList() {
-      if (categoryInfoBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(categoryInfo_);
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> getCategoryList() {
+      if (categoryBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(category_);
       } else {
-        return categoryInfoBuilder_.getMessageList();
+        return categoryBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public int getCategoryInfoCount() {
-      if (categoryInfoBuilder_ == null) {
-        return categoryInfo_.size();
+    public int getCategoryCount() {
+      if (categoryBuilder_ == null) {
+        return category_.size();
       } else {
-        return categoryInfoBuilder_.getCount();
+        return categoryBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public io.reactivesw.catelog.infrastructure.CategoryInfo getCategoryInfo(int index) {
-      if (categoryInfoBuilder_ == null) {
-        return categoryInfo_.get(index);
+    public io.reactivesw.catelog.infrastructure.GrpcCategory getCategory(int index) {
+      if (categoryBuilder_ == null) {
+        return category_.get(index);
       } else {
-        return categoryInfoBuilder_.getMessage(index);
+        return categoryBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder setCategoryInfo(
-        int index, io.reactivesw.catelog.infrastructure.CategoryInfo value) {
-      if (categoryInfoBuilder_ == null) {
+    public Builder setCategory(
+        int index, io.reactivesw.catelog.infrastructure.GrpcCategory value) {
+      if (categoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.set(index, value);
+        ensureCategoryIsMutable();
+        category_.set(index, value);
         onChanged();
       } else {
-        categoryInfoBuilder_.setMessage(index, value);
+        categoryBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder setCategoryInfo(
-        int index, io.reactivesw.catelog.infrastructure.CategoryInfo.Builder builderForValue) {
-      if (categoryInfoBuilder_ == null) {
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.set(index, builderForValue.build());
+    public Builder setCategory(
+        int index, io.reactivesw.catelog.infrastructure.GrpcCategory.Builder builderForValue) {
+      if (categoryBuilder_ == null) {
+        ensureCategoryIsMutable();
+        category_.set(index, builderForValue.build());
         onChanged();
       } else {
-        categoryInfoBuilder_.setMessage(index, builderForValue.build());
+        categoryBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder addCategoryInfo(io.reactivesw.catelog.infrastructure.CategoryInfo value) {
-      if (categoryInfoBuilder_ == null) {
+    public Builder addCategory(io.reactivesw.catelog.infrastructure.GrpcCategory value) {
+      if (categoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.add(value);
+        ensureCategoryIsMutable();
+        category_.add(value);
         onChanged();
       } else {
-        categoryInfoBuilder_.addMessage(value);
+        categoryBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder addCategoryInfo(
-        int index, io.reactivesw.catelog.infrastructure.CategoryInfo value) {
-      if (categoryInfoBuilder_ == null) {
+    public Builder addCategory(
+        int index, io.reactivesw.catelog.infrastructure.GrpcCategory value) {
+      if (categoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.add(index, value);
+        ensureCategoryIsMutable();
+        category_.add(index, value);
         onChanged();
       } else {
-        categoryInfoBuilder_.addMessage(index, value);
+        categoryBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder addCategoryInfo(
-        io.reactivesw.catelog.infrastructure.CategoryInfo.Builder builderForValue) {
-      if (categoryInfoBuilder_ == null) {
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.add(builderForValue.build());
+    public Builder addCategory(
+        io.reactivesw.catelog.infrastructure.GrpcCategory.Builder builderForValue) {
+      if (categoryBuilder_ == null) {
+        ensureCategoryIsMutable();
+        category_.add(builderForValue.build());
         onChanged();
       } else {
-        categoryInfoBuilder_.addMessage(builderForValue.build());
+        categoryBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder addCategoryInfo(
-        int index, io.reactivesw.catelog.infrastructure.CategoryInfo.Builder builderForValue) {
-      if (categoryInfoBuilder_ == null) {
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.add(index, builderForValue.build());
+    public Builder addCategory(
+        int index, io.reactivesw.catelog.infrastructure.GrpcCategory.Builder builderForValue) {
+      if (categoryBuilder_ == null) {
+        ensureCategoryIsMutable();
+        category_.add(index, builderForValue.build());
         onChanged();
       } else {
-        categoryInfoBuilder_.addMessage(index, builderForValue.build());
+        categoryBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder addAllCategoryInfo(
-        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.CategoryInfo> values) {
-      if (categoryInfoBuilder_ == null) {
-        ensureCategoryInfoIsMutable();
+    public Builder addAllCategory(
+        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcCategory> values) {
+      if (categoryBuilder_ == null) {
+        ensureCategoryIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, categoryInfo_);
+            values, category_);
         onChanged();
       } else {
-        categoryInfoBuilder_.addAllMessages(values);
+        categoryBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder clearCategoryInfo() {
-      if (categoryInfoBuilder_ == null) {
-        categoryInfo_ = java.util.Collections.emptyList();
+    public Builder clearCategory() {
+      if (categoryBuilder_ == null) {
+        category_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        categoryInfoBuilder_.clear();
+        categoryBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public Builder removeCategoryInfo(int index) {
-      if (categoryInfoBuilder_ == null) {
-        ensureCategoryInfoIsMutable();
-        categoryInfo_.remove(index);
+    public Builder removeCategory(int index) {
+      if (categoryBuilder_ == null) {
+        ensureCategoryIsMutable();
+        category_.remove(index);
         onChanged();
       } else {
-        categoryInfoBuilder_.remove(index);
+        categoryBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public io.reactivesw.catelog.infrastructure.CategoryInfo.Builder getCategoryInfoBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcCategory.Builder getCategoryBuilder(
         int index) {
-      return getCategoryInfoFieldBuilder().getBuilder(index);
+      return getCategoryFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getCategoryOrBuilder(
         int index) {
-      if (categoryInfoBuilder_ == null) {
-        return categoryInfo_.get(index);  } else {
-        return categoryInfoBuilder_.getMessageOrBuilder(index);
+      if (categoryBuilder_ == null) {
+        return category_.get(index);  } else {
+        return categoryBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public java.util.List<? extends io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> 
-         getCategoryInfoOrBuilderList() {
-      if (categoryInfoBuilder_ != null) {
-        return categoryInfoBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
+         getCategoryOrBuilderList() {
+      if (categoryBuilder_ != null) {
+        return categoryBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(categoryInfo_);
+        return java.util.Collections.unmodifiableList(category_);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public io.reactivesw.catelog.infrastructure.CategoryInfo.Builder addCategoryInfoBuilder() {
-      return getCategoryInfoFieldBuilder().addBuilder(
-          io.reactivesw.catelog.infrastructure.CategoryInfo.getDefaultInstance());
+    public io.reactivesw.catelog.infrastructure.GrpcCategory.Builder addCategoryBuilder() {
+      return getCategoryFieldBuilder().addBuilder(
+          io.reactivesw.catelog.infrastructure.GrpcCategory.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public io.reactivesw.catelog.infrastructure.CategoryInfo.Builder addCategoryInfoBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcCategory.Builder addCategoryBuilder(
         int index) {
-      return getCategoryInfoFieldBuilder().addBuilder(
-          index, io.reactivesw.catelog.infrastructure.CategoryInfo.getDefaultInstance());
+      return getCategoryFieldBuilder().addBuilder(
+          index, io.reactivesw.catelog.infrastructure.GrpcCategory.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.CategoryInfo categoryInfo = 1;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcCategory category = 1;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.CategoryInfo.Builder> 
-         getCategoryInfoBuilderList() {
-      return getCategoryInfoFieldBuilder().getBuilderList();
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory.Builder> 
+         getCategoryBuilderList() {
+      return getCategoryFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.CategoryInfo, io.reactivesw.catelog.infrastructure.CategoryInfo.Builder, io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder> 
-        getCategoryInfoFieldBuilder() {
-      if (categoryInfoBuilder_ == null) {
-        categoryInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catelog.infrastructure.CategoryInfo, io.reactivesw.catelog.infrastructure.CategoryInfo.Builder, io.reactivesw.catelog.infrastructure.CategoryInfoOrBuilder>(
-                categoryInfo_,
+        io.reactivesw.catelog.infrastructure.GrpcCategory, io.reactivesw.catelog.infrastructure.GrpcCategory.Builder, io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
+        getCategoryFieldBuilder() {
+      if (categoryBuilder_ == null) {
+        categoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            io.reactivesw.catelog.infrastructure.GrpcCategory, io.reactivesw.catelog.infrastructure.GrpcCategory.Builder, io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder>(
+                category_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        categoryInfo_ = null;
+        category_ = null;
       }
-      return categoryInfoBuilder_;
+      return categoryBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

@@ -1,7 +1,7 @@
 package io.reactivesw.catelog.dto;
 
 import io.reactivesw.catelog.domain.Media;
-import io.reactivesw.catelog.infrastructure.MediaInfo;
+import io.reactivesw.catelog.infrastructure.GrpcMedia;
 
 /**
  * this is transfer class for Media.
@@ -17,13 +17,13 @@ public final class MediaTransfer {
   private MediaTransfer(){}
 
   /**
-   * transfer Media to MediaInfo.
+   * transfer Media to GrpcMedia.
    * 
    * @param media media
-   * @return MediaInfo
+   * @return GrpcMedia
    */
-  public static MediaInfo transferToMediaInfo(Media media) {
-    final MediaInfo.Builder builder = MediaInfo.newBuilder();
+  public static GrpcMedia transferToMediaInfo(Media media) {
+    final GrpcMedia.Builder builder = GrpcMedia.newBuilder();
 
     builder.setId(media.getId());
     builder.setType(media.getType());

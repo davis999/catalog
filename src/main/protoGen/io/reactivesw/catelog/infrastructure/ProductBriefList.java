@@ -20,7 +20,7 @@ public  final class ProductBriefList extends
     super(builder);
   }
   private ProductBriefList() {
-    productBriefInfo_ = java.util.Collections.emptyList();
+    productBrief_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -50,10 +50,10 @@ public  final class ProductBriefList extends
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              productBriefInfo_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.ProductBriefInfo>();
+              productBrief_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcProductBrief>();
               mutable_bitField0_ |= 0x00000001;
             }
-            productBriefInfo_.add(input.readMessage(io.reactivesw.catelog.infrastructure.ProductBriefInfo.parser(), extensionRegistry));
+            productBrief_.add(input.readMessage(io.reactivesw.catelog.infrastructure.GrpcProductBrief.parser(), extensionRegistry));
             break;
           }
         }
@@ -65,7 +65,7 @@ public  final class ProductBriefList extends
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        productBriefInfo_ = java.util.Collections.unmodifiableList(productBriefInfo_);
+        productBrief_ = java.util.Collections.unmodifiableList(productBrief_);
       }
       makeExtensionsImmutable();
     }
@@ -82,39 +82,39 @@ public  final class ProductBriefList extends
             io.reactivesw.catelog.infrastructure.ProductBriefList.class, io.reactivesw.catelog.infrastructure.ProductBriefList.Builder.class);
   }
 
-  public static final int PRODUCTBRIEFINFO_FIELD_NUMBER = 3;
-  private java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo> productBriefInfo_;
+  public static final int PRODUCTBRIEF_FIELD_NUMBER = 3;
+  private java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief> productBrief_;
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  public java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo> getProductBriefInfoList() {
-    return productBriefInfo_;
+  public java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief> getProductBriefList() {
+    return productBrief_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  public java.util.List<? extends io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder> 
-      getProductBriefInfoOrBuilderList() {
-    return productBriefInfo_;
+  public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder> 
+      getProductBriefOrBuilderList() {
+    return productBrief_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  public int getProductBriefInfoCount() {
-    return productBriefInfo_.size();
+  public int getProductBriefCount() {
+    return productBrief_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  public io.reactivesw.catelog.infrastructure.ProductBriefInfo getProductBriefInfo(int index) {
-    return productBriefInfo_.get(index);
+  public io.reactivesw.catelog.infrastructure.GrpcProductBrief getProductBrief(int index) {
+    return productBrief_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+   * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
    */
-  public io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder getProductBriefInfoOrBuilder(
+  public io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder getProductBriefOrBuilder(
       int index) {
-    return productBriefInfo_.get(index);
+    return productBrief_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -129,8 +129,8 @@ public  final class ProductBriefList extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < productBriefInfo_.size(); i++) {
-      output.writeMessage(3, productBriefInfo_.get(i));
+    for (int i = 0; i < productBrief_.size(); i++) {
+      output.writeMessage(3, productBrief_.get(i));
     }
   }
 
@@ -139,9 +139,9 @@ public  final class ProductBriefList extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < productBriefInfo_.size(); i++) {
+    for (int i = 0; i < productBrief_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, productBriefInfo_.get(i));
+        .computeMessageSize(3, productBrief_.get(i));
     }
     memoizedSize = size;
     return size;
@@ -261,16 +261,16 @@ public  final class ProductBriefList extends
     }
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        getProductBriefInfoFieldBuilder();
+        getProductBriefFieldBuilder();
       }
     }
     public Builder clear() {
       super.clear();
-      if (productBriefInfoBuilder_ == null) {
-        productBriefInfo_ = java.util.Collections.emptyList();
+      if (productBriefBuilder_ == null) {
+        productBrief_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        productBriefInfoBuilder_.clear();
+        productBriefBuilder_.clear();
       }
       return this;
     }
@@ -295,14 +295,14 @@ public  final class ProductBriefList extends
     public io.reactivesw.catelog.infrastructure.ProductBriefList buildPartial() {
       io.reactivesw.catelog.infrastructure.ProductBriefList result = new io.reactivesw.catelog.infrastructure.ProductBriefList(this);
       int from_bitField0_ = bitField0_;
-      if (productBriefInfoBuilder_ == null) {
+      if (productBriefBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          productBriefInfo_ = java.util.Collections.unmodifiableList(productBriefInfo_);
+          productBrief_ = java.util.Collections.unmodifiableList(productBrief_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.productBriefInfo_ = productBriefInfo_;
+        result.productBrief_ = productBrief_;
       } else {
-        result.productBriefInfo_ = productBriefInfoBuilder_.build();
+        result.productBrief_ = productBriefBuilder_.build();
       }
       onBuilt();
       return result;
@@ -319,29 +319,29 @@ public  final class ProductBriefList extends
 
     public Builder mergeFrom(io.reactivesw.catelog.infrastructure.ProductBriefList other) {
       if (other == io.reactivesw.catelog.infrastructure.ProductBriefList.getDefaultInstance()) return this;
-      if (productBriefInfoBuilder_ == null) {
-        if (!other.productBriefInfo_.isEmpty()) {
-          if (productBriefInfo_.isEmpty()) {
-            productBriefInfo_ = other.productBriefInfo_;
+      if (productBriefBuilder_ == null) {
+        if (!other.productBrief_.isEmpty()) {
+          if (productBrief_.isEmpty()) {
+            productBrief_ = other.productBrief_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureProductBriefInfoIsMutable();
-            productBriefInfo_.addAll(other.productBriefInfo_);
+            ensureProductBriefIsMutable();
+            productBrief_.addAll(other.productBrief_);
           }
           onChanged();
         }
       } else {
-        if (!other.productBriefInfo_.isEmpty()) {
-          if (productBriefInfoBuilder_.isEmpty()) {
-            productBriefInfoBuilder_.dispose();
-            productBriefInfoBuilder_ = null;
-            productBriefInfo_ = other.productBriefInfo_;
+        if (!other.productBrief_.isEmpty()) {
+          if (productBriefBuilder_.isEmpty()) {
+            productBriefBuilder_.dispose();
+            productBriefBuilder_ = null;
+            productBrief_ = other.productBrief_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            productBriefInfoBuilder_ = 
+            productBriefBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getProductBriefInfoFieldBuilder() : null;
+                 getProductBriefFieldBuilder() : null;
           } else {
-            productBriefInfoBuilder_.addAllMessages(other.productBriefInfo_);
+            productBriefBuilder_.addAllMessages(other.productBrief_);
           }
         }
       }
@@ -372,244 +372,244 @@ public  final class ProductBriefList extends
     }
     private int bitField0_;
 
-    private java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo> productBriefInfo_ =
+    private java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief> productBrief_ =
       java.util.Collections.emptyList();
-    private void ensureProductBriefInfoIsMutable() {
+    private void ensureProductBriefIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        productBriefInfo_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.ProductBriefInfo>(productBriefInfo_);
+        productBrief_ = new java.util.ArrayList<io.reactivesw.catelog.infrastructure.GrpcProductBrief>(productBrief_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.ProductBriefInfo, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder, io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder> productBriefInfoBuilder_;
+        io.reactivesw.catelog.infrastructure.GrpcProductBrief, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder, io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder> productBriefBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo> getProductBriefInfoList() {
-      if (productBriefInfoBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(productBriefInfo_);
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief> getProductBriefList() {
+      if (productBriefBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productBrief_);
       } else {
-        return productBriefInfoBuilder_.getMessageList();
+        return productBriefBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public int getProductBriefInfoCount() {
-      if (productBriefInfoBuilder_ == null) {
-        return productBriefInfo_.size();
+    public int getProductBriefCount() {
+      if (productBriefBuilder_ == null) {
+        return productBrief_.size();
       } else {
-        return productBriefInfoBuilder_.getCount();
+        return productBriefBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo getProductBriefInfo(int index) {
-      if (productBriefInfoBuilder_ == null) {
-        return productBriefInfo_.get(index);
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief getProductBrief(int index) {
+      if (productBriefBuilder_ == null) {
+        return productBrief_.get(index);
       } else {
-        return productBriefInfoBuilder_.getMessage(index);
+        return productBriefBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder setProductBriefInfo(
-        int index, io.reactivesw.catelog.infrastructure.ProductBriefInfo value) {
-      if (productBriefInfoBuilder_ == null) {
+    public Builder setProductBrief(
+        int index, io.reactivesw.catelog.infrastructure.GrpcProductBrief value) {
+      if (productBriefBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.set(index, value);
+        ensureProductBriefIsMutable();
+        productBrief_.set(index, value);
         onChanged();
       } else {
-        productBriefInfoBuilder_.setMessage(index, value);
+        productBriefBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder setProductBriefInfo(
-        int index, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder builderForValue) {
-      if (productBriefInfoBuilder_ == null) {
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.set(index, builderForValue.build());
+    public Builder setProductBrief(
+        int index, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder builderForValue) {
+      if (productBriefBuilder_ == null) {
+        ensureProductBriefIsMutable();
+        productBrief_.set(index, builderForValue.build());
         onChanged();
       } else {
-        productBriefInfoBuilder_.setMessage(index, builderForValue.build());
+        productBriefBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder addProductBriefInfo(io.reactivesw.catelog.infrastructure.ProductBriefInfo value) {
-      if (productBriefInfoBuilder_ == null) {
+    public Builder addProductBrief(io.reactivesw.catelog.infrastructure.GrpcProductBrief value) {
+      if (productBriefBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.add(value);
+        ensureProductBriefIsMutable();
+        productBrief_.add(value);
         onChanged();
       } else {
-        productBriefInfoBuilder_.addMessage(value);
+        productBriefBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder addProductBriefInfo(
-        int index, io.reactivesw.catelog.infrastructure.ProductBriefInfo value) {
-      if (productBriefInfoBuilder_ == null) {
+    public Builder addProductBrief(
+        int index, io.reactivesw.catelog.infrastructure.GrpcProductBrief value) {
+      if (productBriefBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.add(index, value);
+        ensureProductBriefIsMutable();
+        productBrief_.add(index, value);
         onChanged();
       } else {
-        productBriefInfoBuilder_.addMessage(index, value);
+        productBriefBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder addProductBriefInfo(
-        io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder builderForValue) {
-      if (productBriefInfoBuilder_ == null) {
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.add(builderForValue.build());
+    public Builder addProductBrief(
+        io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder builderForValue) {
+      if (productBriefBuilder_ == null) {
+        ensureProductBriefIsMutable();
+        productBrief_.add(builderForValue.build());
         onChanged();
       } else {
-        productBriefInfoBuilder_.addMessage(builderForValue.build());
+        productBriefBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder addProductBriefInfo(
-        int index, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder builderForValue) {
-      if (productBriefInfoBuilder_ == null) {
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.add(index, builderForValue.build());
+    public Builder addProductBrief(
+        int index, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder builderForValue) {
+      if (productBriefBuilder_ == null) {
+        ensureProductBriefIsMutable();
+        productBrief_.add(index, builderForValue.build());
         onChanged();
       } else {
-        productBriefInfoBuilder_.addMessage(index, builderForValue.build());
+        productBriefBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder addAllProductBriefInfo(
-        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.ProductBriefInfo> values) {
-      if (productBriefInfoBuilder_ == null) {
-        ensureProductBriefInfoIsMutable();
+    public Builder addAllProductBrief(
+        java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcProductBrief> values) {
+      if (productBriefBuilder_ == null) {
+        ensureProductBriefIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, productBriefInfo_);
+            values, productBrief_);
         onChanged();
       } else {
-        productBriefInfoBuilder_.addAllMessages(values);
+        productBriefBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder clearProductBriefInfo() {
-      if (productBriefInfoBuilder_ == null) {
-        productBriefInfo_ = java.util.Collections.emptyList();
+    public Builder clearProductBrief() {
+      if (productBriefBuilder_ == null) {
+        productBrief_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        productBriefInfoBuilder_.clear();
+        productBriefBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public Builder removeProductBriefInfo(int index) {
-      if (productBriefInfoBuilder_ == null) {
-        ensureProductBriefInfoIsMutable();
-        productBriefInfo_.remove(index);
+    public Builder removeProductBrief(int index) {
+      if (productBriefBuilder_ == null) {
+        ensureProductBriefIsMutable();
+        productBrief_.remove(index);
         onChanged();
       } else {
-        productBriefInfoBuilder_.remove(index);
+        productBriefBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder getProductBriefInfoBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder getProductBriefBuilder(
         int index) {
-      return getProductBriefInfoFieldBuilder().getBuilder(index);
+      return getProductBriefFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder getProductBriefInfoOrBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder getProductBriefOrBuilder(
         int index) {
-      if (productBriefInfoBuilder_ == null) {
-        return productBriefInfo_.get(index);  } else {
-        return productBriefInfoBuilder_.getMessageOrBuilder(index);
+      if (productBriefBuilder_ == null) {
+        return productBrief_.get(index);  } else {
+        return productBriefBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public java.util.List<? extends io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder> 
-         getProductBriefInfoOrBuilderList() {
-      if (productBriefInfoBuilder_ != null) {
-        return productBriefInfoBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder> 
+         getProductBriefOrBuilderList() {
+      if (productBriefBuilder_ != null) {
+        return productBriefBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(productBriefInfo_);
+        return java.util.Collections.unmodifiableList(productBrief_);
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder addProductBriefInfoBuilder() {
-      return getProductBriefInfoFieldBuilder().addBuilder(
-          io.reactivesw.catelog.infrastructure.ProductBriefInfo.getDefaultInstance());
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder addProductBriefBuilder() {
+      return getProductBriefFieldBuilder().addBuilder(
+          io.reactivesw.catelog.infrastructure.GrpcProductBrief.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder addProductBriefInfoBuilder(
+    public io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder addProductBriefBuilder(
         int index) {
-      return getProductBriefInfoFieldBuilder().addBuilder(
-          index, io.reactivesw.catelog.infrastructure.ProductBriefInfo.getDefaultInstance());
+      return getProductBriefFieldBuilder().addBuilder(
+          index, io.reactivesw.catelog.infrastructure.GrpcProductBrief.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.grpc.ProductBriefInfo productBriefInfo = 3;</code>
+     * <code>repeated .io.reactivesw.catelog.grpc.GrpcProductBrief productBrief = 3;</code>
      */
-    public java.util.List<io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder> 
-         getProductBriefInfoBuilderList() {
-      return getProductBriefInfoFieldBuilder().getBuilderList();
+    public java.util.List<io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder> 
+         getProductBriefBuilderList() {
+      return getProductBriefFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catelog.infrastructure.ProductBriefInfo, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder, io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder> 
-        getProductBriefInfoFieldBuilder() {
-      if (productBriefInfoBuilder_ == null) {
-        productBriefInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catelog.infrastructure.ProductBriefInfo, io.reactivesw.catelog.infrastructure.ProductBriefInfo.Builder, io.reactivesw.catelog.infrastructure.ProductBriefInfoOrBuilder>(
-                productBriefInfo_,
+        io.reactivesw.catelog.infrastructure.GrpcProductBrief, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder, io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder> 
+        getProductBriefFieldBuilder() {
+      if (productBriefBuilder_ == null) {
+        productBriefBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            io.reactivesw.catelog.infrastructure.GrpcProductBrief, io.reactivesw.catelog.infrastructure.GrpcProductBrief.Builder, io.reactivesw.catelog.infrastructure.GrpcProductBriefOrBuilder>(
+                productBrief_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        productBriefInfo_ = null;
+        productBrief_ = null;
       }
-      return productBriefInfoBuilder_;
+      return productBriefBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

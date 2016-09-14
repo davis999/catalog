@@ -3,8 +3,8 @@
 
 package io.reactivesw.catelog.infrastructure;
 
-public interface ProductBriefInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.ProductBriefInfo)
+public interface GrpcProductBriefOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:io.reactivesw.catelog.grpc.GrpcProductBrief)
     com.google.protobuf.MessageOrBuilder {
 
   /**
