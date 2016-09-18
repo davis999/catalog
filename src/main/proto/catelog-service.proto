@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package io.reactivesw.catelog.infrastructure;
+
+option java_multiple_files = true;
+option java_package = "io.reactivesw.catelog.infrastructure";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "catelog-message.proto";
+
+/**
+ * service for category.
+ */
+service CategoryService {
+  //query all categories and subcategories.
+  rpc getCategories (google.protobuf.Empty) returns (CategoryList);
+}
+
+/**
+ *service for product.
+ */
+service ProductService {
+  //query all products by id of category.
+  rpc getProductsByCategory (google.protobuf.Int64Value) returns
+  (ProductBriefList);
+
+  //query product genaral information by product id.
+  rpc getProductGenaralInformation(google.protobuf.Int64Value) returns
+  (GrpcProduct);
+
+  //query product feature by product id.
+  rpc getProductFeature(google.protobuf.Int64Value) returns
+  (FeatureList);
+
+  //query product variant by product id.
+  rpc getProductVariant(google.protobuf.Int64Value) returns
+  (VariantList);
+
+  //query skus by product id.
+  rpc getSkuByProduct(google.protobuf.Int64Value) returns
+  (SkuList);
+
+  //query product attribute by product id.
+  //TODO define response body.
+  rpc getProductAttribute(google.protobuf.Int64Value) returns
+  (AttributeList);
+
+  //query product's detail by id of product.
+  rpc getProductDetail (google.protobuf.Int64Value) returns
+  (google.protobuf.StringValue);
+}

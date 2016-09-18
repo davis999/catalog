@@ -1,7 +1,5 @@
 package io.reactivesw.catelog.dto;
 
-import io.reactivesw.catelog.domain.AttributeValue;
-import io.reactivesw.catelog.domain.Feature;
 import io.reactivesw.catelog.domain.Media;
 import io.reactivesw.catelog.domain.Product;
 import io.reactivesw.catelog.domain.Sku;
@@ -41,21 +39,10 @@ public final class ProductTransfer {
     builder.setName(product.getName());
     builder.setDisplayOrder(product.getDisplayOrder());
     builder.setDescription(product.getDescription());
-    builder.setDetail(product.getDetail());
     builder.setIsDisplayed(product.isDisplayed());
     final Set<Sku> skus = product.getSkus();
     final Sku defaultSku = skus.iterator().next();
     builder.setPrice(defaultSku.getPrice().toString());
-    for (final Sku sku : skus) {
-      builder.addSku(SkuTransfer.transferToSkuInfo(sku));
-    }
-    for (final Feature feature : product.getFeatures()) {
-      builder.addFeature(FeatureTransfer.transferToFeatureInfo(feature));
-    }
-    for (final AttributeValue attributeValue : product.getAttributeValues()) {
-      builder.addAttribute(AttributeTransfer.transferToAttributeInfo(attributeValue));
-    }
-
     return builder.build();
   }
 

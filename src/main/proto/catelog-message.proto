@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package io.reactivesw.catelog.infrastructure;
+
+option java_package = "io.reactivesw.catelog.infrastructure";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+/**
+ * response when call queryAllCategories.
+ */
+message CategoryList{
+  repeated GrpcCategory category = 1;
+}
+
+//message of category.
+message GrpcCategory {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int32 displayOrder = 4;
+  repeated GrpcCategory subCategoryInfos = 5;
+}
+
+/**
+ *  response when call queryAllProductsByCategory.
+ */
+message ProductBriefList{
+  repeated GrpcProductBrief productBrief = 3;
+}
+
+//message of product brief.
+message GrpcProductBrief{
+  int64 id = 1;
+  string name = 2;
+  string price = 3;
+  int32 displayOrder = 4;
+  string mediaURL = 5;
+}
+
+/**
+ * response when call getProductGenaralInformation.
+ * message of product.
+ */
+message GrpcProduct{
+  int64 id = 1;
+  string manufacturer = 2;
+  string brand = 3;
+  string model = 4;
+  string name = 5;
+  string price = 6;
+  int32 displayOrder = 7;
+  string description = 8;
+  bool isDisplayed = 10;
+  bool isDeleted = 11;
+}
+
+/**
+ * response when call getProductFeature.
+ */
+message FeatureList{
+  repeated GrpcFeature feature = 1;
+}
+
+/**
+ * message of product feature.
+ */
+message GrpcFeature {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int32 displayOrder = 4;
+}
+
+/**
+ * response when call getProductVariant.
+ */
+message VariantList{
+  repeated GrpcVariant variant = 1;
+}
+
+/**
+ * message of variant.
+ */
+message GrpcVariant {
+  int64 id = 1;
+  string name = 2;
+  int32 displayOrder = 3;
+  repeated GrpcVariantValue variantValue = 4;
+}
+
+/**
+ * message of variant value.
+ */
+message GrpcVariantValue {
+  int64 id = 1;
+  string value = 2;
+  int32 displayOrder = 3;
+  string priceAdjustment = 4;
+}
+
+/**
+ * response when call getSkuByProduct.
+ */
+message SkuList{
+  repeated GrpcSku sku = 1;
+}
+
+/**
+ * message of sku.
+ */
+message GrpcSku {
+  int64 id = 1;
+  string skuNumber = 2;
+  bool isActive = 3;
+  int32 quatity = 4;
+  string upc = 5;
+  int32 displayOrder = 6;
+  repeated GrpcMedia media = 7;
+  repeated GrpcVariantValue variantValue = 8;
+}
+
+/**
+ * message of media.
+ */
+message GrpcMedia {
+  int64 id = 1;
+  string type = 2;
+  string title = 3;
+  string url = 4;
+  int32 displayOrder = 5;
+}
+
+/**
+ * response when call getProductAttribute.
+ */
+message AttributeList{
+  repeated GrpcAttribute attribute = 1;
+}
+
+/**
+ * message of attribute and value.
+ */
+message GrpcAttribute{
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  string value = 4;
+  string type = 5;
+  int32 displayOrder = 6;
+}
+
