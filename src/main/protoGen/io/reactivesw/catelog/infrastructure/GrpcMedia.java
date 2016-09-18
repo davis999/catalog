@@ -209,10 +209,10 @@ public  final class GrpcMedia extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 5;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 5;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 5;</code>
+   * <code>optional int32 display_order = 5;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -314,7 +314,7 @@ public  final class GrpcMedia extends
     hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + URL_FIELD_NUMBER;
     hash = (53 * hash) + getUrl().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -764,13 +764,13 @@ public  final class GrpcMedia extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 5;</code>
+     * <code>optional int32 display_order = 5;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 5;</code>
+     * <code>optional int32 display_order = 5;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -779,7 +779,7 @@ public  final class GrpcMedia extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 5;</code>
+     * <code>optional int32 display_order = 5;</code>
      */
     public Builder clearDisplayOrder() {
       

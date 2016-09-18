@@ -43,7 +43,7 @@ public interface GrpcMediaOrBuilder extends
       getUrlBytes();
 
   /**
-   * <code>optional int32 displayOrder = 5;</code>
+   * <code>optional int32 display_order = 5;</code>
    */
   int getDisplayOrder();
 }

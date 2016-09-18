@@ -33,16 +33,16 @@ public interface GrpcProductBriefOrBuilder extends
       getPriceBytes();
 
   /**
-   * <code>optional int32 displayOrder = 4;</code>
+   * <code>optional int32 display_order = 4;</code>
    */
   int getDisplayOrder();
 
   /**
-   * <code>optional string mediaURL = 5;</code>
+   * <code>optional string media_URL = 5;</code>
    */
   java.lang.String getMediaURL();
   /**
-   * <code>optional string mediaURL = 5;</code>
+   * <code>optional string media_URL = 5;</code>
    */
   com.google.protobuf.ByteString
       getMediaURLBytes();

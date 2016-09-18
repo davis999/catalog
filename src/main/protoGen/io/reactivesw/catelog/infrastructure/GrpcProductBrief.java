@@ -180,19 +180,19 @@ public  final class GrpcProductBrief extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 4;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 4;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 4;</code>
+   * <code>optional int32 display_order = 4;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
   }
 
-  public static final int MEDIAURL_FIELD_NUMBER = 5;
+  public static final int MEDIA_URL_FIELD_NUMBER = 5;
   private volatile java.lang.Object mediaURL_;
   /**
-   * <code>optional string mediaURL = 5;</code>
+   * <code>optional string media_URL = 5;</code>
    */
   public java.lang.String getMediaURL() {
     java.lang.Object ref = mediaURL_;
@@ -207,7 +207,7 @@ public  final class GrpcProductBrief extends
     }
   }
   /**
-   * <code>optional string mediaURL = 5;</code>
+   * <code>optional string media_URL = 5;</code>
    */
   public com.google.protobuf.ByteString
       getMediaURLBytes() {
@@ -317,9 +317,9 @@ public  final class GrpcProductBrief extends
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + getPrice().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
-    hash = (37 * hash) + MEDIAURL_FIELD_NUMBER;
+    hash = (37 * hash) + MEDIA_URL_FIELD_NUMBER;
     hash = (53 * hash) + getMediaURL().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -705,13 +705,13 @@ public  final class GrpcProductBrief extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -720,7 +720,7 @@ public  final class GrpcProductBrief extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public Builder clearDisplayOrder() {
       
@@ -731,7 +731,7 @@ public  final class GrpcProductBrief extends
 
     private java.lang.Object mediaURL_ = "";
     /**
-     * <code>optional string mediaURL = 5;</code>
+     * <code>optional string media_URL = 5;</code>
      */
     public java.lang.String getMediaURL() {
       java.lang.Object ref = mediaURL_;
@@ -746,7 +746,7 @@ public  final class GrpcProductBrief extends
       }
     }
     /**
-     * <code>optional string mediaURL = 5;</code>
+     * <code>optional string media_URL = 5;</code>
      */
     public com.google.protobuf.ByteString
         getMediaURLBytes() {
@@ -762,7 +762,7 @@ public  final class GrpcProductBrief extends
       }
     }
     /**
-     * <code>optional string mediaURL = 5;</code>
+     * <code>optional string media_URL = 5;</code>
      */
     public Builder setMediaURL(
         java.lang.String value) {
@@ -775,7 +775,7 @@ public  final class GrpcProductBrief extends
       return this;
     }
     /**
-     * <code>optional string mediaURL = 5;</code>
+     * <code>optional string media_URL = 5;</code>
      */
     public Builder clearMediaURL() {
       
@@ -784,7 +784,7 @@ public  final class GrpcProductBrief extends
       return this;
     }
     /**
-     * <code>optional string mediaURL = 5;</code>
+     * <code>optional string media_URL = 5;</code>
      */
     public Builder setMediaURLBytes(
         com.google.protobuf.ByteString value) {

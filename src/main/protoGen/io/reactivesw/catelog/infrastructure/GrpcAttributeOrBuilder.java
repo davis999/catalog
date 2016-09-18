@@ -53,7 +53,7 @@ public interface GrpcAttributeOrBuilder extends
       getTypeBytes();
 
   /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 display_order = 6;</code>
    */
   int getDisplayOrder();
 }

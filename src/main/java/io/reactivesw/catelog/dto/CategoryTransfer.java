@@ -30,7 +30,7 @@ public final class CategoryTransfer {
 
     if (category.getSubCategories() != null) {
       for (final Category subCategory : category.getSubCategories()) {
-        builder = builder.addSubCategoryInfos(transferToCategoryInfo(subCategory));
+        builder = builder.addSubCategory(transferToCategoryInfo(subCategory));
       }
     }
 

@@ -63,7 +63,7 @@ public interface GrpcProductOrBuilder extends
       getPriceBytes();
 
   /**
-   * <code>optional int32 displayOrder = 7;</code>
+   * <code>optional int32 display_order = 7;</code>
    */
   int getDisplayOrder();
 
@@ -88,14 +88,14 @@ public interface GrpcProductOrBuilder extends
       getDetailBytes();
 
   /**
-   * <code>optional bool isDisplayed = 10;</code>
+   * <code>optional bool displayed = 10;</code>
    */
-  boolean getIsDisplayed();
+  boolean getDisplayed();
 
   /**
-   * <code>optional bool isDeleted = 11;</code>
+   * <code>optional bool deleted = 11;</code>
    */
-  boolean getIsDeleted();
+  boolean getDeleted();
 
   /**
    * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcAttribute attribute = 12;</code>

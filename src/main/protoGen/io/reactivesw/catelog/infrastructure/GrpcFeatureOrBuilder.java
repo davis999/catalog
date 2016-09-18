@@ -33,7 +33,7 @@ public interface GrpcFeatureOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>optional int32 displayOrder = 4;</code>
+   * <code>optional int32 display_order = 4;</code>
    */
   int getDisplayOrder();
 }

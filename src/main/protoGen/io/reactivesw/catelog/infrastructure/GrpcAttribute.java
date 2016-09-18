@@ -250,10 +250,10 @@ public  final class GrpcAttribute extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 6;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 6;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 display_order = 6;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -365,7 +365,7 @@ public  final class GrpcAttribute extends
     hash = (53 * hash) + getValue().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -891,13 +891,13 @@ public  final class GrpcAttribute extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -906,7 +906,7 @@ public  final class GrpcAttribute extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public Builder clearDisplayOrder() {
       

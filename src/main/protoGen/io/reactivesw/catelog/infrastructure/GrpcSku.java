@@ -223,10 +223,10 @@ public  final class GrpcSku extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 6;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 6;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 display_order = 6;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -267,35 +267,35 @@ public  final class GrpcSku extends
     return media_.get(index);
   }
 
-  public static final int VARIANTVALUE_FIELD_NUMBER = 8;
+  public static final int VARIANT_VALUE_FIELD_NUMBER = 8;
   private java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> variantValue_;
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
       getVariantValueOrBuilderList() {
     return variantValue_;
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   public int getVariantValueCount() {
     return variantValue_.size();
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
     return variantValue_.get(index);
   }
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
       int index) {
@@ -429,14 +429,14 @@ public  final class GrpcSku extends
     hash = (53 * hash) + getQuatity();
     hash = (37 * hash) + UPC_FIELD_NUMBER;
     hash = (53 * hash) + getUpc().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     if (getMediaCount() > 0) {
       hash = (37 * hash) + MEDIA_FIELD_NUMBER;
       hash = (53 * hash) + getMediaList().hashCode();
     }
     if (getVariantValueCount() > 0) {
-      hash = (37 * hash) + VARIANTVALUE_FIELD_NUMBER;
+      hash = (37 * hash) + VARIANT_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getVariantValueList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
@@ -963,13 +963,13 @@ public  final class GrpcSku extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -978,7 +978,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 6;</code>
+     * <code>optional int32 display_order = 6;</code>
      */
     public Builder clearDisplayOrder() {
       
@@ -1240,7 +1240,7 @@ public  final class GrpcSku extends
         io.reactivesw.catelog.infrastructure.GrpcVariantValue, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder, io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> variantValueBuilder_;
 
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> getVariantValueList() {
       if (variantValueBuilder_ == null) {
@@ -1250,7 +1250,7 @@ public  final class GrpcSku extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public int getVariantValueCount() {
       if (variantValueBuilder_ == null) {
@@ -1260,7 +1260,7 @@ public  final class GrpcSku extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index) {
       if (variantValueBuilder_ == null) {
@@ -1270,7 +1270,7 @@ public  final class GrpcSku extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder setVariantValue(
         int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
@@ -1287,7 +1287,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder setVariantValue(
         int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
@@ -1301,7 +1301,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder addVariantValue(io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
       if (variantValueBuilder_ == null) {
@@ -1317,7 +1317,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder addVariantValue(
         int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue value) {
@@ -1334,7 +1334,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder addVariantValue(
         io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
@@ -1348,7 +1348,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder addVariantValue(
         int index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder builderForValue) {
@@ -1362,7 +1362,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder addAllVariantValue(
         java.lang.Iterable<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValue> values) {
@@ -1377,7 +1377,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder clearVariantValue() {
       if (variantValueBuilder_ == null) {
@@ -1390,7 +1390,7 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public Builder removeVariantValue(int index) {
       if (variantValueBuilder_ == null) {
@@ -1403,14 +1403,14 @@ public  final class GrpcSku extends
       return this;
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder getVariantValueBuilder(
         int index) {
       return getVariantValueFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
         int index) {
@@ -1420,7 +1420,7 @@ public  final class GrpcSku extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
          getVariantValueOrBuilderList() {
@@ -1431,14 +1431,14 @@ public  final class GrpcSku extends
       }
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder() {
       return getVariantValueFieldBuilder().addBuilder(
           io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder addVariantValueBuilder(
         int index) {
@@ -1446,7 +1446,7 @@ public  final class GrpcSku extends
           index, io.reactivesw.catelog.infrastructure.GrpcVariantValue.getDefaultInstance());
     }
     /**
-     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+     * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
      */
     public java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue.Builder> 
          getVariantValueBuilderList() {

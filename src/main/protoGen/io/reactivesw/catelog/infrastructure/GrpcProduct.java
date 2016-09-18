@@ -24,8 +24,8 @@ public  final class GrpcProduct extends
     displayOrder_ = 0;
     description_ = "";
     detail_ = "";
-    isDisplayed_ = false;
-    isDeleted_ = false;
+    displayed_ = false;
+    deleted_ = false;
     attribute_ = java.util.Collections.emptyList();
     sku_ = java.util.Collections.emptyList();
     variant_ = java.util.Collections.emptyList();
@@ -111,12 +111,12 @@ public  final class GrpcProduct extends
           }
           case 80: {
 
-            isDisplayed_ = input.readBool();
+            displayed_ = input.readBool();
             break;
           }
           case 88: {
 
-            isDeleted_ = input.readBool();
+            deleted_ = input.readBool();
             break;
           }
           case 98: {
@@ -366,10 +366,10 @@ public  final class GrpcProduct extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 7;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 7;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 7;</code>
+   * <code>optional int32 display_order = 7;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -443,22 +443,22 @@ public  final class GrpcProduct extends
     }
   }
 
-  public static final int ISDISPLAYED_FIELD_NUMBER = 10;
-  private boolean isDisplayed_;
+  public static final int DISPLAYED_FIELD_NUMBER = 10;
+  private boolean displayed_;
   /**
-   * <code>optional bool isDisplayed = 10;</code>
+   * <code>optional bool displayed = 10;</code>
    */
-  public boolean getIsDisplayed() {
-    return isDisplayed_;
+  public boolean getDisplayed() {
+    return displayed_;
   }
 
-  public static final int ISDELETED_FIELD_NUMBER = 11;
-  private boolean isDeleted_;
+  public static final int DELETED_FIELD_NUMBER = 11;
+  private boolean deleted_;
   /**
-   * <code>optional bool isDeleted = 11;</code>
+   * <code>optional bool deleted = 11;</code>
    */
-  public boolean getIsDeleted() {
-    return isDeleted_;
+  public boolean getDeleted() {
+    return deleted_;
   }
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 12;
@@ -640,11 +640,11 @@ public  final class GrpcProduct extends
     if (!getDetailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, detail_);
     }
-    if (isDisplayed_ != false) {
-      output.writeBool(10, isDisplayed_);
+    if (displayed_ != false) {
+      output.writeBool(10, displayed_);
     }
-    if (isDeleted_ != false) {
-      output.writeBool(11, isDeleted_);
+    if (deleted_ != false) {
+      output.writeBool(11, deleted_);
     }
     for (int i = 0; i < attribute_.size(); i++) {
       output.writeMessage(12, attribute_.get(i));
@@ -694,13 +694,13 @@ public  final class GrpcProduct extends
     if (!getDetailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, detail_);
     }
-    if (isDisplayed_ != false) {
+    if (displayed_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(10, isDisplayed_);
+        .computeBoolSize(10, displayed_);
     }
-    if (isDeleted_ != false) {
+    if (deleted_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, isDeleted_);
+        .computeBoolSize(11, deleted_);
     }
     for (int i = 0; i < attribute_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -752,10 +752,10 @@ public  final class GrpcProduct extends
         .equals(other.getDescription());
     result = result && getDetail()
         .equals(other.getDetail());
-    result = result && (getIsDisplayed()
-        == other.getIsDisplayed());
-    result = result && (getIsDeleted()
-        == other.getIsDeleted());
+    result = result && (getDisplayed()
+        == other.getDisplayed());
+    result = result && (getDeleted()
+        == other.getDeleted());
     result = result && getAttributeList()
         .equals(other.getAttributeList());
     result = result && getSkuList()
@@ -787,18 +787,18 @@ public  final class GrpcProduct extends
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + getPrice().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DETAIL_FIELD_NUMBER;
     hash = (53 * hash) + getDetail().hashCode();
-    hash = (37 * hash) + ISDISPLAYED_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAYED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsDisplayed());
-    hash = (37 * hash) + ISDELETED_FIELD_NUMBER;
+        getDisplayed());
+    hash = (37 * hash) + DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsDeleted());
+        getDeleted());
     if (getAttributeCount() > 0) {
       hash = (37 * hash) + ATTRIBUTE_FIELD_NUMBER;
       hash = (53 * hash) + getAttributeList().hashCode();
@@ -954,9 +954,9 @@ public  final class GrpcProduct extends
 
       detail_ = "";
 
-      isDisplayed_ = false;
+      displayed_ = false;
 
-      isDeleted_ = false;
+      deleted_ = false;
 
       if (attributeBuilder_ == null) {
         attribute_ = java.util.Collections.emptyList();
@@ -1015,8 +1015,8 @@ public  final class GrpcProduct extends
       result.displayOrder_ = displayOrder_;
       result.description_ = description_;
       result.detail_ = detail_;
-      result.isDisplayed_ = isDisplayed_;
-      result.isDeleted_ = isDeleted_;
+      result.displayed_ = displayed_;
+      result.deleted_ = deleted_;
       if (attributeBuilder_ == null) {
         if (((bitField0_ & 0x00000800) == 0x00000800)) {
           attribute_ = java.util.Collections.unmodifiableList(attribute_);
@@ -1103,11 +1103,11 @@ public  final class GrpcProduct extends
         detail_ = other.detail_;
         onChanged();
       }
-      if (other.getIsDisplayed() != false) {
-        setIsDisplayed(other.getIsDisplayed());
+      if (other.getDisplayed() != false) {
+        setDisplayed(other.getDisplayed());
       }
-      if (other.getIsDeleted() != false) {
-        setIsDeleted(other.getIsDeleted());
+      if (other.getDeleted() != false) {
+        setDeleted(other.getDeleted());
       }
       if (attributeBuilder_ == null) {
         if (!other.attribute_.isEmpty()) {
@@ -1613,13 +1613,13 @@ public  final class GrpcProduct extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 7;</code>
+     * <code>optional int32 display_order = 7;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 7;</code>
+     * <code>optional int32 display_order = 7;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -1628,7 +1628,7 @@ public  final class GrpcProduct extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 7;</code>
+     * <code>optional int32 display_order = 7;</code>
      */
     public Builder clearDisplayOrder() {
       
@@ -1775,54 +1775,54 @@ public  final class GrpcProduct extends
       return this;
     }
 
-    private boolean isDisplayed_ ;
+    private boolean displayed_ ;
     /**
-     * <code>optional bool isDisplayed = 10;</code>
+     * <code>optional bool displayed = 10;</code>
      */
-    public boolean getIsDisplayed() {
-      return isDisplayed_;
+    public boolean getDisplayed() {
+      return displayed_;
     }
     /**
-     * <code>optional bool isDisplayed = 10;</code>
+     * <code>optional bool displayed = 10;</code>
      */
-    public Builder setIsDisplayed(boolean value) {
+    public Builder setDisplayed(boolean value) {
       
-      isDisplayed_ = value;
+      displayed_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool isDisplayed = 10;</code>
+     * <code>optional bool displayed = 10;</code>
      */
-    public Builder clearIsDisplayed() {
+    public Builder clearDisplayed() {
       
-      isDisplayed_ = false;
+      displayed_ = false;
       onChanged();
       return this;
     }
 
-    private boolean isDeleted_ ;
+    private boolean deleted_ ;
     /**
-     * <code>optional bool isDeleted = 11;</code>
+     * <code>optional bool deleted = 11;</code>
      */
-    public boolean getIsDeleted() {
-      return isDeleted_;
+    public boolean getDeleted() {
+      return deleted_;
     }
     /**
-     * <code>optional bool isDeleted = 11;</code>
+     * <code>optional bool deleted = 11;</code>
      */
-    public Builder setIsDeleted(boolean value) {
+    public Builder setDeleted(boolean value) {
       
-      isDeleted_ = value;
+      deleted_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool isDeleted = 11;</code>
+     * <code>optional bool deleted = 11;</code>
      */
-    public Builder clearIsDeleted() {
+    public Builder clearDeleted() {
       
-      isDeleted_ = false;
+      deleted_ = false;
       onChanged();
       return this;
     }

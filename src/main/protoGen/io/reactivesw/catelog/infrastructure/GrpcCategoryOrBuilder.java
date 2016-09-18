@@ -38,26 +38,26 @@ public interface GrpcCategoryOrBuilder extends
   int getDisplayOrder();
 
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory sub_category = 5;</code>
    */
   java.util.List<io.reactivesw.catelog.infrastructure.GrpcCategory> 
-      getSubCategoryInfosList();
+      getSubCategoryList();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory sub_category = 5;</code>
    */
-  io.reactivesw.catelog.infrastructure.GrpcCategory getSubCategoryInfos(int index);
+  io.reactivesw.catelog.infrastructure.GrpcCategory getSubCategory(int index);
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory sub_category = 5;</code>
    */
-  int getSubCategoryInfosCount();
+  int getSubCategoryCount();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory sub_category = 5;</code>
    */
   java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder> 
-      getSubCategoryInfosOrBuilderList();
+      getSubCategoryOrBuilderList();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory subCategoryInfos = 5;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcCategory sub_category = 5;</code>
    */
-  io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getSubCategoryInfosOrBuilder(
+  io.reactivesw.catelog.infrastructure.GrpcCategoryOrBuilder getSubCategoryOrBuilder(
       int index);
 }

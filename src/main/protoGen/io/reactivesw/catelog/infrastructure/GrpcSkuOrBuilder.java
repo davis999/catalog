@@ -43,7 +43,7 @@ public interface GrpcSkuOrBuilder extends
       getUpcBytes();
 
   /**
-   * <code>optional int32 displayOrder = 6;</code>
+   * <code>optional int32 display_order = 6;</code>
    */
   int getDisplayOrder();
 
@@ -72,25 +72,25 @@ public interface GrpcSkuOrBuilder extends
       int index);
 
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   java.util.List<io.reactivesw.catelog.infrastructure.GrpcVariantValue> 
       getVariantValueList();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   io.reactivesw.catelog.infrastructure.GrpcVariantValue getVariantValue(int index);
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   int getVariantValueCount();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   java.util.List<? extends io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder> 
       getVariantValueOrBuilderList();
   /**
-   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variantValue = 8;</code>
+   * <code>repeated .io.reactivesw.catelog.infrastructure.GrpcVariantValue variant_value = 8;</code>
    */
   io.reactivesw.catelog.infrastructure.GrpcVariantValueOrBuilder getVariantValueOrBuilder(
       int index);
