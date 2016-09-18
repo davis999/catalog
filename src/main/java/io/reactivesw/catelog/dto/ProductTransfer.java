@@ -9,6 +9,8 @@ import io.reactivesw.catelog.infrastructure.GrpcProduct;
 import io.reactivesw.catelog.infrastructure.GrpcProductBrief;
 import io.reactivesw.catelog.infrastructure.ProductBriefList;
 
+import org.modelmapper.ModelMapper;
+
 import java.util.List;
 import java.util.Set;
 
@@ -32,17 +34,9 @@ public final class ProductTransfer {
    * @return ProductInfo
    */
   public static GrpcProduct transferToProductInfo(Product product) {
-    final GrpcProduct.Builder builder = GrpcProduct.newBuilder();
+    final ModelMapper modelMapper = new ModelMapper();
+    final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
 
-    builder.setId(product.getId());
-    builder.setManufacturer(product.getManufacturer());
-    builder.setBrand(product.getBrand());
-    builder.setModel(product.getModel());
-    builder.setName(product.getName());
-    builder.setDisplayOrder(product.getDisplayOrder());
-    builder.setDescription(product.getDescription());
-    builder.setDetail(product.getDetail());
-    builder.setIsDisplayed(product.isDisplayed());
     final Set<Sku> skus = product.getSkus();
     final Sku defaultSku = skus.iterator().next();
     builder.setPrice(defaultSku.getPrice().toString());

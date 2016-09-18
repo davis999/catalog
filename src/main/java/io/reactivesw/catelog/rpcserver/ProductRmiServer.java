@@ -1,20 +1,16 @@
 package io.reactivesw.catelog.rpcserver;
 
-import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
 
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import io.reactivesw.catelog.domain.Category;
+import io.reactivesw.catelog.common.GrpcResponseUtil;
 import io.reactivesw.catelog.domain.Product;
-import io.reactivesw.catelog.dto.CategoryTransfer;
 import io.reactivesw.catelog.dto.ProductTransfer;
-import io.reactivesw.catelog.infrastructure.CategoryList;
-import io.reactivesw.catelog.infrastructure.CatelogServiceGrpc;
 import io.reactivesw.catelog.infrastructure.GrpcProduct;
 import io.reactivesw.catelog.infrastructure.ProductBriefList;
-import io.reactivesw.catelog.service.CategoryService;
+import io.reactivesw.catelog.infrastructure.ProductServiceGrpc;
 import io.reactivesw.catelog.service.ProductService;
 
 import org.lognet.springboot.grpc.GRpcService;
@@ -31,19 +27,12 @@ import java.util.List;
  *
  */
 @GRpcService
-public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase {
-
+public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase {
 
   /**
    * log.
    */
-  private static final Logger LOG = LoggerFactory.getLogger(CatelogRmiServer.class);
-
-  /**
-   * category service.
-   */
-  @Autowired
-  private transient CategoryService categoryService;
+  private static final Logger LOG = LoggerFactory.getLogger(ProductRmiServer.class);
 
   /**
    * product service.
@@ -55,7 +44,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
    * get product detail.
    */
   @Override
-  public void queryProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
+  public void getProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
     final long productId = request.getValue();
     LOG.debug("enter queryProductDetial, product id is {}", productId);
     final Product product = productService.queryProductById(productId);
@@ -67,7 +56,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
 
     final GrpcProduct reply = ProductTransfer.transferToProductInfo(product);
 
-    completeResponse(responseObserver, reply);
+    GrpcResponseUtil.completeResponse(responseObserver, reply);
     LOG.info("end queryProductDetial.");
   }
 
@@ -75,7 +64,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
    * query products by category.
    */
   @Override
-  public void queryProductsByCategory(Int64Value request,
+  public void getProductsByCategory(Int64Value request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
     LOG.debug("enter queryProductsByCategory, category id is {}", categoryId);
@@ -87,38 +76,7 @@ public class CatelogRmiServer extends CatelogServiceGrpc.CatelogServiceImplBase 
     }
     final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
 
-    completeResponse(responseObserver, reply);
+    GrpcResponseUtil.completeResponse(responseObserver, reply);
     LOG.debug("end queryProductsByCategory");
-  }
-
-  /**
-   * get all categories and subcategories.
-   */
-  @Override
-  public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
-    LOG.debug("enter getCategories.");
-    final List<Category> categories = categoryService.findAllTopCategories();
-    if (categories == null) {
-      LOG.debug("query top categories fail, result is null");
-      final Status status =
-          Status.NOT_FOUND.withDescription("query all categories fail, no categories");
-      throw new StatusRuntimeException(status);
-    }
-
-    final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
-
-    completeResponse(responseObserver, reply);
-    LOG.debug("end getCategories.");
-  }
-
-  /**
-   * complete response.
-   * 
-   * @param responseObserver responseObserver
-   * @param reply reply
-   */
-  private <T> void completeResponse(StreamObserver<T> responseObserver, final T reply) {
-    responseObserver.onNext(reply);
-    responseObserver.onCompleted();
   }
 }

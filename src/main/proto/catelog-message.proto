@@ -1,27 +1,10 @@
 syntax = "proto3";
 
-option java_multiple_files = true;
+package io.reactivesw.catelog.infrastructure;
+
 option java_package = "io.reactivesw.catelog.infrastructure";
-
-import "google/protobuf/empty.proto";
-import "google/protobuf/wrappers.proto";
-
-package io.reactivesw.catelog.grpc;
-
-/**
- * define catelog rpc service.
- */
-service CatelogService {
-  //query all categories and subcategories.
-  rpc getCategories (google.protobuf.Empty) returns (CategoryList){}
-
-  //query all products by id of category
-  rpc queryProductsByCategory (google.protobuf.Int64Value) returns
-  (ProductBriefList){}
-
-  //query product's detail by id of product
-  rpc queryProductDetial (google.protobuf.Int64Value) returns (GrpcProduct){}
-}
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
 
 /**
  * response when call queryAllCategories.
@@ -31,18 +14,32 @@ message CategoryList{
 }
 
 /**
- *  response when call queryAllProductsByCategory.
+ * message of category.
  */
-message ProductBriefList{
-  repeated GrpcProductBrief productBrief = 3;
-}
-
 message GrpcCategory {
   int64 id = 1;
   string name = 2;
   string description = 3;
   int32 displayOrder = 4;
   repeated GrpcCategory subCategoryInfos = 5;
+}
+
+/**
+ *  response when call queryAllProductsByCategory.
+ */
+message ProductBriefList{
+  repeated GrpcProductBrief productBrief = 3;
+}
+
+/**
+ * message of product brief.
+ */
+message GrpcProductBrief{
+  int64 id = 1;
+  string name = 2;
+  string price = 3;
+  int32 displayOrder = 4;
+  string mediaURL = 5;
 }
 
 message GrpcAttribute{
@@ -110,12 +107,4 @@ message GrpcProduct{
   repeated GrpcSku sku = 13;
   repeated GrpcVariant variant = 14;
   repeated GrpcFeature feature = 15;
-}
-
-message GrpcProductBrief{
-  int64 id = 1;
-  string name = 2;
-  string price = 3;
-  int32 displayOrder = 4;
-  string mediaURL = 5;
 }

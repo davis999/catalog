@@ -5,6 +5,8 @@ import io.reactivesw.catelog.domain.Sku;
 import io.reactivesw.catelog.domain.VariantValue;
 import io.reactivesw.catelog.infrastructure.GrpcSku;
 
+import org.modelmapper.ModelMapper;
+
 import java.util.Set;
 
 /**
@@ -27,14 +29,8 @@ public final class SkuTransfer {
    * @return GrpcSku
    */
   public static GrpcSku transferToSkuInfo(Sku sku) {
-    final GrpcSku.Builder builder = GrpcSku.newBuilder();
-
-    builder.setId(sku.getId());
-    builder.setSkuNumber(sku.getSkuNumber());
-    builder.setIsActive(sku.isActive());
-    builder.setQuatity(sku.getQuantity());
-    builder.setUpc(sku.getUpc());
-    builder.setDisplayOrder(sku.getDisplayOrder());
+    final ModelMapper modelMapper = new ModelMapper();
+    final GrpcSku.Builder builder = modelMapper.map(sku, GrpcSku.Builder.class);
 
     final Set<Media> medias = sku.getMedias();
     for (final Media media : medias) {

@@ -4,6 +4,8 @@ import io.reactivesw.catelog.domain.Category;
 import io.reactivesw.catelog.infrastructure.CategoryList;
 import io.reactivesw.catelog.infrastructure.GrpcCategory;
 
+import org.modelmapper.ModelMapper;
+
 import java.util.List;
 
 /**
@@ -23,14 +25,12 @@ public final class CategoryTransfer {
    * @return GrpcCategory
    */
   public static GrpcCategory transferToCategoryInfo(Category category) {
-    GrpcCategory.Builder builder = GrpcCategory.newBuilder();
-    builder = builder.setDescription(category.getDescription()).setName(category.getName())
-        .setId(category.getId()).setDisplayOrder(category.getDisplayOrder());
+    final ModelMapper modelMapper = new ModelMapper();
+    GrpcCategory.Builder builder = modelMapper.map(category, GrpcCategory.Builder.class);
 
     if (category.getSubCategories() != null) {
       for (final Category subCategory : category.getSubCategories()) {
         builder = builder.addSubCategoryInfos(transferToCategoryInfo(subCategory));
-
       }
     }
 

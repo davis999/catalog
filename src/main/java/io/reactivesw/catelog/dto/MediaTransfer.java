@@ -3,6 +3,8 @@ package io.reactivesw.catelog.dto;
 import io.reactivesw.catelog.domain.Media;
 import io.reactivesw.catelog.infrastructure.GrpcMedia;
 
+import org.modelmapper.ModelMapper;
+
 /**
  * this is transfer class for Media.
  * 
@@ -10,11 +12,11 @@ import io.reactivesw.catelog.infrastructure.GrpcMedia;
  *
  */
 public final class MediaTransfer {
-  
+
   /**
    * private constructor.
    */
-  private MediaTransfer(){}
+  private MediaTransfer() {}
 
   /**
    * transfer Media to GrpcMedia.
@@ -23,14 +25,8 @@ public final class MediaTransfer {
    * @return GrpcMedia
    */
   public static GrpcMedia transferToMediaInfo(Media media) {
-    final GrpcMedia.Builder builder = GrpcMedia.newBuilder();
-
-    builder.setId(media.getId());
-    builder.setType(media.getType());
-    builder.setTitle(media.getTitle());
-    builder.setUrl(media.getUrl());
-    builder.setDisplayOrder(media.getDisplayOrder());
-
+    final ModelMapper modelMapper = new ModelMapper();
+    final GrpcMedia.Builder builder = modelMapper.map(media, GrpcMedia.Builder.class);
     return builder.build();
   }
 }

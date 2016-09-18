@@ -3,6 +3,8 @@ package io.reactivesw.catelog.dto;
 import io.reactivesw.catelog.domain.Feature;
 import io.reactivesw.catelog.infrastructure.GrpcFeature;
 
+import org.modelmapper.ModelMapper;
+
 /**
  * this is transfer class for feature.
  * 
@@ -23,13 +25,8 @@ public final class FeatureTransfer {
    * @return GrpcFeature
    */
   public static GrpcFeature transferToFeatureInfo(Feature feature) {
-    final GrpcFeature.Builder builder = GrpcFeature.newBuilder();
-
-    builder.setId(feature.getId());
-    builder.setName(feature.getName());
-    builder.setDescription(feature.getDescription());
-    builder.setDisplayOrder(feature.getDisplayOrder());
-
+    final ModelMapper modelMapper = new ModelMapper();
+    final GrpcFeature.Builder builder = modelMapper.map(feature, GrpcFeature.Builder.class);
     return builder.build();
   }
 }

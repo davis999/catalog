@@ -3,6 +3,8 @@ package io.reactivesw.catelog.dto;
 import io.reactivesw.catelog.domain.VariantValue;
 import io.reactivesw.catelog.infrastructure.GrpcVariantValue;
 
+import org.modelmapper.ModelMapper;
+
 /**
  * this is transfer class for VariantValue.
  * 
@@ -23,13 +25,9 @@ public final class VariantValueTransfer {
    * @return GrpcVariantValue
    */
   public static GrpcVariantValue transferToVariantValue(VariantValue variantValue) {
-    final GrpcVariantValue.Builder builder = GrpcVariantValue.newBuilder();
-
-    builder.setId(variantValue.getId());
-    builder.setValue(variantValue.getValue());
-    builder.setDisplayOrder(variantValue.getDisplayOrder());
-    builder.setPriceAdjustment(variantValue.getPriceAdjustment().toString());
-
+    final ModelMapper modelMapper = new ModelMapper();
+    final GrpcVariantValue.Builder builder =
+        modelMapper.map(variantValue, GrpcVariantValue.Builder.class);
     return builder.build();
   }
 }
