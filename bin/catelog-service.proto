@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package io.reactivesw.catelog.infrastructure;
+
+option java_multiple_files = true;
+option java_package = "io.reactivesw.catelog.infrastructure";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "catelog-message.proto";
+
+/**
+ * define catelog rpc service.
+ */
+service CategoryService {
+  //query all categories and subcategories.
+  rpc getCategories (google.protobuf.Empty) returns (CategoryList);
+}
+
+service ProductService{
+  //query all products by id of category
+  rpc getProductsByCategory (google.protobuf.Int64Value) returns
+  (ProductBriefList);
+
+  //query product's detail by id of product
+  rpc getProductDetial (google.protobuf.Int64Value) returns (GrpcProduct);
+}
