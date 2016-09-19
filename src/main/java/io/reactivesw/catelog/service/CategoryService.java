@@ -18,7 +18,7 @@ public interface CategoryService {
    * @param category category to save
    * @return true for success and false for fail
    */
-  boolean saveCategory(Category category);
+  Category saveCategory(Category category);
 
   /**
    * find some categories by it's name.
@@ -26,7 +26,7 @@ public interface CategoryService {
    * @param name name
    * @return list of categories.
    */
-  List<Category> findCategoryByName(String name);
+  Set<Category> findCategoryByName(String name);
 
   /**
    * find all top categories.

@@ -45,9 +45,8 @@ public class CategoryServiceImpl implements CategoryService {
    * @return true for success and false for fail
    */
   @Override
-  public boolean saveCategory(Category category) {
-    final Category savedCategory = categoryRepository.save(category);
-    return savedCategory == null ? false : true;
+  public Category saveCategory(Category category) {
+    return categoryRepository.save(category);
   }
 
   /**
@@ -57,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
    * @return list of categories.
    */
   @Override
-  public List<Category> findCategoryByName(String name) {
+  public Set<Category> findCategoryByName(String name) {
     return categoryRepository.findCategoryByName(name);
   }
 

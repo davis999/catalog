@@ -38,8 +38,10 @@ public final class ProductTransfer {
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
 
     final Set<Sku> skus = product.getSkus();
-    final Sku defaultSku = skus.iterator().next();
-    builder.setPrice(defaultSku.getPrice().toString());
+    final Sku defaultSku = product.getDefaultSku();
+    if (defaultSku != null) {
+      builder.setPrice(defaultSku.getPrice().toString());
+    }
     if (skus != null) {
       for (final Sku sku : skus) {
         builder.addSku(SkuTransfer.transferToGrpcSku(sku));

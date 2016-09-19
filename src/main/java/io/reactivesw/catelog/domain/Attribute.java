@@ -19,9 +19,8 @@ import javax.validation.constraints.Size;
 
 /**
  * this is the entity class for attribute.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_attribute")
@@ -87,7 +86,7 @@ public class Attribute implements Serializable {
 
   /**
    * get id.
-   * 
+   *
    * @return the id
    */
   public long getId() {
@@ -96,7 +95,7 @@ public class Attribute implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id the id to set
    */
   public void setId(long id) {
@@ -105,7 +104,7 @@ public class Attribute implements Serializable {
 
   /**
    * get name.
-   * 
+   *
    * @return the name
    */
   public String getName() {
@@ -114,7 +113,7 @@ public class Attribute implements Serializable {
 
   /**
    * set name.
-   * 
+   *
    * @param name the name to set
    */
   public void setName(String name) {
@@ -123,7 +122,7 @@ public class Attribute implements Serializable {
 
   /**
    * get description.
-   * 
+   *
    * @return the description
    */
   public String getDescription() {
@@ -132,7 +131,7 @@ public class Attribute implements Serializable {
 
   /**
    * set description.
-   * 
+   *
    * @param description the description to set
    */
   public void setDescription(String description) {
@@ -141,7 +140,7 @@ public class Attribute implements Serializable {
 
   /**
    * get type.
-   * 
+   *
    * @return the type
    */
   public String getType() {
@@ -150,7 +149,7 @@ public class Attribute implements Serializable {
 
   /**
    * set type.
-   * 
+   *
    * @param type the type to set
    */
   public void setType(String type) {
@@ -159,7 +158,7 @@ public class Attribute implements Serializable {
 
   /**
    * get displayOrder.
-   * 
+   *
    * @return the displayOrder
    */
   public int getDisplayOrder() {
@@ -168,7 +167,7 @@ public class Attribute implements Serializable {
 
   /**
    * set displayOrder.
-   * 
+   *
    * @param displayOrder the displayOrder to set
    */
   public void setDisplayOrder(int displayOrder) {
@@ -177,7 +176,7 @@ public class Attribute implements Serializable {
 
   /**
    * get createTime.
-   * 
+   *
    * @return the create time.
    */
   public Date getCreateTime() {
@@ -186,7 +185,7 @@ public class Attribute implements Serializable {
 
   /**
    * set createTime.
-   * 
+   *
    * @param createTime the create time to set
    */
   public void setCreateTime(Date createTime) {
@@ -195,7 +194,7 @@ public class Attribute implements Serializable {
 
   /**
    * get lastModifiedTime.
-   * 
+   *
    * @return last modified time.
    */
   public Date getLastModifiedTime() {
@@ -204,7 +203,7 @@ public class Attribute implements Serializable {
 
   /**
    * set lastModifiedTime.
-   * 
+   *
    * @param lastModifiedTime the last modified time
    */
   public void setLastModifiedTime(Date lastModifiedTime) {
@@ -213,7 +212,7 @@ public class Attribute implements Serializable {
 
   /**
    * get attribute values.
-   * 
+   *
    * @return the attributeValues
    */
   public Set<AttributeValue> getAttributeValues() {
@@ -222,7 +221,7 @@ public class Attribute implements Serializable {
 
   /**
    * set attribute values.
-   * 
+   *
    * @param attributeValues the attributeValues to set
    */
   public void setAttributeValues(Set<AttributeValue> attributeValues) {
