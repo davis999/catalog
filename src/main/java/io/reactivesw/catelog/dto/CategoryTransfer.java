@@ -46,7 +46,7 @@ public final class CategoryTransfer {
   public static CategoryList transferToCategoryList(Set<Category> categories) {
     CategoryList.Builder builder = CategoryList.newBuilder();
     if (categories != null) {
-      for (Category category : categories) {
+      for (final Category category : categories) {
         builder = builder.addCategory(transferToCategoryInfo(category));
       }
     }
