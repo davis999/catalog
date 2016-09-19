@@ -16,7 +16,9 @@ public final class MediaTransfer {
   /**
    * private constructor.
    */
-  private MediaTransfer() {}
+  private MediaTransfer() {
+    
+  }
 
   /**
    * transfer Media to GrpcMedia.

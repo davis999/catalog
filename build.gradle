@@ -4,7 +4,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'com.google.protobuf'
 
 apply from: 'code_analyze_and_test/code_analyzer.gradle'
-//apply from: 'code_analyze_and_test/code_unit_test.gradle'
+apply from: 'code_analyze_and_test/code_unit_test.gradle'
 
 buildscript {
   ext {

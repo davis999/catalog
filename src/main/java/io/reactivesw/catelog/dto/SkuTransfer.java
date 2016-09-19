@@ -16,11 +16,11 @@ import java.util.Set;
  *
  */
 public final class SkuTransfer {
-  
+
   /**
    * private constructro.
    */
-  private SkuTransfer(){}
+  private SkuTransfer() {}
 
   /**
    * transfer Sku to GrpcSku.
@@ -28,7 +28,7 @@ public final class SkuTransfer {
    * @param sku sku
    * @return GrpcSku
    */
-  public static GrpcSku transferToSkuInfo(Sku sku) {
+  public static GrpcSku transferToGrpcSku(Sku sku) {
     final ModelMapper modelMapper = new ModelMapper();
     final GrpcSku.Builder builder = modelMapper.map(sku, GrpcSku.Builder.class);
 
@@ -38,8 +38,10 @@ public final class SkuTransfer {
     }
 
     final Set<VariantValue> variantValues = sku.getVariantValues();
-    for (final VariantValue variantValue : variantValues) {
-      builder.addVariantValue(VariantValueTransfer.transferToVariantValue(variantValue));
+    if (variantValues != null) {
+      for (final VariantValue variantValue : variantValues) {
+        builder.addVariantValue(VariantValueTransfer.transferToVariantValue(variantValue));
+      }
     }
 
     return builder.build();

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is repository interface for category.
@@ -29,5 +30,5 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
    * @param depth depth
    * @return list of category
    */
-  List<Category> findCategoryByDepth(int depth);
+  Set<Category> findCategoryByDepth(int depth);
 }

@@ -54,7 +54,7 @@ public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase 
       throw new StatusRuntimeException(status);
     }
 
-    final GrpcProduct reply = ProductTransfer.transferToProductInfo(product);
+    final GrpcProduct reply = ProductTransfer.transferToGrpcProduct(product);
 
     GrpcResponseUtil.completeResponse(responseObserver, reply);
     LOG.info("end queryProductDetial.");

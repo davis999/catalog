@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is service class for category.
@@ -66,7 +67,7 @@ public class CategoryServiceImpl implements CategoryService {
    * @return list of categories.
    */
   @Override
-  public List<Category> findAllTopCategories() {
+  public Set<Category> findAllTopCategories() {
     return categoryRepository.findCategoryByDepth(TOP_DEPTH);
   }
 

@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * this is gRPC server for catelog.
@@ -46,7 +46,7 @@ public class CategoryRmiServer extends CategoryServiceGrpc.CategoryServiceImplBa
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
     LOG.debug("enter getCategories.");
-    final List<Category> categories = categoryService.findAllTopCategories();
+    final Set<Category> categories = categoryService.findAllTopCategories();
     if (categories == null) {
       LOG.debug("query top categories fail, result is null");
       final Status status =

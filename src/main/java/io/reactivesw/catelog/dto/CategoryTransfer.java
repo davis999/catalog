@@ -6,7 +6,7 @@ import io.reactivesw.catelog.infrastructure.GrpcCategory;
 
 import org.modelmapper.ModelMapper;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * this is transfer class for category.
@@ -40,14 +40,14 @@ public final class CategoryTransfer {
   /**
    * transfer list category to CategoryList.
    * 
-   * @param categories list of category.
+   * @param categories set of category.
    * @return CategoryList
    */
-  public static CategoryList transferToCategoryList(List<Category> categories) {
+  public static CategoryList transferToCategoryList(Set<Category> categories) {
     CategoryList.Builder builder = CategoryList.newBuilder();
     if (categories != null) {
-      for (int index = 0; index < categories.size(); index++) {
-        builder = builder.addCategory(transferToCategoryInfo(categories.get(index)));
+      for (Category category : categories) {
+        builder = builder.addCategory(transferToCategoryInfo(category));
       }
     }
     return builder.build();

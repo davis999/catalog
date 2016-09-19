@@ -28,26 +28,32 @@ public final class ProductTransfer {
   private ProductTransfer() {}
 
   /**
-   * transfer Product to ProductInfo.
+   * transfer Product to GrpcProduct.
    * 
    * @param product src product
-   * @return ProductInfo
+   * @return GrpcProduct
    */
-  public static GrpcProduct transferToProductInfo(Product product) {
+  public static GrpcProduct transferToGrpcProduct(Product product) {
     final ModelMapper modelMapper = new ModelMapper();
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
 
     final Set<Sku> skus = product.getSkus();
     final Sku defaultSku = skus.iterator().next();
     builder.setPrice(defaultSku.getPrice().toString());
-    for (final Sku sku : skus) {
-      builder.addSku(SkuTransfer.transferToSkuInfo(sku));
+    if (skus != null) {
+      for (final Sku sku : skus) {
+        builder.addSku(SkuTransfer.transferToGrpcSku(sku));
+      }
     }
-    for (final Feature feature : product.getFeatures()) {
-      builder.addFeature(FeatureTransfer.transferToFeatureInfo(feature));
+    if (product.getFeatures() != null) {
+      for (final Feature feature : product.getFeatures()) {
+        builder.addFeature(FeatureTransfer.transferToFeatureInfo(feature));
+      }
     }
-    for (final AttributeValue attributeValue : product.getAttributeValues()) {
-      builder.addAttribute(AttributeTransfer.transferToAttributeInfo(attributeValue));
+    if (product.getAttributeValues() != null) {
+      for (final AttributeValue attributeValue : product.getAttributeValues()) {
+        builder.addAttribute(AttributeTransfer.transferToAttributeInfo(attributeValue));
+      }
     }
 
     return builder.build();
@@ -62,8 +68,10 @@ public final class ProductTransfer {
   public static ProductBriefList transferToProductBriefList(List<Product> products) {
     final ProductBriefList.Builder builder = ProductBriefList.newBuilder();
 
-    for (final Product product : products) {
-      builder.addProductBrief(transferToGrpcProductBrief(product));
+    if (products != null) {
+      for (final Product product : products) {
+        builder.addProductBrief(transferToGrpcProductBrief(product));
+      }
     }
 
     return builder.build();

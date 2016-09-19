@@ -3,6 +3,7 @@ package io.reactivesw.catelog.service;
 import io.reactivesw.catelog.domain.Category;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is service interface for category.
@@ -32,7 +33,7 @@ public interface CategoryService {
    * 
    * @return list of categories.
    */
-  List<Category> findAllTopCategories();
+  Set<Category> findAllTopCategories();
 
   /**
    * find a category by it's id.
