@@ -24,7 +24,6 @@ class CategoryServiceTest extends Specification{
     savedCategory.setCreateTime(new Date());
     savedCategory.setLastModifiedTime(new Date());
     savedCategory.setDisplayOrder(0);
-    savedCategory.setDisplayed(true);
     savedCategory.setDepth(0);
 
     allCategories.add(savedCategory);
@@ -46,7 +45,6 @@ class CategoryServiceTest extends Specification{
     category.setCreateTime(new Date());
     category.setLastModifiedTime(new Date());
     category.setDisplayOrder(0);
-    category.setDisplayed(true);
     category.setDepth(0);
 
     when: "save category"

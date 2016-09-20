@@ -27,7 +27,6 @@ class CategoryTransferTest extends Specification {
     category.setCreateTime(new Date());
     category.setLastModifiedTime(new Date());
     category.setDisplayOrder(0);
-    category.setDisplayed(true);
     category.setDepth(0);
 
     firstSubCategory.setId(2002L);
@@ -36,7 +35,6 @@ class CategoryTransferTest extends Specification {
     firstSubCategory.setCreateTime(new Date());
     firstSubCategory.setLastModifiedTime(new Date());
     firstSubCategory.setDisplayOrder(0);
-    firstSubCategory.setDisplayed(true);
     firstSubCategory.setDepth(category.getDepth() + 1);
 
     grandsonCategory.setId(3001L);
@@ -45,7 +43,6 @@ class CategoryTransferTest extends Specification {
     grandsonCategory.setCreateTime(new Date());
     grandsonCategory.setLastModifiedTime(new Date());
     grandsonCategory.setDisplayOrder(0);
-    grandsonCategory.setDisplayed(true);
     grandsonCategory.setDepth(firstSubCategory.getDepth() + 1);
 
     grandsonCategorys = new HashSet<Category>();
@@ -57,7 +54,6 @@ class CategoryTransferTest extends Specification {
     secondSubCategory.setCreateTime(new Date());
     secondSubCategory.setLastModifiedTime(new Date());
     secondSubCategory.setDisplayOrder(1);
-    secondSubCategory.setDisplayed(true);
     secondSubCategory.setDepth(category.getDepth() + 1);
 
     subCategories = new HashSet<Category>();
