@@ -56,12 +56,6 @@ public class Category implements Serializable {
   private int displayOrder;
 
   /**
-   * is displayed.
-   */
-  @Column(name = "displayed")
-  private boolean displayed;
-
-  /**
    * depth for category.
    */
   @Column(name = "depth")
@@ -166,24 +160,6 @@ public class Category implements Serializable {
   }
 
   /**
-   * get displayed.
-   * 
-   * @return displayed.
-   */
-  public boolean isDisplayed() {
-    return displayed;
-  }
-
-  /**
-   * set displayed.
-   * 
-   * @param displayed displayed.
-   */
-  public void setDisplayed(boolean displayed) {
-    this.displayed = displayed;
-  }
-
-  /**
    * get depth.
    * 
    * @return depth.
@@ -278,7 +254,7 @@ public class Category implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, displayOrder, depth, displayed);
+    return Objects.hash(id, name, description, displayOrder, depth);
   }
 
   /**
@@ -293,8 +269,7 @@ public class Category implements Serializable {
       final Category other = (Category) obj;
       equalsResult = Objects.equals(id, other.id) && Objects.equals(name, other.name)
           && Objects.equals(description, other.description)
-          && Objects.equals(displayOrder, other.displayOrder) && Objects.equals(depth, other.depth)
-          && Objects.equals(displayed, other.displayed);
+          && Objects.equals(displayOrder, other.displayOrder) && Objects.equals(depth, other.depth);
     }
     return equalsResult;
   }
