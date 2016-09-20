@@ -88,7 +88,7 @@ public final class ProductTransfer {
   public static GrpcProductBrief transferToGrpcProductBrief(Product product) {
     final GrpcProductBrief.Builder builder = GrpcProductBrief.newBuilder();
 
-    final Sku defaultSku = product.getSkus().iterator().next();
+    final Sku defaultSku = product.getDefaultSku();
     final Media defaultMedia = defaultSku.getMedias().iterator().next();
 
     builder.setId(product.getId());
