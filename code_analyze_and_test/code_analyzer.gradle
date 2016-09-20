@@ -18,7 +18,7 @@ checkstyle{
   configFile = 'code_analyze_and_test/config/checkstyle/checkstyle.xml' as File
   //exclude the package you do not want to check
   checkstyleMain.exclude 'com/google/protobuf/*',
-      'io/reactivesw/catelog/infrastructure/*'
+      'io/reactivesw/catalog/infrastructure/*'
 }
 
 /*************PMD(Project Manager Design)***************/
@@ -30,7 +30,7 @@ pmd  {
   sourceSets = [sourceSets.main]
 }
 tasks.withType(Pmd) {  //exclude the package you do not want to check
-  exclude 'com/google/protobuf/*', 'io/reactivesw/catelog/infrastructure/*','io/reactivesw/catelog/Application.java'}
+  exclude 'com/google/protobuf/*', 'io/reactivesw/catalog/infrastructure/*','io/reactivesw/catalog/Application.java'}
 
 
 /*************find bug***************/
@@ -43,7 +43,7 @@ findbugs {
 tasks.withType(FindBugs) {
   //exclude the package you do not want to check
   classes = classes.filter {
-    !it.path.contains('io/reactivesw/catelog/infrastructure/')
+    !it.path.contains('io/reactivesw/catalog/infrastructure/')
   }
   classes = classes.filter {
     !it.path.contains('com/google/protobuf/')

@@ -7,8 +7,8 @@ jacocoTestReport {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
                 'com/google/protobuf/*',
-                'io/reactivesw/catelog/infrastructure/*',
-                'io/reactivesw/catelog/*.java'
+                'io/reactivesw/catalog/infrastructure/*',
+                'io/reactivesw/catalog/*.java'
             ])
         })
     }
