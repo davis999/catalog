@@ -186,10 +186,10 @@ public  final class GrpcCategory extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 4;
+  public static final int DISPLAY_ORDER_FIELD_NUMBER = 4;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 4;</code>
+   * <code>optional int32 display_order = 4;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
@@ -325,7 +325,7 @@ public  final class GrpcCategory extends
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
+    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     if (getSubCategoryCount() > 0) {
       hash = (37 * hash) + SUB_CATEGORY_FIELD_NUMBER;
@@ -754,13 +754,13 @@ public  final class GrpcCategory extends
 
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -769,7 +769,7 @@ public  final class GrpcCategory extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 4;</code>
+     * <code>optional int32 display_order = 4;</code>
      */
     public Builder clearDisplayOrder() {
       

@@ -20,7 +20,7 @@ message GrpcCategory {
   int64 id = 1;
   string name = 2;
   string description = 3;
-  int32 displayOrder = 4;
+  int32 display_order = 4;
   repeated GrpcCategory sub_category = 5;
 }
 

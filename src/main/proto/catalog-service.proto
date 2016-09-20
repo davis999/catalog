@@ -14,6 +14,11 @@ import "catalog-message.proto";
 service CategoryService {
   //query all categories and subcategories.
   rpc getCategories (google.protobuf.Empty) returns (CategoryList);
+
+  //get a category detail.
+  rpc getCategoryById (google.protobuf.Int64Value) returns(GrpcCategory);
+
+
 }
 
 /**

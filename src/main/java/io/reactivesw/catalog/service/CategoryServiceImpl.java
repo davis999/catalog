@@ -92,6 +92,11 @@ public class CategoryServiceImpl implements CategoryService {
    */
   @Override
   public Category findCategoryById(long id) {
-    return categoryRepository.findOne(id);
+    final Category category = categoryRepository.findOne(id);
+    if (category == null) {
+      LOG.debug("find category by id fail, not such category with id {}", id);
+      throw new CatalogRuntimeException();
+    }
+    return category;
   }
 }

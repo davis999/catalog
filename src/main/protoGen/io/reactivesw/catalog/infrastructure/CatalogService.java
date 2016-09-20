@@ -20,17 +20,19 @@ public final class CatalogService {
       "\n\025catalog-service.proto\022$io.reactivesw.c" +
       "atalog.infrastructure\032\033google/protobuf/e" +
       "mpty.proto\032\036google/protobuf/wrappers.pro" +
-      "to\032\025catalog-message.proto2n\n\017CategorySer" +
-      "vice\022[\n\rgetCategories\022\026.google.protobuf." +
-      "Empty\0322.io.reactivesw.catalog.infrastruc" +
-      "ture.CategoryList2\342\001\n\016ProductService\022l\n\025" +
-      "getProductsByCategory\022\033.google.protobuf." +
-      "Int64Value\0326.io.reactivesw.catalog.infra" +
-      "structure.ProductBriefList\022b\n\020getProduct",
-      "Detial\022\033.google.protobuf.Int64Value\0321.io" +
-      ".reactivesw.catalog.infrastructure.GrpcP" +
-      "roductB(\n$io.reactivesw.catalog.infrastr" +
-      "uctureP\001b\006proto3"
+      "to\032\025catalog-message.proto2\322\001\n\017CategorySe" +
+      "rvice\022[\n\rgetCategories\022\026.google.protobuf" +
+      ".Empty\0322.io.reactivesw.catalog.infrastru" +
+      "cture.CategoryList\022b\n\017getCategoryById\022\033." +
+      "google.protobuf.Int64Value\0322.io.reactive" +
+      "sw.catalog.infrastructure.GrpcCategory2\342" +
+      "\001\n\016ProductService\022l\n\025getProductsByCatego",
+      "ry\022\033.google.protobuf.Int64Value\0326.io.rea" +
+      "ctivesw.catalog.infrastructure.ProductBr" +
+      "iefList\022b\n\020getProductDetial\022\033.google.pro" +
+      "tobuf.Int64Value\0321.io.reactivesw.catalog" +
+      ".infrastructure.GrpcProductB(\n$io.reacti" +
+      "vesw.catalog.infrastructureP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

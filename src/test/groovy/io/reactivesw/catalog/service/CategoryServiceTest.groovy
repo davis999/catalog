@@ -1,6 +1,9 @@
 package io.reactivesw.catalog.service
 
+import io.reactivesw.catalog.exception.CatalogRuntimeException
 import io.reactivesw.catalog.repository.CategoryRepository
+import javafx.beans.binding.When
+import org.mockito.internal.matchers.Null
 
 import java.util.List
 
@@ -29,11 +32,9 @@ class CategoryServiceTest extends Specification{
     allCategories.add(savedCategory);
     categorySet.add(savedCategory);
 
-    categoryRepository.save(_) >> savedCategory;
-    categoryRepository.findOne(_) >> savedCategory;
+    categoryRepository.save(_) >> savedCategory
     categoryRepository.findCategoryByName(_) >> categorySet;
-    categoryRepository.findAll() >> allCategories;
-    categoryRepository.findCategoryByDepth(_) >> categorySet;
+    categoryRepository.findAll() >> allCategories
     categoryService.categoryRepository = categoryRepository;
   }
 
@@ -55,10 +56,25 @@ class CategoryServiceTest extends Specification{
   }
 
   def "test find a category by id"(){
+    given:
+    categoryRepository.findOne(_) >> savedCategory;
+
     when:
     Category category = categoryService.findCategoryById(10086L);
     then:
     category == savedCategory
+    category.getId() == savedCategory.getId()
+  }
+
+  def "test find a category by id and no result"(){
+    given:
+    categoryRepository.findOne(_) >> null
+
+    when:
+    categoryService.findCategoryById(10086L)
+
+    then:
+    thrown(CatalogRuntimeException)
   }
   
   def "test find a category by name"(){
@@ -70,11 +86,35 @@ class CategoryServiceTest extends Specification{
   }
 
   def "test find top categories"(){
+    given:
+    categoryRepository.findCategoryByDepth(_) >> categorySet;
     when:
     Set<Category> categories = categoryService.findAllTopCategories();
     then:
     categories == categorySet;
     categories.size() == categorySet.size()
+  }
+
+  def "test find top categories and no result"(){
+    given:
+    categoryRepository.findCategoryByDepth(_) >> null
+
+    when:
+    categoryService.findAllTopCategories();
+
+    then:
+    thrown(CatalogRuntimeException)
+   }
+
+  def "test find top categories and get empty set"(){
+    given:
+    categoryRepository.findCategoryByDepth(_) >> new HashSet<Category>()
+
+    when:
+    categoryService.findAllTopCategories();
+
+    then:
+    thrown(CatalogRuntimeException)
   }
   
   def "test find all categories"(){

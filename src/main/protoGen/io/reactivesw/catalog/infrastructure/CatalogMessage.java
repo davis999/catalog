@@ -75,49 +75,49 @@ public final class CatalogMessage {
       "\n\025catalog-message.proto\022$io.reactivesw.c" +
       "atalog.infrastructure\"T\n\014CategoryList\022D\n" +
       "\010category\030\001 \003(\01322.io.reactivesw.catalog." +
-      "infrastructure.GrpcCategory\"\235\001\n\014GrpcCate" +
+      "infrastructure.GrpcCategory\"\236\001\n\014GrpcCate" +
       "gory\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descri" +
-      "ption\030\003 \001(\t\022\024\n\014displayOrder\030\004 \001(\005\022H\n\014sub" +
-      "_category\030\005 \003(\01322.io.reactivesw.catalog." +
-      "infrastructure.GrpcCategory\"a\n\020ProductBr" +
-      "iefList\022M\n\rproduct_brief\030\001 \003(\01326.io.reac" +
-      "tivesw.catalog.infrastructure.GrpcProduc",
-      "tBrief\"e\n\020GrpcProductBrief\022\n\n\002id\030\001 \001(\003\022\014" +
-      "\n\004name\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022\025\n\rdisplay_o" +
-      "rder\030\004 \001(\005\022\021\n\tmedia_URL\030\005 \001(\t\"r\n\rGrpcAtt" +
-      "ribute\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013desc" +
-      "ription\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\014\n\004type\030\005 \001" +
-      "(\t\022\025\n\rdisplay_order\030\006 \001(\005\"S\n\013GrpcFeature" +
-      "\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descriptio" +
-      "n\030\003 \001(\t\022\025\n\rdisplay_order\030\004 \001(\005\"\\\n\020GrpcVa" +
-      "riantValue\022\n\n\002id\030\001 \001(\003\022\r\n\005value\030\002 \001(\t\022\024\n" +
-      "\014displayOrder\030\003 \001(\005\022\027\n\017priceAdjustment\030\004",
-      " \001(\t\"\215\001\n\013GrpcVariant\022\n\n\002id\030\001 \001(\003\022\014\n\004name" +
-      "\030\002 \001(\t\022\025\n\rdisplay_order\030\003 \001(\005\022M\n\rvariant" +
-      "_value\030\004 \003(\01326.io.reactivesw.catalog.inf" +
-      "rastructure.GrpcVariantValue\"X\n\tGrpcMedi" +
-      "a\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\t\022\r\n\005title\030\003 \001" +
-      "(\t\022\013\n\003url\030\004 \001(\t\022\025\n\rdisplay_order\030\005 \001(\005\"\376" +
-      "\001\n\007GrpcSku\022\n\n\002id\030\001 \001(\003\022\021\n\tskuNumber\030\002 \001(" +
-      "\t\022\020\n\010isActive\030\003 \001(\010\022\017\n\007quatity\030\004 \001(\005\022\013\n\003" +
-      "upc\030\005 \001(\t\022\025\n\rdisplay_order\030\006 \001(\005\022>\n\005medi" +
-      "a\030\007 \003(\0132/.io.reactivesw.catalog.infrastr",
-      "ucture.GrpcMedia\022M\n\rvariant_value\030\010 \003(\0132" +
-      "6.io.reactivesw.catalog.infrastructure.G" +
-      "rpcVariantValue\"\326\003\n\013GrpcProduct\022\n\n\002id\030\001 " +
-      "\001(\003\022\024\n\014manufacturer\030\002 \001(\t\022\r\n\005brand\030\003 \001(\t" +
-      "\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005price\030\006" +
-      " \001(\t\022\025\n\rdisplay_order\030\007 \001(\005\022\023\n\013descripti" +
-      "on\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022\021\n\tdisplayed\030\n " +
-      "\001(\010\022\017\n\007deleted\030\013 \001(\010\022F\n\tattribute\030\014 \003(\0132" +
-      "3.io.reactivesw.catalog.infrastructure.G" +
-      "rpcAttribute\022:\n\003sku\030\r \003(\0132-.io.reactives",
-      "w.catalog.infrastructure.GrpcSku\022B\n\007vari" +
-      "ant\030\016 \003(\01321.io.reactivesw.catalog.infras" +
-      "tructure.GrpcVariant\022B\n\007feature\030\017 \003(\01321." +
-      "io.reactivesw.catalog.infrastructure.Grp" +
-      "cFeatureB+\n$io.reactivesw.catalog.infras" +
-      "tructureP\001\240\001\001b\006proto3"
+      "ption\030\003 \001(\t\022\025\n\rdisplay_order\030\004 \001(\005\022H\n\014su" +
+      "b_category\030\005 \003(\01322.io.reactivesw.catalog" +
+      ".infrastructure.GrpcCategory\"a\n\020ProductB" +
+      "riefList\022M\n\rproduct_brief\030\001 \003(\01326.io.rea" +
+      "ctivesw.catalog.infrastructure.GrpcProdu",
+      "ctBrief\"e\n\020GrpcProductBrief\022\n\n\002id\030\001 \001(\003\022" +
+      "\014\n\004name\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022\025\n\rdisplay_" +
+      "order\030\004 \001(\005\022\021\n\tmedia_URL\030\005 \001(\t\"r\n\rGrpcAt" +
+      "tribute\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\014\n\004type\030\005 " +
+      "\001(\t\022\025\n\rdisplay_order\030\006 \001(\005\"S\n\013GrpcFeatur" +
+      "e\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descripti" +
+      "on\030\003 \001(\t\022\025\n\rdisplay_order\030\004 \001(\005\"\\\n\020GrpcV" +
+      "ariantValue\022\n\n\002id\030\001 \001(\003\022\r\n\005value\030\002 \001(\t\022\024" +
+      "\n\014displayOrder\030\003 \001(\005\022\027\n\017priceAdjustment\030",
+      "\004 \001(\t\"\215\001\n\013GrpcVariant\022\n\n\002id\030\001 \001(\003\022\014\n\004nam" +
+      "e\030\002 \001(\t\022\025\n\rdisplay_order\030\003 \001(\005\022M\n\rvarian" +
+      "t_value\030\004 \003(\01326.io.reactivesw.catalog.in" +
+      "frastructure.GrpcVariantValue\"X\n\tGrpcMed" +
+      "ia\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\t\022\r\n\005title\030\003 " +
+      "\001(\t\022\013\n\003url\030\004 \001(\t\022\025\n\rdisplay_order\030\005 \001(\005\"" +
+      "\376\001\n\007GrpcSku\022\n\n\002id\030\001 \001(\003\022\021\n\tskuNumber\030\002 \001" +
+      "(\t\022\020\n\010isActive\030\003 \001(\010\022\017\n\007quatity\030\004 \001(\005\022\013\n" +
+      "\003upc\030\005 \001(\t\022\025\n\rdisplay_order\030\006 \001(\005\022>\n\005med" +
+      "ia\030\007 \003(\0132/.io.reactivesw.catalog.infrast",
+      "ructure.GrpcMedia\022M\n\rvariant_value\030\010 \003(\013" +
+      "26.io.reactivesw.catalog.infrastructure." +
+      "GrpcVariantValue\"\326\003\n\013GrpcProduct\022\n\n\002id\030\001" +
+      " \001(\003\022\024\n\014manufacturer\030\002 \001(\t\022\r\n\005brand\030\003 \001(" +
+      "\t\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005price\030" +
+      "\006 \001(\t\022\025\n\rdisplay_order\030\007 \001(\005\022\023\n\013descript" +
+      "ion\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022\021\n\tdisplayed\030\n" +
+      " \001(\010\022\017\n\007deleted\030\013 \001(\010\022F\n\tattribute\030\014 \003(\013" +
+      "23.io.reactivesw.catalog.infrastructure." +
+      "GrpcAttribute\022:\n\003sku\030\r \003(\0132-.io.reactive",
+      "sw.catalog.infrastructure.GrpcSku\022B\n\007var" +
+      "iant\030\016 \003(\01321.io.reactivesw.catalog.infra" +
+      "structure.GrpcVariant\022B\n\007feature\030\017 \003(\01321" +
+      ".io.reactivesw.catalog.infrastructure.Gr" +
+      "pcFeatureB+\n$io.reactivesw.catalog.infra" +
+      "structureP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

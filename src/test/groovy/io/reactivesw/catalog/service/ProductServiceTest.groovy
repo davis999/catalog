@@ -1,5 +1,6 @@
 package io.reactivesw.catalog.service
 
+import io.reactivesw.catalog.exception.CatalogRuntimeException
 import io.reactivesw.catalog.service.ProductServiceImpl;
 import io.reactivesw.catalog.domain.Product;
 import io.reactivesw.catalog.repository.ProductRepository;
@@ -19,23 +20,57 @@ class ProductServiceTest extends Specification{
 
   def setup(){
     allPoducts.add(savedProduct);
-
-    productRepository.findOne(_) >> savedProduct
-    productRepository.findProductByCategoryId(_) >> allPoducts
     productService.productRepository = productRepository
   }
 
   def "test query product by id"(){
+    given:
+    productRepository.findOne(_) >> savedProduct
     when:
     Product product = productService.queryProductById(10086L)
     then:
     product == savedProduct
   }
 
+  def "test query product by id and no result"(){
+    given:
+    productRepository.findOne(_) >> null
+
+    when:
+    productService.queryProductById(10086L)
+
+    then:
+    thrown(CatalogRuntimeException)
+  }
+
   def "test query product by category id"(){
+    given:
+    productRepository.findProductByCategoryId(_) >> allPoducts
     when:
     List<Product> products = productService.queryProductsByCategoryId(10086L)
     then:
     products == allPoducts
+  }
+
+  def "test query product by category id and get null result"(){
+    given:
+    productRepository.findProductByCategoryId(_) >> null
+
+    when:
+    productService.queryProductsByCategoryId(10086L)
+
+    then:
+    thrown(CatalogRuntimeException)
+  }
+
+  def "test query product by category id and get empty list"(){
+    given:
+    productRepository.findProductByCategoryId(_) >> new ArrayList<Product>()
+
+    when:
+    productService.queryProductsByCategoryId(10086L)
+
+    then:
+    thrown(CatalogRuntimeException)
   }
 }
