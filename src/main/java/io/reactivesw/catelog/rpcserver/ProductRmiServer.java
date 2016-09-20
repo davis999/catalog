@@ -46,7 +46,7 @@ public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase 
   @Override
   public void getProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
     final long productId = request.getValue();
-    LOG.debug("enter queryProductDetial, product id is {}", productId);
+    LOG.info("enter queryProductDetial, product id is {}", productId);
     final Product product = productService.queryProductById(productId);
     if (product == null) {
       LOG.error("product is null, query id is {}", productId);
@@ -57,7 +57,7 @@ public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase 
     final GrpcProduct reply = ProductTransfer.transferToGrpcProduct(product);
 
     GrpcResponseUtil.completeResponse(responseObserver, reply);
-    LOG.info("end queryProductDetial.");
+    LOG.info("end queryProductDetial, product is {}.", product.toString());
   }
 
   /**
@@ -67,7 +67,7 @@ public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase 
   public void getProductsByCategory(Int64Value request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
-    LOG.debug("enter queryProductsByCategory, category id is {}", categoryId);
+    LOG.info("enter queryProductsByCategory, category id is {}", categoryId);
     final List<Product> products = productService.queryProductsByCategoryId(categoryId);
     if (products == null) {
       LOG.debug("cann't query product by category id {}", categoryId);
@@ -77,6 +77,6 @@ public class ProductRmiServer extends ProductServiceGrpc.ProductServiceImplBase 
     final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
 
     GrpcResponseUtil.completeResponse(responseObserver, reply);
-    LOG.debug("end queryProductsByCategory");
+    LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
   }
 }

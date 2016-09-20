@@ -28,7 +28,6 @@ import java.util.Set;
 @GRpcService
 public class CategoryRmiServer extends CategoryServiceGrpc.CategoryServiceImplBase {
 
-
   /**
    * log.
    */
@@ -45,7 +44,7 @@ public class CategoryRmiServer extends CategoryServiceGrpc.CategoryServiceImplBa
    */
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
-    LOG.debug("enter getCategories.");
+    LOG.info("enter getCategories.");
     final Set<Category> categories = categoryService.findAllTopCategories();
     if (categories == null) {
       LOG.debug("query top categories fail, result is null");
@@ -57,6 +56,6 @@ public class CategoryRmiServer extends CategoryServiceGrpc.CategoryServiceImplBa
     final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
 
     GrpcResponseUtil.completeResponse(responseObserver, reply);
-    LOG.debug("end getCategories.");
+    LOG.info("end getCategories.get {} categories", reply.getCategoryCount());
   }
 }
