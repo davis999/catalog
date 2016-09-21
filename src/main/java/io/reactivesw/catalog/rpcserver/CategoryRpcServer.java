@@ -24,9 +24,8 @@ import java.util.Set;
 
 /**
  * this is gRPC server for catelog.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @GRpcService
 public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBase {
@@ -63,7 +62,8 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
 
   /**
    * get a category by it's id.
-   * @param request request from client
+   *
+   * @param request          request from client
    * @param responseObserver response to client
    */
   @Override
@@ -74,11 +74,11 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
       final Category category = categoryService.findCategoryById(categoryId);
       final GrpcCategory reply = CategoryTransfer.transferToCategoryInfo(category);
       GrpcResponseUtil.completeResponse(responseObserver, reply);
-      LOG.info("end getCategoryById, get the category: {}", reply.toString() );
+      LOG.info("end getCategoryById, get the category: {}", reply.toString());
     } catch (CatalogRuntimeException exception) {
       LOG.error("query fail, category with id {} is not exist.", categoryId);
       final Status status =
-              Status.NOT_FOUND.withDescription("query category fail, ID is not exist");
+          Status.NOT_FOUND.withDescription("query category fail, ID is not exist");
       throw new StatusRuntimeException(status);
     }
   }

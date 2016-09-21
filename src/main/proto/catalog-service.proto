@@ -18,7 +18,6 @@ service CategoryService {
   //get a category detail.
   rpc getCategoryById (google.protobuf.Int64Value) returns(GrpcCategory);
 
-
 }
 
 /**
