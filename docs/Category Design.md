@@ -14,7 +14,7 @@ Category
   深度，顶层为0，子category在父category的depth上＋1.
 * createdTime - DateTime
   数据库记录创建时间。
-* lastModifiedTime - DateTime
+* modifiedTime - DateTime
   数据库记录修改时间。
 * subCategories - Reference to Category - Optional
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package io.reactivesw.catalog.infrastructure;
 
-option java_package = "io.reactivesw.catalog.infrastructure";
+option java_package = "io.reactivesw.catalog.grpc";
 option java_multiple_files = true;
 option java_generate_equals_and_hash = true;
 
@@ -119,3 +119,4 @@ message GrpcProduct {
     repeated GrpcVariant variant = 14;
     repeated GrpcFeature feature = 15;
 }
+

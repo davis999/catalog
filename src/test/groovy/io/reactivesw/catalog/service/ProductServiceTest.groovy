@@ -1,13 +1,9 @@
 package io.reactivesw.catalog.service
 
-import io.reactivesw.catalog.exception.CatalogRuntimeException
-import io.reactivesw.catalog.service.ProductServiceImpl;
-import io.reactivesw.catalog.domain.Product;
-import io.reactivesw.catalog.repository.ProductRepository;
-
-import java.util.List;
-import java.util.Set;
-
+import io.reactivesw.catalog.domain.service.ProductServiceImpl
+import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException
+import io.reactivesw.catalog.domain.entity.Product;
+import io.reactivesw.catalog.infrastructure.repository.ProductRepository
 import spock.lang.Specification;
 
 class ProductServiceTest extends Specification{
