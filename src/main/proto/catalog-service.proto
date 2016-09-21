@@ -12,22 +12,25 @@ import "catalog-message.proto";
  * define catelog rpc service.
  */
 service CategoryService {
-  //query all categories and subcategories.
-  rpc getCategories (google.protobuf.Empty) returns (CategoryList);
+    //query all categories and subcategories.
+    rpc getCategories (google.protobuf.Empty) returns (CategoryList);
 
-  //get a category detail.
-  rpc getCategoryById (google.protobuf.Int64Value) returns(GrpcCategory);
+    //get a category detail.
+    rpc getCategoryById (google.protobuf.Int64Value) returns (GrpcCategory);
 
+    //add a category.
+    rpc saveCategory (CategoryDraft) returns (GrpcCategory);
+
+    rpc 
 }
 
 /**
  *  product rpc service.
  */
-service ProductService{
-  //query all products by id of category
-  rpc getProductsByCategory (google.protobuf.Int64Value) returns
-  (ProductBriefList);
+service ProductService {
+    //query all products by id of category
+    rpc getProductsByCategory (google.protobuf.Int64Value) returns (ProductBriefList);
 
-  //query product's detail by id of product
-  rpc getProductDetial (google.protobuf.Int64Value) returns (GrpcProduct);
+    //query product's detail by id of product
+    rpc getProductDetial (google.protobuf.Int64Value) returns (GrpcProduct);
 }

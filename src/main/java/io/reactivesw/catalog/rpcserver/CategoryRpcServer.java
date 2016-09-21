@@ -10,6 +10,7 @@ import io.reactivesw.catalog.common.GrpcResponseUtil;
 import io.reactivesw.catalog.domain.Category;
 import io.reactivesw.catalog.dto.CategoryTransfer;
 import io.reactivesw.catalog.exception.CatalogRuntimeException;
+import io.reactivesw.catalog.infrastructure.CategoryDraft;
 import io.reactivesw.catalog.infrastructure.CategoryList;
 import io.reactivesw.catalog.infrastructure.CategoryServiceGrpc;
 import io.reactivesw.catalog.infrastructure.GrpcCategory;
@@ -81,5 +82,15 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
           Status.NOT_FOUND.withDescription("query category fail, ID is not exist");
       throw new StatusRuntimeException(status);
     }
+  }
+
+  @Override
+  public void saveCategory(CategoryDraft request, StreamObserver<GrpcCategory> responseObserver) {
+    final String name = request.getName();
+    final String description = request.getDescription();
+    final int displayOrder = request.getDisplayOrder();
+    final long parantId = request.getParentId();
+
+
   }
 }

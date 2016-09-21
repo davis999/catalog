@@ -19,6 +19,11 @@ public final class CatalogMessage {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_reactivesw_catalog_infrastructure_CategoryDraft_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_io_reactivesw_catalog_infrastructure_CategoryDraft_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -79,45 +84,47 @@ public final class CatalogMessage {
       "gory\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descri" +
       "ption\030\003 \001(\t\022\025\n\rdisplay_order\030\004 \001(\005\022H\n\014su" +
       "b_category\030\005 \003(\01322.io.reactivesw.catalog" +
-      ".infrastructure.GrpcCategory\"a\n\020ProductB" +
-      "riefList\022M\n\rproduct_brief\030\001 \003(\01326.io.rea" +
-      "ctivesw.catalog.infrastructure.GrpcProdu",
-      "ctBrief\"e\n\020GrpcProductBrief\022\n\n\002id\030\001 \001(\003\022" +
-      "\014\n\004name\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022\025\n\rdisplay_" +
-      "order\030\004 \001(\005\022\021\n\tmedia_URL\030\005 \001(\t\"r\n\rGrpcAt" +
-      "tribute\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013des" +
-      "cription\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\014\n\004type\030\005 " +
-      "\001(\t\022\025\n\rdisplay_order\030\006 \001(\005\"S\n\013GrpcFeatur" +
-      "e\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013descripti" +
-      "on\030\003 \001(\t\022\025\n\rdisplay_order\030\004 \001(\005\"\\\n\020GrpcV" +
-      "ariantValue\022\n\n\002id\030\001 \001(\003\022\r\n\005value\030\002 \001(\t\022\024" +
-      "\n\014displayOrder\030\003 \001(\005\022\027\n\017priceAdjustment\030",
-      "\004 \001(\t\"\215\001\n\013GrpcVariant\022\n\n\002id\030\001 \001(\003\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\025\n\rdisplay_order\030\003 \001(\005\022M\n\rvarian" +
-      "t_value\030\004 \003(\01326.io.reactivesw.catalog.in" +
-      "frastructure.GrpcVariantValue\"X\n\tGrpcMed" +
-      "ia\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\t\022\r\n\005title\030\003 " +
-      "\001(\t\022\013\n\003url\030\004 \001(\t\022\025\n\rdisplay_order\030\005 \001(\005\"" +
-      "\376\001\n\007GrpcSku\022\n\n\002id\030\001 \001(\003\022\021\n\tskuNumber\030\002 \001" +
-      "(\t\022\020\n\010isActive\030\003 \001(\010\022\017\n\007quatity\030\004 \001(\005\022\013\n" +
-      "\003upc\030\005 \001(\t\022\025\n\rdisplay_order\030\006 \001(\005\022>\n\005med" +
-      "ia\030\007 \003(\0132/.io.reactivesw.catalog.infrast",
-      "ructure.GrpcMedia\022M\n\rvariant_value\030\010 \003(\013" +
-      "26.io.reactivesw.catalog.infrastructure." +
-      "GrpcVariantValue\"\326\003\n\013GrpcProduct\022\n\n\002id\030\001" +
-      " \001(\003\022\024\n\014manufacturer\030\002 \001(\t\022\r\n\005brand\030\003 \001(" +
-      "\t\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005price\030" +
-      "\006 \001(\t\022\025\n\rdisplay_order\030\007 \001(\005\022\023\n\013descript" +
-      "ion\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022\021\n\tdisplayed\030\n" +
-      " \001(\010\022\017\n\007deleted\030\013 \001(\010\022F\n\tattribute\030\014 \003(\013" +
-      "23.io.reactivesw.catalog.infrastructure." +
-      "GrpcAttribute\022:\n\003sku\030\r \003(\0132-.io.reactive",
-      "sw.catalog.infrastructure.GrpcSku\022B\n\007var" +
-      "iant\030\016 \003(\01321.io.reactivesw.catalog.infra" +
-      "structure.GrpcVariant\022B\n\007feature\030\017 \003(\01321" +
-      ".io.reactivesw.catalog.infrastructure.Gr" +
-      "pcFeatureB+\n$io.reactivesw.catalog.infra" +
-      "structureP\001\240\001\001b\006proto3"
+      ".infrastructure.GrpcCategory\"\\\n\rCategory" +
+      "Draft\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t" +
+      "\022\025\n\rdisplay_order\030\003 \001(\005\022\021\n\tparent_id\030\004 \001",
+      "(\003\"a\n\020ProductBriefList\022M\n\rproduct_brief\030" +
+      "\001 \003(\01326.io.reactivesw.catalog.infrastruc" +
+      "ture.GrpcProductBrief\"e\n\020GrpcProductBrie" +
+      "f\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005price\030\003 \001" +
+      "(\t\022\025\n\rdisplay_order\030\004 \001(\005\022\021\n\tmedia_URL\030\005" +
+      " \001(\t\"r\n\rGrpcAttribute\022\n\n\002id\030\001 \001(\003\022\014\n\004nam" +
+      "e\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005value\030\004 " +
+      "\001(\t\022\014\n\004type\030\005 \001(\t\022\025\n\rdisplay_order\030\006 \001(\005" +
+      "\"S\n\013GrpcFeature\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(" +
+      "\t\022\023\n\013description\030\003 \001(\t\022\025\n\rdisplay_order\030",
+      "\004 \001(\005\"\\\n\020GrpcVariantValue\022\n\n\002id\030\001 \001(\003\022\r\n" +
+      "\005value\030\002 \001(\t\022\024\n\014displayOrder\030\003 \001(\005\022\027\n\017pr" +
+      "iceAdjustment\030\004 \001(\t\"\215\001\n\013GrpcVariant\022\n\n\002i" +
+      "d\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\025\n\rdisplay_order\030\003" +
+      " \001(\005\022M\n\rvariant_value\030\004 \003(\01326.io.reactiv" +
+      "esw.catalog.infrastructure.GrpcVariantVa" +
+      "lue\"X\n\tGrpcMedia\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001" +
+      "(\t\022\r\n\005title\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\025\n\rdispla" +
+      "y_order\030\005 \001(\005\"\376\001\n\007GrpcSku\022\n\n\002id\030\001 \001(\003\022\021\n" +
+      "\tskuNumber\030\002 \001(\t\022\020\n\010isActive\030\003 \001(\010\022\017\n\007qu",
+      "atity\030\004 \001(\005\022\013\n\003upc\030\005 \001(\t\022\025\n\rdisplay_orde" +
+      "r\030\006 \001(\005\022>\n\005media\030\007 \003(\0132/.io.reactivesw.c" +
+      "atalog.infrastructure.GrpcMedia\022M\n\rvaria" +
+      "nt_value\030\010 \003(\01326.io.reactivesw.catalog.i" +
+      "nfrastructure.GrpcVariantValue\"\326\003\n\013GrpcP" +
+      "roduct\022\n\n\002id\030\001 \001(\003\022\024\n\014manufacturer\030\002 \001(\t" +
+      "\022\r\n\005brand\030\003 \001(\t\022\r\n\005model\030\004 \001(\t\022\014\n\004name\030\005" +
+      " \001(\t\022\r\n\005price\030\006 \001(\t\022\025\n\rdisplay_order\030\007 \001" +
+      "(\005\022\023\n\013description\030\010 \001(\t\022\016\n\006detail\030\t \001(\t\022" +
+      "\021\n\tdisplayed\030\n \001(\010\022\017\n\007deleted\030\013 \001(\010\022F\n\ta",
+      "ttribute\030\014 \003(\01323.io.reactivesw.catalog.i" +
+      "nfrastructure.GrpcAttribute\022:\n\003sku\030\r \003(\013" +
+      "2-.io.reactivesw.catalog.infrastructure." +
+      "GrpcSku\022B\n\007variant\030\016 \003(\01321.io.reactivesw" +
+      ".catalog.infrastructure.GrpcVariant\022B\n\007f" +
+      "eature\030\017 \003(\01321.io.reactivesw.catalog.inf" +
+      "rastructure.GrpcFeatureB+\n$io.reactivesw" +
+      ".catalog.infrastructureP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -143,56 +150,62 @@ public final class CatalogMessage {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", "SubCategory", });
-    internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor =
+    internal_static_io_reactivesw_catalog_infrastructure_CategoryDraft_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_io_reactivesw_catalog_infrastructure_CategoryDraft_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_io_reactivesw_catalog_infrastructure_CategoryDraft_descriptor,
+        new java.lang.String[] { "Name", "Description", "DisplayOrder", "ParentId", });
+    internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor,
         new java.lang.String[] { "ProductBrief", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_descriptor,
         new java.lang.String[] { "Id", "Name", "Price", "DisplayOrder", "MediaURL", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "Value", "Type", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor,
         new java.lang.String[] { "Id", "Value", "DisplayOrder", "PriceAdjustment", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor,
         new java.lang.String[] { "Id", "Name", "DisplayOrder", "VariantValue", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor,
         new java.lang.String[] { "Id", "Type", "Title", "Url", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor,
         new java.lang.String[] { "Id", "SkuNumber", "IsActive", "Quatity", "Upc", "DisplayOrder", "Media", "VariantValue", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor,

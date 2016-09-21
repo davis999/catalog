@@ -68,7 +68,30 @@ Exception:
 5. parent不存在，则返回信息"parent is not existed"
 6. displayOrder为负数，则返回信息"the displayOrder should be a non-negative integer "
 
-### 1.5 get all category
+### 1.5 Update Category
+#### 1.5.1 change name
+Exception：
+1. name长度错误，则返回信息"the length of name should be greater than 3 and less than 64"
+2. name为空，则返回信息"the name is null"
+3. 同一节点下name重复，则返回信息"the name is existed"
+#### 1.5.2 change description
+Exception:
+1. description过长，则返回信息"the description is too long"
+#### 1.5.3 change parent
+Exception:
+1. parent不存在，则返回信息"parent is not existed"
+#### 1.5.4 change displayOrder
+Exception:
+1. displayOrder为负数，则返回信息"the displayOrder should be a non-negative integer "
+
+### 1.6 Delete Category By ID
+method: delete
+Response Representation: message of result
+Exception:
+1. 当有product或者category与要删除的category关联，则不能直接删除category，这时会返回信息"not a null category, conn't delete'"。
+2. 如果ID不存在，则返回信息"the category is not existed"。
+
+### 1.7 get all category
 Method: Get
 Request Representation: null
 Response Representation: List of Category

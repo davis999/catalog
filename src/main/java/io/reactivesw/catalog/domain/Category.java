@@ -73,7 +73,7 @@ public class Category implements Serializable {
   @Column(name = "last_modified_time")
   private Date lastModifiedTime;
 
-  /**
+   /**
    * subcategories.
    */
   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)

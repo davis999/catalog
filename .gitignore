@@ -12,3 +12,12 @@
 hs_err_pid*
 /build/
 /.gradle/
+
+# generated files
+bin/
+
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
