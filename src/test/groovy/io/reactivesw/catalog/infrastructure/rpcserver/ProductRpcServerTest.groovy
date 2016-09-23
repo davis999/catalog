@@ -27,7 +27,7 @@ class ProductRpcServerTest extends Specification{
   def setup(){
     inputData = Int64Value.newBuilder().setValue(10086L).build()
     outputData = Mock(StreamObserver)
-    
+
     product = new Product();
     product.setId(1L);
     product.setName("product");
@@ -52,9 +52,10 @@ class ProductRpcServerTest extends Specification{
     medias.add(media);
     sku.setMedias(medias);
 
-    Set<Sku> skus = new HashSet<Sku>();
+    List<Sku> skus = new ArrayList<>();
     skus.add(sku);
-    product.setSkus(skus);
+    product.setAdditionalSkus(skus);
+    product.setDefaultSku(sku);
 
     Feature feature = new Feature();
     feature.setId(10086L);
@@ -80,7 +81,7 @@ class ProductRpcServerTest extends Specification{
 
     Set<AttributeValue> attributeValues = new HashSet<AttributeValue>();
     attributeValues.add(attributeValue);
-    product.setAttributeValues(attributeValues);
+    product.setAttributeValues(attributeValues)
   }
 
   def "test query products by category id"(){

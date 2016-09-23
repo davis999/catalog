@@ -2,7 +2,7 @@ package io.reactivesw.catalog.domain.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -77,14 +78,14 @@ public class Sku implements Serializable {
   /**
    * create time for sku.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
    * last modified time for sku.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * price for sku.
@@ -111,10 +112,18 @@ public class Sku implements Serializable {
   /**
    * product for sku.
    */
-  @ManyToOne(targetEntity = Product.class, cascade = {CascadeType.MERGE, CascadeType.REFRESH},
-      optional = false)
-  @JoinColumn(name = "product_id")
+  @ManyToOne(optional = true, targetEntity = Product.class,
+      cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+  @JoinColumn(name = "addl_product_id")
   private Product product;
+
+  /**
+   * default product.
+   * This will be non-null if and only if this Sku is the default Sku for a Product
+   */
+  @OneToOne(optional = true, targetEntity = Product.class, cascade = {CascadeType.ALL})
+  @JoinColumn(name = "default_product_id")
+  private Product defaultProduct;
 
   /**
    * get id.
@@ -261,39 +270,39 @@ public class Sku implements Serializable {
   }
 
   /**
-   * get createTime.
+   * get createdTime.
    * 
-   * @return createTime
+   * @return createdTime
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
+   * set createdTime.
    * 
-   * @param createTime createTime
+   * @param createdTime createdTime
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
+   * get modifiedTime.
    * 
-   * @return lastModifiedTime
+   * @return modifiedTime
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
+   * set modifiedTime.
    * 
-   * @param lastModifiedTime lastModifiedTime
+   * @param modifiedTime modifiedTime
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**
@@ -330,6 +339,22 @@ public class Sku implements Serializable {
    */
   public void setPrice(BigDecimal price) {
     this.price = price;
+  }
+
+  /**
+   * get defaultProduct.
+   * @return defaultProduct.
+   */
+  public Product getDefaultProduct() {
+    return defaultProduct;
+  }
+
+  /**
+   * set defaultProduct.
+   * @param defaultProduct defaultProduct.
+   */
+  public void setDefaultProduct(Product defaultProduct) {
+    this.defaultProduct = defaultProduct;
   }
 
   /**

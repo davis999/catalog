@@ -41,9 +41,10 @@ class ProductTransferTest extends Specification{
     medias.add(media);
     sku.setMedias(medias);
 
-    Set<Sku> skus = new HashSet<Sku>();
+    List<Sku> skus = new ArrayList<>();
     skus.add(sku);
-    product.setSkus(skus);
+    product.setAdditionalSkus(skus);
+    product.setDefaultSku(sku);
 
     Feature feature = new Feature();
     feature.setId(10086L);
@@ -78,10 +79,10 @@ class ProductTransferTest extends Specification{
     GrpcProductBrief grpcProductBrief = ProductTransfer.transferToGrpcProductBrief(product);
     then:
     grpcProductBrief.getId() == product.getId();
-//    grpcProductBrief.getPrice() == product.getSkus().iterator().next().getPrice().toString();
+    grpcProductBrief.getPrice() == product.getDefaultSku().getPrice().toString();
     grpcProductBrief.getName() == product.getName();
     grpcProductBrief.getDisplayOrder() == product.getDisplayOrder();
-//    grpcProductBrief.getMediaURL() == product.getSkus().iterator().next().getMedias().iterator().next().getUrl();
+    grpcProductBrief.getMediaURL() == product.getDefaultSku().getMedias().iterator().next().getUrl();
   }
 
   def "test transfer to GrpcProduct"(){
@@ -95,7 +96,7 @@ class ProductTransferTest extends Specification{
     grpcProduct.getBrand() == product.getBrand();
     grpcProduct.getDescription() == product.getDescription();
     grpcProduct.getDetail() == product.getDetail();
-    grpcProduct.getSkuCount() == product.getSkus().size();
+    grpcProduct.getSkuCount() == product.getAdditionalSkus().size();
     grpcProduct.getFeatureCount() == product.getFeatures().size();
     grpcProduct.getAttributeCount() == product.getAttributeValues().size();
   }

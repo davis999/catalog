@@ -1,7 +1,11 @@
 package io.reactivesw.catalog.domain.entity;
 
+import org.hibernate.annotations.BatchSize;
+
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -16,15 +20,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 /**
  * this is entity class for product.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_product")
@@ -109,66 +113,75 @@ public class Product implements Serializable {
   private boolean deleted;
 
   /**
-   * skus for product.
+   * additional sku.
    */
-  @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  private Set<Sku> skus;
+  @OneToMany(fetch = FetchType.EAGER, targetEntity = Sku.class,
+      mappedBy = "product", cascade = CascadeType.ALL)
+  @BatchSize(size = 50)
+  private List<Sku> additionalSkus = new ArrayList<Sku>();
+
+  /**
+   * default sku.
+   */
+  @OneToOne(targetEntity = Sku.class, cascade = {CascadeType.ALL})
+  @JoinColumn(name = "default_sku_id")
+  private Sku defaultSku;
 
   /**
    * variants for product.
    */
   @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_product_variant", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
-      inverseJoinColumns = @JoinColumn(name = "variant_id") )
+  @JoinTable(name = "sw_product_variant", joinColumns = @JoinColumn(name = PRODUCT_ID),
+      inverseJoinColumns = @JoinColumn(name = "variant_id"))
   private Set<Variant> variants;
 
   /**
    * features for product.
    */
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_product_feature", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
-      inverseJoinColumns = @JoinColumn(name = "feature_id") )
+  @JoinTable(name = "sw_product_feature", joinColumns = @JoinColumn(name = PRODUCT_ID),
+      inverseJoinColumns = @JoinColumn(name = "feature_id"))
   private Set<Feature> features;
 
   /**
    * attribute values for product.
    */
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_product_attribute_value", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
-      inverseJoinColumns = @JoinColumn(name = "attribute_value_id") )
+  @JoinTable(name = "sw_product_attribute_value", joinColumns = @JoinColumn(name = PRODUCT_ID),
+      inverseJoinColumns = @JoinColumn(name = "attribute_value_id"))
   private Set<AttributeValue> attributeValues;
 
   /**
    * template for product.
    */
   @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_product_template", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
-      inverseJoinColumns = @JoinColumn(name = "template_id") )
+  @JoinTable(name = "sw_product_template", joinColumns = @JoinColumn(name = PRODUCT_ID),
+      inverseJoinColumns = @JoinColumn(name = "template_id"))
   private Template template;
 
   /**
    * category for product.
    */
   @ManyToOne(targetEntity = Category.class)
-  @JoinTable(name = "sw_category_product", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
-      inverseJoinColumns = @JoinColumn(name = "category_id") )
+  @JoinTable(name = "sw_category_product", joinColumns = @JoinColumn(name = PRODUCT_ID),
+      inverseJoinColumns = @JoinColumn(name = "category_id"))
   private Category category;
 
   /**
    * create time for product.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
    * last modified time for product.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * get id.
-   * 
+   *
    * @return id
    */
   public long getId() {
@@ -177,7 +190,7 @@ public class Product implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id id.
    */
   public void setId(long id) {
@@ -186,7 +199,7 @@ public class Product implements Serializable {
 
   /**
    * get manufacturer.
-   * 
+   *
    * @return manufacturer
    */
   public String getManufacturer() {
@@ -195,7 +208,7 @@ public class Product implements Serializable {
 
   /**
    * set manufacturer.
-   * 
+   *
    * @param manufacturer manufacturer
    */
   public void setManufacturer(String manufacturer) {
@@ -204,7 +217,7 @@ public class Product implements Serializable {
 
   /**
    * get brand.
-   * 
+   *
    * @return brand
    */
   public String getBrand() {
@@ -213,7 +226,7 @@ public class Product implements Serializable {
 
   /**
    * set brand.
-   * 
+   *
    * @param brand brand
    */
   public void setBrand(String brand) {
@@ -222,7 +235,7 @@ public class Product implements Serializable {
 
   /**
    * get model.
-   * 
+   *
    * @return model
    */
   public String getModel() {
@@ -231,7 +244,7 @@ public class Product implements Serializable {
 
   /**
    * set model.
-   * 
+   *
    * @param model model
    */
   public void setModel(String model) {
@@ -240,7 +253,7 @@ public class Product implements Serializable {
 
   /**
    * get name.
-   * 
+   *
    * @return name
    */
   public String getName() {
@@ -249,7 +262,7 @@ public class Product implements Serializable {
 
   /**
    * set name.
-   * 
+   *
    * @param name name
    */
   public void setName(String name) {
@@ -258,7 +271,7 @@ public class Product implements Serializable {
 
   /**
    * get displayOrder.
-   * 
+   *
    * @return displayOrder
    */
   public int getDisplayOrder() {
@@ -267,7 +280,7 @@ public class Product implements Serializable {
 
   /**
    * set displayOrder.
-   * 
+   *
    * @param displayOrder displayOrder
    */
   public void setDisplayOrder(int displayOrder) {
@@ -276,7 +289,7 @@ public class Product implements Serializable {
 
   /**
    * get description.
-   * 
+   *
    * @return description
    */
   public String getDescription() {
@@ -285,7 +298,7 @@ public class Product implements Serializable {
 
   /**
    * set description.
-   * 
+   *
    * @param description description
    */
   public void setDescription(String description) {
@@ -294,7 +307,7 @@ public class Product implements Serializable {
 
   /**
    * get detail.
-   * 
+   *
    * @return detail
    */
   public String getDetail() {
@@ -303,7 +316,7 @@ public class Product implements Serializable {
 
   /**
    * set detail.
-   * 
+   *
    * @param detail detail
    */
   public void setDetail(String detail) {
@@ -312,7 +325,7 @@ public class Product implements Serializable {
 
   /**
    * get displayed.
-   * 
+   *
    * @return displayed
    */
   public boolean isDisplayed() {
@@ -321,7 +334,7 @@ public class Product implements Serializable {
 
   /**
    * set displayed.
-   * 
+   *
    * @param displayed displayed
    */
   public void setDisplayed(boolean displayed) {
@@ -330,7 +343,7 @@ public class Product implements Serializable {
 
   /**
    * get deleted.
-   * 
+   *
    * @return deleted
    */
   public boolean isDeleted() {
@@ -339,7 +352,7 @@ public class Product implements Serializable {
 
   /**
    * set deleted.
-   * 
+   *
    * @param deleted deleted
    */
   public void setDeleted(boolean deleted) {
@@ -347,26 +360,44 @@ public class Product implements Serializable {
   }
 
   /**
-   * get skus.
-   * 
-   * @return skus
+   * get addtitional skus.
+   *
+   * @return additionalSkus
    */
-  public Set<Sku> getSkus() {
-    return skus;
+  public List<Sku> getAdditionalSkus() {
+    return additionalSkus;
   }
 
   /**
-   * set skus.
-   * 
-   * @param skus skus
+   * set AdditionalSkus.
+   *
+   * @param additionalSkus additionalSkus.
    */
-  public void setSkus(Set<Sku> skus) {
-    this.skus = skus;
+  public void setAdditionalSkus(List<Sku> additionalSkus) {
+    this.additionalSkus = additionalSkus;
+  }
+
+  /**
+   * get defaultSku.
+   *
+   * @return defaultSku.
+   */
+  public Sku getDefaultSku() {
+    return defaultSku;
+  }
+
+  /**
+   * set defaultSku.
+   *
+   * @param defaultSku defaultSku.
+   */
+  public void setDefaultSku(Sku defaultSku) {
+    this.defaultSku = defaultSku;
   }
 
   /**
    * get variants.
-   * 
+   *
    * @return variants
    */
   public Set<Variant> getVariants() {
@@ -375,7 +406,7 @@ public class Product implements Serializable {
 
   /**
    * set variants.
-   * 
+   *
    * @param variants variants
    */
   public void setVariants(Set<Variant> variants) {
@@ -384,7 +415,7 @@ public class Product implements Serializable {
 
   /**
    * get features.
-   * 
+   *
    * @return features
    */
   public Set<Feature> getFeatures() {
@@ -393,7 +424,7 @@ public class Product implements Serializable {
 
   /**
    * set features.
-   * 
+   *
    * @param features features
    */
   public void setFeatures(Set<Feature> features) {
@@ -402,7 +433,7 @@ public class Product implements Serializable {
 
   /**
    * get attributeValues.
-   * 
+   *
    * @return attributeValues
    */
   public Set<AttributeValue> getAttributeValues() {
@@ -411,7 +442,7 @@ public class Product implements Serializable {
 
   /**
    * set attributeValues.
-   * 
+   *
    * @param attributeValues attributeValues
    */
   public void setAttributeValues(Set<AttributeValue> attributeValues) {
@@ -420,7 +451,7 @@ public class Product implements Serializable {
 
   /**
    * get template.
-   * 
+   *
    * @return template
    */
   public Template getTemplate() {
@@ -429,7 +460,7 @@ public class Product implements Serializable {
 
   /**
    * set template.
-   * 
+   *
    * @param template template
    */
   public void setTemplate(Template template) {
@@ -437,35 +468,35 @@ public class Product implements Serializable {
   }
 
   /**
-   * get createTime.
-   * 
-   * @return createTime
+   * get createdTime.
+   *
+   * @return createdTime
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
-   * 
-   * @param createTime createTime
+   * set createdTime.
+   *
+   * @param createdTime createdTime
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
    * get lastModifiedTiem.
-   * 
+   *
    * @return lastModifiedTiem
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
    * get category.
-   * 
+   *
    * @return the category
    */
   public Category getCategory() {
@@ -474,7 +505,7 @@ public class Product implements Serializable {
 
   /**
    * set category.
-   * 
+   *
    * @param category the category to set
    */
   public void setCategory(Category category) {
@@ -482,12 +513,12 @@ public class Product implements Serializable {
   }
 
   /**
-   * set lastModifiedTime.
-   * 
-   * @param lastModifiedTime the lastModifiedTime to set
+   * set modifiedTime.
+   *
+   * @param modifiedTime the modifiedTime to set
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**

@@ -2,6 +2,7 @@ package io.reactivesw.catalog.infrastructure.dto;
 
 import io.reactivesw.catalog.domain.entity.AttributeValue;
 import io.reactivesw.catalog.domain.entity.Feature;
+import io.reactivesw.catalog.domain.entity.Media;
 import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.grpc.GrpcProduct;
@@ -11,7 +12,6 @@ import io.reactivesw.catalog.grpc.ProductBriefList;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * this is transfer class for product.
@@ -36,11 +36,11 @@ public final class ProductTransfer {
     final ModelMapper modelMapper = new ModelMapper();
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
 
-    final Set<Sku> skus = product.getSkus();
-//    final Sku defaultSku = product.getDefaultSku();
-//    if (defaultSku != null) {
-//      builder.setPrice(defaultSku.getPrice().toString());
-//    }
+    final List<Sku> skus = product.getAdditionalSkus();
+    final Sku defaultSku = product.getDefaultSku();
+    if (defaultSku != null) {
+      builder.setPrice(defaultSku.getPrice().toString());
+    }
     if (skus != null) {
       for (final Sku sku : skus) {
         builder.addSku(SkuTransfer.transferToGrpcSku(sku));
@@ -87,14 +87,14 @@ public final class ProductTransfer {
   public static GrpcProductBrief transferToGrpcProductBrief(Product product) {
     final GrpcProductBrief.Builder builder = GrpcProductBrief.newBuilder();
 
-//    final Sku defaultSku = product.getDefaultSku();
-//    final Media defaultMedia = defaultSku.getMedias().iterator().next();
+    final Sku defaultSku = product.getDefaultSku();
+    final Media defaultMedia = defaultSku.getMedias().iterator().next();
 
     builder.setId(product.getId());
     builder.setDisplayOrder(product.getDisplayOrder());
-//    builder.setMediaURL(defaultMedia.getUrl());
+    builder.setMediaURL(defaultMedia.getUrl());
     builder.setName(product.getName());
-//    builder.setPrice(defaultSku.getPrice().toString());
+    builder.setPrice(defaultSku.getPrice().toString());
 
     return builder.build();
   }

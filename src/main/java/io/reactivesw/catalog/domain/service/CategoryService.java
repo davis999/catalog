@@ -68,8 +68,8 @@ public class CategoryService {
   /**
    * find a category by it's id.
    *
-   * @param id id
-   * @return category
+   * @param id id.
+   * @return Category category.
    */
   public Category findCategoryById(long id) {
     final Category category = categoryRepository.findOne(id);

@@ -2,7 +2,7 @@ package io.reactivesw.catalog.infrastructure.repository;
 
 import io.reactivesw.catalog.domain.entity.Media;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository("mediaRepository")
-public interface MediaRepository extends CrudRepository<Media, Long> {
+public interface MediaRepository extends JpaRepository<Media, Long> {
 
 }
