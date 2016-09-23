@@ -1,26 +1,30 @@
 package io.reactivesw.catalog.service
 
-import io.reactivesw.catalog.domain.service.CategoryServiceImpl
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException
+import io.reactivesw.catalog.domain.service.CategoryService
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException
 import io.reactivesw.catalog.infrastructure.repository.CategoryRepository
 import io.reactivesw.catalog.domain.entity.Category
 
 import spock.lang.Specification
 
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
 class CategoryServiceTest extends Specification {
 
-    CategoryServiceImpl categoryService = new CategoryServiceImpl();
+    CategoryService categoryService = new CategoryService();
     CategoryRepository categoryRepository = Mock();
     Category savedCategory = new Category();
     List<Category> allCategories = new ArrayList<Category>();
     Set<Category> categorySet = new HashSet<Category>();
 
     def setup() {
+        ZonedDateTime createdTime = ZonedDateTime.now(ZoneOffset.UTC)
         savedCategory.setId(10086L);
         savedCategory.setName("Feature");
         savedCategory.setDescription("this is feature product");
-        savedCategory.setCreatedTime(new Date());
-        savedCategory.setModifiedTime(new Date());
+        savedCategory.setCreatedTime(createdTime);
+        savedCategory.setModifiedTime(createdTime);
         savedCategory.setDisplayOrder(0);
 
         allCategories.add(savedCategory);
@@ -34,11 +38,12 @@ class CategoryServiceTest extends Specification {
 
     def "test add category"() {
         given:
+        ZonedDateTime createdTime = ZonedDateTime.now(ZoneOffset.UTC)
         Category category = new Category();
         category.setName("Feature");
         category.setDescription("this is feature product");
-        category.setCreatedTime(new Date());
-        category.setModifiedTime(new Date());
+        category.setCreatedTime(createdTime);
+        category.setModifiedTime(createdTime);
         category.setDisplayOrder(0);
 
         when: "save category"
@@ -67,7 +72,7 @@ class CategoryServiceTest extends Specification {
         categoryService.findCategoryById(10086L)
 
         then:
-        thrown(CatalogRuntimeException)
+        thrown(NotFoundException)
     }
 
     def "test find a category by name"() {

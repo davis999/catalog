@@ -24,7 +24,6 @@ public  final class GrpcCategory extends
     name_ = "";
     description_ = "";
     displayOrder_ = 0;
-    subCategory_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,14 +73,6 @@ public  final class GrpcCategory extends
             displayOrder_ = input.readInt32();
             break;
           }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              subCategory_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcCategory>();
-              mutable_bitField0_ |= 0x00000010;
-            }
-            subCategory_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcCategory.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -90,9 +81,6 @@ public  final class GrpcCategory extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-        subCategory_ = java.util.Collections.unmodifiableList(subCategory_);
-      }
       makeExtensionsImmutable();
     }
   }
@@ -108,7 +96,6 @@ public  final class GrpcCategory extends
             io.reactivesw.catalog.grpc.GrpcCategory.class, io.reactivesw.catalog.grpc.GrpcCategory.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -195,41 +182,6 @@ public  final class GrpcCategory extends
     return displayOrder_;
   }
 
-  public static final int SUB_CATEGORY_FIELD_NUMBER = 5;
-  private java.util.List<io.reactivesw.catalog.grpc.GrpcCategory> subCategory_;
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  public java.util.List<io.reactivesw.catalog.grpc.GrpcCategory> getSubCategoryList() {
-    return subCategory_;
-  }
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  public java.util.List<? extends io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder> 
-      getSubCategoryOrBuilderList() {
-    return subCategory_;
-  }
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  public int getSubCategoryCount() {
-    return subCategory_.size();
-  }
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  public io.reactivesw.catalog.grpc.GrpcCategory getSubCategory(int index) {
-    return subCategory_.get(index);
-  }
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  public io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder getSubCategoryOrBuilder(
-      int index) {
-    return subCategory_.get(index);
-  }
-
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -254,9 +206,6 @@ public  final class GrpcCategory extends
     if (displayOrder_ != 0) {
       output.writeInt32(4, displayOrder_);
     }
-    for (int i = 0; i < subCategory_.size(); i++) {
-      output.writeMessage(5, subCategory_.get(i));
-    }
   }
 
   public int getSerializedSize() {
@@ -277,10 +226,6 @@ public  final class GrpcCategory extends
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, displayOrder_);
-    }
-    for (int i = 0; i < subCategory_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, subCategory_.get(i));
     }
     memoizedSize = size;
     return size;
@@ -306,8 +251,6 @@ public  final class GrpcCategory extends
         .equals(other.getDescription());
     result = result && (getDisplayOrder()
         == other.getDisplayOrder());
-    result = result && getSubCategoryList()
-        .equals(other.getSubCategoryList());
     return result;
   }
 
@@ -327,10 +270,6 @@ public  final class GrpcCategory extends
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
-    if (getSubCategoryCount() > 0) {
-      hash = (37 * hash) + SUB_CATEGORY_FIELD_NUMBER;
-      hash = (53 * hash) + getSubCategoryList().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -449,7 +388,6 @@ public  final class GrpcCategory extends
     }
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        getSubCategoryFieldBuilder();
       }
     }
     public Builder clear() {
@@ -462,12 +400,6 @@ public  final class GrpcCategory extends
 
       displayOrder_ = 0;
 
-      if (subCategoryBuilder_ == null) {
-        subCategory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      } else {
-        subCategoryBuilder_.clear();
-      }
       return this;
     }
 
@@ -490,22 +422,10 @@ public  final class GrpcCategory extends
 
     public io.reactivesw.catalog.grpc.GrpcCategory buildPartial() {
       io.reactivesw.catalog.grpc.GrpcCategory result = new io.reactivesw.catalog.grpc.GrpcCategory(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       result.description_ = description_;
       result.displayOrder_ = displayOrder_;
-      if (subCategoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          subCategory_ = java.util.Collections.unmodifiableList(subCategory_);
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.subCategory_ = subCategory_;
-      } else {
-        result.subCategory_ = subCategoryBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -535,32 +455,6 @@ public  final class GrpcCategory extends
       if (other.getDisplayOrder() != 0) {
         setDisplayOrder(other.getDisplayOrder());
       }
-      if (subCategoryBuilder_ == null) {
-        if (!other.subCategory_.isEmpty()) {
-          if (subCategory_.isEmpty()) {
-            subCategory_ = other.subCategory_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureSubCategoryIsMutable();
-            subCategory_.addAll(other.subCategory_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.subCategory_.isEmpty()) {
-          if (subCategoryBuilder_.isEmpty()) {
-            subCategoryBuilder_.dispose();
-            subCategoryBuilder_ = null;
-            subCategory_ = other.subCategory_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-            subCategoryBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getSubCategoryFieldBuilder() : null;
-          } else {
-            subCategoryBuilder_.addAllMessages(other.subCategory_);
-          }
-        }
-      }
       onChanged();
       return this;
     }
@@ -586,7 +480,6 @@ public  final class GrpcCategory extends
       }
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -776,246 +669,6 @@ public  final class GrpcCategory extends
       displayOrder_ = 0;
       onChanged();
       return this;
-    }
-
-    private java.util.List<io.reactivesw.catalog.grpc.GrpcCategory> subCategory_ =
-      java.util.Collections.emptyList();
-    private void ensureSubCategoryIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        subCategory_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcCategory>(subCategory_);
-        bitField0_ |= 0x00000010;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catalog.grpc.GrpcCategory, io.reactivesw.catalog.grpc.GrpcCategory.Builder, io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder> subCategoryBuilder_;
-
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public java.util.List<io.reactivesw.catalog.grpc.GrpcCategory> getSubCategoryList() {
-      if (subCategoryBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(subCategory_);
-      } else {
-        return subCategoryBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public int getSubCategoryCount() {
-      if (subCategoryBuilder_ == null) {
-        return subCategory_.size();
-      } else {
-        return subCategoryBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategory getSubCategory(int index) {
-      if (subCategoryBuilder_ == null) {
-        return subCategory_.get(index);
-      } else {
-        return subCategoryBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder setSubCategory(
-        int index, io.reactivesw.catalog.grpc.GrpcCategory value) {
-      if (subCategoryBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubCategoryIsMutable();
-        subCategory_.set(index, value);
-        onChanged();
-      } else {
-        subCategoryBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder setSubCategory(
-        int index, io.reactivesw.catalog.grpc.GrpcCategory.Builder builderForValue) {
-      if (subCategoryBuilder_ == null) {
-        ensureSubCategoryIsMutable();
-        subCategory_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        subCategoryBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder addSubCategory(io.reactivesw.catalog.grpc.GrpcCategory value) {
-      if (subCategoryBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubCategoryIsMutable();
-        subCategory_.add(value);
-        onChanged();
-      } else {
-        subCategoryBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder addSubCategory(
-        int index, io.reactivesw.catalog.grpc.GrpcCategory value) {
-      if (subCategoryBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubCategoryIsMutable();
-        subCategory_.add(index, value);
-        onChanged();
-      } else {
-        subCategoryBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder addSubCategory(
-        io.reactivesw.catalog.grpc.GrpcCategory.Builder builderForValue) {
-      if (subCategoryBuilder_ == null) {
-        ensureSubCategoryIsMutable();
-        subCategory_.add(builderForValue.build());
-        onChanged();
-      } else {
-        subCategoryBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder addSubCategory(
-        int index, io.reactivesw.catalog.grpc.GrpcCategory.Builder builderForValue) {
-      if (subCategoryBuilder_ == null) {
-        ensureSubCategoryIsMutable();
-        subCategory_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        subCategoryBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder addAllSubCategory(
-        java.lang.Iterable<? extends io.reactivesw.catalog.grpc.GrpcCategory> values) {
-      if (subCategoryBuilder_ == null) {
-        ensureSubCategoryIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, subCategory_);
-        onChanged();
-      } else {
-        subCategoryBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder clearSubCategory() {
-      if (subCategoryBuilder_ == null) {
-        subCategory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-      } else {
-        subCategoryBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public Builder removeSubCategory(int index) {
-      if (subCategoryBuilder_ == null) {
-        ensureSubCategoryIsMutable();
-        subCategory_.remove(index);
-        onChanged();
-      } else {
-        subCategoryBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategory.Builder getSubCategoryBuilder(
-        int index) {
-      return getSubCategoryFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder getSubCategoryOrBuilder(
-        int index) {
-      if (subCategoryBuilder_ == null) {
-        return subCategory_.get(index);  } else {
-        return subCategoryBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public java.util.List<? extends io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder> 
-         getSubCategoryOrBuilderList() {
-      if (subCategoryBuilder_ != null) {
-        return subCategoryBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(subCategory_);
-      }
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategory.Builder addSubCategoryBuilder() {
-      return getSubCategoryFieldBuilder().addBuilder(
-          io.reactivesw.catalog.grpc.GrpcCategory.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategory.Builder addSubCategoryBuilder(
-        int index) {
-      return getSubCategoryFieldBuilder().addBuilder(
-          index, io.reactivesw.catalog.grpc.GrpcCategory.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-     */
-    public java.util.List<io.reactivesw.catalog.grpc.GrpcCategory.Builder> 
-         getSubCategoryBuilderList() {
-      return getSubCategoryFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
-        io.reactivesw.catalog.grpc.GrpcCategory, io.reactivesw.catalog.grpc.GrpcCategory.Builder, io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder> 
-        getSubCategoryFieldBuilder() {
-      if (subCategoryBuilder_ == null) {
-        subCategoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            io.reactivesw.catalog.grpc.GrpcCategory, io.reactivesw.catalog.grpc.GrpcCategory.Builder, io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder>(
-                subCategory_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
-                getParentForChildren(),
-                isClean());
-        subCategory_ = null;
-      }
-      return subCategoryBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

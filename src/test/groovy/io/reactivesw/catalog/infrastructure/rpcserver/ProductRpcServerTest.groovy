@@ -10,9 +10,8 @@ import io.reactivesw.catalog.domain.entity.Feature
 import io.reactivesw.catalog.domain.entity.Media
 import io.reactivesw.catalog.domain.entity.Product
 import io.reactivesw.catalog.domain.entity.Sku
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException
 import io.reactivesw.catalog.domain.service.ProductService
-
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException
 import spock.lang.Specification
 
 class ProductRpcServerTest extends Specification{
@@ -82,7 +81,6 @@ class ProductRpcServerTest extends Specification{
     Set<AttributeValue> attributeValues = new HashSet<AttributeValue>();
     attributeValues.add(attributeValue);
     product.setAttributeValues(attributeValues);
-    product.setDefaultSku(sku);
   }
 
   def "test query products by category id"(){
@@ -97,7 +95,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query products by category id and no result"(){
     given:
-    productService.queryProductsByCategoryId(_) >> {throw new CatalogRuntimeException()}
+    productService.queryProductsByCategoryId(_) >> {throw new NotFoundException()}
 
     when:
     productRpcServer.getProductsByCategory(inputData, outputData)
@@ -118,7 +116,7 @@ class ProductRpcServerTest extends Specification{
   
   def "test query product by product id and no result return"(){
     given:
-    productService.queryProductById(_) >> {throw new CatalogRuntimeException()}
+    productService.queryProductById(_) >> {throw new NotFoundException()}
 
     when:
     productRpcServer.getProductDetial(inputData, outputData)

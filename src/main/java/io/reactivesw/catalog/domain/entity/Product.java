@@ -16,7 +16,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
@@ -154,12 +153,6 @@ public class Product implements Serializable {
   @JoinTable(name = "sw_category_product", joinColumns = @JoinColumn(name = PRODUCT_ID) ,
       inverseJoinColumns = @JoinColumn(name = "category_id") )
   private Category category;
-
-  /**
-   * default sku.
-   */
-  @OneToOne
-  private Sku defaultSku;
 
   /**
    * create time for product.
@@ -495,26 +488,6 @@ public class Product implements Serializable {
    */
   public void setLastModifiedTime(Date lastModifiedTime) {
     this.lastModifiedTime = new Date(lastModifiedTime.getTime());
-  }
-
-
-
-  /**
-   * get defaultSku.
-   * 
-   * @return the defaultSku
-   */
-  public Sku getDefaultSku() {
-    return defaultSku;
-  }
-
-  /**
-   * set defaultSku.
-   * 
-   * @param defaultSku the defaultSku to set
-   */
-  public void setDefaultSku(Sku defaultSku) {
-    this.defaultSku = defaultSku;
   }
 
   /**

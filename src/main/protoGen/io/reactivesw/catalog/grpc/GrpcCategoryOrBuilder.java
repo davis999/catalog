@@ -36,28 +36,4 @@ public interface GrpcCategoryOrBuilder extends
    * <code>optional int32 display_order = 4;</code>
    */
   int getDisplayOrder();
-
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  java.util.List<io.reactivesw.catalog.grpc.GrpcCategory> 
-      getSubCategoryList();
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  io.reactivesw.catalog.grpc.GrpcCategory getSubCategory(int index);
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  int getSubCategoryCount();
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  java.util.List<? extends io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder> 
-      getSubCategoryOrBuilderList();
-  /**
-   * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcCategory sub_category = 5;</code>
-   */
-  io.reactivesw.catalog.grpc.GrpcCategoryOrBuilder getSubCategoryOrBuilder(
-      int index);
 }

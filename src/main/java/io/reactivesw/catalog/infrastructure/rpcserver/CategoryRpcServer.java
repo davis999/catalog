@@ -2,6 +2,7 @@ package io.reactivesw.catalog.infrastructure.rpcserver;
 
 import com.google.protobuf.Empty;
 import com.google.protobuf.Int64Value;
+
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -11,7 +12,7 @@ import io.reactivesw.catalog.grpc.CategoryList;
 import io.reactivesw.catalog.grpc.CategoryServiceGrpc;
 import io.reactivesw.catalog.grpc.GrpcCategory;
 import io.reactivesw.catalog.infrastructure.dto.CategoryTransfer;
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException;
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
 import org.lognet.springboot.grpc.GRpcService;
 import org.slf4j.Logger;
@@ -50,7 +51,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
       final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end getCategories.get {} categories.", reply.getCategoryCount());
-    } catch (CatalogRuntimeException exception) {
+    } catch (NotFoundException exception) {
       LOG.error("exception from findAllTopCategories, no result.", exception);
       final Status status =
           Status.NOT_FOUND.withDescription("query all categories fail, no categories");
@@ -73,7 +74,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
       final GrpcCategory reply = CategoryTransfer.transferToCategoryInfo(category);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end getCategoryById, get the category: {}", reply.toString());
-    } catch (CatalogRuntimeException exception) {
+    } catch (NotFoundException exception) {
       LOG.error("query fail, category with id {} is not exist.", categoryId);
       final Status status =
           Status.NOT_FOUND.withDescription("query category fail, ID is not exist");

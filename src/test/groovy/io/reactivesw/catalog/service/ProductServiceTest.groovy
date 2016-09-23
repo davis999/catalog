@@ -1,14 +1,15 @@
 package io.reactivesw.catalog.service
 
-import io.reactivesw.catalog.domain.service.ProductServiceImpl
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException
-import io.reactivesw.catalog.domain.entity.Product;
+import io.reactivesw.catalog.domain.service.ProductService
+
+import io.reactivesw.catalog.domain.entity.Product
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.repository.ProductRepository
 import spock.lang.Specification;
 
 class ProductServiceTest extends Specification{
 
-  ProductServiceImpl productService = new ProductServiceImpl();
+  ProductService productService = new ProductService();
   ProductRepository productRepository = Mock();
   Product savedProduct = new Product();
   List<Product> allPoducts = new ArrayList<Product>();
@@ -36,7 +37,7 @@ class ProductServiceTest extends Specification{
     productService.queryProductById(10086L)
 
     then:
-    thrown(CatalogRuntimeException)
+    thrown(NotFoundException)
   }
 
   def "test query product by category id"(){
@@ -56,7 +57,7 @@ class ProductServiceTest extends Specification{
     productService.queryProductsByCategoryId(10086L)
 
     then:
-    thrown(CatalogRuntimeException)
+    thrown(NotFoundException)
   }
 
   def "test query product by category id and get empty list"(){
@@ -67,6 +68,6 @@ class ProductServiceTest extends Specification{
     productService.queryProductsByCategoryId(10086L)
 
     then:
-    thrown(CatalogRuntimeException)
+    thrown(NotFoundException)
   }
 }

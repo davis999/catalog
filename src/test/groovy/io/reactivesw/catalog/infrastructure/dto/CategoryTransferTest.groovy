@@ -5,6 +5,11 @@ import io.reactivesw.catalog.grpc.CategoryList
 import io.reactivesw.catalog.grpc.GrpcCategory
 import spock.lang.Specification
 
+import java.time.OffsetTime
+import java.time.ZoneId
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
 class CategoryTransferTest extends Specification {
   Category category
   Category annothreCategory
@@ -13,19 +18,19 @@ class CategoryTransferTest extends Specification {
   def setup() {
     category = new Category()
     annothreCategory = new  Category()
-
+    ZonedDateTime createdTime = ZonedDateTime.now(ZoneOffset.UTC)
     category.setId(1001L);
     category.setName("Feature");
     category.setDescription("this is feature product");
-    category.setCreatedTime(new Date());
-    category.setModifiedTime(new Date());
+    category.setCreatedTime(createdTime);
+    category.setModifiedTime(createdTime);
     category.setDisplayOrder(0);
 
     annothreCategory.setId(2002L);
     annothreCategory.setName("Feature T-Shirt");
     annothreCategory.setDescription("this is feature T-Shirt product");
-    annothreCategory.setCreatedTime(new Date());
-    annothreCategory.setModifiedTime(new Date());
+    annothreCategory.setCreatedTime(createdTime);
+    annothreCategory.setModifiedTime(createdTime);
     annothreCategory.setDisplayOrder(1);
 
     categories = new ArrayList<Category>()

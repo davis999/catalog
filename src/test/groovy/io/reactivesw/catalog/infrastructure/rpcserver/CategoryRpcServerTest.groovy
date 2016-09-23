@@ -5,13 +5,15 @@ import com.google.protobuf.Int64Value
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver
 import io.reactivesw.catalog.domain.entity.Category
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException
 import io.reactivesw.catalog.domain.service.CategoryService
-
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException
 import spock.lang.Specification
 
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
 class CategoryRpcServerTest extends Specification{
-  def categoryService = Mock(CategoryService)
+  def categoryService = Stub(CategoryService)
   def categoryRpcServer = new CategoryRpcServer(categoryService:categoryService)
   List<Category> categories
   def category
@@ -19,13 +21,14 @@ class CategoryRpcServerTest extends Specification{
   def emptyInput
   def outputData
   def setup(){
+    ZonedDateTime createdTime = ZonedDateTime.now(ZoneOffset.UTC)
     categories = new ArrayList<Category>()
     category = new Category()
     category.setId(1001L);
     category.setName("Feature");
     category.setDescription("this is feature product");
-    category.setCreatedTime(new Date());
-    category.setModifiedTime(new Date());
+    category.setCreatedTime(createdTime);
+    category.setModifiedTime(createdTime);
     category.setDisplayOrder(0);
     categories.add(category)
 
@@ -47,7 +50,7 @@ class CategoryRpcServerTest extends Specification{
 
   def "test get all top category and no result"(){
     given:
-    categoryService.findAllCategories() >> { throw new CatalogRuntimeException() }
+    categoryService.findAllCategories() >> { throw new NotFoundException() }
 
     when:
     categoryRpcServer.getCategories(emptyInput, outputData)
@@ -67,7 +70,7 @@ class CategoryRpcServerTest extends Specification{
 
   def "test get a category without result"(){
     given:
-    categoryService.findCategoryById(_) >> { throw new CatalogRuntimeException() }
+    categoryService.findCategoryById(_) >> { throw new NotFoundException() }
 
     when:
     categoryRpcServer.getCategoryById(longInput, outputData)

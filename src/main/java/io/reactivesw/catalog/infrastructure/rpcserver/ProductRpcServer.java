@@ -1,6 +1,7 @@
 package io.reactivesw.catalog.infrastructure.rpcserver;
 
 import com.google.protobuf.Int64Value;
+
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -10,7 +11,7 @@ import io.reactivesw.catalog.grpc.GrpcProduct;
 import io.reactivesw.catalog.grpc.ProductBriefList;
 import io.reactivesw.catalog.grpc.ProductServiceGrpc;
 import io.reactivesw.catalog.infrastructure.dto.ProductTransfer;
-import io.reactivesw.catalog.infrastructure.exception.CatalogRuntimeException;
+import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
 import org.lognet.springboot.grpc.GRpcService;
 import org.slf4j.Logger;
@@ -51,7 +52,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
       final GrpcProduct reply = ProductTransfer.transferToGrpcProduct(product);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end queryProductDetial, product is {}.", reply.toString());
-    } catch (CatalogRuntimeException exception) {
+    } catch (NotFoundException exception) {
       LOG.error("product is null, id is {}", productId);
       final Status status = Status.NOT_FOUND.withDescription("query product fail, not found");
       throw new StatusRuntimeException(status);
@@ -71,7 +72,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
       final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
-    } catch (CatalogRuntimeException exception) {
+    } catch (NotFoundException exception) {
       LOG.debug("cann't query product by category id {}", categoryId);
       final Status status = Status.NOT_FOUND.withDescription("query product list fail, not found");
       throw new StatusRuntimeException(status);

@@ -21,18 +21,6 @@ message GrpcCategory {
     string name = 2;
     string description = 3;
     int32 display_order = 4;
-    repeated GrpcCategory sub_category = 5;
-}
-
-/**
- * message of CategoryDraft.
- * used to save category.
- */
-message CategoryDraft {
-    string name = 1;
-    string description = 2;
-    int32 display_order = 3;
-    int64 parent_id = 4;
 }
 
 /**
