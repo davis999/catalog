@@ -4,9 +4,11 @@ import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.repository.ProductRepository;
 
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,15 +36,17 @@ public class ProductService {
   /**
    * query product by id.
    * 
-   * @param id id.
+   * @param productId id.
    * @return product.
    */
-  public Product queryProductById(long id) {
-    final Product product = productRepository.findOne(id);
+  public Product queryProductById(long productId) {
+    LOG.info("enter queryProductById, id is {}.", productId);
+    final Product product = productRepository.findOne(productId);
     if (product == null) {
-      LOG.debug("query product fail, no such product with id {}", id);
-      throw new NotFoundException();
+      LOG.debug("query product fail, no such product with id {}", productId);
+      throw new NotFoundException("Product Not Exist.");
     }
+    LOG.info("end queryProductById, id is {}.", productId);
     return product;
   }
 
@@ -53,11 +57,13 @@ public class ProductService {
    * @return list of Product
    */
   public List<Product> queryProductsByCategoryId(long categoryId) {
+    LOG.info("enter queryProductByCategoryId, id is {}.", categoryId);
     final List<Product> products = productRepository.findProductByCategoryId(categoryId);
     if (products == null || products.isEmpty()) {
       LOG.debug("fail to query product by catagory id {}, no result.", categoryId);
       throw new NotFoundException();
     }
+    LOG.info("end queryProductByCategoryId, id is {}.", categoryId);
     return products;
   }
 }

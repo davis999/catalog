@@ -11,12 +11,15 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Davis on 16/9/23.
  */
-@Component
+//@Component
 public class DataLoader implements ApplicationRunner {
 
   /**
@@ -62,6 +65,10 @@ public class DataLoader implements ApplicationRunner {
    * @param product  product
    */
   private void addProductToCategory(Category category, Product product) {
+//    Set<Product> products = new HashSet<>();
+//    products.add(product);
+//    category.setProducts(products);
+//    categoryRepository.save(category);
     product.setCategory(category);
     productRepository.save(product);
   }
@@ -82,12 +89,16 @@ public class DataLoader implements ApplicationRunner {
    */
   private Category initialCategory() {
     final List<Category> categories = categoryRepository.findAll();
-    Category category = new Category();
     if (categories == null || categories.isEmpty()) {
       final Category homeCategory = CategoryDataInitial.initialHomeCategory();
-      category = categoryRepository.save(homeCategory);
+      final Category featureCategory = CategoryDataInitial.initialFeatureCategory();
+      final List<Category> categoryList = new ArrayList<>();
+      categoryList.add(homeCategory);
+      categoryList.add(featureCategory);
+      categoryRepository.save(categoryList);
+      return homeCategory;
     }
-    return category;
+    return categories.get(0);
   }
 
   /**

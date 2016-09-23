@@ -45,12 +45,12 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
    */
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
-    LOG.info("enter getCategories.");
+    LOG.debug("enter getCategories.");
     try {
       final List<Category> categories = categoryService.findAllCategories();
       final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end getCategories.get {} categories.", reply.getCategoryCount());
+      LOG.debug("end getCategories.get {} categories.", reply.getCategoryCount());
     } catch (NotFoundException exception) {
       LOG.error("exception from findAllTopCategories, no result.", exception);
       final Status status =

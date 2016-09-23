@@ -46,14 +46,14 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
   @Override
   public void getProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
     final long productId = request.getValue();
-    LOG.info("enter queryProductDetial, product id is {}", productId);
+    LOG.debug("enter queryProductDetial, product id is {}", productId);
     try {
       final Product product = productService.queryProductById(productId);
       final GrpcProduct reply = ProductTransfer.transferToGrpcProduct(product);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end queryProductDetial, product is {}.", reply.toString());
+      LOG.debug("end queryProductDetial, product is {}.", reply.toString());
     } catch (NotFoundException exception) {
-      LOG.error("product is null, id is {}", productId);
+      LOG.warn("product is null, id is {}", productId);
       final Status status = Status.NOT_FOUND.withDescription("query product fail, not found");
       throw new StatusRuntimeException(status);
     }
@@ -66,14 +66,14 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
   public void getProductsByCategory(Int64Value request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
-    LOG.info("enter queryProductsByCategory, category id is {}", categoryId);
+    LOG.debug("enter queryProductsByCategory, category id is {}", categoryId);
     try {
       final List<Product> products = productService.queryProductsByCategoryId(categoryId);
       final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
+      LOG.debug("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
     } catch (NotFoundException exception) {
-      LOG.debug("cann't query product by category id {}", categoryId);
+      LOG.warn("cann't query product by category id {}", categoryId);
       final Status status = Status.NOT_FOUND.withDescription("query product list fail, not found");
       throw new StatusRuntimeException(status);
     }
