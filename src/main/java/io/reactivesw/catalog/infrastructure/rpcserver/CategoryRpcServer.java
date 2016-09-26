@@ -52,9 +52,9 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end getCategories.get {} categories.", reply.getCategoryCount());
     } catch (NotFoundException exception) {
-      LOG.error("exception from findAllTopCategories, no result.", exception);
+      LOG.warn("exception from findAllTopCategories, no result.", exception);
       final Status status =
-          Status.NOT_FOUND.withDescription("query all categories fail, no categories");
+          Status.INTERNAL.withDescription("can not get any category.");
       throw new StatusRuntimeException(status);
     }
   }

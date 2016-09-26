@@ -15,9 +15,8 @@ import javax.persistence.Table;
 
 /**
  * this is the entity class for category.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "SW_CATEGORY")
@@ -70,7 +69,7 @@ public class Category implements Serializable {
 
   /**
    * get if for category.
-   * 
+   *
    * @return id
    */
   public long getId() {
@@ -79,7 +78,7 @@ public class Category implements Serializable {
 
   /**
    * set if for category.
-   * 
+   *
    * @param id id.
    */
   public void setId(long id) {
@@ -88,7 +87,7 @@ public class Category implements Serializable {
 
   /**
    * get name for category.
-   * 
+   *
    * @return name.
    */
   public String getName() {
@@ -97,7 +96,7 @@ public class Category implements Serializable {
 
   /**
    * set name for category.
-   * 
+   *
    * @param name name.
    */
   public void setName(String name) {
@@ -106,7 +105,7 @@ public class Category implements Serializable {
 
   /**
    * get description for category.
-   * 
+   *
    * @return description.
    */
   public String getDescription() {
@@ -115,7 +114,7 @@ public class Category implements Serializable {
 
   /**
    * set description for category.
-   * 
+   *
    * @param description description.
    */
   public void setDescription(String description) {
@@ -124,7 +123,7 @@ public class Category implements Serializable {
 
   /**
    * get display order.
-   * 
+   *
    * @return displayOrder.
    */
   public int getDisplayOrder() {
@@ -133,7 +132,7 @@ public class Category implements Serializable {
 
   /**
    * set display order.
-   * 
+   *
    * @param displayOrder displayOrder
    */
   public void setDisplayOrder(int displayOrder) {
@@ -142,7 +141,7 @@ public class Category implements Serializable {
 
   /**
    * get create time.
-   * 
+   *
    * @return create time.
    */
   public ZonedDateTime getCreatedTime() {
@@ -151,7 +150,7 @@ public class Category implements Serializable {
 
   /**
    * set create time.
-   * 
+   *
    * @param createdTime create time.
    */
   public void setCreatedTime(ZonedDateTime createdTime) {
@@ -160,7 +159,7 @@ public class Category implements Serializable {
 
   /**
    * get last modified time.
-   * 
+   *
    * @return modifiedTime.
    */
   public ZonedDateTime getModifiedTime() {
@@ -169,7 +168,7 @@ public class Category implements Serializable {
 
   /**
    * set last modified time.
-   * 
+   *
    * @param modifiedTime last modified time.
    */
   public void setModifiedTime(ZonedDateTime modifiedTime) {
@@ -178,7 +177,7 @@ public class Category implements Serializable {
 
   /**
    * get all products.
-   * 
+   *
    * @return products.
    */
   public Set<Product> getProducts() {
@@ -187,7 +186,7 @@ public class Category implements Serializable {
 
   /**
    * set products.
-   * 
+   *
    * @param products products.
    */
   public void setProducts(Set<Product> products) {

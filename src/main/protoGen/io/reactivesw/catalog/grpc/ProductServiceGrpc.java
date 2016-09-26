@@ -23,7 +23,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 0.15.0)",
-    comments = "Source: catalog-service.proto")
+    comments = "Source: catalog_service.proto")
 public class ProductServiceGrpc {
 
   private ProductServiceGrpc() {}

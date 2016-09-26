@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package io.reactivesw.catalog.infrastructure;
+
+option java_package = "io.reactivesw.catalog.grpc";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+/**
+ * response when call queryAllCategories.
+ */
+message CategoryList {
+    repeated GrpcCategory category = 1;
+}
+
+/**
+ * message of category.
+ */
+message GrpcCategory {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 display_order = 4;
+}
+
+/**
+ *  response when call queryAllProductsByCategory.
+ */
+message ProductBriefList {
+    repeated GrpcProductBrief product_brief = 1;
+}
+
+/**
+ * message of product brief.
+ */
+message GrpcProductBrief {
+    int64 id = 1;
+    string name = 2;
+    string price = 3;
+    int32 display_order = 4;
+    string media_URL = 5;
+}
+
+message GrpcAttribute {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    string value = 4;
+    string type = 5;
+    int32 display_order = 6;
+}
+
+message GrpcFeature {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 display_order = 4;
+}
+
+message GrpcVariantValue {
+    int64 id = 1;
+    string value = 2;
+    int32 displayOrder = 3;
+    string priceAdjustment = 4;
+}
+
+message GrpcVariant {
+    int64 id = 1;
+    string name = 2;
+    int32 display_order = 3;
+    repeated GrpcVariantValue variant_value = 4;
+}
+
+message GrpcMedia {
+    int64 id = 1;
+    string type = 2;
+    string title = 3;
+    string url = 4;
+    int32 display_order = 5;
+}
+
+message GrpcSku {
+    int64 id = 1;
+    string skuNumber = 2;
+    bool isActive = 3;
+    int32 quatity = 4;
+    string upc = 5;
+    int32 display_order = 6;
+    repeated GrpcMedia media = 7;
+    repeated GrpcVariantValue variant_value = 8;
+}
+
+message GrpcProduct {
+    int64 id = 1;
+    string manufacturer = 2;
+    string brand = 3;
+    string model = 4;
+    string name = 5;
+    string price = 6;
+    int32 display_order = 7;
+    string description = 8;
+    string detail = 9;
+    bool displayed = 10;
+    bool deleted = 11;
+    repeated GrpcAttribute attribute = 12;
+    repeated GrpcSku sku = 13;
+    repeated GrpcVariant variant = 14;
+    repeated GrpcFeature feature = 15;
+}
+

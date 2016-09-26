@@ -15,7 +15,6 @@ import java.util.List;
 
 /**
  * this is transfer class for product.
- *
  * @author Davis
  */
 public final class ProductTransfer {
@@ -28,19 +27,15 @@ public final class ProductTransfer {
 
   /**
    * transfer Product to GrpcProduct.
-   *
    * @param product src product
    * @return GrpcProduct
    */
   public static GrpcProduct transferToGrpcProduct(Product product) {
     final ModelMapper modelMapper = new ModelMapper();
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
-
     final List<Sku> skus = product.getAdditionalSkus();
     final Sku defaultSku = product.getDefaultSku();
-    if (defaultSku != null) {
-      builder.setPrice(defaultSku.getPrice().toString());
-    }
+    builder.setPrice(defaultSku.getPrice().toString());
     if (skus != null) {
       for (final Sku sku : skus) {
         builder.addSku(SkuTransfer.transferToGrpcSku(sku));
@@ -62,7 +57,6 @@ public final class ProductTransfer {
 
   /**
    * transfer list of products to ProductBriefList.
-   *
    * @param products src products.
    * @return ProductBriefList
    */
@@ -80,9 +74,8 @@ public final class ProductTransfer {
 
   /**
    * transfer Product to GrpcProductBrief.
-   *
    * @param product src product
-   * @return GrpcProductBrief
+   * @return GrpcProductBrief GrpcProductBrief
    */
   public static GrpcProductBrief transferToGrpcProductBrief(Product product) {
     final GrpcProductBrief.Builder builder = GrpcProductBrief.newBuilder();
