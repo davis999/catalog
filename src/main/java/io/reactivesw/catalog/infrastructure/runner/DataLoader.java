@@ -9,12 +9,9 @@ import io.reactivesw.catalog.infrastructure.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Davis on 16/9/23.
@@ -47,7 +44,7 @@ public class DataLoader implements ApplicationRunner {
    * @throws Exception exception.
    */
   @Override
-  public void run(ApplicationArguments args) throws Exception {
+  public void run(ApplicationArguments args) {
     //initial media.
     initialMedia();
     //initial category.
@@ -89,16 +86,18 @@ public class DataLoader implements ApplicationRunner {
    */
   private Category initialCategory() {
     final List<Category> categories = categoryRepository.findAll();
+    Category homeCategory = null;
     if (categories == null || categories.isEmpty()) {
-      final Category homeCategory = CategoryDataInitial.initialHomeCategory();
+      homeCategory = CategoryDataInitial.initialHomeCategory();
       final Category featureCategory = CategoryDataInitial.initialFeatureCategory();
       final List<Category> categoryList = new ArrayList<>();
       categoryList.add(homeCategory);
       categoryList.add(featureCategory);
       categoryRepository.save(categoryList);
-      return homeCategory;
+    } else {
+      homeCategory = categories.get(0);
     }
-    return categories.get(0);
+    return homeCategory;
   }
 
   /**

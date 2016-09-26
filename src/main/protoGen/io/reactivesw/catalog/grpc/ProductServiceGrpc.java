@@ -22,7 +22,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 0.15.0)",
+    value = "by gRPC proto compiler (version 1.0.0)",
     comments = "Source: catalog_service.proto")
 public class ProductServiceGrpc {
 
@@ -79,7 +79,7 @@ public class ProductServiceGrpc {
    *  product rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface ProductService {
+  public static abstract class ProductServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -87,34 +87,37 @@ public class ProductServiceGrpc {
      * </pre>
      */
     public void getProductsByCategory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver);
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_PRODUCTS_BY_CATEGORY, responseObserver);
+    }
 
     /**
      * <pre>
      *query product's detail by id of product
      * </pre>
      */
-    public void getProductDetial(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct> responseObserver);
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1469")
-  public static abstract class ProductServiceImplBase implements ProductService, io.grpc.BindableService {
-
-    @java.lang.Override
-    public void getProductsByCategory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_PRODUCTS_BY_CATEGORY, responseObserver);
-    }
-
-    @java.lang.Override
     public void getProductDetial(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_GET_PRODUCT_DETIAL, responseObserver);
     }
 
     @java.lang.Override public io.grpc.ServerServiceDefinition bindService() {
-      return ProductServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            METHOD_GET_PRODUCTS_BY_CATEGORY,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.ProductBriefList>(
+                  this, METHODID_GET_PRODUCTS_BY_CATEGORY)))
+          .addMethod(
+            METHOD_GET_PRODUCT_DETIAL,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.GrpcProduct>(
+                  this, METHODID_GET_PRODUCT_DETIAL)))
+          .build();
     }
   }
 
@@ -124,50 +127,7 @@ public class ProductServiceGrpc {
    *  product rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface ProductServiceBlockingClient {
-
-    /**
-     * <pre>
-     *query all products by id of category
-     * </pre>
-     */
-    public io.reactivesw.catalog.grpc.ProductBriefList getProductsByCategory(com.google.protobuf.Int64Value request);
-
-    /**
-     * <pre>
-     *query product's detail by id of product
-     * </pre>
-     */
-    public io.reactivesw.catalog.grpc.GrpcProduct getProductDetial(com.google.protobuf.Int64Value request);
-  }
-
-  /**
-   * <pre>
-   **
-   *  product rpc service.
-   * </pre>
-   */
-  @java.lang.Deprecated public static interface ProductServiceFutureClient {
-
-    /**
-     * <pre>
-     *query all products by id of category
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.ProductBriefList> getProductsByCategory(
-        com.google.protobuf.Int64Value request);
-
-    /**
-     * <pre>
-     *query product's detail by id of product
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.GrpcProduct> getProductDetial(
-        com.google.protobuf.Int64Value request);
-  }
-
-  public static class ProductServiceStub extends io.grpc.stub.AbstractStub<ProductServiceStub>
-      implements ProductService {
+  public static final class ProductServiceStub extends io.grpc.stub.AbstractStub<ProductServiceStub> {
     private ProductServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -183,14 +143,22 @@ public class ProductServiceGrpc {
       return new ProductServiceStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all products by id of category
+     * </pre>
+     */
     public void getProductsByCategory(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions()), request, responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query product's detail by id of product
+     * </pre>
+     */
     public void getProductDetial(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct> responseObserver) {
       asyncUnaryCall(
@@ -198,8 +166,13 @@ public class ProductServiceGrpc {
     }
   }
 
-  public static class ProductServiceBlockingStub extends io.grpc.stub.AbstractStub<ProductServiceBlockingStub>
-      implements ProductServiceBlockingClient {
+  /**
+   * <pre>
+   **
+   *  product rpc service.
+   * </pre>
+   */
+  public static final class ProductServiceBlockingStub extends io.grpc.stub.AbstractStub<ProductServiceBlockingStub> {
     private ProductServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -215,21 +188,34 @@ public class ProductServiceGrpc {
       return new ProductServiceBlockingStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all products by id of category
+     * </pre>
+     */
     public io.reactivesw.catalog.grpc.ProductBriefList getProductsByCategory(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions(), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query product's detail by id of product
+     * </pre>
+     */
     public io.reactivesw.catalog.grpc.GrpcProduct getProductDetial(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_PRODUCT_DETIAL, getCallOptions(), request);
     }
   }
 
-  public static class ProductServiceFutureStub extends io.grpc.stub.AbstractStub<ProductServiceFutureStub>
-      implements ProductServiceFutureClient {
+  /**
+   * <pre>
+   **
+   *  product rpc service.
+   * </pre>
+   */
+  public static final class ProductServiceFutureStub extends io.grpc.stub.AbstractStub<ProductServiceFutureStub> {
     private ProductServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -245,22 +231,28 @@ public class ProductServiceGrpc {
       return new ProductServiceFutureStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all products by id of category
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.ProductBriefList> getProductsByCategory(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions()), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query product's detail by id of product
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.GrpcProduct> getProductDetial(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCT_DETIAL, getCallOptions()), request);
     }
   }
-
-  @java.lang.Deprecated public static abstract class AbstractProductService extends ProductServiceImplBase {}
 
   private static final int METHODID_GET_PRODUCTS_BY_CATEGORY = 0;
   private static final int METHODID_GET_PRODUCT_DETIAL = 1;
@@ -270,10 +262,10 @@ public class ProductServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProductService serviceImpl;
+    private final ProductServiceImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(ProductService serviceImpl, int methodId) {
+    public MethodHandlers(ProductServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -312,23 +304,4 @@ public class ProductServiceGrpc {
         METHOD_GET_PRODUCT_DETIAL);
   }
 
-  @java.lang.Deprecated public static io.grpc.ServerServiceDefinition bindService(
-      final ProductService serviceImpl) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          METHOD_GET_PRODUCTS_BY_CATEGORY,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Int64Value,
-              io.reactivesw.catalog.grpc.ProductBriefList>(
-                serviceImpl, METHODID_GET_PRODUCTS_BY_CATEGORY)))
-        .addMethod(
-          METHOD_GET_PRODUCT_DETIAL,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Int64Value,
-              io.reactivesw.catalog.grpc.GrpcProduct>(
-                serviceImpl, METHODID_GET_PRODUCT_DETIAL)))
-        .build();
-  }
 }

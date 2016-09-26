@@ -6,12 +6,18 @@ package com.google.protobuf;
 public final class EmptyProto {
   private EmptyProto() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_Empty_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -41,7 +47,7 @@ public final class EmptyProto {
     internal_static_google_protobuf_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_protobuf_Empty_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_Empty_descriptor,
         new java.lang.String[] { });
   }

@@ -1,0 +1,30 @@
+apply plugin: "com.palantir.jacoco-coverage"
+apply plugin: 'groovy'
+apply from:'code_analyzer_test/test_coverage_config.gradle'
+
+//config of coverage check, see document: https://github.com/palantir/gradle-jacoco-coverage
+//exclude the folders we do not want to check
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    'com/google/protobuf/*',
+                    'io/reactivesw/catalog/App*',
+                    'io/reactivesw/catalog/grpc/*',
+                    'io/reactivesw/catalog/domain/entity/*',
+                    'io/reactivesw/catalog/infrastructure/exception/*',
+                    'io/reactivesw/catalog/infrastructure/dto/*',
+                    'io/reactivesw/catalog/infrastructure/runner/*',
+                    'io/reactivesw/catalog/infrastructure/utils/*'
+            ])
+        })
+    }
+}
+
+// see document: https://github.com/palantir/gradle-jacoco-coverage
+//more details config
+jacocoCoverage {
+    // Scopes can be exempt from all coverage requirements by exact scope name or scope name pattern.
+    fileThreshold 0.0, "Application.java"
+
+}

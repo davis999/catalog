@@ -6,12 +6,18 @@ package io.reactivesw.catalog.grpc;
 public final class CatalogSkuMessage {
   private CatalogSkuMessage() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -44,7 +50,7 @@ public final class CatalogSkuMessage {
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor,
         new java.lang.String[] { "SkuId", "SkuNumber", "SkuName", "MediaUrl", "Price", });
   }

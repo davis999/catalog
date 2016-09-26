@@ -7,11 +7,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcProduct}
  */
 public  final class GrpcProduct extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.GrpcProduct)
     GrpcProductOrBuilder {
   // Use GrpcProduct.newBuilder() to construct.
-  private GrpcProduct(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private GrpcProduct(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GrpcProduct() {
@@ -124,7 +124,8 @@ public  final class GrpcProduct extends
               attribute_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcAttribute>();
               mutable_bitField0_ |= 0x00000800;
             }
-            attribute_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcAttribute.parser(), extensionRegistry));
+            attribute_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcAttribute.parser(), extensionRegistry));
             break;
           }
           case 106: {
@@ -132,7 +133,8 @@ public  final class GrpcProduct extends
               sku_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcSku>();
               mutable_bitField0_ |= 0x00001000;
             }
-            sku_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcSku.parser(), extensionRegistry));
+            sku_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcSku.parser(), extensionRegistry));
             break;
           }
           case 114: {
@@ -140,7 +142,8 @@ public  final class GrpcProduct extends
               variant_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariant>();
               mutable_bitField0_ |= 0x00002000;
             }
-            variant_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcVariant.parser(), extensionRegistry));
+            variant_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcVariant.parser(), extensionRegistry));
             break;
           }
           case 122: {
@@ -148,7 +151,8 @@ public  final class GrpcProduct extends
               feature_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcFeature>();
               mutable_bitField0_ |= 0x00004000;
             }
-            feature_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcFeature.parser(), extensionRegistry));
+            feature_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcFeature.parser(), extensionRegistry));
             break;
           }
         }
@@ -179,7 +183,7 @@ public  final class GrpcProduct extends
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -617,28 +621,28 @@ public  final class GrpcProduct extends
       output.writeInt64(1, id_);
     }
     if (!getManufacturerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, manufacturer_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, manufacturer_);
     }
     if (!getBrandBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, brand_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, brand_);
     }
     if (!getModelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, model_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, model_);
     }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
     if (!getPriceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, price_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, price_);
     }
     if (displayOrder_ != 0) {
       output.writeInt32(7, displayOrder_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
     }
     if (!getDetailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 9, detail_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, detail_);
     }
     if (displayed_ != false) {
       output.writeBool(10, displayed_);
@@ -670,29 +674,29 @@ public  final class GrpcProduct extends
         .computeInt64Size(1, id_);
     }
     if (!getManufacturerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, manufacturer_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, manufacturer_);
     }
     if (!getBrandBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, brand_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, brand_);
     }
     if (!getModelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, model_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, model_);
     }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
     }
     if (!getPriceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, price_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, price_);
     }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, displayOrder_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
     }
     if (!getDetailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, detail_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, detail_);
     }
     if (displayed_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -843,39 +847,39 @@ public  final class GrpcProduct extends
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcProduct parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -893,7 +897,7 @@ public  final class GrpcProduct extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -901,7 +905,7 @@ public  final class GrpcProduct extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcProduct}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.GrpcProduct)
       io.reactivesw.catalog.grpc.GrpcProductOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -909,7 +913,7 @@ public  final class GrpcProduct extends
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -922,12 +926,13 @@ public  final class GrpcProduct extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
         getAttributeFieldBuilder();
         getSkuFieldBuilder();
         getVariantFieldBuilder();
@@ -1058,6 +1063,32 @@ public  final class GrpcProduct extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.GrpcProduct) {
         return mergeFrom((io.reactivesw.catalog.grpc.GrpcProduct)other);
@@ -1128,7 +1159,7 @@ public  final class GrpcProduct extends
             attribute_ = other.attribute_;
             bitField0_ = (bitField0_ & ~0x00000800);
             attributeBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttributeFieldBuilder() : null;
           } else {
             attributeBuilder_.addAllMessages(other.attribute_);
@@ -1154,7 +1185,7 @@ public  final class GrpcProduct extends
             sku_ = other.sku_;
             bitField0_ = (bitField0_ & ~0x00001000);
             skuBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSkuFieldBuilder() : null;
           } else {
             skuBuilder_.addAllMessages(other.sku_);
@@ -1180,7 +1211,7 @@ public  final class GrpcProduct extends
             variant_ = other.variant_;
             bitField0_ = (bitField0_ & ~0x00002000);
             variantBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getVariantFieldBuilder() : null;
           } else {
             variantBuilder_.addAllMessages(other.variant_);
@@ -1206,7 +1237,7 @@ public  final class GrpcProduct extends
             feature_ = other.feature_;
             bitField0_ = (bitField0_ & ~0x00004000);
             featureBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFeatureFieldBuilder() : null;
           } else {
             featureBuilder_.addAllMessages(other.feature_);
@@ -1836,7 +1867,7 @@ public  final class GrpcProduct extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcAttribute, io.reactivesw.catalog.grpc.GrpcAttribute.Builder, io.reactivesw.catalog.grpc.GrpcAttributeOrBuilder> attributeBuilder_;
 
     /**
@@ -2052,11 +2083,11 @@ public  final class GrpcProduct extends
          getAttributeBuilderList() {
       return getAttributeFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcAttribute, io.reactivesw.catalog.grpc.GrpcAttribute.Builder, io.reactivesw.catalog.grpc.GrpcAttributeOrBuilder> 
         getAttributeFieldBuilder() {
       if (attributeBuilder_ == null) {
-        attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcAttribute, io.reactivesw.catalog.grpc.GrpcAttribute.Builder, io.reactivesw.catalog.grpc.GrpcAttributeOrBuilder>(
                 attribute_,
                 ((bitField0_ & 0x00000800) == 0x00000800),
@@ -2076,7 +2107,7 @@ public  final class GrpcProduct extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder> skuBuilder_;
 
     /**
@@ -2292,11 +2323,11 @@ public  final class GrpcProduct extends
          getSkuBuilderList() {
       return getSkuFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder> 
         getSkuFieldBuilder() {
       if (skuBuilder_ == null) {
-        skuBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        skuBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder>(
                 sku_,
                 ((bitField0_ & 0x00001000) == 0x00001000),
@@ -2316,7 +2347,7 @@ public  final class GrpcProduct extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcVariant, io.reactivesw.catalog.grpc.GrpcVariant.Builder, io.reactivesw.catalog.grpc.GrpcVariantOrBuilder> variantBuilder_;
 
     /**
@@ -2532,11 +2563,11 @@ public  final class GrpcProduct extends
          getVariantBuilderList() {
       return getVariantFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcVariant, io.reactivesw.catalog.grpc.GrpcVariant.Builder, io.reactivesw.catalog.grpc.GrpcVariantOrBuilder> 
         getVariantFieldBuilder() {
       if (variantBuilder_ == null) {
-        variantBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        variantBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcVariant, io.reactivesw.catalog.grpc.GrpcVariant.Builder, io.reactivesw.catalog.grpc.GrpcVariantOrBuilder>(
                 variant_,
                 ((bitField0_ & 0x00002000) == 0x00002000),
@@ -2556,7 +2587,7 @@ public  final class GrpcProduct extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcFeature, io.reactivesw.catalog.grpc.GrpcFeature.Builder, io.reactivesw.catalog.grpc.GrpcFeatureOrBuilder> featureBuilder_;
 
     /**
@@ -2772,11 +2803,11 @@ public  final class GrpcProduct extends
          getFeatureBuilderList() {
       return getFeatureFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcFeature, io.reactivesw.catalog.grpc.GrpcFeature.Builder, io.reactivesw.catalog.grpc.GrpcFeatureOrBuilder> 
         getFeatureFieldBuilder() {
       if (featureBuilder_ == null) {
-        featureBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        featureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcFeature, io.reactivesw.catalog.grpc.GrpcFeature.Builder, io.reactivesw.catalog.grpc.GrpcFeatureOrBuilder>(
                 feature_,
                 ((bitField0_ & 0x00004000) == 0x00004000),

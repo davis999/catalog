@@ -7,11 +7,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcVariantValue}
  */
 public  final class GrpcVariantValue extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.GrpcVariantValue)
     GrpcVariantValueOrBuilder {
   // Use GrpcVariantValue.newBuilder() to construct.
-  private GrpcVariantValue(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private GrpcVariantValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GrpcVariantValue() {
@@ -84,7 +84,7 @@ public  final class GrpcVariantValue extends
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -193,13 +193,13 @@ public  final class GrpcVariantValue extends
       output.writeInt64(1, id_);
     }
     if (!getValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
     }
     if (displayOrder_ != 0) {
       output.writeInt32(3, displayOrder_);
     }
     if (!getPriceAdjustmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, priceAdjustment_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, priceAdjustment_);
     }
   }
 
@@ -213,14 +213,14 @@ public  final class GrpcVariantValue extends
         .computeInt64Size(1, id_);
     }
     if (!getValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
     }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, displayOrder_);
     }
     if (!getPriceAdjustmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, priceAdjustment_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, priceAdjustment_);
     }
     memoizedSize = size;
     return size;
@@ -293,39 +293,39 @@ public  final class GrpcVariantValue extends
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariantValue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -343,7 +343,7 @@ public  final class GrpcVariantValue extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -351,7 +351,7 @@ public  final class GrpcVariantValue extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcVariantValue}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.GrpcVariantValue)
       io.reactivesw.catalog.grpc.GrpcVariantValueOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -359,7 +359,7 @@ public  final class GrpcVariantValue extends
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -372,12 +372,13 @@ public  final class GrpcVariantValue extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
       }
     }
     public Builder clear() {
@@ -420,6 +421,32 @@ public  final class GrpcVariantValue extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.GrpcVariantValue) {
         return mergeFrom((io.reactivesw.catalog.grpc.GrpcVariantValue)other);

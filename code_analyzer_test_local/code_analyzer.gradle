@@ -1,0 +1,36 @@
+apply plugin: "checkstyle"
+apply plugin: "pmd"
+apply plugin: "findbugs"
+
+apply from:'code_analyzer_test/code_analyzer_config.gradle'
+
+repositories {
+  maven { url "http://jcenter.bintray.com" }
+  maven { url "https://repo.maven.apache.org/maven2" }
+}
+
+/*************checkstyle(use google java style)***************/
+checkstyle{
+  //exclude the package you do not want to check
+  checkstyleMain.exclude 'com/google/protobuf/*',
+      'io/reactivesw/catalog/grpc/*'
+}
+
+/*************PMD(Project Manager Design)***************/
+tasks.withType(Pmd) {  //exclude the package you do not want to check
+  exclude 'com/google/protobuf/*'
+  exclude 'io/reactivesw/catalog/grpc/*'
+  exclude 'io/reactivesw/catalog/Application.java'
+}
+
+
+/*************find bug***************/
+tasks.withType(FindBugs) {
+  //exclude the package you do not want to check
+  classes = classes.filter {
+    !it.path.contains('io/reactivesw/catalog/grpc/')
+  }
+  classes = classes.filter {
+    !it.path.contains('com/google/protobuf/')
+  }
+}

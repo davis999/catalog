@@ -7,11 +7,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcVariant}
  */
 public  final class GrpcVariant extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.GrpcVariant)
     GrpcVariantOrBuilder {
   // Use GrpcVariant.newBuilder() to construct.
-  private GrpcVariant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private GrpcVariant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GrpcVariant() {
@@ -67,7 +67,8 @@ public  final class GrpcVariant extends
               variantValue_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariantValue>();
               mutable_bitField0_ |= 0x00000008;
             }
-            variantValue_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcVariantValue.parser(), extensionRegistry));
+            variantValue_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcVariantValue.parser(), extensionRegistry));
             break;
           }
         }
@@ -89,7 +90,7 @@ public  final class GrpcVariant extends
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -200,7 +201,7 @@ public  final class GrpcVariant extends
       output.writeInt64(1, id_);
     }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (displayOrder_ != 0) {
       output.writeInt32(3, displayOrder_);
@@ -220,7 +221,7 @@ public  final class GrpcVariant extends
         .computeInt64Size(1, id_);
     }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -303,39 +304,39 @@ public  final class GrpcVariant extends
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcVariant parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -353,7 +354,7 @@ public  final class GrpcVariant extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -361,7 +362,7 @@ public  final class GrpcVariant extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcVariant}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.GrpcVariant)
       io.reactivesw.catalog.grpc.GrpcVariantOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -369,7 +370,7 @@ public  final class GrpcVariant extends
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -382,12 +383,13 @@ public  final class GrpcVariant extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
         getVariantValueFieldBuilder();
       }
     }
@@ -446,6 +448,32 @@ public  final class GrpcVariant extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.GrpcVariant) {
         return mergeFrom((io.reactivesw.catalog.grpc.GrpcVariant)other);
@@ -486,7 +514,7 @@ public  final class GrpcVariant extends
             variantValue_ = other.variantValue_;
             bitField0_ = (bitField0_ & ~0x00000008);
             variantValueBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getVariantValueFieldBuilder() : null;
           } else {
             variantValueBuilder_.addAllMessages(other.variantValue_);
@@ -650,7 +678,7 @@ public  final class GrpcVariant extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcVariantValue, io.reactivesw.catalog.grpc.GrpcVariantValue.Builder, io.reactivesw.catalog.grpc.GrpcVariantValueOrBuilder> variantValueBuilder_;
 
     /**
@@ -866,11 +894,11 @@ public  final class GrpcVariant extends
          getVariantValueBuilderList() {
       return getVariantValueFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcVariantValue, io.reactivesw.catalog.grpc.GrpcVariantValue.Builder, io.reactivesw.catalog.grpc.GrpcVariantValueOrBuilder> 
         getVariantValueFieldBuilder() {
       if (variantValueBuilder_ == null) {
-        variantValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        variantValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcVariantValue, io.reactivesw.catalog.grpc.GrpcVariantValue.Builder, io.reactivesw.catalog.grpc.GrpcVariantValueOrBuilder>(
                 variantValue_,
                 ((bitField0_ & 0x00000008) == 0x00000008),

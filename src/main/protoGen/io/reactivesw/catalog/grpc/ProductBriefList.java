@@ -12,11 +12,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.ProductBriefList}
  */
 public  final class ProductBriefList extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.ProductBriefList)
     ProductBriefListOrBuilder {
   // Use ProductBriefList.newBuilder() to construct.
-  private ProductBriefList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private ProductBriefList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private ProductBriefList() {
@@ -53,7 +53,8 @@ public  final class ProductBriefList extends
               productBrief_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcProductBrief>();
               mutable_bitField0_ |= 0x00000001;
             }
-            productBrief_.add(input.readMessage(io.reactivesw.catalog.grpc.GrpcProductBrief.parser(), extensionRegistry));
+            productBrief_.add(
+                input.readMessage(io.reactivesw.catalog.grpc.GrpcProductBrief.parser(), extensionRegistry));
             break;
           }
         }
@@ -75,7 +76,7 @@ public  final class ProductBriefList extends
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -203,39 +204,39 @@ public  final class ProductBriefList extends
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.ProductBriefList parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -253,7 +254,7 @@ public  final class ProductBriefList extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -266,7 +267,7 @@ public  final class ProductBriefList extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.ProductBriefList}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.ProductBriefList)
       io.reactivesw.catalog.grpc.ProductBriefListOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -274,7 +275,7 @@ public  final class ProductBriefList extends
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -287,12 +288,13 @@ public  final class ProductBriefList extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
         getProductBriefFieldBuilder();
       }
     }
@@ -340,6 +342,32 @@ public  final class ProductBriefList extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.ProductBriefList) {
         return mergeFrom((io.reactivesw.catalog.grpc.ProductBriefList)other);
@@ -370,7 +398,7 @@ public  final class ProductBriefList extends
             productBrief_ = other.productBrief_;
             bitField0_ = (bitField0_ & ~0x00000001);
             productBriefBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getProductBriefFieldBuilder() : null;
           } else {
             productBriefBuilder_.addAllMessages(other.productBrief_);
@@ -413,7 +441,7 @@ public  final class ProductBriefList extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcProductBrief, io.reactivesw.catalog.grpc.GrpcProductBrief.Builder, io.reactivesw.catalog.grpc.GrpcProductBriefOrBuilder> productBriefBuilder_;
 
     /**
@@ -629,11 +657,11 @@ public  final class ProductBriefList extends
          getProductBriefBuilderList() {
       return getProductBriefFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.reactivesw.catalog.grpc.GrpcProductBrief, io.reactivesw.catalog.grpc.GrpcProductBrief.Builder, io.reactivesw.catalog.grpc.GrpcProductBriefOrBuilder> 
         getProductBriefFieldBuilder() {
       if (productBriefBuilder_ == null) {
-        productBriefBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        productBriefBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcProductBrief, io.reactivesw.catalog.grpc.GrpcProductBrief.Builder, io.reactivesw.catalog.grpc.GrpcProductBriefOrBuilder>(
                 productBrief_,
                 ((bitField0_ & 0x00000001) == 0x00000001),

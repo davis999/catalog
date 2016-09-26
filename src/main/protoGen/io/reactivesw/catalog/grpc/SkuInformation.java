@@ -13,11 +13,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.SkuInformation}
  */
 public  final class SkuInformation extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.SkuInformation)
     SkuInformationOrBuilder {
   // Use SkuInformation.newBuilder() to construct.
-  private SkuInformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private SkuInformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private SkuInformation() {
@@ -98,7 +98,7 @@ public  final class SkuInformation extends
     return io.reactivesw.catalog.grpc.CatalogSkuMessage.internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogSkuMessage.internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -266,16 +266,16 @@ public  final class SkuInformation extends
       output.writeInt64(1, skuId_);
     }
     if (!getSkuNumberBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, skuNumber_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skuNumber_);
     }
     if (!getSkuNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, skuName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, skuName_);
     }
     if (!getMediaUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, mediaUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mediaUrl_);
     }
     if (!getPriceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, price_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, price_);
     }
   }
 
@@ -289,16 +289,16 @@ public  final class SkuInformation extends
         .computeInt64Size(1, skuId_);
     }
     if (!getSkuNumberBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, skuNumber_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skuNumber_);
     }
     if (!getSkuNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, skuName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, skuName_);
     }
     if (!getMediaUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, mediaUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mediaUrl_);
     }
     if (!getPriceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, price_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, price_);
     }
     memoizedSize = size;
     return size;
@@ -375,39 +375,39 @@ public  final class SkuInformation extends
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.SkuInformation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -425,7 +425,7 @@ public  final class SkuInformation extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -439,7 +439,7 @@ public  final class SkuInformation extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.SkuInformation}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.SkuInformation)
       io.reactivesw.catalog.grpc.SkuInformationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -447,7 +447,7 @@ public  final class SkuInformation extends
       return io.reactivesw.catalog.grpc.CatalogSkuMessage.internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogSkuMessage.internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -460,12 +460,13 @@ public  final class SkuInformation extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
       }
     }
     public Builder clear() {
@@ -511,6 +512,32 @@ public  final class SkuInformation extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.SkuInformation) {
         return mergeFrom((io.reactivesw.catalog.grpc.SkuInformation)other);

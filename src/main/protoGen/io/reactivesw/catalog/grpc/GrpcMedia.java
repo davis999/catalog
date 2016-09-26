@@ -7,11 +7,11 @@ package io.reactivesw.catalog.grpc;
  * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcMedia}
  */
 public  final class GrpcMedia extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:io.reactivesw.catalog.infrastructure.GrpcMedia)
     GrpcMediaOrBuilder {
   // Use GrpcMedia.newBuilder() to construct.
-  private GrpcMedia(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  private GrpcMedia(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GrpcMedia() {
@@ -91,7 +91,7 @@ public  final class GrpcMedia extends
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -234,13 +234,13 @@ public  final class GrpcMedia extends
       output.writeInt64(1, id_);
     }
     if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
     }
     if (!getTitleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, title_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
     }
     if (!getUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, url_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, url_);
     }
     if (displayOrder_ != 0) {
       output.writeInt32(5, displayOrder_);
@@ -257,13 +257,13 @@ public  final class GrpcMedia extends
         .computeInt64Size(1, id_);
     }
     if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
     }
     if (!getTitleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, title_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
     }
     if (!getUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, url_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, url_);
     }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -344,39 +344,39 @@ public  final class GrpcMedia extends
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
   public static io.reactivesw.catalog.grpc.GrpcMedia parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
+    return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
@@ -394,7 +394,7 @@ public  final class GrpcMedia extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -402,7 +402,7 @@ public  final class GrpcMedia extends
    * Protobuf type {@code io.reactivesw.catalog.infrastructure.GrpcMedia}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:io.reactivesw.catalog.infrastructure.GrpcMedia)
       io.reactivesw.catalog.grpc.GrpcMediaOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -410,7 +410,7 @@ public  final class GrpcMedia extends
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.reactivesw.catalog.grpc.CatalogMessage.internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -423,12 +423,13 @@ public  final class GrpcMedia extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
       }
     }
     public Builder clear() {
@@ -474,6 +475,32 @@ public  final class GrpcMedia extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.reactivesw.catalog.grpc.GrpcMedia) {
         return mergeFrom((io.reactivesw.catalog.grpc.GrpcMedia)other);

@@ -22,7 +22,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 0.15.0)",
+    value = "by gRPC proto compiler (version 1.0.0)",
     comments = "Source: catalog_service.proto")
 public class CategoryServiceGrpc {
 
@@ -79,7 +79,7 @@ public class CategoryServiceGrpc {
    * define catelog rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface CategoryService {
+  public static abstract class CategoryServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -87,34 +87,37 @@ public class CategoryServiceGrpc {
      * </pre>
      */
     public void getCategories(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.CategoryList> responseObserver);
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.CategoryList> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_CATEGORIES, responseObserver);
+    }
 
     /**
      * <pre>
      *get a category detail.
      * </pre>
      */
-    public void getCategoryById(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcCategory> responseObserver);
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1469")
-  public static abstract class CategoryServiceImplBase implements CategoryService, io.grpc.BindableService {
-
-    @java.lang.Override
-    public void getCategories(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.CategoryList> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_CATEGORIES, responseObserver);
-    }
-
-    @java.lang.Override
     public void getCategoryById(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcCategory> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_GET_CATEGORY_BY_ID, responseObserver);
     }
 
     @java.lang.Override public io.grpc.ServerServiceDefinition bindService() {
-      return CategoryServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            METHOD_GET_CATEGORIES,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Empty,
+                io.reactivesw.catalog.grpc.CategoryList>(
+                  this, METHODID_GET_CATEGORIES)))
+          .addMethod(
+            METHOD_GET_CATEGORY_BY_ID,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.GrpcCategory>(
+                  this, METHODID_GET_CATEGORY_BY_ID)))
+          .build();
     }
   }
 
@@ -124,50 +127,7 @@ public class CategoryServiceGrpc {
    * define catelog rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface CategoryServiceBlockingClient {
-
-    /**
-     * <pre>
-     *query all categories and subcategories.
-     * </pre>
-     */
-    public io.reactivesw.catalog.grpc.CategoryList getCategories(com.google.protobuf.Empty request);
-
-    /**
-     * <pre>
-     *get a category detail.
-     * </pre>
-     */
-    public io.reactivesw.catalog.grpc.GrpcCategory getCategoryById(com.google.protobuf.Int64Value request);
-  }
-
-  /**
-   * <pre>
-   **
-   * define catelog rpc service.
-   * </pre>
-   */
-  @java.lang.Deprecated public static interface CategoryServiceFutureClient {
-
-    /**
-     * <pre>
-     *query all categories and subcategories.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.CategoryList> getCategories(
-        com.google.protobuf.Empty request);
-
-    /**
-     * <pre>
-     *get a category detail.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.GrpcCategory> getCategoryById(
-        com.google.protobuf.Int64Value request);
-  }
-
-  public static class CategoryServiceStub extends io.grpc.stub.AbstractStub<CategoryServiceStub>
-      implements CategoryService {
+  public static final class CategoryServiceStub extends io.grpc.stub.AbstractStub<CategoryServiceStub> {
     private CategoryServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -183,14 +143,22 @@ public class CategoryServiceGrpc {
       return new CategoryServiceStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all categories and subcategories.
+     * </pre>
+     */
     public void getCategories(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.CategoryList> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_CATEGORIES, getCallOptions()), request, responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *get a category detail.
+     * </pre>
+     */
     public void getCategoryById(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcCategory> responseObserver) {
       asyncUnaryCall(
@@ -198,8 +166,13 @@ public class CategoryServiceGrpc {
     }
   }
 
-  public static class CategoryServiceBlockingStub extends io.grpc.stub.AbstractStub<CategoryServiceBlockingStub>
-      implements CategoryServiceBlockingClient {
+  /**
+   * <pre>
+   **
+   * define catelog rpc service.
+   * </pre>
+   */
+  public static final class CategoryServiceBlockingStub extends io.grpc.stub.AbstractStub<CategoryServiceBlockingStub> {
     private CategoryServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -215,21 +188,34 @@ public class CategoryServiceGrpc {
       return new CategoryServiceBlockingStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all categories and subcategories.
+     * </pre>
+     */
     public io.reactivesw.catalog.grpc.CategoryList getCategories(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_CATEGORIES, getCallOptions(), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *get a category detail.
+     * </pre>
+     */
     public io.reactivesw.catalog.grpc.GrpcCategory getCategoryById(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_CATEGORY_BY_ID, getCallOptions(), request);
     }
   }
 
-  public static class CategoryServiceFutureStub extends io.grpc.stub.AbstractStub<CategoryServiceFutureStub>
-      implements CategoryServiceFutureClient {
+  /**
+   * <pre>
+   **
+   * define catelog rpc service.
+   * </pre>
+   */
+  public static final class CategoryServiceFutureStub extends io.grpc.stub.AbstractStub<CategoryServiceFutureStub> {
     private CategoryServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -245,22 +231,28 @@ public class CategoryServiceGrpc {
       return new CategoryServiceFutureStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query all categories and subcategories.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.CategoryList> getCategories(
         com.google.protobuf.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_CATEGORIES, getCallOptions()), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *get a category detail.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.GrpcCategory> getCategoryById(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_CATEGORY_BY_ID, getCallOptions()), request);
     }
   }
-
-  @java.lang.Deprecated public static abstract class AbstractCategoryService extends CategoryServiceImplBase {}
 
   private static final int METHODID_GET_CATEGORIES = 0;
   private static final int METHODID_GET_CATEGORY_BY_ID = 1;
@@ -270,10 +262,10 @@ public class CategoryServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CategoryService serviceImpl;
+    private final CategoryServiceImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(CategoryService serviceImpl, int methodId) {
+    public MethodHandlers(CategoryServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -312,23 +304,4 @@ public class CategoryServiceGrpc {
         METHOD_GET_CATEGORY_BY_ID);
   }
 
-  @java.lang.Deprecated public static io.grpc.ServerServiceDefinition bindService(
-      final CategoryService serviceImpl) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          METHOD_GET_CATEGORIES,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Empty,
-              io.reactivesw.catalog.grpc.CategoryList>(
-                serviceImpl, METHODID_GET_CATEGORIES)))
-        .addMethod(
-          METHOD_GET_CATEGORY_BY_ID,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Int64Value,
-              io.reactivesw.catalog.grpc.GrpcCategory>(
-                serviceImpl, METHODID_GET_CATEGORY_BY_ID)))
-        .build();
-  }
 }

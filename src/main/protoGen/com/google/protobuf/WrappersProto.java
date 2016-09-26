@@ -6,52 +6,58 @@ package com.google.protobuf;
 public final class WrappersProto {
   private WrappersProto() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_DoubleValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_DoubleValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_FloatValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_FloatValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_Int64Value_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_Int64Value_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_UInt64Value_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_UInt64Value_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_Int32Value_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_Int32Value_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_UInt32Value_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_UInt32Value_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_BoolValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_BoolValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_StringValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_StringValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_BytesValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_BytesValue_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -88,55 +94,55 @@ public final class WrappersProto {
     internal_static_google_protobuf_DoubleValue_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_protobuf_DoubleValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DoubleValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_FloatValue_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_protobuf_FloatValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_FloatValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_Int64Value_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_google_protobuf_Int64Value_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_Int64Value_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_UInt64Value_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_google_protobuf_UInt64Value_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_UInt64Value_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_Int32Value_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_google_protobuf_Int32Value_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_Int32Value_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_UInt32Value_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_google_protobuf_UInt32Value_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_UInt32Value_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_BoolValue_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_google_protobuf_BoolValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_BoolValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_StringValue_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_google_protobuf_StringValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_StringValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_google_protobuf_BytesValue_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_google_protobuf_BytesValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_BytesValue_descriptor,
         new java.lang.String[] { "Value", });
   }

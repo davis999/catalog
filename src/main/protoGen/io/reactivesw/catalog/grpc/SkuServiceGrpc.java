@@ -22,7 +22,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 0.15.0)",
+    value = "by gRPC proto compiler (version 1.0.0)",
     comments = "Source: catalog_sku_service.proto")
 public class SkuServiceGrpc {
 
@@ -79,7 +79,7 @@ public class SkuServiceGrpc {
    * sku rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface SkuService {
+  public static abstract class SkuServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -87,34 +87,37 @@ public class SkuServiceGrpc {
      * </pre>
      */
     public void querySkuInventory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver);
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_INVENTORY, responseObserver);
+    }
 
     /**
      * <pre>
      *query sku simple information.
      * </pre>
      */
-    public void querySkuSimpleInformation(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation> responseObserver);
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1469")
-  public static abstract class SkuServiceImplBase implements SkuService, io.grpc.BindableService {
-
-    @java.lang.Override
-    public void querySkuInventory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_INVENTORY, responseObserver);
-    }
-
-    @java.lang.Override
     public void querySkuSimpleInformation(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, responseObserver);
     }
 
     @java.lang.Override public io.grpc.ServerServiceDefinition bindService() {
-      return SkuServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            METHOD_QUERY_SKU_INVENTORY,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int32Value>(
+                  this, METHODID_QUERY_SKU_INVENTORY)))
+          .addMethod(
+            METHOD_QUERY_SKU_SIMPLE_INFORMATION,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.SkuInformation>(
+                  this, METHODID_QUERY_SKU_SIMPLE_INFORMATION)))
+          .build();
     }
   }
 
@@ -124,50 +127,7 @@ public class SkuServiceGrpc {
    * sku rpc service.
    * </pre>
    */
-  @java.lang.Deprecated public static interface SkuServiceBlockingClient {
-
-    /**
-     * <pre>
-     *query sku inventory by sku id.
-     * </pre>
-     */
-    public com.google.protobuf.Int32Value querySkuInventory(com.google.protobuf.Int64Value request);
-
-    /**
-     * <pre>
-     *query sku simple information.
-     * </pre>
-     */
-    public io.reactivesw.catalog.grpc.SkuInformation querySkuSimpleInformation(com.google.protobuf.Int64Value request);
-  }
-
-  /**
-   * <pre>
-   **
-   * sku rpc service.
-   * </pre>
-   */
-  @java.lang.Deprecated public static interface SkuServiceFutureClient {
-
-    /**
-     * <pre>
-     *query sku inventory by sku id.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> querySkuInventory(
-        com.google.protobuf.Int64Value request);
-
-    /**
-     * <pre>
-     *query sku simple information.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.SkuInformation> querySkuSimpleInformation(
-        com.google.protobuf.Int64Value request);
-  }
-
-  public static class SkuServiceStub extends io.grpc.stub.AbstractStub<SkuServiceStub>
-      implements SkuService {
+  public static final class SkuServiceStub extends io.grpc.stub.AbstractStub<SkuServiceStub> {
     private SkuServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -183,14 +143,22 @@ public class SkuServiceGrpc {
       return new SkuServiceStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku inventory by sku id.
+     * </pre>
+     */
     public void querySkuInventory(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_INVENTORY, getCallOptions()), request, responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku simple information.
+     * </pre>
+     */
     public void querySkuSimpleInformation(com.google.protobuf.Int64Value request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation> responseObserver) {
       asyncUnaryCall(
@@ -198,8 +166,13 @@ public class SkuServiceGrpc {
     }
   }
 
-  public static class SkuServiceBlockingStub extends io.grpc.stub.AbstractStub<SkuServiceBlockingStub>
-      implements SkuServiceBlockingClient {
+  /**
+   * <pre>
+   **
+   * sku rpc service.
+   * </pre>
+   */
+  public static final class SkuServiceBlockingStub extends io.grpc.stub.AbstractStub<SkuServiceBlockingStub> {
     private SkuServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -215,21 +188,34 @@ public class SkuServiceGrpc {
       return new SkuServiceBlockingStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku inventory by sku id.
+     * </pre>
+     */
     public com.google.protobuf.Int32Value querySkuInventory(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_SKU_INVENTORY, getCallOptions(), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku simple information.
+     * </pre>
+     */
     public io.reactivesw.catalog.grpc.SkuInformation querySkuSimpleInformation(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions(), request);
     }
   }
 
-  public static class SkuServiceFutureStub extends io.grpc.stub.AbstractStub<SkuServiceFutureStub>
-      implements SkuServiceFutureClient {
+  /**
+   * <pre>
+   **
+   * sku rpc service.
+   * </pre>
+   */
+  public static final class SkuServiceFutureStub extends io.grpc.stub.AbstractStub<SkuServiceFutureStub> {
     private SkuServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -245,22 +231,28 @@ public class SkuServiceGrpc {
       return new SkuServiceFutureStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku inventory by sku id.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> querySkuInventory(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_INVENTORY, getCallOptions()), request);
     }
 
-    @java.lang.Override
+    /**
+     * <pre>
+     *query sku simple information.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.SkuInformation> querySkuSimpleInformation(
         com.google.protobuf.Int64Value request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions()), request);
     }
   }
-
-  @java.lang.Deprecated public static abstract class AbstractSkuService extends SkuServiceImplBase {}
 
   private static final int METHODID_QUERY_SKU_INVENTORY = 0;
   private static final int METHODID_QUERY_SKU_SIMPLE_INFORMATION = 1;
@@ -270,10 +262,10 @@ public class SkuServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SkuService serviceImpl;
+    private final SkuServiceImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(SkuService serviceImpl, int methodId) {
+    public MethodHandlers(SkuServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -312,23 +304,4 @@ public class SkuServiceGrpc {
         METHOD_QUERY_SKU_SIMPLE_INFORMATION);
   }
 
-  @java.lang.Deprecated public static io.grpc.ServerServiceDefinition bindService(
-      final SkuService serviceImpl) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          METHOD_QUERY_SKU_INVENTORY,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Int64Value,
-              com.google.protobuf.Int32Value>(
-                serviceImpl, METHODID_QUERY_SKU_INVENTORY)))
-        .addMethod(
-          METHOD_QUERY_SKU_SIMPLE_INFORMATION,
-          asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Int64Value,
-              io.reactivesw.catalog.grpc.SkuInformation>(
-                serviceImpl, METHODID_QUERY_SKU_SIMPLE_INFORMATION)))
-        .build();
-  }
 }

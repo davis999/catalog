@@ -6,62 +6,68 @@ package io.reactivesw.catalog.grpc;
 public final class CatalogMessage {
   private CatalogMessage() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_CategoryList_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_CategoryList_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor;
   static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -132,67 +138,67 @@ public final class CatalogMessage {
     internal_static_io_reactivesw_catalog_infrastructure_CategoryList_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_io_reactivesw_catalog_infrastructure_CategoryList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_CategoryList_descriptor,
         new java.lang.String[] { "Category", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcCategory_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_ProductBriefList_descriptor,
         new java.lang.String[] { "ProductBrief", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcProductBrief_descriptor,
         new java.lang.String[] { "Id", "Name", "Price", "DisplayOrder", "MediaURL", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcAttribute_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "Value", "Type", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcFeature_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcVariantValue_descriptor,
         new java.lang.String[] { "Id", "Value", "DisplayOrder", "PriceAdjustment", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcVariant_descriptor,
         new java.lang.String[] { "Id", "Name", "DisplayOrder", "VariantValue", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcMedia_descriptor,
         new java.lang.String[] { "Id", "Type", "Title", "Url", "DisplayOrder", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor,
         new java.lang.String[] { "Id", "SkuNumber", "IsActive", "Quatity", "Upc", "DisplayOrder", "Media", "VariantValue", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor,
         new java.lang.String[] { "Id", "Manufacturer", "Brand", "Model", "Name", "Price", "DisplayOrder", "Description", "Detail", "Displayed", "Deleted", "Attribute", "Sku", "Variant", "Feature", });
   }
