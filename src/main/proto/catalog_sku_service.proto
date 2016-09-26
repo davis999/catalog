@@ -6,15 +6,15 @@ option java_multiple_files = true;
 option java_package = "io.reactivesw.catalog.grpc";
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
-import "catalog_shopping_cart_message.proto";
+import "catalog_sku_message.proto";
 
 /**
- * service for shoppingcart.
+ * sku rpc service.
  */
-service CatalogShoppingCartService{
+service SkuService {
     //query sku inventory by sku id.
-    rpc querySkuInventory(google.protobuf.Int64Value) returns (google.protobuf.Int32Value);
+    rpc querySkuInventory (google.protobuf.Int64Value) returns (google.protobuf.Int32Value);
 
     //query sku simple information.
-    rpc querySkuSimpleInformation(google.protobuf.Int64Value) returns(SkuInformation);
+    rpc querySkuSimpleInformation (google.protobuf.Int64Value) returns (SkuInformation);
 }

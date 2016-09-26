@@ -5,26 +5,27 @@ import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.domain.entity.VariantValue;
 import io.reactivesw.catalog.grpc.GrpcSku;
 
+import io.reactivesw.catalog.grpc.SkuInformation;
 import org.modelmapper.ModelMapper;
 
 import java.util.Set;
 
 /**
  * this is transfer class for Sku.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 public final class SkuTransfer {
 
   /**
    * private constructro.
    */
-  private SkuTransfer() {}
+  private SkuTransfer() {
+  }
 
   /**
    * transfer Sku to GrpcSku.
-   * 
+   *
    * @param sku sku
    * @return GrpcSku
    */
@@ -44,6 +45,18 @@ public final class SkuTransfer {
       }
     }
 
+    return builder.build();
+  }
+
+  /**
+   * transfer Sku to SkuInformation.
+   *
+   * @param sku sku
+   * @return SkuInformation SkuInformation
+   */
+  public static SkuInformation transferToSkuInformation(Sku sku) {
+    final ModelMapper modelMapper = new ModelMapper();
+    final SkuInformation.Builder builder = modelMapper.map(sku, SkuInformation.Builder.class);
     return builder.build();
   }
 }

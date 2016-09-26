@@ -3,12 +3,9 @@ package io.reactivesw.catalog.domain.service;
 import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.repository.ProductRepository;
-
-import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

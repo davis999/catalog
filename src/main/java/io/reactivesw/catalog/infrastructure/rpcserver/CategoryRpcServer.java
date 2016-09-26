@@ -22,7 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 /**
- * this is gRPC server for catelog.
+ * this is gRPC server for category.
  *
  * @author Davis
  */

@@ -72,7 +72,7 @@ public final class CatalogMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025catalog-message.proto\022$io.reactivesw.c" +
+      "\n\025catalog_message.proto\022$io.reactivesw.c" +
       "atalog.infrastructure\"T\n\014CategoryList\022D\n" +
       "\010category\030\001 \003(\01322.io.reactivesw.catalog." +
       "infrastructure.GrpcCategory\"T\n\014GrpcCateg" +
