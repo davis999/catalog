@@ -13,7 +13,7 @@ buildscript {
         // for unit test code coverage  -- need to find a way to put it in its file
         classpath('com.palantir:jacoco-coverage:0.4.0')
 
-        // grpc build
+        // protobuf compile plugin
         classpath('com.google.protobuf:protobuf-gradle-plugin:0.8.0')
     }
 }

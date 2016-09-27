@@ -57,6 +57,11 @@ public final class SkuTransfer {
   public static SkuInformation transferToSkuInformation(Sku sku) {
     final ModelMapper modelMapper = new ModelMapper();
     final SkuInformation.Builder builder = modelMapper.map(sku, SkuInformation.Builder.class);
+    Set<Media> medias = sku.getMedias();
+    if (medias != null && !medias.isEmpty()) {
+      Media media = medias.iterator().next();
+      builder.setMediaUrl(media.getUrl());
+    }
     return builder.build();
   }
 }

@@ -4,8 +4,8 @@ import io.reactivesw.catalog.domain.entity.Media
 import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.entity.Variant
 import io.reactivesw.catalog.domain.entity.VariantValue
-import io.reactivesw.catalog.grpc.GrpcSku;
-
+import io.reactivesw.catalog.grpc.GrpcSku
+import io.reactivesw.catalog.grpc.SkuInformation;
 import spock.lang.Specification
 
 class SkuTransferTest extends Specification{
@@ -49,5 +49,14 @@ class SkuTransferTest extends Specification{
     grpcSku.getUpc() == sku.getUpc();
     grpcSku.getMediaCount() == sku.getMedias().size();
     grpcSku.getVariantValueCount() == sku.getVariantValues().size();
+  }
+
+  def "test transfer to SkuInformation"(){
+    when:
+    SkuInformation skuInformation = SkuTransfer.transferToSkuInformation(sku)
+    then:
+    skuInformation.getSkuId() == sku.getId()
+    skuInformation.getMediaUrl() == sku.getMedias().getAt(0).getUrl()
+    skuInformation.getPrice() == sku.getPrice().toString()
   }
 }

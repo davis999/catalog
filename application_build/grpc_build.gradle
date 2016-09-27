@@ -1,10 +1,13 @@
 apply plugin: 'com.google.protobuf'
 
-//appoint proto file.
 sourceSets {
     main {
+        //appoint proto file.
         proto {
             srcDir "$projectDir/catalog_proto"
+        }
+        java {
+            srcDir "src/main/protoGen"
         }
     }
 }

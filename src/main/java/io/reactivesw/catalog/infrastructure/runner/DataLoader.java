@@ -3,20 +3,25 @@ package io.reactivesw.catalog.infrastructure.runner;
 import io.reactivesw.catalog.domain.entity.Category;
 import io.reactivesw.catalog.domain.entity.Media;
 import io.reactivesw.catalog.domain.entity.Product;
+import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.infrastructure.repository.CategoryRepository;
 import io.reactivesw.catalog.infrastructure.repository.MediaRepository;
 import io.reactivesw.catalog.infrastructure.repository.ProductRepository;
+import io.reactivesw.catalog.infrastructure.repository.SkuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Davis on 16/9/23.
  */
-//@Component
+@Component
 public class DataLoader implements ApplicationRunner {
 
   /**
@@ -38,6 +43,12 @@ public class DataLoader implements ApplicationRunner {
   private transient ProductRepository productRepository;
 
   /**
+   * sku repository.
+   */
+  @Autowired
+  private transient SkuRepository skuRepository;
+
+  /**
    * run when system setup.
    *
    * @param args args.
@@ -45,14 +56,30 @@ public class DataLoader implements ApplicationRunner {
    */
   @Override
   public void run(ApplicationArguments args) {
-    //initial media.
-    initialMedia();
+    //initial media
+    Media media = initialMedia();
+    //initial sku
+    Sku sku = initialSku();
+    //add media to sku
+    addMediaToSku(sku, media);
     //initial category.
-    final Category category = initialCategory();
-    //initial product.
-    final Product product = initialProduct();
-    //add product to category.
-    addProductToCategory(category, product);
+//    final Category category = initialCategory();
+//    //initial product.
+//    final Product product = initialProduct();
+//    //add product to category.
+//    addProductToCategory(category, product);
+  }
+
+  /**
+   * add media to sku.
+   * @param sku sku
+   * @param media media
+   */
+  private void addMediaToSku(Sku sku, Media media) {
+    Set<Media> medias = new HashSet<>();
+    medias.add(media);
+    sku.setMedias(medias);
+    skuRepository.save(sku);
   }
 
   /**
@@ -73,12 +100,16 @@ public class DataLoader implements ApplicationRunner {
   /**
    * initial media.
    */
-  private void initialMedia() {
+  private Media initialMedia() {
     final List<Media> medias = mediaRepository.findAll();
+    Media savedMedia = null;
     if (medias == null || medias.isEmpty()) {
       final Media media = MediaDataInitial.initialMedia();
-      mediaRepository.save(media);
+      savedMedia = mediaRepository.save(media);
+    } else {
+      savedMedia = medias.get(0);
     }
+    return savedMedia;
   }
 
   /**
@@ -111,5 +142,22 @@ public class DataLoader implements ApplicationRunner {
       savedProduct = productRepository.save(product);
     }
     return savedProduct;
+  }
+
+  /**
+   * initial sku.
+   *
+   * @return Sku saved sku.
+   */
+  private Sku initialSku() {
+    final List<Sku> skus = skuRepository.findAll();
+    Sku savedSku = null;
+    if (skus == null || skus.isEmpty()) {
+      final Sku sku = SkuDataInitial.initialSku();
+      savedSku = skuRepository.save(sku);
+    }else {
+      savedSku = skus.get(0);
+    }
+    return savedSku;
   }
 }

@@ -45,14 +45,14 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
    */
   @Override
   public void getCategories(Empty request, StreamObserver<CategoryList> responseObserver) {
-    LOG.debug("enter getCategories.");
+    LOG.info("enter getCategories.");
     try {
       final List<Category> categories = categoryService.findAllCategories();
       final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.debug("end getCategories.get {} categories.", reply.getCategoryCount());
+      LOG.info("end getCategories.get {} categories.", reply.getCategoryCount());
     } catch (NotFoundException exception) {
-      LOG.warn("exception from findAllTopCategories, no result.", exception);
+      LOG.debug("exception from findAllTopCategories, no result.", exception);
       final Status status =
           Status.INTERNAL.withDescription("can not get any category.");
       throw new StatusRuntimeException(status);
@@ -75,7 +75,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end getCategoryById, get the category: {}", reply.toString());
     } catch (NotFoundException exception) {
-      LOG.error("query fail, category with id {} is not exist.", categoryId);
+      LOG.debug("query fail, category with id {} is not exist.", categoryId);
       final Status status =
           Status.NOT_FOUND.withDescription("query category fail, ID is not exist");
       throw new StatusRuntimeException(status);

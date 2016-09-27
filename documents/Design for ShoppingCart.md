@@ -1,7 +1,7 @@
 ## 1. gRPC API
-In [catalog_shopping_cart_service.proto](https://github.com/reactivesw/catalog/blob/master/src/main/proto/catalog_shopping_cart_service.proto), define 1 service and 2 rpc API.
-The request and response message are in [catalog_shopping_cart_message.proto
-](https://github.com/reactivesw/catalog/blob/master/src/main/proto/catalog_shopping_cart_message.proto).
+In [catalog_sku_service.proto](https://github.com/reactivesw/catalog_proto/blob/master/catalog_sku_service.proto), define 1 service and 2 rpc API.
+The request and response message are in [catalog_sku_message.proto
+](https://github.com/reactivesw/catalog_proto/blob/master/catalog_sku_message.proto).
 ### 1.1 query sku inventory by sku id
 * description : query sku inventory by sku id.
 * parameters : Int64Value(value(long))
