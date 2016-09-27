@@ -6,7 +6,7 @@ Catalog Service support following user case:
 ## 2. query sku inventory by sku id
 ShoppingCart use sku id to query sku inventory.
 response & exception:
-* if sku is active, return the real number.
+* if sku is active, return the inventory.
 * if sku is not active, throw exception with description "Sku is not active".
 * if sku is not found ,throw exception with description "Sku is not exist"
 
