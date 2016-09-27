@@ -33,17 +33,17 @@ public class SkuService {
    * @return int sku inventory.
    */
   public int queryQuantity(long skuId) {
-    LOG.info("query sku quantity by it's id {}.", skuId);
+    LOG.debug("query sku quantity by it's id {}.", skuId);
     final Sku sku = skuRepository.findOne(skuId);
     if (sku == null) {
-      LOG.debug("can not find sku with id {}.", skuId);
+      LOG.warn("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
     } else if (!sku.isActive()) {
       LOG.debug("sku is not active, id is {}.", skuId);
       throw new SkuNotActiveException("sku is not active");
     }
     final int quantity = sku.getQuantity();
-    LOG.info("end query sku quantity, id is {}, quantity is {}", skuId, quantity);
+    LOG.debug("end query sku quantity, id is {}, quantity is {}", skuId, quantity);
     return quantity;
   }
 
@@ -54,18 +54,18 @@ public class SkuService {
    * @return Sku Sku
    */
   public Sku querySkuById(long skuId) {
-    LOG.info("query sku by id {}.", skuId);
+    LOG.debug("query sku by id {}.", skuId);
     final Sku sku = skuRepository.findOne(skuId);
 
     if (sku == null) {
-      LOG.debug("can not find sku with id {}.", skuId);
+      LOG.warn("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
     } else if (!sku.isActive()) {
       LOG.debug("sku is not active, id is {}.", skuId);
       throw new SkuNotActiveException("sku is not active");
     }
 
-    LOG.info("end query sku, get sku: {}", sku.toString());
+    LOG.debug("end query sku, get sku: {}", sku.toString());
     return sku;
   }
 }

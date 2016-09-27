@@ -45,12 +45,12 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
   @Override
   public void querySkuInventory(Int64Value request, StreamObserver<Int32Value> responseObserver) {
     final long skuId = request.getValue();
-    LOG.info("start querySkuInventory, sku id is {}.", skuId);
+    LOG.debug("start querySkuInventory, sku id is {}.", skuId);
     try {
       final int inventory = skuService.queryQuantity(skuId);
       final Int32Value reply = Int32Value.newBuilder().setValue(inventory).build();
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end querySkuInventory, sku id is {}, inventory is {}.", skuId, inventory);
+      LOG.debug("end querySkuInventory, sku id is {}, inventory is {}.", skuId, inventory);
     } catch (NotFoundException exception) {
       LOG.debug("query sku quantity fail, can not find sku.", exception);
       final Status status = Status.NOT_FOUND.withDescription("sku is not exit");
@@ -72,12 +72,12 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
   public void querySkuSimpleInformation(Int64Value request, StreamObserver<SkuInformation>
       responseObserver) {
     final long skuId = request.getValue();
-    LOG.info("start querySkuSimpleInformation, id is {}.", skuId);
+    LOG.debug("start querySkuSimpleInformation, id is {}.", skuId);
     try {
       final Sku sku = skuService.querySkuById(skuId);
       final SkuInformation reply = SkuTransfer.transferToSkuInformation(sku);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end querySkuSimpleInformation, get sku information {}.", reply.toString());
+      LOG.debug("end querySkuSimpleInformation, get sku information {}.", reply.toString());
     } catch (NotFoundException exception) {
       LOG.debug("query sku quantity fail, can not find sku.", exception);
       final Status status = Status.NOT_FOUND.withDescription("sku is not exit");
