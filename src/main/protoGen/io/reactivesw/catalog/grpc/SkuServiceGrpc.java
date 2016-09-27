@@ -49,6 +49,15 @@ public class SkuServiceGrpc {
               "io.reactivesw.catalog.infrastructure.SkuService", "querySkuSimpleInformation"),
           io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.SkuInformation.getDefaultInstance()));
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.SkuIdList,
+      io.reactivesw.catalog.grpc.SkuInformationList> METHOD_QUERY_SKU_INFORMATION_LIST =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          generateFullMethodName(
+              "io.reactivesw.catalog.infrastructure.SkuService", "querySkuInformationList"),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.SkuIdList.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.SkuInformationList.getDefaultInstance()));
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -101,6 +110,16 @@ public class SkuServiceGrpc {
       asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, responseObserver);
     }
 
+    /**
+     * <pre>
+     *query list sku information.
+     * </pre>
+     */
+    public void querySkuInformationList(io.reactivesw.catalog.grpc.SkuIdList request,
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformationList> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_INFORMATION_LIST, responseObserver);
+    }
+
     @java.lang.Override public io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -117,6 +136,13 @@ public class SkuServiceGrpc {
                 com.google.protobuf.Int64Value,
                 io.reactivesw.catalog.grpc.SkuInformation>(
                   this, METHODID_QUERY_SKU_SIMPLE_INFORMATION)))
+          .addMethod(
+            METHOD_QUERY_SKU_INFORMATION_LIST,
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.reactivesw.catalog.grpc.SkuIdList,
+                io.reactivesw.catalog.grpc.SkuInformationList>(
+                  this, METHODID_QUERY_SKU_INFORMATION_LIST)))
           .build();
     }
   }
@@ -164,6 +190,17 @@ public class SkuServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *query list sku information.
+     * </pre>
+     */
+    public void querySkuInformationList(io.reactivesw.catalog.grpc.SkuIdList request,
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformationList> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_QUERY_SKU_INFORMATION_LIST, getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -206,6 +243,16 @@ public class SkuServiceGrpc {
     public io.reactivesw.catalog.grpc.SkuInformation querySkuSimpleInformation(com.google.protobuf.Int64Value request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *query list sku information.
+     * </pre>
+     */
+    public io.reactivesw.catalog.grpc.SkuInformationList querySkuInformationList(io.reactivesw.catalog.grpc.SkuIdList request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_QUERY_SKU_INFORMATION_LIST, getCallOptions(), request);
     }
   }
 
@@ -252,10 +299,22 @@ public class SkuServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *query list sku information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.SkuInformationList> querySkuInformationList(
+        io.reactivesw.catalog.grpc.SkuIdList request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_QUERY_SKU_INFORMATION_LIST, getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_QUERY_SKU_INVENTORY = 0;
   private static final int METHODID_QUERY_SKU_SIMPLE_INFORMATION = 1;
+  private static final int METHODID_QUERY_SKU_INFORMATION_LIST = 2;
 
   private static class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -282,6 +341,10 @@ public class SkuServiceGrpc {
           serviceImpl.querySkuSimpleInformation((com.google.protobuf.Int64Value) request,
               (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation>) responseObserver);
           break;
+        case METHODID_QUERY_SKU_INFORMATION_LIST:
+          serviceImpl.querySkuInformationList((io.reactivesw.catalog.grpc.SkuIdList) request,
+              (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformationList>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -301,7 +364,8 @@ public class SkuServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     return new io.grpc.ServiceDescriptor(SERVICE_NAME,
         METHOD_QUERY_SKU_INVENTORY,
-        METHOD_QUERY_SKU_SIMPLE_INFORMATION);
+        METHOD_QUERY_SKU_SIMPLE_INFORMATION,
+        METHOD_QUERY_SKU_INFORMATION_LIST);
   }
 
 }

@@ -8,16 +8,21 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.domain.service.SkuService;
+import io.reactivesw.catalog.grpc.SkuIdList;
 import io.reactivesw.catalog.grpc.SkuInformation;
+import io.reactivesw.catalog.grpc.SkuInformationList;
 import io.reactivesw.catalog.grpc.SkuServiceGrpc;
 import io.reactivesw.catalog.infrastructure.dto.SkuTransfer;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
+import io.reactivesw.catalog.infrastructure.exception.NullParameterException;
 import io.reactivesw.catalog.infrastructure.exception.SkuNotActiveException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
 import org.lognet.springboot.grpc.GRpcService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * this is gRPC server for sku.
@@ -86,6 +91,29 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
       LOG.debug("query sku quantity fail, sku is not active.", exception);
       final Status status = Status.UNAVAILABLE.withDescription("sku is not active");
       throw new StatusRuntimeException(status);
+    }
+  }
+
+  /**
+   * query list sku information.
+   *
+   * @param request          list of skuId.
+   * @param responseObserver list of sku information.
+   */
+  @Override
+  public void querySkuInformationList(SkuIdList request, StreamObserver<SkuInformationList>
+      responseObserver) {
+    final List<Long> skuIds = request.getSkuIdList();
+    LOG.debug("start querySkuInformationList.");
+    try {
+      final List<Sku> skus = skuService.queryListSku(skuIds);
+      final SkuInformationList reply = SkuTransfer.transferToSkuInformationList(skus);
+      GrpcResponseUtils.completeResponse(responseObserver, reply);
+      LOG.debug("end querySkuInformationList, get {} sku.", reply.getSkuInformationCount());
+    } catch (NullParameterException exception) {
+      //TODO
+    }catch (NullPointerException exception){
+      //TODO
     }
   }
 }

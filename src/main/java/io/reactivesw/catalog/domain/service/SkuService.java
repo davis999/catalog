@@ -2,12 +2,15 @@ package io.reactivesw.catalog.domain.service;
 
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
+import io.reactivesw.catalog.infrastructure.exception.NullParameterException;
 import io.reactivesw.catalog.infrastructure.exception.SkuNotActiveException;
 import io.reactivesw.catalog.infrastructure.repository.SkuRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * this is service class for sku.
@@ -67,5 +70,19 @@ public class SkuService {
 
     LOG.debug("end query sku, get sku: {}", sku.toString());
     return sku;
+  }
+
+  /**
+   * query list of sku by ids.
+   * @param skuIds list of id.
+   * @return list of sku.
+   */
+  public List<Sku> queryListSku(List<Long> skuIds){
+    if (skuIds == null || skuIds.isEmpty()){
+      LOG.debug("query list sku with null id");
+      throw new NullParameterException("sku id is null");
+    }
+    final List<Sku> skus = skuRepository.findAll(skuIds);
+    return skus;
   }
 }

@@ -6,8 +6,11 @@ import io.reactivesw.catalog.domain.entity.VariantValue;
 import io.reactivesw.catalog.grpc.GrpcSku;
 
 import io.reactivesw.catalog.grpc.SkuInformation;
+import io.reactivesw.catalog.grpc.SkuInformationList;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -24,13 +27,17 @@ public final class SkuTransfer {
   }
 
   /**
+   * model mapper.
+   */
+  private static final ModelMapper modelMapper = new ModelMapper();
+
+  /**
    * transfer Sku to GrpcSku.
    *
    * @param sku sku
    * @return GrpcSku
    */
   public static GrpcSku transferToGrpcSku(Sku sku) {
-    final ModelMapper modelMapper = new ModelMapper();
     final GrpcSku.Builder builder = modelMapper.map(sku, GrpcSku.Builder.class);
 
     final Set<Media> medias = sku.getMedias();
@@ -55,12 +62,25 @@ public final class SkuTransfer {
    * @return SkuInformation SkuInformation
    */
   public static SkuInformation transferToSkuInformation(Sku sku) {
-    final ModelMapper modelMapper = new ModelMapper();
+
     final SkuInformation.Builder builder = modelMapper.map(sku, SkuInformation.Builder.class);
     Set<Media> medias = sku.getMedias();
     if (medias != null && !medias.isEmpty()) {
       Media media = medias.iterator().next();
       builder.setMediaUrl(media.getUrl());
+    }
+    return builder.build();
+  }
+
+  /**
+   * transfer list of Sku to SkuInformationList
+   * @param skus list of Sku
+   * @return SkuInformationList
+   */
+  public static SkuInformationList transferToSkuInformationList(List<Sku> skus) {
+    final SkuInformationList.Builder builder = SkuInformationList.newBuilder();
+    for (final Sku sku : skus) {
+      builder.addSkuInformation(transferToSkuInformation(sku));
     }
     return builder.build();
   }

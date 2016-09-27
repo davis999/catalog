@@ -45,15 +45,15 @@ INSERT INTO sw_attribute (attribute_id, name, type, description, display_order) 
 --insert into sw_attribute_value
 INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (1, 'attribute string value', 1);
 INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (2, 'attribute string value', 2);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (3, 'attribute string value', 3);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (4, 'attribute string value', 4);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (5, 'attribute string value', 5);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (3, '19.99', 3);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (4, '11', 4);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (5, '2015-10-11 10:00:00', 5);
 
 INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (6, 'attribute string value', 6);
 INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (7, 'attribute string value', 7);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (8, 'attribute string value', 8);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (9, 'attribute string value', 9);
-INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (10, 'attribute string value', 10);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (8, '19.89', 8);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (9, '12', 9);
+INSERT INTO sw_attribute_value (attribute_value_id, value, attribute_id) VALUES (10, '2015-10-12 10:00:00', 10);
 
 --insert into sw_template_attribute
 INSERT INTO sw_template_attribute (template_id, attribute_id) VALUES (1, 1);
@@ -107,6 +107,9 @@ INSERT INTO sw_category_product (category_id, product_id) VALUES (1, 2);
 
 INSERT INTO sw_category_product (category_id, product_id) VALUES (2, 1);
 INSERT INTO sw_category_product (category_id, product_id) VALUES (2, 2);
+
+--insert into sw_product_attribute_value
+INSERT INTO sw_product_attribute_value (product_id, category_id) VALUES ();
 
 
 

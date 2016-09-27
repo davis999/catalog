@@ -15,10 +15,20 @@ public final class CatalogSkuMessage {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -29,11 +39,14 @@ public final class CatalogSkuMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\031catalog_sku_message.proto\022$io.reactive" +
-      "sw.catalog.infrastructure\"h\n\016SkuInformat" +
-      "ion\022\016\n\006sku_id\030\001 \001(\003\022\022\n\nsku_number\030\002 \001(\t\022" +
-      "\020\n\010sku_name\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\r\n\005" +
-      "price\030\005 \001(\tB!\n\032io.reactivesw.catalog.grp" +
-      "cP\001\240\001\001b\006proto3"
+      "sw.catalog.infrastructure\"c\n\022SkuInformat" +
+      "ionList\022M\n\017sku_information\030\001 \003(\01324.io.re" +
+      "activesw.catalog.infrastructure.SkuInfor" +
+      "mation\"h\n\016SkuInformation\022\016\n\006sku_id\030\001 \001(\003" +
+      "\022\022\n\nsku_number\030\002 \001(\t\022\020\n\010sku_name\030\003 \001(\t\022\021" +
+      "\n\tmedia_url\030\004 \001(\t\022\r\n\005price\030\005 \001(\t\"\033\n\tSkuI" +
+      "dList\022\016\n\006sku_id\030\001 \003(\003B!\n\032io.reactivesw.c" +
+      "atalog.grpcP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -47,12 +60,24 @@ public final class CatalogSkuMessage {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor =
+    internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_descriptor,
+        new java.lang.String[] { "SkuInformation", });
+    internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_SkuInformation_descriptor,
         new java.lang.String[] { "SkuId", "SkuNumber", "SkuName", "MediaUrl", "Price", });
+    internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_descriptor,
+        new java.lang.String[] { "SkuId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
