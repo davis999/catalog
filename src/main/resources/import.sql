@@ -109,7 +109,7 @@ INSERT INTO sw_category_product (category_id, product_id) VALUES (2, 1);
 INSERT INTO sw_category_product (category_id, product_id) VALUES (2, 2);
 
 --insert into sw_product_attribute_value
-INSERT INTO sw_product_attribute_value (product_id, category_id) VALUES ();
+INSERT INTO sw_product_attribute_value (product_id, category_id) VALUES (1, 1);
 
 
 
