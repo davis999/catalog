@@ -57,11 +57,11 @@ public class DataLoader implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) {
     //initial media
-    Media media = initialMedia();
-    //initial sku
-    Sku sku = initialSku();
-    //add media to sku
-    addMediaToSku(sku, media);
+//    Media media = initialMedia();
+//    //initial sku
+//    Sku sku = initialSku();
+//    //add media to sku
+//    addMediaToSku(sku, media);
     //initial category.
 //    final Category category = initialCategory();
 //    //initial product.
