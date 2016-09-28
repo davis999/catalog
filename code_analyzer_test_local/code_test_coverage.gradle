@@ -8,14 +8,14 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-//                    'io/reactivesw/catalog/**',
                     'com/google/protobuf/*',
                     'io/reactivesw/catalog/App*',
                     'io/reactivesw/catalog/grpc/*',
                     'io/reactivesw/catalog/domain/entity/*',
                     'io/reactivesw/catalog/infrastructure/exception/*',
                     'io/reactivesw/catalog/infrastructure/dto/*',
-                    'io/reactivesw/catalog/infrastructure/utils/*'
+                    'io/reactivesw/catalog/infrastructure/utils/*',
+                    'io/reactivesw/catalog/infrastructure/rpcserver/*'
             ])
         })
     }
