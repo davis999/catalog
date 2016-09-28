@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -74,15 +75,27 @@ public class SkuService {
 
   /**
    * query list of sku by ids.
+   *
    * @param skuIds list of id.
    * @return list of sku.
    */
-  public List<Sku> queryListSku(List<Long> skuIds){
-    if (skuIds == null || skuIds.isEmpty()){
+  public List<Sku> queryListSku(List<Long> skuIds) {
+    if (skuIds == null || skuIds.isEmpty()) {
       LOG.debug("query list sku with null id");
       throw new NullParameterException("sku id is null");
     }
-    final List<Sku> skus = skuRepository.findAll(skuIds);
+    List<Sku> skus = skuRepository.findAll(skuIds);
+    //remove not active sku.
+    if (skus == null) {
+      //should return new List instead of null.
+      skus = new ArrayList<>();
+    } else {
+      for (Sku sku : skus) {
+        if (!sku.isActive()) {
+          skus.remove(sku);
+        }
+      }
+    }
     return skus;
   }
 }

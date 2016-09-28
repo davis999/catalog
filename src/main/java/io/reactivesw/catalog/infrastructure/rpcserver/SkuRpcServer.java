@@ -111,9 +111,9 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end querySkuInformationList, get {} sku.", reply.getSkuInformationCount());
     } catch (NullParameterException exception) {
-      //TODO
-    }catch (NullPointerException exception){
-      //TODO
+      LOG.debug("queryListSku fail. ", exception);
+      final Status status = Status.DATA_LOSS.withDescription("list of id is null");
+      throw new StatusRuntimeException(status);
     }
   }
 }

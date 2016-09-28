@@ -9,7 +9,6 @@ import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
 import org.modelmapper.ModelMapper;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -19,17 +18,16 @@ import java.util.Set;
  * @author Davis
  */
 public final class SkuTransfer {
+  /**
+   * model mapper.
+   */
+  private static ModelMapper modelMapper = new ModelMapper();
 
   /**
    * private constructro.
    */
   private SkuTransfer() {
   }
-
-  /**
-   * model mapper.
-   */
-  private static final ModelMapper modelMapper = new ModelMapper();
 
   /**
    * transfer Sku to GrpcSku.
@@ -73,7 +71,8 @@ public final class SkuTransfer {
   }
 
   /**
-   * transfer list of Sku to SkuInformationList
+   * transfer list of Sku to SkuInformationList.
+   *
    * @param skus list of Sku
    * @return SkuInformationList
    */

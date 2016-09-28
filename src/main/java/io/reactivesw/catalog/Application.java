@@ -6,14 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * this is the starter of project.
- * @author Davis
  *
+ * @author Davis
  */
 @SpringBootApplication
 // @EnableConfigurationProperties({ApplicationConfig.class})
 public class Application {
   /**
    * the main method.
+   *
    * @param args - args
    */
   public static void main(final String[] args) {
