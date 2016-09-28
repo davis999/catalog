@@ -1,7 +1,7 @@
 package io.reactivesw.catalog.domain.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
@@ -64,16 +64,16 @@ public class Template implements Serializable {
   private Set<Attribute> attributes;
 
   /**
-   * create time for template.
+   * create time.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
-   * last modified time for template.
+   * last modified time.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * products for template.
@@ -154,39 +154,39 @@ public class Template implements Serializable {
   }
 
   /**
-   * get createTime.
-   * 
-   * @return the createTime
+   * get create time.
+   *
+   * @return create time.
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
-   * 
-   * @param createTime the createTime to set
+   * set create time.
+   *
+   * @param createdTime create time.
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
-   * 
-   * @return the lastModifiedTime
+   * get last modified time.
+   *
+   * @return modifiedTime.
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
-   * 
-   * @param lastModifiedTime the lastModifiedTime to set
+   * set last modified time.
+   *
+   * @param modifiedTime last modified time.
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**

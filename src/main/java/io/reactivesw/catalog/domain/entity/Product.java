@@ -494,6 +494,15 @@ public class Product implements Serializable {
   }
 
   /**
+   * set modifiedTime.
+   *
+   * @param modifiedTime the modifiedTime to set
+   */
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
+  }
+
+  /**
    * get category.
    *
    * @return the category
@@ -509,15 +518,6 @@ public class Product implements Serializable {
    */
   public void setCategory(Category category) {
     this.category = category;
-  }
-
-  /**
-   * set modifiedTime.
-   *
-   * @param modifiedTime the modifiedTime to set
-   */
-  public void setModifiedTime(ZonedDateTime modifiedTime) {
-    this.modifiedTime = modifiedTime;
   }
 
   /**

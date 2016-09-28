@@ -3,7 +3,7 @@ package io.reactivesw.catalog.domain.entity;
 import com.google.common.base.Objects;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +15,8 @@ import javax.validation.constraints.Size;
 
 /**
  * this is the entity class for media.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_media")
@@ -64,20 +63,20 @@ public class Media implements Serializable {
   private int displayOrder;
 
   /**
-   * create time for media.
+   * create time.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
    * last modified time.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * get id.
-   * 
+   *
    * @return id
    */
   public long getId() {
@@ -86,7 +85,7 @@ public class Media implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id id
    */
   public void setId(long id) {
@@ -95,7 +94,7 @@ public class Media implements Serializable {
 
   /**
    * get type.
-   * 
+   *
    * @return type.
    */
   public String getType() {
@@ -104,7 +103,7 @@ public class Media implements Serializable {
 
   /**
    * set type.
-   * 
+   *
    * @param type type
    */
   public void setType(String type) {
@@ -113,7 +112,7 @@ public class Media implements Serializable {
 
   /**
    * get title.
-   * 
+   *
    * @return title.
    */
   public String getTitle() {
@@ -122,7 +121,7 @@ public class Media implements Serializable {
 
   /**
    * set title.
-   * 
+   *
    * @param title title
    */
   public void setTitle(String title) {
@@ -131,7 +130,7 @@ public class Media implements Serializable {
 
   /**
    * get url.
-   * 
+   *
    * @return url
    */
   public String getUrl() {
@@ -140,7 +139,7 @@ public class Media implements Serializable {
 
   /**
    * set url.
-   * 
+   *
    * @param url url
    */
   public void setUrl(String url) {
@@ -149,7 +148,7 @@ public class Media implements Serializable {
 
   /**
    * get displayOrder.
-   * 
+   *
    * @return displayOrder.
    */
   public int getDisplayOrder() {
@@ -158,7 +157,7 @@ public class Media implements Serializable {
 
   /**
    * set displayOrder.
-   * 
+   *
    * @param displayOrder displayOrder
    */
   public void setDisplayOrder(int displayOrder) {
@@ -166,44 +165,44 @@ public class Media implements Serializable {
   }
 
   /**
-   * get createTime.
-   * 
-   * @return createTime.
+   * get create time.
+   *
+   * @return create time.
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
-   * 
-   * @param createTime createTime
+   * set create time.
+   *
+   * @param createdTime create time.
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
-   * 
-   * @return lastModifiedTime.
+   * get last modified time.
+   *
+   * @return modifiedTime.
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
-   * 
-   * @param lastModifiedTime lastModifiedTime
+   * set last modified time.
+   *
+   * @param modifiedTime last modified time.
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**
    * hashCode.
-   * 
+   *
    * @return int hashCode.
    */
   @Override
@@ -213,7 +212,7 @@ public class Media implements Serializable {
 
   /**
    * equals.
-   * 
+   *
    * @param obj other Object
    * @return boolean
    */

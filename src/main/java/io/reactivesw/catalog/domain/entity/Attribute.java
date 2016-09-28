@@ -3,7 +3,7 @@ package io.reactivesw.catalog.domain.entity;
 import com.google.common.base.Objects;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -66,16 +66,16 @@ public class Attribute implements Serializable {
   private int displayOrder;
 
   /**
-   * create time for attribute.
+   * create time for product.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
-   * last modified time for attribute.
+   * last modified time for product.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * attribute values.
@@ -164,36 +164,41 @@ public class Attribute implements Serializable {
   }
 
   /**
-   * get createTime.
-   * @return the create time.
+   * get createdTime.
+   *
+   * @return createdTime
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
-   * @param createTime the create time to set
+   * set createdTime.
+   *
+   * @param createdTime createdTime
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
-   * @return last modified time.
+   * get lastModifiedTiem.
+   *
+   * @return lastModifiedTiem
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
-   * @param lastModifiedTime the last modified time
+   * set modifiedTime.
+   *
+   * @param modifiedTime the modifiedTime to set
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
+
 
   /**
    * get attribute values.

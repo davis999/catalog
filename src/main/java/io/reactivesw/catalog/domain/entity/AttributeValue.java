@@ -3,7 +3,7 @@ package io.reactivesw.catalog.domain.entity;
 import com.google.common.base.Objects;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,9 +18,8 @@ import javax.validation.constraints.Size;
 
 /**
  * this is the entity class for attribute value.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_attribute_value")
@@ -43,16 +42,16 @@ public class AttributeValue implements Serializable {
   private String value;
 
   /**
-   * create time.
+   * create time for product.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
-   * last modified time.
+   * last modified time for product.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * attribute.
@@ -63,7 +62,7 @@ public class AttributeValue implements Serializable {
 
   /**
    * get id.
-   * 
+   *
    * @return the id
    */
   public long getId() {
@@ -72,7 +71,7 @@ public class AttributeValue implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id the id to set
    */
   public void setId(long id) {
@@ -81,7 +80,7 @@ public class AttributeValue implements Serializable {
 
   /**
    * get value.
-   * 
+   *
    * @return the value
    */
   public String getValue() {
@@ -90,7 +89,7 @@ public class AttributeValue implements Serializable {
 
   /**
    * set value.
-   * 
+   *
    * @param value the value to set
    */
   public void setValue(String value) {
@@ -98,44 +97,44 @@ public class AttributeValue implements Serializable {
   }
 
   /**
-   * get createTime.
-   * 
-   * @return the create time.
+   * get createdTime.
+   *
+   * @return createdTime
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
-   * set createTime.
-   * 
-   * @param createTime the create time to set
+   * set createdTime.
+   *
+   * @param createdTime createdTime
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
-   * 
-   * @return last modified time.
+   * get lastModifiedTiem.
+   *
+   * @return lastModifiedTiem
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
-   * 
-   * @param lastModifiedTime the last modified time
+   * set modifiedTime.
+   *
+   * @param modifiedTime the modifiedTime to set
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**
    * get attribute.
-   * 
+   *
    * @return the attribute
    */
   public Attribute getAttribute() {
@@ -144,7 +143,7 @@ public class AttributeValue implements Serializable {
 
   /**
    * set attribute.
-   * 
+   *
    * @param attribute the attribute to set
    */
   public void setAttribute(Attribute attribute) {

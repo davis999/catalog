@@ -1,7 +1,7 @@
 package io.reactivesw.catalog.domain.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -14,9 +14,8 @@ import javax.validation.constraints.Size;
 
 /**
  * this is entity class for feature.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_feature")
@@ -56,20 +55,20 @@ public class Feature implements Serializable {
   private int displayOrder;
 
   /**
-   * create time for feature.
+   * create time.
    */
-  @Column(name = "create_time")
-  private Date createTime;
+  @Column(name = "created_time")
+  private ZonedDateTime createdTime;
 
   /**
-   * last modified time for feature.
+   * last modified time.
    */
-  @Column(name = "last_modified_time")
-  private Date lastModifiedTime;
+  @Column(name = "modified_time")
+  private ZonedDateTime modifiedTime;
 
   /**
    * get id.
-   * 
+   *
    * @return id.
    */
   public long getId() {
@@ -78,7 +77,7 @@ public class Feature implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id id.
    */
   public void setId(long id) {
@@ -87,7 +86,7 @@ public class Feature implements Serializable {
 
   /**
    * get name.
-   * 
+   *
    * @return name.
    */
   public String getName() {
@@ -96,7 +95,7 @@ public class Feature implements Serializable {
 
   /**
    * set name.
-   * 
+   *
    * @param name name.
    */
   public void setName(String name) {
@@ -105,7 +104,7 @@ public class Feature implements Serializable {
 
   /**
    * get description.
-   * 
+   *
    * @return description.
    */
   public String getDescription() {
@@ -114,7 +113,7 @@ public class Feature implements Serializable {
 
   /**
    * set description.
-   * 
+   *
    * @param description description.
    */
   public void setDescription(String description) {
@@ -123,7 +122,7 @@ public class Feature implements Serializable {
 
   /**
    * get display order.
-   * 
+   *
    * @return displayOrder.
    */
   public int getDisplayOrder() {
@@ -132,8 +131,8 @@ public class Feature implements Serializable {
 
   /**
    * set displayorder.
-   * 
-   * @param displayOrder.
+   *
+   * @param displayOrder display order.
    */
   public void setDisplayOrder(int displayOrder) {
     this.displayOrder = displayOrder;
@@ -141,38 +140,38 @@ public class Feature implements Serializable {
 
   /**
    * get create time.
-   * 
-   * @return createTime.
+   *
+   * @return create time.
    */
-  public Date getCreateTime() {
-    return new Date(createTime.getTime());
+  public ZonedDateTime getCreatedTime() {
+    return createdTime;
   }
 
   /**
    * set create time.
-   * 
-   * @param createTime.
+   *
+   * @param createdTime create time.
    */
-  public void setCreateTime(Date createTime) {
-    this.createTime = new Date(createTime.getTime());
+  public void setCreatedTime(ZonedDateTime createdTime) {
+    this.createdTime = createdTime;
   }
 
   /**
-   * get lastModifiedTime.
-   * 
-   * @return lastModifiedTime.
+   * get last modified time.
+   *
+   * @return modifiedTime.
    */
-  public Date getLastModifiedTime() {
-    return new Date(lastModifiedTime.getTime());
+  public ZonedDateTime getModifiedTime() {
+    return modifiedTime;
   }
 
   /**
-   * set lastModifiedTime.
-   * 
-   * @param lastModifiedTime.
+   * set last modified time.
+   *
+   * @param modifiedTime last modified time.
    */
-  public void setLastModifiedTime(Date lastModifiedTime) {
-    this.lastModifiedTime = new Date(lastModifiedTime.getTime());
+  public void setModifiedTime(ZonedDateTime modifiedTime) {
+    this.modifiedTime = modifiedTime;
   }
 
   /**

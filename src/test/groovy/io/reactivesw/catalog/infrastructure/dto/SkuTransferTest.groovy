@@ -5,7 +5,8 @@ import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.entity.Variant
 import io.reactivesw.catalog.domain.entity.VariantValue
 import io.reactivesw.catalog.grpc.GrpcSku
-import io.reactivesw.catalog.grpc.SkuInformation;
+import io.reactivesw.catalog.grpc.SkuInformation
+import io.reactivesw.catalog.grpc.SkuInformationList;
 import spock.lang.Specification
 
 class SkuTransferTest extends Specification{
@@ -58,5 +59,17 @@ class SkuTransferTest extends Specification{
     skuInformation.getSkuId() == sku.getId()
     skuInformation.getMediaUrl() == sku.getMedias().getAt(0).getUrl()
     skuInformation.getPrice() == sku.getPrice().toString()
+  }
+
+  def "test transfer to sku information list"(){
+    given:
+    List<Sku> skus = new ArrayList<>();
+    skus.add(sku)
+
+    when:
+    SkuInformationList skuInformationList = SkuTransfer.transferToSkuInformationList(skus)
+
+    then:
+    skuInformationList.getSkuInformationCount() > 0
   }
 }
