@@ -1,11 +1,5 @@
 package io.reactivesw.catalog.domain.entity;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.ZonedDateTime;
-import java.util.Objects;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,11 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * this is entity class for sku.
@@ -96,7 +95,7 @@ public class Sku implements Serializable {
   /**
    * medias for sku.
    */
-  @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+  @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_sku_media", joinColumns = @JoinColumn(name = "sku_id") ,
       inverseJoinColumns = @JoinColumn(name = "media_id") )
   private Set<Media> medias;
@@ -104,7 +103,7 @@ public class Sku implements Serializable {
   /**
    * variant values for sku.
    */
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_sku_variant_value", joinColumns = @JoinColumn(name = "sku_id") ,
       inverseJoinColumns = @JoinColumn(name = "variant_value_id") )
   private Set<VariantValue> variantValues;

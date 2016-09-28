@@ -52,7 +52,7 @@ class ProductRpcServerTest extends Specification{
     medias.add(media);
     sku.setMedias(medias);
 
-    List<Sku> skus = new ArrayList<>();
+    Set<Sku> skus = new HashSet<>();
     skus.add(sku);
     product.setAdditionalSkus(skus);
     product.setDefaultSku(sku);

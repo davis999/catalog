@@ -5,6 +5,7 @@ import org.hibernate.annotations.BatchSize;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -118,7 +119,7 @@ public class Product implements Serializable {
   @OneToMany(fetch = FetchType.EAGER, targetEntity = Sku.class,
       mappedBy = "product", cascade = CascadeType.ALL)
   @BatchSize(size = 50)
-  private List<Sku> additionalSkus = new ArrayList<Sku>();
+  private Set<Sku> additionalSkus = new HashSet<>();
 
   /**
    * default sku.
@@ -364,7 +365,7 @@ public class Product implements Serializable {
    *
    * @return additionalSkus
    */
-  public List<Sku> getAdditionalSkus() {
+  public Set<Sku> getAdditionalSkus() {
     return additionalSkus;
   }
 
@@ -373,7 +374,7 @@ public class Product implements Serializable {
    *
    * @param additionalSkus additionalSkus.
    */
-  public void setAdditionalSkus(List<Sku> additionalSkus) {
+  public void setAdditionalSkus(Set<Sku> additionalSkus) {
     this.additionalSkus = additionalSkus;
   }
 

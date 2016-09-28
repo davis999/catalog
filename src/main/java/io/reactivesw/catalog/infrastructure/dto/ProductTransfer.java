@@ -12,6 +12,7 @@ import io.reactivesw.catalog.grpc.ProductBriefList;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is transfer class for product.
@@ -33,7 +34,7 @@ public final class ProductTransfer {
   public static GrpcProduct transferToGrpcProduct(Product product) {
     final ModelMapper modelMapper = new ModelMapper();
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
-    final List<Sku> skus = product.getAdditionalSkus();
+    final Set<Sku> skus = product.getAdditionalSkus();
     final Sku defaultSku = product.getDefaultSku();
     builder.setPrice(defaultSku.getPrice().toString());
     if (skus != null) {

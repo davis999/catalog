@@ -38,8 +38,8 @@ public class AttributeValue implements Serializable {
   /**
    * value for attribute value.
    */
-  @Size(max = 16)
-  @Column(name = "value", length = 16, nullable = false)
+  @Size(max = 255)
+  @Column(name = "value", length = 255, nullable = false)
   private String value;
 
   /**
