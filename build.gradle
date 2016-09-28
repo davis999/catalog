@@ -29,7 +29,7 @@ apply from: 'application_build/application_build.gradle'
 
 // used by build and docker
 jar {
-    baseName = 'reactivesw-catelog'
+    baseName = 'reactivesw-catalog'
     version = '0.0.1-SNAPSHOT'
 }
 

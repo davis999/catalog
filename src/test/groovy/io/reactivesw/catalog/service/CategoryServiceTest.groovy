@@ -32,7 +32,6 @@ class CategoryServiceTest extends Specification {
 
         categoryRepository.save(_) >> savedCategory
         categoryRepository.findCategoryByName(_) >> categorySet;
-        categoryRepository.findAll() >> allCategories
         categoryService.categoryRepository = categoryRepository;
     }
 
@@ -84,10 +83,34 @@ class CategoryServiceTest extends Specification {
     }
 
     def "test find all categories"() {
+        given:
+        categoryRepository.findAll() >> allCategories
         when:
         List<Category> categories = categoryService.findAllCategories();
         then:
         categories == allCategories;
         categories.size() == allCategories.size()
+    }
+
+    def "test find all categories and get null"(){
+        given:
+        categoryRepository.findAll() >> null
+
+        when:
+        categoryService.findAllCategories()
+
+        then:
+        thrown(NotFoundException)
+    }
+
+    def "test find all categories and get empty result"(){
+        given:
+        categoryRepository.findAll() >> new ArrayList<Category>()
+
+        when:
+        categoryService.findAllCategories()
+
+        then:
+        thrown(NotFoundException)
     }
 }
