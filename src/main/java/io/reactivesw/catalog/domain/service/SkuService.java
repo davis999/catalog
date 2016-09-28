@@ -86,16 +86,24 @@ public class SkuService {
     }
     List<Sku> skus = skuRepository.findAll(skuIds);
     //remove not active sku.
-    if (skus == null) {
-      //should return new List instead of null.
-      skus = new ArrayList<>();
-    } else {
+    return removeNotActiveSku(skus);
+  }
+
+  /**
+   * remove not active sku.
+   *
+   * @param skus list of sku.
+   * @return list of sku.
+   */
+  private List<Sku> removeNotActiveSku(List<Sku> skus) {
+    final List<Sku> removedSkus = new ArrayList<>();
+    if (skus != null) {
       for (Sku sku : skus) {
-        if (!sku.isActive()) {
-          skus.remove(sku);
+        if (sku.isActive()) {
+          removedSkus.add(sku);
         }
       }
     }
-    return skus;
+    return removedSkus;
   }
 }
