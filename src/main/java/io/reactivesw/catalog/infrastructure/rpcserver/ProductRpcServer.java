@@ -1,13 +1,12 @@
 package io.reactivesw.catalog.infrastructure.rpcserver;
 
-import com.google.protobuf.Int64Value;
-
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.domain.service.ProductService;
 import io.reactivesw.catalog.grpc.GrpcProduct;
+import io.reactivesw.catalog.grpc.LongValue;
 import io.reactivesw.catalog.grpc.ProductBriefList;
 import io.reactivesw.catalog.grpc.ProductServiceGrpc;
 import io.reactivesw.catalog.infrastructure.dto.ProductTransfer;
@@ -44,7 +43,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
    * get product detail.
    */
   @Override
-  public void getProductDetial(Int64Value request, StreamObserver<GrpcProduct> responseObserver) {
+  public void getProductDetial(LongValue request, StreamObserver<GrpcProduct> responseObserver) {
     final long productId = request.getValue();
     LOG.info("enter queryProductDetial, product id is {}", productId);
     try {
@@ -63,7 +62,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
    * query products by category.
    */
   @Override
-  public void getProductsByCategory(Int64Value request,
+  public void getProductsByCategory(LongValue request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
     LOG.info("enter queryProductsByCategory, category id is {}", categoryId);

@@ -1,6 +1,6 @@
 package io.reactivesw.catalog.infrastructure.rpcserver
 
-import io.grpc.StatusRuntimeException;
+import io.grpc.StatusRuntimeException
 import io.grpc.stub.StreamObserver
 import io.reactivesw.catalog.domain.entity.Category
 import io.reactivesw.catalog.domain.service.CategoryService
@@ -12,7 +12,7 @@ import spock.lang.Specification
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
 
-class CategoryRpcServerTest extends Specification{
+class SkuRpcServerTest extends Specification{
   def categoryService = Stub(CategoryService)
   def categoryRpcServer = new CategoryRpcServer(categoryService:categoryService)
   List<Category> categories

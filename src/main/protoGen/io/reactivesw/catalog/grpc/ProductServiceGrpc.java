@@ -32,22 +32,22 @@ public class ProductServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<com.google.protobuf.Int64Value,
+  public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.LongValue,
       io.reactivesw.catalog.grpc.ProductBriefList> METHOD_GET_PRODUCTS_BY_CATEGORY =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "io.reactivesw.catalog.infrastructure.ProductService", "getProductsByCategory"),
-          io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.LongValue.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.ProductBriefList.getDefaultInstance()));
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<com.google.protobuf.Int64Value,
+  public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.LongValue,
       io.reactivesw.catalog.grpc.GrpcProduct> METHOD_GET_PRODUCT_DETIAL =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "io.reactivesw.catalog.infrastructure.ProductService", "getProductDetial"),
-          io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.LongValue.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.GrpcProduct.getDefaultInstance()));
 
   /**
@@ -86,7 +86,7 @@ public class ProductServiceGrpc {
      *query all products by id of category
      * </pre>
      */
-    public void getProductsByCategory(com.google.protobuf.Int64Value request,
+    public void getProductsByCategory(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_GET_PRODUCTS_BY_CATEGORY, responseObserver);
     }
@@ -96,7 +96,7 @@ public class ProductServiceGrpc {
      *query product's detail by id of product
      * </pre>
      */
-    public void getProductDetial(com.google.protobuf.Int64Value request,
+    public void getProductDetial(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_GET_PRODUCT_DETIAL, responseObserver);
     }
@@ -107,14 +107,14 @@ public class ProductServiceGrpc {
             METHOD_GET_PRODUCTS_BY_CATEGORY,
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.LongValue,
                 io.reactivesw.catalog.grpc.ProductBriefList>(
                   this, METHODID_GET_PRODUCTS_BY_CATEGORY)))
           .addMethod(
             METHOD_GET_PRODUCT_DETIAL,
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.LongValue,
                 io.reactivesw.catalog.grpc.GrpcProduct>(
                   this, METHODID_GET_PRODUCT_DETIAL)))
           .build();
@@ -148,7 +148,7 @@ public class ProductServiceGrpc {
      *query all products by id of category
      * </pre>
      */
-    public void getProductsByCategory(com.google.protobuf.Int64Value request,
+    public void getProductsByCategory(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions()), request, responseObserver);
@@ -159,7 +159,7 @@ public class ProductServiceGrpc {
      *query product's detail by id of product
      * </pre>
      */
-    public void getProductDetial(com.google.protobuf.Int64Value request,
+    public void getProductDetial(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCT_DETIAL, getCallOptions()), request, responseObserver);
@@ -193,7 +193,7 @@ public class ProductServiceGrpc {
      *query all products by id of category
      * </pre>
      */
-    public io.reactivesw.catalog.grpc.ProductBriefList getProductsByCategory(com.google.protobuf.Int64Value request) {
+    public io.reactivesw.catalog.grpc.ProductBriefList getProductsByCategory(io.reactivesw.catalog.grpc.LongValue request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions(), request);
     }
@@ -203,7 +203,7 @@ public class ProductServiceGrpc {
      *query product's detail by id of product
      * </pre>
      */
-    public io.reactivesw.catalog.grpc.GrpcProduct getProductDetial(com.google.protobuf.Int64Value request) {
+    public io.reactivesw.catalog.grpc.GrpcProduct getProductDetial(io.reactivesw.catalog.grpc.LongValue request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_PRODUCT_DETIAL, getCallOptions(), request);
     }
@@ -237,7 +237,7 @@ public class ProductServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.ProductBriefList> getProductsByCategory(
-        com.google.protobuf.Int64Value request) {
+        io.reactivesw.catalog.grpc.LongValue request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCTS_BY_CATEGORY, getCallOptions()), request);
     }
@@ -248,7 +248,7 @@ public class ProductServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.GrpcProduct> getProductDetial(
-        com.google.protobuf.Int64Value request) {
+        io.reactivesw.catalog.grpc.LongValue request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_PRODUCT_DETIAL, getCallOptions()), request);
     }
@@ -275,11 +275,11 @@ public class ProductServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_PRODUCTS_BY_CATEGORY:
-          serviceImpl.getProductsByCategory((com.google.protobuf.Int64Value) request,
+          serviceImpl.getProductsByCategory((io.reactivesw.catalog.grpc.LongValue) request,
               (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.ProductBriefList>) responseObserver);
           break;
         case METHODID_GET_PRODUCT_DETIAL:
-          serviceImpl.getProductDetial((com.google.protobuf.Int64Value) request,
+          serviceImpl.getProductDetial((io.reactivesw.catalog.grpc.LongValue) request,
               (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.GrpcProduct>) responseObserver);
           break;
         default:

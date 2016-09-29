@@ -25,18 +25,20 @@ public final class CatalogSkuService {
     java.lang.String[] descriptorData = {
       "\n\'catalog_proto/catalog_sku_service.prot" +
       "o\022$io.reactivesw.catalog.infrastructure\032" +
-      ",catalog_proto/google/protobuf/wrappers." +
-      "proto\032\'catalog_proto/catalog_sku_message" +
-      ".proto2\322\002\n\nSkuService\022M\n\021querySkuInvento" +
-      "ry\022\033.google.protobuf.Int64Value\032\033.google" +
-      ".protobuf.Int32Value\022n\n\031querySkuSimpleIn" +
-      "formation\022\033.google.protobuf.Int64Value\0324" +
-      ".io.reactivesw.catalog.infrastructure.Sk" +
-      "uInformation\022\204\001\n\027querySkuInformationList",
-      "\022/.io.reactivesw.catalog.infrastructure." +
-      "SkuIdList\0328.io.reactivesw.catalog.infras" +
-      "tructure.SkuInformationListB\036\n\032io.reacti" +
-      "vesw.catalog.grpcP\001b\006proto3"
+      "\'catalog_proto/catalog_sku_message.proto" +
+      "\032(catalog_proto/catalog_data_message.pro" +
+      "to2\216\003\n\nSkuService\022t\n\021querySkuInventory\022/" +
+      ".io.reactivesw.catalog.infrastructure.Lo" +
+      "ngValue\032..io.reactivesw.catalog.infrastr" +
+      "ucture.IntValue\022\202\001\n\031querySkuSimpleInform" +
+      "ation\022/.io.reactivesw.catalog.infrastruc" +
+      "ture.LongValue\0324.io.reactivesw.catalog.i",
+      "nfrastructure.SkuInformation\022\204\001\n\027querySk" +
+      "uInformationList\022/.io.reactivesw.catalog" +
+      ".infrastructure.SkuIdList\0328.io.reactives" +
+      "w.catalog.infrastructure.SkuInformationL" +
+      "istB\036\n\032io.reactivesw.catalog.grpcP\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -49,11 +51,11 @@ public final class CatalogSkuService {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.WrappersProto.getDescriptor(),
           io.reactivesw.catalog.grpc.CatalogSkuMessage.getDescriptor(),
+          io.reactivesw.catalog.grpc.CatalogDataMessage.getDescriptor(),
         }, assigner);
-    com.google.protobuf.WrappersProto.getDescriptor();
     io.reactivesw.catalog.grpc.CatalogSkuMessage.getDescriptor();
+    io.reactivesw.catalog.grpc.CatalogDataMessage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

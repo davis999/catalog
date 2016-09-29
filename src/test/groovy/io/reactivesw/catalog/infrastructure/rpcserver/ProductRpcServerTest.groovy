@@ -1,7 +1,5 @@
 package io.reactivesw.catalog.infrastructure.rpcserver
 
-import com.google.protobuf.Int64Value
-
 import io.grpc.StatusRuntimeException
 import io.grpc.stub.StreamObserver
 import io.reactivesw.catalog.domain.entity.Attribute
@@ -11,6 +9,7 @@ import io.reactivesw.catalog.domain.entity.Media
 import io.reactivesw.catalog.domain.entity.Product
 import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.service.ProductService
+import io.reactivesw.catalog.grpc.LongValue
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException
 import spock.lang.Specification
 
@@ -25,7 +24,7 @@ class ProductRpcServerTest extends Specification{
   def outputData
 
   def setup(){
-    inputData = Int64Value.newBuilder().setValue(10086L).build()
+    inputData = LongValue.newBuilder().setValue(10086L).build()
     outputData = Mock(StreamObserver)
 
     product = new Product();

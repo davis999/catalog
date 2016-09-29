@@ -24,23 +24,23 @@ public final class CatalogService {
   static {
     java.lang.String[] descriptorData = {
       "\n#catalog_proto/catalog_service.proto\022$i" +
-      "o.reactivesw.catalog.infrastructure\032)cat" +
-      "alog_proto/google/protobuf/empty.proto\032," +
-      "catalog_proto/google/protobuf/wrappers.p" +
-      "roto\032#catalog_proto/catalog_message.prot" +
-      "o2\322\001\n\017CategoryService\022[\n\rgetCategories\022\026" +
-      ".google.protobuf.Empty\0322.io.reactivesw.c" +
-      "atalog.infrastructure.CategoryList\022b\n\017ge" +
-      "tCategoryById\022\033.google.protobuf.Int64Val" +
-      "ue\0322.io.reactivesw.catalog.infrastructur",
-      "e.GrpcCategory2\342\001\n\016ProductService\022l\n\025get" +
-      "ProductsByCategory\022\033.google.protobuf.Int" +
-      "64Value\0326.io.reactivesw.catalog.infrastr" +
-      "ucture.ProductBriefList\022b\n\020getProductDet" +
-      "ial\022\033.google.protobuf.Int64Value\0321.io.re" +
-      "activesw.catalog.infrastructure.GrpcProd" +
-      "uctB\036\n\032io.reactivesw.catalog.grpcP\001b\006pro" +
-      "to3"
+      "o.reactivesw.catalog.infrastructure\032(cat" +
+      "alog_proto/catalog_data_message.proto\032#c" +
+      "atalog_proto/catalog_message.proto2\373\001\n\017C" +
+      "ategoryService\022p\n\rgetCategories\022+.io.rea" +
+      "ctivesw.catalog.infrastructure.Empty\0322.i" +
+      "o.reactivesw.catalog.infrastructure.Cate" +
+      "goryList\022v\n\017getCategoryById\022/.io.reactiv" +
+      "esw.catalog.infrastructure.LongValue\0322.i" +
+      "o.reactivesw.catalog.infrastructure.Grpc",
+      "Category2\213\002\n\016ProductService\022\200\001\n\025getProdu" +
+      "ctsByCategory\022/.io.reactivesw.catalog.in" +
+      "frastructure.LongValue\0326.io.reactivesw.c" +
+      "atalog.infrastructure.ProductBriefList\022v" +
+      "\n\020getProductDetial\022/.io.reactivesw.catal" +
+      "og.infrastructure.LongValue\0321.io.reactiv" +
+      "esw.catalog.infrastructure.GrpcProductB\036" +
+      "\n\032io.reactivesw.catalog.grpcP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -53,12 +53,10 @@ public final class CatalogService {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.WrappersProto.getDescriptor(),
+          io.reactivesw.catalog.grpc.CatalogDataMessage.getDescriptor(),
           io.reactivesw.catalog.grpc.CatalogMessage.getDescriptor(),
         }, assigner);
-    com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.WrappersProto.getDescriptor();
+    io.reactivesw.catalog.grpc.CatalogDataMessage.getDescriptor();
     io.reactivesw.catalog.grpc.CatalogMessage.getDescriptor();
   }
 

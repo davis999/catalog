@@ -32,22 +32,22 @@ public class SkuServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<com.google.protobuf.Int64Value,
-      com.google.protobuf.Int32Value> METHOD_QUERY_SKU_INVENTORY =
+  public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.LongValue,
+      io.reactivesw.catalog.grpc.IntValue> METHOD_QUERY_SKU_INVENTORY =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "io.reactivesw.catalog.infrastructure.SkuService", "querySkuInventory"),
-          io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int32Value.getDefaultInstance()));
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.LongValue.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.IntValue.getDefaultInstance()));
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<com.google.protobuf.Int64Value,
+  public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.LongValue,
       io.reactivesw.catalog.grpc.SkuInformation> METHOD_QUERY_SKU_SIMPLE_INFORMATION =
       io.grpc.MethodDescriptor.create(
           io.grpc.MethodDescriptor.MethodType.UNARY,
           generateFullMethodName(
               "io.reactivesw.catalog.infrastructure.SkuService", "querySkuSimpleInformation"),
-          io.grpc.protobuf.ProtoUtils.marshaller(com.google.protobuf.Int64Value.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.LongValue.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(io.reactivesw.catalog.grpc.SkuInformation.getDefaultInstance()));
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<io.reactivesw.catalog.grpc.SkuIdList,
@@ -95,8 +95,8 @@ public class SkuServiceGrpc {
      *query sku inventory by sku id.
      * </pre>
      */
-    public void querySkuInventory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+    public void querySkuInventory(io.reactivesw.catalog.grpc.LongValue request,
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.IntValue> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_INVENTORY, responseObserver);
     }
 
@@ -105,7 +105,7 @@ public class SkuServiceGrpc {
      *query sku simple information.
      * </pre>
      */
-    public void querySkuSimpleInformation(com.google.protobuf.Int64Value request,
+    public void querySkuSimpleInformation(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, responseObserver);
     }
@@ -126,14 +126,14 @@ public class SkuServiceGrpc {
             METHOD_QUERY_SKU_INVENTORY,
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Int64Value,
-                com.google.protobuf.Int32Value>(
+                io.reactivesw.catalog.grpc.LongValue,
+                io.reactivesw.catalog.grpc.IntValue>(
                   this, METHODID_QUERY_SKU_INVENTORY)))
           .addMethod(
             METHOD_QUERY_SKU_SIMPLE_INFORMATION,
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Int64Value,
+                io.reactivesw.catalog.grpc.LongValue,
                 io.reactivesw.catalog.grpc.SkuInformation>(
                   this, METHODID_QUERY_SKU_SIMPLE_INFORMATION)))
           .addMethod(
@@ -174,8 +174,8 @@ public class SkuServiceGrpc {
      *query sku inventory by sku id.
      * </pre>
      */
-    public void querySkuInventory(com.google.protobuf.Int64Value request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+    public void querySkuInventory(io.reactivesw.catalog.grpc.LongValue request,
+        io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.IntValue> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_INVENTORY, getCallOptions()), request, responseObserver);
     }
@@ -185,7 +185,7 @@ public class SkuServiceGrpc {
      *query sku simple information.
      * </pre>
      */
-    public void querySkuSimpleInformation(com.google.protobuf.Int64Value request,
+    public void querySkuSimpleInformation(io.reactivesw.catalog.grpc.LongValue request,
         io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions()), request, responseObserver);
@@ -230,7 +230,7 @@ public class SkuServiceGrpc {
      *query sku inventory by sku id.
      * </pre>
      */
-    public com.google.protobuf.Int32Value querySkuInventory(com.google.protobuf.Int64Value request) {
+    public io.reactivesw.catalog.grpc.IntValue querySkuInventory(io.reactivesw.catalog.grpc.LongValue request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_SKU_INVENTORY, getCallOptions(), request);
     }
@@ -240,7 +240,7 @@ public class SkuServiceGrpc {
      *query sku simple information.
      * </pre>
      */
-    public io.reactivesw.catalog.grpc.SkuInformation querySkuSimpleInformation(com.google.protobuf.Int64Value request) {
+    public io.reactivesw.catalog.grpc.SkuInformation querySkuSimpleInformation(io.reactivesw.catalog.grpc.LongValue request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions(), request);
     }
@@ -283,8 +283,8 @@ public class SkuServiceGrpc {
      *query sku inventory by sku id.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> querySkuInventory(
-        com.google.protobuf.Int64Value request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.IntValue> querySkuInventory(
+        io.reactivesw.catalog.grpc.LongValue request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_INVENTORY, getCallOptions()), request);
     }
@@ -295,7 +295,7 @@ public class SkuServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.reactivesw.catalog.grpc.SkuInformation> querySkuSimpleInformation(
-        com.google.protobuf.Int64Value request) {
+        io.reactivesw.catalog.grpc.LongValue request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_QUERY_SKU_SIMPLE_INFORMATION, getCallOptions()), request);
     }
@@ -334,11 +334,11 @@ public class SkuServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_QUERY_SKU_INVENTORY:
-          serviceImpl.querySkuInventory((com.google.protobuf.Int64Value) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
+          serviceImpl.querySkuInventory((io.reactivesw.catalog.grpc.LongValue) request,
+              (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.IntValue>) responseObserver);
           break;
         case METHODID_QUERY_SKU_SIMPLE_INFORMATION:
-          serviceImpl.querySkuSimpleInformation((com.google.protobuf.Int64Value) request,
+          serviceImpl.querySkuSimpleInformation((io.reactivesw.catalog.grpc.LongValue) request,
               (io.grpc.stub.StreamObserver<io.reactivesw.catalog.grpc.SkuInformation>) responseObserver);
           break;
         case METHODID_QUERY_SKU_INFORMATION_LIST:

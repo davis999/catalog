@@ -1,8 +1,5 @@
 package io.reactivesw.catalog.infrastructure.rpcserver;
 
-import com.google.protobuf.Empty;
-import com.google.protobuf.Int64Value;
-
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -10,7 +7,9 @@ import io.reactivesw.catalog.domain.entity.Category;
 import io.reactivesw.catalog.domain.service.CategoryService;
 import io.reactivesw.catalog.grpc.CategoryList;
 import io.reactivesw.catalog.grpc.CategoryServiceGrpc;
+import io.reactivesw.catalog.grpc.Empty;
 import io.reactivesw.catalog.grpc.GrpcCategory;
+import io.reactivesw.catalog.grpc.LongValue;
 import io.reactivesw.catalog.infrastructure.dto.CategoryTransfer;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
@@ -66,7 +65,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
    * @param responseObserver response to client
    */
   @Override
-  public void getCategoryById(Int64Value request, StreamObserver<GrpcCategory> responseObserver) {
+  public void getCategoryById(LongValue request, StreamObserver<GrpcCategory> responseObserver) {
     final long categoryId = request.getValue();
     LOG.info("enter getCategoryById, id is {}", categoryId);
     try {

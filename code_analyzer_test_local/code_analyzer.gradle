@@ -23,7 +23,6 @@ tasks.withType(Pmd) {  //exclude the package you do not want to check
   exclude 'io/reactivesw/catalog/Application.java'
 }
 
-
 /*************find bug***************/
 tasks.withType(FindBugs) {
   //exclude the package you do not want to check

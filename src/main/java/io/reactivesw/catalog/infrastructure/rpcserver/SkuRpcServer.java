@@ -1,13 +1,12 @@
 package io.reactivesw.catalog.infrastructure.rpcserver;
 
-import com.google.protobuf.Int32Value;
-import com.google.protobuf.Int64Value;
-
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.domain.service.SkuService;
+import io.reactivesw.catalog.grpc.IntValue;
+import io.reactivesw.catalog.grpc.LongValue;
 import io.reactivesw.catalog.grpc.SkuIdList;
 import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
@@ -48,12 +47,12 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
    * @param responseObserver inventory number.
    */
   @Override
-  public void querySkuInventory(Int64Value request, StreamObserver<Int32Value> responseObserver) {
+  public void querySkuInventory(LongValue request, StreamObserver<IntValue> responseObserver) {
     final long skuId = request.getValue();
     LOG.debug("start querySkuInventory, sku id is {}.", skuId);
     try {
       final int inventory = skuService.queryQuantity(skuId);
-      final Int32Value reply = Int32Value.newBuilder().setValue(inventory).build();
+      final IntValue reply = IntValue.newBuilder().setValue(inventory).build();
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end querySkuInventory, sku id is {}, inventory is {}.", skuId, inventory);
     } catch (NotFoundException exception) {
@@ -74,7 +73,7 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
    * @param responseObserver SkuInformation.
    */
   @Override
-  public void querySkuSimpleInformation(Int64Value request, StreamObserver<SkuInformation>
+  public void querySkuSimpleInformation(LongValue request, StreamObserver<SkuInformation>
       responseObserver) {
     final long skuId = request.getValue();
     LOG.debug("start querySkuSimpleInformation, id is {}.", skuId);
