@@ -38,7 +38,7 @@ public class CategoryService {
    */
   public List<Category> findAllCategories() {
     LOG.info("find all category.");
-    final List<Category> categories = categoryRepository.findAll();
+    final List<Category> categories = categoryRepository.findAllCategoryByOrderByDisplayOrderAsc();
     if (categories == null || categories.isEmpty()) {
       LOG.debug("query all categories fail, no result");
       throw new NotFoundException("Not Category Exist");

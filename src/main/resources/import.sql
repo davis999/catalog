@@ -22,8 +22,10 @@ INSERT INTO sw_variant_value (variant_value_id, display_order, price_adjustment,
 INSERT INTO sw_variant_value (variant_value_id, display_order, price_adjustment, variant_id, variant_value) VALUES (6, 2, 0, 2, 'L');
 
 --insert into sw_category
-INSERT INTO sw_category (category_id, name, display_order, description) VALUES (1, 'home', 0, 'this is home category');
-INSERT INTO sw_category (category_id, name, display_order, description) VALUES (2, 'feature', 0, 'this is feature category');
+INSERT INTO sw_category (category_id, name, display_order, description) VALUES (1, 'all', 0, 'this is home category');
+INSERT INTO sw_category (category_id, name, display_order, description) VALUES (2, 'feature', 1, 'this is feature category');
+INSERT INTO sw_category (category_id, name, display_order, description) VALUES (3, 'smart wear', 2, 'this is smart wear category');
+INSERT INTO sw_category (category_id, name, display_order, description) VALUES (4, 'camera', 3, 'this is camera category');
 
 --insert into sw_template
 INSERT INTO sw_template (template_id, name, description) VALUES (1, 'Shirt', 'this is shirt template');

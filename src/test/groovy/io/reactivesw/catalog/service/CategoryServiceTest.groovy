@@ -84,9 +84,9 @@ class CategoryServiceTest extends Specification {
 
     def "test find all categories"() {
         given:
-        categoryRepository.findAll() >> allCategories
+        categoryRepository.findAllCategoryByOrderByDisplayOrderAsc() >> allCategories
         when:
-        List<Category> categories = categoryService.findAllCategories();
+        List<Category> categories = categoryService.findAllCategories()
         then:
         categories == allCategories;
         categories.size() == allCategories.size()

@@ -7,7 +7,7 @@ spring:
   jpa: 
     database: MYSQL
     hibernate: 
-      ddl-auto: update
+      ddl-auto: create
       dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
     properties: 

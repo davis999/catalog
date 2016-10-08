@@ -94,6 +94,6 @@ Exception:
 ### 1.7 get all category
 Method: Get
 Request Representation: null
-Response Representation: List of Category
+Response Representation: List of Category and order by display order asc.
 Exception:
 1. 没有结果，则返回错误代号为NOT_FOUND，描述为 "query all categories fail, no categories"
