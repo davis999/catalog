@@ -15,6 +15,9 @@ buildscript {
 
         // protobuf compile plugin
         classpath('com.google.protobuf:protobuf-gradle-plugin:0.8.0')
+
+        //for docker build
+        classpath('se.transmode.gradle:gradle-docker:1.2')
     }
 }
 
@@ -27,10 +30,13 @@ apply from: 'application_build/grpc_build.gradle'
 // application build script
 apply from: 'application_build/application_build.gradle'
 
+//docker build script
+apply from: 'application_build/docker_build.gradle'
+
 // used by build and docker
 jar {
     baseName = 'reactivesw-catalog'
-    version = '0.0.1-SNAPSHOT'
+    version = '0.0.1'
 }
 
 // these two files are for code analyzer, unit test and code coverage check
