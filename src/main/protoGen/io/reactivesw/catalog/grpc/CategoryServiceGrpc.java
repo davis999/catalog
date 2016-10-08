@@ -18,7 +18,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 /**
  * <pre>
  **
- * define catelog rpc service.
+ * define catelog rpc services.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -76,7 +76,7 @@ public class CategoryServiceGrpc {
   /**
    * <pre>
    **
-   * define catelog rpc service.
+   * define catelog rpc services.
    * </pre>
    */
   public static abstract class CategoryServiceImplBase implements io.grpc.BindableService {
@@ -124,7 +124,7 @@ public class CategoryServiceGrpc {
   /**
    * <pre>
    **
-   * define catelog rpc service.
+   * define catelog rpc services.
    * </pre>
    */
   public static final class CategoryServiceStub extends io.grpc.stub.AbstractStub<CategoryServiceStub> {
@@ -169,7 +169,7 @@ public class CategoryServiceGrpc {
   /**
    * <pre>
    **
-   * define catelog rpc service.
+   * define catelog rpc services.
    * </pre>
    */
   public static final class CategoryServiceBlockingStub extends io.grpc.stub.AbstractStub<CategoryServiceBlockingStub> {
@@ -212,7 +212,7 @@ public class CategoryServiceGrpc {
   /**
    * <pre>
    **
-   * define catelog rpc service.
+   * define catelog rpc services.
    * </pre>
    */
   public static final class CategoryServiceFutureStub extends io.grpc.stub.AbstractStub<CategoryServiceFutureStub> {

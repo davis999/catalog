@@ -18,7 +18,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 /**
  * <pre>
  **
- *  product rpc service.
+ *  product rpc services.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -76,7 +76,7 @@ public class ProductServiceGrpc {
   /**
    * <pre>
    **
-   *  product rpc service.
+   *  product rpc services.
    * </pre>
    */
   public static abstract class ProductServiceImplBase implements io.grpc.BindableService {
@@ -124,7 +124,7 @@ public class ProductServiceGrpc {
   /**
    * <pre>
    **
-   *  product rpc service.
+   *  product rpc services.
    * </pre>
    */
   public static final class ProductServiceStub extends io.grpc.stub.AbstractStub<ProductServiceStub> {
@@ -169,7 +169,7 @@ public class ProductServiceGrpc {
   /**
    * <pre>
    **
-   *  product rpc service.
+   *  product rpc services.
    * </pre>
    */
   public static final class ProductServiceBlockingStub extends io.grpc.stub.AbstractStub<ProductServiceBlockingStub> {
@@ -212,7 +212,7 @@ public class ProductServiceGrpc {
   /**
    * <pre>
    **
-   *  product rpc service.
+   *  product rpc services.
    * </pre>
    */
   public static final class ProductServiceFutureStub extends io.grpc.stub.AbstractStub<ProductServiceFutureStub> {
