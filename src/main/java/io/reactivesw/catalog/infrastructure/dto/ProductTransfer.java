@@ -90,7 +90,9 @@ public final class ProductTransfer {
     builder.setDisplayOrder(product.getDisplayOrder());
     builder.setMediaURL(defaultMedia.getUrl());
     builder.setName(product.getName());
-    builder.setPrice(defaultSku.getPrice().toString());
+
+    final String price = DecimalFormatUtils.transferToShortString(defaultSku.getPrice());
+    builder.setPrice(price);
 
     return builder.build();
   }

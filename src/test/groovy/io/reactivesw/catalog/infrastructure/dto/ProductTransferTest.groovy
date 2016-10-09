@@ -15,8 +15,10 @@ class ProductTransferTest extends Specification{
   Product product = null;
   Sku sku = null;
   Media media = null;
+  def price = "19.99"
 
   def setup(){
+
     product = new Product();
     product.setId(1L);
     product.setName("product");
@@ -28,7 +30,7 @@ class ProductTransferTest extends Specification{
     product.setModel("product model");
 
     sku = new Sku();
-    sku.setPrice(new BigDecimal(19.99));
+    sku.setPrice(new BigDecimal(price));
     sku.setSkuNumber("sku number");
     sku.setUpc("sku upc");
 
@@ -79,7 +81,7 @@ class ProductTransferTest extends Specification{
     GrpcProductBrief grpcProductBrief = ProductTransfer.transferToGrpcProductBrief(product);
     then:
     grpcProductBrief.getId() == product.getId();
-    grpcProductBrief.getPrice() == product.getDefaultSku().getPrice().toString();
+    grpcProductBrief.getPrice() == price
     grpcProductBrief.getName() == product.getName();
     grpcProductBrief.getDisplayOrder() == product.getDisplayOrder();
     grpcProductBrief.getMediaURL() == product.getDefaultSku().getMedias().iterator().next().getUrl();
