@@ -32,6 +32,16 @@ public class CategoryService {
   private transient CategoryRepository categoryRepository;
 
   /**
+   * if category is exist.
+   *
+   * @param categoryId category id
+   * @return true if exist, false if not exist
+   */
+  public boolean existCategory(long categoryId) {
+    return categoryRepository.exists(categoryId);
+  }
+
+  /**
    * find all categories.
    *
    * @return set of categories

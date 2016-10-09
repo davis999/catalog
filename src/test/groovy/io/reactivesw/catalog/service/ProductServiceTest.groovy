@@ -54,10 +54,11 @@ class ProductServiceTest extends Specification{
     productRepository.findProductByCategoryId(_) >> null
 
     when:
-    productService.queryProductsByCategoryId(10086L)
+    List<Product> products = productService.queryProductsByCategoryId(10086L)
 
     then:
-    thrown(NotFoundException)
+    products != null
+    products.size() == 0
   }
 
   def "test query product by category id and get empty list"(){
@@ -65,9 +66,10 @@ class ProductServiceTest extends Specification{
     productRepository.findProductByCategoryId(_) >> new ArrayList<Product>()
 
     when:
-    productService.queryProductsByCategoryId(10086L)
+    List<Product> products = productService.queryProductsByCategoryId(10086L)
 
     then:
-    thrown(NotFoundException)
+    products != null
+    products.size() == 0
   }
 }

@@ -113,4 +113,16 @@ class CategoryServiceTest extends Specification {
         then:
         thrown(NotFoundException)
     }
+
+    def "test exist category and get true"(){
+        given:
+        categoryRepository.exists(_) >> true
+        def categoryId = 1L
+
+        when:
+        def exist = categoryService.existCategory(categoryId)
+
+        then:
+        exist == true
+    }
 }

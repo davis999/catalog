@@ -8,19 +8,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * this is service class for product.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Service("productService")
 public class ProductService {
 
   /**
-   *log.
+   * log.
    */
   private static final Logger LOG = LoggerFactory.getLogger(ProductService.class);
 
@@ -32,7 +32,7 @@ public class ProductService {
 
   /**
    * query product by id.
-   * 
+   *
    * @param productId id.
    * @return product.
    */
@@ -49,18 +49,20 @@ public class ProductService {
 
   /**
    * query list of Product by category id.
-   * 
+   * if result is null, should return new ArrayList.
+   *
    * @param categoryId category id
    * @return list of Product
    */
   public List<Product> queryProductsByCategoryId(long categoryId) {
     LOG.info("enter queryProductByCategoryId, id is {}.", categoryId);
-    final List<Product> products = productRepository.findProductByCategoryId(categoryId);
+    List<Product> products = productRepository.findProductByCategoryId(categoryId);
     if (products == null || products.isEmpty()) {
       LOG.debug("fail to query product by catagory id {}, no result.", categoryId);
-      throw new NotFoundException();
+      products = new ArrayList<>();
     }
-    LOG.info("end queryProductByCategoryId, id is {}.", categoryId);
+    LOG.info("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
+        products.size());
     return products;
   }
 }
