@@ -23,9 +23,8 @@ import javax.validation.constraints.Size;
 
 /**
  * this is entity class for sku.
- * 
- * @author Davis
  *
+ * @author Davis
  */
 @Entity
 @Table(name = "sw_sku")
@@ -97,16 +96,16 @@ public class Sku implements Serializable {
    * medias for sku.
    */
   @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_sku_media", joinColumns = @JoinColumn(name = "sku_id") ,
-      inverseJoinColumns = @JoinColumn(name = "media_id") )
+  @JoinTable(name = "sw_sku_media", joinColumns = @JoinColumn(name = "sku_id"),
+      inverseJoinColumns = @JoinColumn(name = "media_id"))
   private Set<Media> medias;
 
   /**
    * variant values for sku.
    */
   @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  @JoinTable(name = "sw_sku_variant_value", joinColumns = @JoinColumn(name = "sku_id") ,
-      inverseJoinColumns = @JoinColumn(name = "variant_value_id") )
+  @JoinTable(name = "sw_sku_variant_value", joinColumns = @JoinColumn(name = "sku_id"),
+      inverseJoinColumns = @JoinColumn(name = "variant_value_id"))
   private Set<VariantValue> variantValues;
 
   /**
@@ -127,7 +126,7 @@ public class Sku implements Serializable {
 
   /**
    * get id.
-   * 
+   *
    * @return id
    */
   public long getId() {
@@ -136,7 +135,7 @@ public class Sku implements Serializable {
 
   /**
    * set id.
-   * 
+   *
    * @param id id
    */
   public void setId(long id) {
@@ -145,7 +144,7 @@ public class Sku implements Serializable {
 
   /**
    * get skuNumber.
-   * 
+   *
    * @return skuNumber
    */
   public String getSkuNumber() {
@@ -154,7 +153,7 @@ public class Sku implements Serializable {
 
   /**
    * set skuNumber.
-   * 
+   *
    * @param skuNumber skuNumber
    */
   public void setSkuNumber(String skuNumber) {
@@ -163,7 +162,7 @@ public class Sku implements Serializable {
 
   /**
    * get active.
-   * 
+   *
    * @return active
    */
   public boolean isActive() {
@@ -172,7 +171,7 @@ public class Sku implements Serializable {
 
   /**
    * set active.
-   * 
+   *
    * @param active active
    */
   public void setActive(boolean active) {
@@ -181,7 +180,7 @@ public class Sku implements Serializable {
 
   /**
    * get quantity.
-   * 
+   *
    * @return quantity
    */
   public int getQuantity() {
@@ -190,7 +189,7 @@ public class Sku implements Serializable {
 
   /**
    * set quantity.
-   * 
+   *
    * @param quantity quantity
    */
   public void setQuantity(int quantity) {
@@ -199,7 +198,7 @@ public class Sku implements Serializable {
 
   /**
    * get upc.
-   * 
+   *
    * @return upc
    */
   public String getUpc() {
@@ -208,7 +207,7 @@ public class Sku implements Serializable {
 
   /**
    * set upd.
-   * 
+   *
    * @param upc upc
    */
   public void setUpc(String upc) {
@@ -217,7 +216,7 @@ public class Sku implements Serializable {
 
   /**
    * get displayOrder.
-   * 
+   *
    * @return displayOrder
    */
   public int getDisplayOrder() {
@@ -226,7 +225,7 @@ public class Sku implements Serializable {
 
   /**
    * set displayOrder.
-   * 
+   *
    * @param displayOrder displayOrder
    */
   public void setDisplayOrder(int displayOrder) {
@@ -235,7 +234,7 @@ public class Sku implements Serializable {
 
   /**
    * get medias.
-   * 
+   *
    * @return medias.
    */
   public Set<Media> getMedias() {
@@ -244,7 +243,7 @@ public class Sku implements Serializable {
 
   /**
    * set medias.
-   * 
+   *
    * @param medias medias
    */
   public void setMedias(Set<Media> medias) {
@@ -253,7 +252,7 @@ public class Sku implements Serializable {
 
   /**
    * get variantValues.
-   * 
+   *
    * @return variantValues
    */
   public Set<VariantValue> getVariantValues() {
@@ -262,7 +261,7 @@ public class Sku implements Serializable {
 
   /**
    * set variantValues.
-   * 
+   *
    * @param variantValues variantValues
    */
   public void setVariantValues(Set<VariantValue> variantValues) {
@@ -271,7 +270,7 @@ public class Sku implements Serializable {
 
   /**
    * get createdTime.
-   * 
+   *
    * @return createdTime
    */
   public ZonedDateTime getCreatedTime() {
@@ -280,7 +279,7 @@ public class Sku implements Serializable {
 
   /**
    * set createdTime.
-   * 
+   *
    * @param createdTime createdTime
    */
   public void setCreatedTime(ZonedDateTime createdTime) {
@@ -289,7 +288,7 @@ public class Sku implements Serializable {
 
   /**
    * get modifiedTime.
-   * 
+   *
    * @return modifiedTime
    */
   public ZonedDateTime getModifiedTime() {
@@ -298,7 +297,7 @@ public class Sku implements Serializable {
 
   /**
    * set modifiedTime.
-   * 
+   *
    * @param modifiedTime modifiedTime
    */
   public void setModifiedTime(ZonedDateTime modifiedTime) {
@@ -307,16 +306,20 @@ public class Sku implements Serializable {
 
   /**
    * get product.
-   * 
+   *
    * @return product
    */
   public Product getProduct() {
-    return product;
+    Product result = product;
+    if (product == null && defaultProduct != null) {
+      result = defaultProduct;
+    }
+    return result;
   }
 
   /**
    * set product.
-   * 
+   *
    * @param product product
    */
   public void setProduct(Product product) {
@@ -325,7 +328,7 @@ public class Sku implements Serializable {
 
   /**
    * get price.
-   * 
+   *
    * @return price
    */
   public BigDecimal getPrice() {
@@ -334,7 +337,7 @@ public class Sku implements Serializable {
 
   /**
    * set price.
-   * 
+   *
    * @param price price
    */
   public void setPrice(BigDecimal price) {
@@ -343,6 +346,7 @@ public class Sku implements Serializable {
 
   /**
    * get defaultProduct.
+   *
    * @return defaultProduct.
    */
   public Product getDefaultProduct() {
@@ -351,6 +355,7 @@ public class Sku implements Serializable {
 
   /**
    * set defaultProduct.
+   *
    * @param defaultProduct defaultProduct.
    */
   public void setDefaultProduct(Product defaultProduct) {

@@ -7,6 +7,7 @@ import io.reactivesw.catalog.grpc.GrpcSku;
 
 import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
+import io.reactivesw.catalog.infrastructure.utils.DecimalFormatUtils;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
@@ -67,6 +68,8 @@ public final class SkuTransfer {
       Media media = medias.iterator().next();
       builder.setMediaUrl(media.getUrl());
     }
+    builder.setSkuName(sku.getProduct().getName());
+    builder.setPrice(DecimalFormatUtils.transferToShortString(sku.getPrice()));
     return builder.build();
   }
 

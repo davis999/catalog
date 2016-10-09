@@ -1,6 +1,7 @@
 package io.reactivesw.catalog.infrastructure.dto
 
 import io.reactivesw.catalog.domain.entity.Media
+import io.reactivesw.catalog.domain.entity.Product
 import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.entity.Variant
 import io.reactivesw.catalog.domain.entity.VariantValue
@@ -13,11 +14,13 @@ class SkuTransferTest extends Specification {
     Sku sku = null;
     Media media = null;
     VariantValue variantValue = null;
+    Product product = null
+    def price = "19.99"
 
     def setup() {
         sku = new Sku();
         sku.setId(1L);
-        sku.setPrice(new BigDecimal(19.99));
+        sku.setPrice(new BigDecimal(price + "0000000"));
         sku.setSkuNumber("sku number");
         sku.setUpc("sku upc");
 
@@ -39,6 +42,10 @@ class SkuTransferTest extends Specification {
         Set<VariantValue> variantValues = new HashSet<VariantValue>();
         variantValues.add(variantValue);
         sku.setVariantValues(variantValues);
+
+        product = new Product()
+        product.setName("B-shirt")
+        sku.setProduct(product)
     }
 
     def "test transfer to GrpcSku"() {
@@ -58,7 +65,7 @@ class SkuTransferTest extends Specification {
         then:
         skuInformation.getSkuId() == sku.getId()
         skuInformation.getMediaUrl() == sku.getMedias().getAt(0).getUrl()
-        skuInformation.getPrice() == sku.getPrice().toString()
+        skuInformation.getPrice() == price
     }
 
     def "test transfer to sku information list"() {
