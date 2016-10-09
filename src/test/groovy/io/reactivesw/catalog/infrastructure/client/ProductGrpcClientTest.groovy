@@ -4,6 +4,7 @@ import com.google.protobuf.Int64Value
 import io.grpc.ManagedChannel
 import io.grpc.netty.NettyChannelBuilder
 import io.reactivesw.catalog.grpc.GrpcProduct
+import io.reactivesw.catalog.grpc.LongValue
 import io.reactivesw.catalog.grpc.ProductBriefList
 import io.reactivesw.catalog.grpc.ProductServiceGrpc
 import spock.lang.Specification
@@ -16,9 +17,9 @@ class ProductGrpcClientTest extends Specification {
 //    def "test find list of product by category"() {
 //        given:
 //        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build();
+//                NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build();
 //        ProductServiceGrpc.ProductServiceBlockingStub stub = ProductServiceGrpc.newBlockingStub(channel);
-//        Int64Value.Builder builder = Int64Value.newBuilder();
+//        LongValue.Builder builder = LongValue.newBuilder();
 //        builder.setValue(1L);
 //
 //        when:

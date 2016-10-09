@@ -9,6 +9,7 @@ import io.reactivesw.catalog.grpc.GrpcProduct;
 import io.reactivesw.catalog.grpc.GrpcProductBrief;
 import io.reactivesw.catalog.grpc.ProductBriefList;
 
+import io.reactivesw.catalog.infrastructure.utils.DecimalFormatUtils;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
@@ -36,7 +37,8 @@ public final class ProductTransfer {
     final GrpcProduct.Builder builder = modelMapper.map(product, GrpcProduct.Builder.class);
     final Set<Sku> skus = product.getAdditionalSkus();
     final Sku defaultSku = product.getDefaultSku();
-    builder.setPrice(defaultSku.getPrice().toString());
+    final String price = DecimalFormatUtils.transferToShortString(defaultSku.getPrice());
+    builder.setPrice(price);
     if (skus != null) {
       for (final Sku sku : skus) {
         builder.addSku(SkuTransfer.transferToGrpcSku(sku));

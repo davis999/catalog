@@ -10,6 +10,7 @@ import io.reactivesw.catalog.grpc.CategoryList
 import io.reactivesw.catalog.grpc.CategoryServiceGrpc
 import spock.lang.Specification
 
+import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
 
 class CategoryGrpcClientTest extends Specification{
