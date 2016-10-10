@@ -6,6 +6,8 @@ repositories {
 }
 apply plugin: 'java'
 
+apply from: 'application_build/version.gradle'
+
 compileJava {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8

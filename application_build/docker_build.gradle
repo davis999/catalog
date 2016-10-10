@@ -2,14 +2,24 @@ apply plugin: 'docker'
 
 group = "reactivesw"
 
-//build docker image
-task buildDocker(type: Docker, dependsOn: build) {
-    applicationName = jar.baseName
-    dockerfile = file('src/main/docker/Dockerfile')
-    doFirst {
-        copy {
-            from jar
-            into stageDir
-        }
-    }
+task buildDocker(type: Docker, dependsOn: [build]) {
+    applicationName = project.ext.baseName
+    tagVersion = project.ext.version
+
+    baseImage='frolvlad/alpine-oraclejdk8:slim'
+    volume '/tmp'
+
+    def fileName = './build/libs/' + project.ext.baseName + '-' + project.ext.version +'.jar'
+    addFile(fileName,'app.jar')
+
+    runCommand("sh -c 'touch /app.jar'")
+
+    //the entryPoint
+    List<String> list = new ArrayList<String>()
+    list.add("java")
+    list.add("-Djava.security.egd=file:/dev/./urandom")
+    list.add("-jar")
+    list.add("/app.jar")
+    entryPoint(list)
+
 }

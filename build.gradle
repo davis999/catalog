@@ -35,8 +35,8 @@ apply from: 'application_build/docker_build.gradle'
 
 // used by build and docker
 jar {
-    baseName = 'catalog'
-    version = '0.0.1'
+    baseName = project.ext.baseName
+    version = project.ext.version
 }
 
 // these two files are for code analyzer, unit test and code coverage check
