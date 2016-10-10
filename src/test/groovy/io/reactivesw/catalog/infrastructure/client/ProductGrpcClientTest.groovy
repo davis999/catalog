@@ -17,7 +17,7 @@ class ProductGrpcClientTest extends Specification {
 //    def "test find list of product by category"() {
 //        given:
 //        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build();
+//                NettyChannelBuilder.forAddress("192.168.8.115", 9096).usePlaintext(true).build();
 //        ProductServiceGrpc.ProductServiceBlockingStub stub = ProductServiceGrpc.newBlockingStub(channel);
 //        LongValue.Builder builder = LongValue.newBuilder();
 //        builder.setValue(1L);
@@ -28,7 +28,7 @@ class ProductGrpcClientTest extends Specification {
 //        products != null;
 //        products.getProductBriefCount() > 0;
 //    }
-//
+
 //    def "test find product detail information"() {
 //        given:
 //        def productId = 1L;

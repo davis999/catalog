@@ -19,7 +19,7 @@ class SkuGrpcClient extends Specification {
 //        long skuId = 1L
 //        LongValue request = LongValue.newBuilder().setValue(skuId).build()
 //        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build()
+//                NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build()
 //        SkuServiceGrpc.SkuServiceBlockingStub stub = SkuServiceGrpc.newBlockingStub(channel)
 //
 //        when:
@@ -31,7 +31,7 @@ class SkuGrpcClient extends Specification {
 //
 //    def "query sku information by id"(){
 //        given:
-//        long skuId = 2L
+//        long skuId = 1L
 //        LongValue request = LongValue.newBuilder().setValue(skuId).build()
 //        ManagedChannel channel =
 //                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build()
@@ -44,21 +44,5 @@ class SkuGrpcClient extends Specification {
 //        reply != null
 //        reply.getSkuId() == skuId
 //        reply.getMediaUrl() != ""
-//    }
-
-//    def "query sku information by id"() {
-//        given:
-//        SkuIdList.Builder builder = SkuIdList.newBuilder()
-//        builder.addSkuId(19L).addSkuId(12L).addSkuId(13L).addSkuId(14L);
-//        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build()
-//        SkuServiceGrpc.SkuServiceBlockingStub stub = SkuServiceGrpc.newBlockingStub(channel)
-//
-//        when:
-//        SkuInformationList reply = stub.querySkuInformationList(builder.build())
-//
-//        then:
-//        reply != null
-//        reply.getSkuInformationCount() == 0
 //    }
 }

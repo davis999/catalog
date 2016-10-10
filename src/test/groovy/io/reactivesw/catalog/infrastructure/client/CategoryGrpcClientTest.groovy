@@ -18,7 +18,7 @@ class CategoryGrpcClientTest extends Specification{
 //  def "test find all top categories"(){
 //    given:
 //    ManagedChannel channel =
-//        NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build();
+//        NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build();
 //    CategoryServiceGrpc.CategoryServiceBlockingStub stub = CategoryServiceGrpc.newBlockingStub(channel);
 //
 //    when:
@@ -26,7 +26,7 @@ class CategoryGrpcClientTest extends Specification{
 //
 //    then:
 //    categories != null;
-//    categories.getCategoryList().size() == 2;
+//    categories.getCategoryList().size() == 4;
 //    channel.shutdown().awaitTermination(1, TimeUnit.SECONDS);
 //  }
 }
