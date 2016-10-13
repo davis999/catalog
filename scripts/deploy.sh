@@ -1,2 +1,2 @@
-ls -la
-date
+#!/usr/bin/env bash
+echo "hello world"
