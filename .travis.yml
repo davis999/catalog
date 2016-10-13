@@ -11,9 +11,13 @@ script:
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- ./script/deploy.sh
 
 after_script:
   - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD";
     docker push reactivesw/catalog;
-  - ./script/deploy.sh
+
+deploy:
+  provider: script
+  script: script/deploy.sh
+  on:
+    branch: master
