@@ -1,20 +1,26 @@
 #! /bin/sh
 
 #删除rc
-echo "--------------------------------------------------------------------------------------------------\n"
+echo "\n-----------------------------------start delete cust-catalog rc----------------------------------------------\n"
 echo "delete cust-catalog rc\n"
-curl -X DELETE -s http://54.200.161.225:8080/api/v1/namespaces/default/replicationcontrollers/cust-catalog
-echo "--------------------------------------------------------------------------------------------------\n"
+curl -X DELETE http://54.200.161.225:8080/api/v1/namespaces/default/replicationcontrollers/cust-catalog
+echo "\n-----------------------------------end delete cust-catalog rc------------------------------------------------\n"
 
-echo "--------------------------------------------------------------------------------------------------\n"
-echo "delete cust-catalog pod\n"
-#删除pod
-curl -X DELETE -s http://54.200.161.225:8080/api/v1/namespaces/default/pods/cust-catalog-6mreq
-echo "--------------------------------------------------------------------------------------------------\n"
+echo "\n----------------------------------start get all cust-catalog pod---------------------------------------------\n"
+#获取到所有的pods
+podList=$(curl -X GET http://54.200.161.225:8080/api/v1/namespaces/default/pods)
+echo "\n----------------------------------end get all cust-catalog pod-----------------------------------------------\n"
 
-echo "--------------------------------------------------------------------------------------------------\n"
-echo "post cust-catalog-rc.yaml to k8s\n"
+#删除所有cust-catalog的pod
+echo "\n----------------------------------start delete all cust-catalog pod------------------------------------------\n"
+for podName in $(echo $podList | grep -oE 'cust-catalog-[a-zA-Z0-9]{1,5}')
+do
+	curl -X DELETE http://54.200.161.225:8080/api/v1/namespaces/default/pods/$podName
+done
+echo "\n----------------------------------end delete all cust-catalog pod--------------------------------------------\n"
+
+echo "------------------------------------start post cust-catalog-rc.yaml to k8s-------------------------------------\n"
 #提交json，新建rc
 curl -X POST http://54.200.161.225:8080/api/v1/namespaces/default/replicationcontrollers \
 	  -H "Content-Type:application/yaml" --data-binary "@./scripts/cust-catalog-rc.yaml"
-echo "--------------------------------------------------------------------------------------------------\n"
+echo "\n----------------------------------end post cust-catalog-rc.yaml to k8s---------------------------------------\n"
