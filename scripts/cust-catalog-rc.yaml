@@ -1,0 +1,29 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: cust-catalog
+  labels:
+    name: cust-catalog
+spec:
+  replicas: 1
+  selector:
+    name: cust-catalog
+  template:
+    metadata:
+      labels:
+        name: cust-catalog
+    spec:
+      containers:
+      - name: cust-catalog
+        image: reactivesw/catalog
+        ports:
+        - containerPort: 9096
+        env:
+        - name: spring_datasource_url
+          value: "jdbc:mysql://10.254.156.22:3306/reactivesw"
+        - name: spring_datasource_username
+          value: root
+        - name: spring_datasource_password
+          value: "123456"
+        - name: grpc_port
+          value: "9096"
