@@ -21,19 +21,4 @@ public interface GrpcCategoryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
-
-  /**
-   * <code>optional string description = 3;</code>
-   */
-  java.lang.String getDescription();
-  /**
-   * <code>optional string description = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
-
-  /**
-   * <code>optional int32 display_order = 4;</code>
-   */
-  int getDisplayOrder();
 }

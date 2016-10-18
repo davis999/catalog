@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.VariantValue;
 import io.reactivesw.catalog.grpc.GrpcVariantValue;
@@ -11,12 +11,12 @@ import org.modelmapper.ModelMapper;
  * @author Davis
  *
  */
-public final class VariantValueTransfer {
+public final class VariantValueMapper {
 
   /**
    * private constructor.
    */
-  private VariantValueTransfer() {}
+  private VariantValueMapper() {}
 
   /**
    * transfer VariantValue to GrpcVariantValue.

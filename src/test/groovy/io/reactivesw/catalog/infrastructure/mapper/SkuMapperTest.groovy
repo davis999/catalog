@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Media
 import io.reactivesw.catalog.domain.entity.Product
@@ -10,7 +10,7 @@ import io.reactivesw.catalog.grpc.SkuInformation
 import io.reactivesw.catalog.grpc.SkuInformationList;
 import spock.lang.Specification
 
-class SkuTransferTest extends Specification {
+class SkuMapperTest extends Specification {
     Sku sku = null;
     Media media = null;
     VariantValue variantValue = null;
@@ -50,8 +50,8 @@ class SkuTransferTest extends Specification {
 
     def "test transfer to GrpcSku"() {
         when:
-        SkuTransfer skuTransfer = new SkuTransfer();
-        GrpcSku grpcSku = SkuTransfer.transferToGrpcSku(sku);
+        SkuMapper skuTransfer = new SkuMapper();
+        GrpcSku grpcSku = SkuMapper.transferToGrpcSku(sku);
         then:
         grpcSku.getId() == sku.getId();
         grpcSku.getUpc() == sku.getUpc();
@@ -61,7 +61,7 @@ class SkuTransferTest extends Specification {
 
     def "test transfer to SkuInformation"() {
         when:
-        SkuInformation skuInformation = SkuTransfer.transferToSkuInformation(sku)
+        SkuInformation skuInformation = SkuMapper.transferToSkuInformation(sku)
         then:
         skuInformation.getSkuId() == sku.getId()
         skuInformation.getMediaUrl() == sku.getMedias().getAt(0).getUrl()
@@ -74,7 +74,7 @@ class SkuTransferTest extends Specification {
         skus.add(sku)
 
         when:
-        SkuInformationList skuInformationList = SkuTransfer.transferToSkuInformationList(skus)
+        SkuInformationList skuInformationList = SkuMapper.transferToSkuInformationList(skus)
 
         then:
         skuInformationList.getSkuInformationCount() > 0

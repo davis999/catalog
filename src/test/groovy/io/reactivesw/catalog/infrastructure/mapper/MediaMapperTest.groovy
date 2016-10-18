@@ -1,11 +1,11 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Media
 import io.reactivesw.catalog.grpc.GrpcMedia;
 
 import spock.lang.Specification
 
-class MediaTransferTest extends Specification{
+class MediaMapperTest extends Specification{
   Media media = null;
   
   def setup(){
@@ -18,8 +18,8 @@ class MediaTransferTest extends Specification{
   
   def "test transfer to GrpcMedia"(){
     when:
-    MediaTransfer mediaTransfer = new MediaTransfer();
-    GrpcMedia grpcMedia = MediaTransfer.transferToMediaInfo(media);
+    MediaMapper mediaTransfer = new MediaMapper();
+    GrpcMedia grpcMedia = MediaMapper.transferToMediaInfo(media);
     then:
     grpcMedia.getId() == media.getId();
     grpcMedia.getType() == media.getType();

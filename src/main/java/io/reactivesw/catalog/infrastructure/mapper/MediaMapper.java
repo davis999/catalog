@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.Media;
 import io.reactivesw.catalog.grpc.GrpcMedia;
@@ -11,12 +11,12 @@ import org.modelmapper.ModelMapper;
  * @author Davis
  *
  */
-public final class MediaTransfer {
+public final class MediaMapper {
 
   /**
    * private constructor.
    */
-  private MediaTransfer() {
+  private MediaMapper() {
     
   }
 

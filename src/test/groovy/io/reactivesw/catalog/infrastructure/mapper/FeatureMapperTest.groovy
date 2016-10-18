@@ -1,11 +1,11 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Feature
 import io.reactivesw.catalog.grpc.GrpcFeature;
 
 import spock.lang.Specification
 
-class FeatureTransferTest extends Specification{
+class FeatureMapperTest extends Specification{
   Feature feature = null;
   
   def setup(){
@@ -18,8 +18,8 @@ class FeatureTransferTest extends Specification{
   
   def "test transfer to GrpcFeature"(){
     when:
-    FeatureTransfer featureTransfer = new FeatureTransfer();
-    GrpcFeature grpcFeature = FeatureTransfer.transferToFeatureInfo(feature);
+    FeatureMapper featureTransfer = new FeatureMapper();
+    GrpcFeature grpcFeature = FeatureMapper.transferToFeatureInfo(feature);
     
     then:
     grpcFeature.getId() == feature.getId();

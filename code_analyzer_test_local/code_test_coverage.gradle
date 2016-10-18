@@ -13,7 +13,7 @@ jacocoTestReport {
                     'io/reactivesw/catalog/grpc/*',
                     'io/reactivesw/catalog/domain/entity/*',
                     'io/reactivesw/catalog/infrastructure/exception/*',
-//                    'io/reactivesw/catalog/infrastructure/dto/*',
+//                    'io/reactivesw/catalog/infrastructure/mapper/*',
                     'io/reactivesw/catalog/infrastructure/utils/*',
                     'io/reactivesw/catalog/infrastructure/rpcserver/*'
             ])

@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.Attribute;
 import io.reactivesw.catalog.domain.entity.AttributeValue;
@@ -10,11 +10,11 @@ import io.reactivesw.catalog.grpc.GrpcAttribute;
  * @author Davis
  *
  */
-public final class AttributeTransfer {
+public final class AttributeMapper {
   /**
    * private constructor.
    */
-  private AttributeTransfer() {}
+  private AttributeMapper() {}
 
   /**
    * transfer AttributeValue to GrpcAttribute.

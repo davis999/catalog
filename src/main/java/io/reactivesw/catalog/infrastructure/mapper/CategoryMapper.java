@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.Category;
 import io.reactivesw.catalog.grpc.CategoryList;
@@ -13,9 +13,9 @@ import java.util.List;
  *
  * @author Davis
  */
-public final class CategoryTransfer {
+public final class CategoryMapper {
 
-  private CategoryTransfer() {
+  private CategoryMapper() {
   }
 
   /**

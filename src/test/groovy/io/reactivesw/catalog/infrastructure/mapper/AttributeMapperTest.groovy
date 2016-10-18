@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Attribute
 import io.reactivesw.catalog.domain.entity.AttributeValue
@@ -6,7 +6,7 @@ import io.reactivesw.catalog.grpc.GrpcAttribute;
 
 import spock.lang.Specification
 
-class AttributeTransferTest extends Specification{
+class AttributeMapperTest extends Specification{
   Attribute attribute = null;
   AttributeValue attributeValue = null;
 
@@ -26,8 +26,8 @@ class AttributeTransferTest extends Specification{
 
   def "test transfer to GrpcAttribute"(){
     when:
-    AttributeTransfer attributeTransfer = new AttributeTransfer();
-    GrpcAttribute grpcAttribute = AttributeTransfer.transferToAttributeInfo(attributeValue);
+    AttributeMapper attributeTransfer = new AttributeMapper();
+    GrpcAttribute grpcAttribute = AttributeMapper.transferToAttributeInfo(attributeValue);
     then:
     grpcAttribute.getId() == attributeValue.getId();
     grpcAttribute.getName() == attribute.getName();

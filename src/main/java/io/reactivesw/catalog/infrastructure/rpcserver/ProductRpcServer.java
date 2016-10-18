@@ -10,7 +10,7 @@ import io.reactivesw.catalog.grpc.GrpcProduct;
 import io.reactivesw.catalog.grpc.LongValue;
 import io.reactivesw.catalog.grpc.ProductBriefList;
 import io.reactivesw.catalog.grpc.ProductServiceGrpc;
-import io.reactivesw.catalog.infrastructure.dto.ProductTransfer;
+import io.reactivesw.catalog.infrastructure.mapper.ProductMapper;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
 import org.lognet.springboot.grpc.GRpcService;
@@ -55,7 +55,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
     LOG.info("enter queryProductDetial, product id is {}", productId);
     try {
       final Product product = productService.queryProductById(productId);
-      final GrpcProduct reply = ProductTransfer.transferToGrpcProduct(product);
+      final GrpcProduct reply = ProductMapper.transferToGrpcProduct(product);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end queryProductDetial, product is {}.", reply.toString());
     } catch (NotFoundException exception) {
@@ -75,7 +75,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
     LOG.info("enter queryProductsByCategory, category id is {}", categoryId);
     try {
       final List<Product> products = productApplication.queryProductsByCategoryId(categoryId);
-      final ProductBriefList reply = ProductTransfer.transferToProductBriefList(products);
+      final ProductBriefList reply = ProductMapper.transferToProductBriefList(products);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
     } catch (NotFoundException exception) {

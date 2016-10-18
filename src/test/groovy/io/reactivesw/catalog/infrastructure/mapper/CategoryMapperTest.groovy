@@ -1,16 +1,14 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Category
 import io.reactivesw.catalog.grpc.CategoryList
 import io.reactivesw.catalog.grpc.GrpcCategory
 import spock.lang.Specification
 
-import java.time.OffsetTime
-import java.time.ZoneId
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
 
-class CategoryTransferTest extends Specification {
+class CategoryMapperTest extends Specification {
   Category category
   Category annothreCategory
   List<Category> categories
@@ -41,28 +39,27 @@ class CategoryTransferTest extends Specification {
 
   def "test transfer to GrpcCategory"(){
     when:
-    CategoryTransfer categoryTransfer = new CategoryTransfer();
-    GrpcCategory grpcCategory = CategoryTransfer.transferToCategoryInfo(category);
+    CategoryMapper categoryTransfer = new CategoryMapper();
+    GrpcCategory grpcCategory = CategoryMapper.transferToCategoryInfo(category);
 
     then:
     grpcCategory.getName() == category.getName();
     grpcCategory.getId() == category.getId();
-    grpcCategory.getDescription() == category.getDescription();
   }
 
   def "test transfer to CategoryList"(){
     when: "test sub categories"
-    CategoryList categoryList = CategoryTransfer.transferToCategoryList(categories);
+    CategoryList categoryList = CategoryMapper.transferToCategoryList(categories);
     then:
     categoryList.getCategoryCount() == categories.size();
 
     when: "test new hashset without nothing"
-    categoryList = CategoryTransfer.transferToCategoryList(new ArrayList<Category>());
+    categoryList = CategoryMapper.transferToCategoryList(new ArrayList<Category>());
     then:
     categoryList.getCategoryCount() == 0;
 
     when:"test null"
-    categoryList = CategoryTransfer.transferToCategoryList(null);
+    categoryList = CategoryMapper.transferToCategoryList(null);
     then:
     categoryList.getCategoryCount() == 0;
   }

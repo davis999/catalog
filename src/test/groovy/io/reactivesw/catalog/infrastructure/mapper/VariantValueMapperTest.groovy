@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Variant
 import io.reactivesw.catalog.domain.entity.VariantValue
@@ -6,7 +6,7 @@ import io.reactivesw.catalog.grpc.GrpcVariantValue
 
 import spock.lang.Specification
 
-class VariantValueTransferTest extends Specification {
+class VariantValueMapperTest extends Specification {
   VariantValue variantValue = null;
   Variant variant = null;
   
@@ -24,8 +24,8 @@ class VariantValueTransferTest extends Specification {
   
   def "test transfer to GrpcVariantValue"(){
     when:
-    VariantValueTransfer variantValueTransfer = new VariantValueTransfer();
-    GrpcVariantValue grpcVariantValue = VariantValueTransfer.transferToVariantValue(variantValue);
+    VariantValueMapper variantValueTransfer = new VariantValueMapper();
+    GrpcVariantValue grpcVariantValue = VariantValueMapper.transferToVariantValue(variantValue);
     then:
     grpcVariantValue.getId() == variantValue.getId();
     grpcVariantValue.getValue() == variantValue.getValue();

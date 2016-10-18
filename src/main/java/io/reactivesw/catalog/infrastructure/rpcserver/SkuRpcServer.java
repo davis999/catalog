@@ -11,7 +11,7 @@ import io.reactivesw.catalog.grpc.SkuIdList;
 import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
 import io.reactivesw.catalog.grpc.SkuServiceGrpc;
-import io.reactivesw.catalog.infrastructure.dto.SkuTransfer;
+import io.reactivesw.catalog.infrastructure.mapper.SkuMapper;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.exception.NullParameterException;
 import io.reactivesw.catalog.infrastructure.exception.SkuNotActiveException;
@@ -79,7 +79,7 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
     LOG.debug("start querySkuSimpleInformation, id is {}.", skuId);
     try {
       final Sku sku = skuService.querySkuById(skuId);
-      final SkuInformation reply = SkuTransfer.transferToSkuInformation(sku);
+      final SkuInformation reply = SkuMapper.transferToSkuInformation(sku);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end querySkuSimpleInformation, get sku information {}.", reply.toString());
     } catch (NotFoundException exception) {
@@ -106,7 +106,7 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
     LOG.debug("start querySkuInformationList.");
     try {
       final List<Sku> skus = skuService.queryListSku(skuIds);
-      final SkuInformationList reply = SkuTransfer.transferToSkuInformationList(skus);
+      final SkuInformationList reply = SkuMapper.transferToSkuInformationList(skus);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end querySkuInformationList, get {} sku.", reply.getSkuInformationCount());
     } catch (NullParameterException exception) {

@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.Media;
 import io.reactivesw.catalog.domain.entity.Sku;
@@ -18,7 +18,7 @@ import java.util.Set;
  *
  * @author Davis
  */
-public final class SkuTransfer {
+public final class SkuMapper {
   /**
    * model mapper.
    */
@@ -27,7 +27,7 @@ public final class SkuTransfer {
   /**
    * private constructro.
    */
-  private SkuTransfer() {
+  private SkuMapper() {
   }
 
   /**
@@ -41,13 +41,13 @@ public final class SkuTransfer {
 
     final Set<Media> medias = sku.getMedias();
     for (final Media media : medias) {
-      builder.addMedia(MediaTransfer.transferToMediaInfo(media));
+      builder.addMedia(MediaMapper.transferToMediaInfo(media));
     }
 
     final Set<VariantValue> variantValues = sku.getVariantValues();
     if (variantValues != null) {
       for (final VariantValue variantValue : variantValues) {
-        builder.addVariantValue(VariantValueTransfer.transferToVariantValue(variantValue));
+        builder.addVariantValue(VariantValueMapper.transferToVariantValue(variantValue));
       }
     }
 

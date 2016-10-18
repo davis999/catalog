@@ -18,7 +18,7 @@ class CategoryGrpcClientTest extends Specification{
 //  def "test find all top categories"(){
 //    given:
 //    ManagedChannel channel =
-//        NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build();
+//        NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build();
 //    CategoryServiceGrpc.CategoryServiceBlockingStub stub = CategoryServiceGrpc.newBlockingStub(channel);
 //
 //    when:

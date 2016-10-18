@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.Feature;
 import io.reactivesw.catalog.grpc.GrpcFeature;
@@ -11,12 +11,12 @@ import org.modelmapper.ModelMapper;
  * @author Davis
  *
  */
-public final class FeatureTransfer {
+public final class FeatureMapper {
 
   /**
    * private constructor.
    */
-  private FeatureTransfer() {}
+  private FeatureMapper() {}
 
   /**
    * transfer Feature to GrpcFeature.

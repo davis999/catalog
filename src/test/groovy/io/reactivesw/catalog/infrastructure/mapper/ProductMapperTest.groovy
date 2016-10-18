@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto
+package io.reactivesw.catalog.infrastructure.mapper
 
 import io.reactivesw.catalog.domain.entity.Attribute
 import io.reactivesw.catalog.domain.entity.AttributeValue
@@ -11,7 +11,7 @@ import io.reactivesw.catalog.grpc.GrpcProductBrief
 import io.reactivesw.catalog.grpc.ProductBriefList
 import spock.lang.Specification
 
-class ProductTransferTest extends Specification{
+class ProductMapperTest extends Specification{
   Product product = null;
   Sku sku = null;
   Media media = null;
@@ -77,8 +77,8 @@ class ProductTransferTest extends Specification{
 
   def "test transfer to product brief"(){
     when:
-    ProductTransfer productTransfer = new ProductTransfer();
-    GrpcProductBrief grpcProductBrief = ProductTransfer.transferToGrpcProductBrief(product);
+    ProductMapper productTransfer = new ProductMapper();
+    GrpcProductBrief grpcProductBrief = ProductMapper.transferToGrpcProductBrief(product);
     then:
     grpcProductBrief.getId() == product.getId();
     grpcProductBrief.getPrice() == price
@@ -89,7 +89,7 @@ class ProductTransferTest extends Specification{
 
   def "test transfer to GrpcProduct"(){
     when:
-    GrpcProduct grpcProduct = ProductTransfer.transferToGrpcProduct(product);
+    GrpcProduct grpcProduct = ProductMapper.transferToGrpcProduct(product);
     then:
     grpcProduct.getId() == product.getId();
     grpcProduct.getName() == product.getName();
@@ -110,21 +110,21 @@ class ProductTransferTest extends Specification{
     products.add(product);
 
     when:"test list of product"
-    ProductBriefList productBriefs = ProductTransfer.transferToProductBriefList(products);
+    ProductBriefList productBriefs = ProductMapper.transferToProductBriefList(products);
 
     then:
     productBriefs.getProductBriefCount() == products.size();
 
     when:"test null list"
     products = null;
-    productBriefs = ProductTransfer.transferToProductBriefList(products);
+    productBriefs = ProductMapper.transferToProductBriefList(products);
 
     then:
     productBriefs.getProductBriefCount() == 0;
 
     when:"test new list with nothing"
     products = new ArrayList<Product>();
-    productBriefs = ProductTransfer.transferToProductBriefList(products);
+    productBriefs = ProductMapper.transferToProductBriefList(products);
 
     then:
     productBriefs.getProductBriefCount() == 0;

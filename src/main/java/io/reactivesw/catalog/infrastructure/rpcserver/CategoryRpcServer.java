@@ -10,7 +10,7 @@ import io.reactivesw.catalog.grpc.CategoryServiceGrpc;
 import io.reactivesw.catalog.grpc.Empty;
 import io.reactivesw.catalog.grpc.GrpcCategory;
 import io.reactivesw.catalog.grpc.LongValue;
-import io.reactivesw.catalog.infrastructure.dto.CategoryTransfer;
+import io.reactivesw.catalog.infrastructure.mapper.CategoryMapper;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.utils.GrpcResponseUtils;
 import org.lognet.springboot.grpc.GRpcService;
@@ -47,7 +47,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
     LOG.info("enter getCategories.");
     try {
       final List<Category> categories = categoryService.findAllCategories();
-      final CategoryList reply = CategoryTransfer.transferToCategoryList(categories);
+      final CategoryList reply = CategoryMapper.transferToCategoryList(categories);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end getCategories.get {} categories.", reply.getCategoryCount());
     } catch (NotFoundException exception) {
@@ -70,7 +70,7 @@ public class CategoryRpcServer extends CategoryServiceGrpc.CategoryServiceImplBa
     LOG.info("enter getCategoryById, id is {}", categoryId);
     try {
       final Category category = categoryService.findCategoryById(categoryId);
-      final GrpcCategory reply = CategoryTransfer.transferToCategoryInfo(category);
+      final GrpcCategory reply = CategoryMapper.transferToCategoryInfo(category);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end getCategoryById, get the category: {}", reply.toString());
     } catch (NotFoundException exception) {

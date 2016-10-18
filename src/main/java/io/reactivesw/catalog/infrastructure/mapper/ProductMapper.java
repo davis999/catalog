@@ -1,4 +1,4 @@
-package io.reactivesw.catalog.infrastructure.dto;
+package io.reactivesw.catalog.infrastructure.mapper;
 
 import io.reactivesw.catalog.domain.entity.AttributeValue;
 import io.reactivesw.catalog.domain.entity.Feature;
@@ -19,12 +19,12 @@ import java.util.Set;
  * this is transfer class for product.
  * @author Davis
  */
-public final class ProductTransfer {
+public final class ProductMapper {
 
   /**
    * private constructor.
    */
-  private ProductTransfer() {
+  private ProductMapper() {
   }
 
   /**
@@ -41,17 +41,17 @@ public final class ProductTransfer {
     builder.setPrice(price);
     if (skus != null) {
       for (final Sku sku : skus) {
-        builder.addSku(SkuTransfer.transferToGrpcSku(sku));
+        builder.addSku(SkuMapper.transferToGrpcSku(sku));
       }
     }
     if (product.getFeatures() != null) {
       for (final Feature feature : product.getFeatures()) {
-        builder.addFeature(FeatureTransfer.transferToFeatureInfo(feature));
+        builder.addFeature(FeatureMapper.transferToFeatureInfo(feature));
       }
     }
     if (product.getAttributeValues() != null) {
       for (final AttributeValue attributeValue : product.getAttributeValues()) {
-        builder.addAttribute(AttributeTransfer.transferToAttributeInfo(attributeValue));
+        builder.addAttribute(AttributeMapper.transferToAttributeInfo(attributeValue));
       }
     }
 
