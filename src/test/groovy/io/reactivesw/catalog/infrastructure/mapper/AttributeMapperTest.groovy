@@ -31,9 +31,6 @@ class AttributeMapperTest extends Specification{
     then:
     grpcAttribute.getId() == attributeValue.getId();
     grpcAttribute.getName() == attribute.getName();
-    grpcAttribute.getDescription() == attribute.getDescription();
-    grpcAttribute.getDisplayOrder() == attribute.getDisplayOrder();
     grpcAttribute.getValue() == attributeValue.getValue();
-    grpcAttribute.getType() == attribute.getType();
   }
 }

@@ -23,8 +23,6 @@ class FeatureMapperTest extends Specification{
     
     then:
     grpcFeature.getId() == feature.getId();
-    grpcFeature.getName() == feature.getName();
-    grpcFeature.getDisplayOrder() == feature.getDisplayOrder();
-    grpcFeature.getDescription() == feature.getDescription(); 
+    grpcFeature.getDescription() == feature.getDescription();
   }
 }

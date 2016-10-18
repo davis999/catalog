@@ -29,6 +29,11 @@ public final class CatalogDataMessage {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_IntValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_reactivesw_catalog_infrastructure_StringValue_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_io_reactivesw_catalog_infrastructure_StringValue_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -41,8 +46,9 @@ public final class CatalogDataMessage {
       "\n(catalog_proto/catalog_data_message.pro" +
       "to\022$io.reactivesw.catalog.infrastructure" +
       "\"\007\n\005Empty\"\032\n\tLongValue\022\r\n\005value\030\001 \001(\003\"\031\n" +
-      "\010IntValue\022\r\n\005value\030\001 \001(\005B!\n\032io.reactives" +
-      "w.catalog.grpcP\001\240\001\001b\006proto3"
+      "\010IntValue\022\r\n\005value\030\001 \001(\005\"\034\n\013StringValue\022" +
+      "\r\n\005value\030\001 \001(\tB!\n\032io.reactivesw.catalog." +
+      "grpcP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -73,6 +79,12 @@ public final class CatalogDataMessage {
     internal_static_io_reactivesw_catalog_infrastructure_IntValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_IntValue_descriptor,
+        new java.lang.String[] { "Value", });
+    internal_static_io_reactivesw_catalog_infrastructure_StringValue_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_io_reactivesw_catalog_infrastructure_StringValue_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_io_reactivesw_catalog_infrastructure_StringValue_descriptor,
         new java.lang.String[] { "Value", });
   }
 

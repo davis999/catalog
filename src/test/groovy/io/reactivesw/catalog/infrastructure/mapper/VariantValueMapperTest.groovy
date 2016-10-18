@@ -29,6 +29,5 @@ class VariantValueMapperTest extends Specification {
     then:
     grpcVariantValue.getId() == variantValue.getId();
     grpcVariantValue.getValue() == variantValue.getValue();
-    grpcVariantValue.getPriceAdjustment() == variantValue.getPriceAdjustment().toString();
   }
 }

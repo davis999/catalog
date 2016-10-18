@@ -19,7 +19,7 @@ class SkuGrpcClient extends Specification {
 //        long skuId = 1L
 //        LongValue request = LongValue.newBuilder().setValue(skuId).build()
 //        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("192.168.8.29", 9096).usePlaintext(true).build()
+//                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build()
 //        SkuServiceGrpc.SkuServiceBlockingStub stub = SkuServiceGrpc.newBlockingStub(channel)
 //
 //        when:

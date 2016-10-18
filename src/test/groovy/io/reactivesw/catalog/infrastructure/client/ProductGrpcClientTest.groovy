@@ -28,14 +28,14 @@ class ProductGrpcClientTest extends Specification {
 //        products != null;
 //        products.getProductBriefCount() > 0;
 //    }
-
+//
 //    def "test find product detail information"() {
 //        given:
 //        def productId = 1L;
 //        ManagedChannel channel =
 //                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build();
 //        ProductServiceGrpc.ProductServiceBlockingStub stub = ProductServiceGrpc.newBlockingStub(channel);
-//        Int64Value.Builder builder = Int64Value.newBuilder();
+//        LongValue.Builder builder = LongValue.newBuilder();
 //        builder.setValue(productId);
 //        when:
 //        GrpcProduct productInfo = stub.getProductDetial(builder.build());

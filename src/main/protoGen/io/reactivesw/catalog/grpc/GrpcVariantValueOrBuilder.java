@@ -23,17 +23,27 @@ public interface GrpcVariantValueOrBuilder extends
       getValueBytes();
 
   /**
-   * <code>optional int32 displayOrder = 3;</code>
+   * <code>optional bool is_active = 3;</code>
+   */
+  boolean getIsActive();
+
+  /**
+   * <code>optional int32 displayOrder = 4;</code>
    */
   int getDisplayOrder();
 
   /**
-   * <code>optional string priceAdjustment = 4;</code>
+   * <code>optional string sku_number = 5;</code>
    */
-  java.lang.String getPriceAdjustment();
+  java.lang.String getSkuNumber();
   /**
-   * <code>optional string priceAdjustment = 4;</code>
+   * <code>optional string sku_number = 5;</code>
    */
   com.google.protobuf.ByteString
-      getPriceAdjustmentBytes();
+      getSkuNumberBytes();
+
+  /**
+   * <code>optional bool selected = 6;</code>
+   */
+  boolean getSelected();
 }

@@ -23,37 +23,12 @@ public interface GrpcAttributeOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>optional string description = 3;</code>
-   */
-  java.lang.String getDescription();
-  /**
-   * <code>optional string description = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
-
-  /**
-   * <code>optional string value = 4;</code>
+   * <code>optional string value = 3;</code>
    */
   java.lang.String getValue();
   /**
-   * <code>optional string value = 4;</code>
+   * <code>optional string value = 3;</code>
    */
   com.google.protobuf.ByteString
       getValueBytes();
-
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  java.lang.String getType();
-  /**
-   * <code>optional string type = 5;</code>
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <code>optional int32 display_order = 6;</code>
-   */
-  int getDisplayOrder();
 }

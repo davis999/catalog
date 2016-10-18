@@ -29,6 +29,11 @@ public final class CatalogSkuMessage {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_reactivesw_catalog_infrastructure_GrpcSkuDetail_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_io_reactivesw_catalog_infrastructure_GrpcSkuDetail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -39,14 +44,26 @@ public final class CatalogSkuMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\'catalog_proto/catalog_sku_message.prot" +
-      "o\022$io.reactivesw.catalog.infrastructure\"" +
-      "c\n\022SkuInformationList\022M\n\017sku_information" +
-      "\030\001 \003(\01324.io.reactivesw.catalog.infrastru" +
-      "cture.SkuInformation\"h\n\016SkuInformation\022\016" +
-      "\n\006sku_id\030\001 \001(\003\022\022\n\nsku_number\030\002 \001(\t\022\020\n\010sk" +
-      "u_name\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\r\n\005price" +
-      "\030\005 \001(\t\"\033\n\tSkuIdList\022\016\n\006sku_id\030\001 \003(\003B!\n\032i" +
-      "o.reactivesw.catalog.grpcP\001\240\001\001b\006proto3"
+      "o\022$io.reactivesw.catalog.infrastructure\032" +
+      "+catalog_proto/catalog_product_message.p" +
+      "roto\"c\n\022SkuInformationList\022M\n\017sku_inform" +
+      "ation\030\001 \003(\01324.io.reactivesw.catalog.infr" +
+      "astructure.SkuInformation\"h\n\016SkuInformat" +
+      "ion\022\016\n\006sku_id\030\001 \001(\003\022\022\n\nsku_number\030\002 \001(\t\022" +
+      "\020\n\010sku_name\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\r\n\005" +
+      "price\030\005 \001(\t\"\033\n\tSkuIdList\022\016\n\006sku_id\030\001 \003(\003" +
+      "\"\241\003\n\rGrpcSkuDetail\022\n\n\002id\030\001 \001(\003\022\024\n\014manufa",
+      "cturer\030\002 \001(\t\022\r\n\005brand\030\003 \001(\t\022\r\n\005model\030\004 \001" +
+      "(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005price\030\006 \001(\t\022\023\n\013descr" +
+      "iption\030\007 \001(\t\022\016\n\006detail\030\010 \001(\t\022B\n\007feature\030" +
+      "\t \003(\01321.io.reactivesw.catalog.infrastruc" +
+      "ture.GrpcFeature\022F\n\tattribute\030\n \003(\01323.io" +
+      ".reactivesw.catalog.infrastructure.GrpcA" +
+      "ttribute\022B\n\007variant\030\013 \003(\01321.io.reactives" +
+      "w.catalog.infrastructure.GrpcVariant\022>\n\005" +
+      "media\030\014 \003(\0132/.io.reactivesw.catalog.infr" +
+      "astructure.GrpcMediaB!\n\032io.reactivesw.ca",
+      "talog.grpcP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -59,6 +76,7 @@ public final class CatalogSkuMessage {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.reactivesw.catalog.grpc.CatalogProductMessage.getDescriptor(),
         }, assigner);
     internal_static_io_reactivesw_catalog_infrastructure_SkuInformationList_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -78,6 +96,13 @@ public final class CatalogSkuMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_SkuIdList_descriptor,
         new java.lang.String[] { "SkuId", });
+    internal_static_io_reactivesw_catalog_infrastructure_GrpcSkuDetail_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_io_reactivesw_catalog_infrastructure_GrpcSkuDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_io_reactivesw_catalog_infrastructure_GrpcSkuDetail_descriptor,
+        new java.lang.String[] { "Id", "Manufacturer", "Brand", "Model", "Name", "Price", "Description", "Detail", "Feature", "Attribute", "Variant", "Media", });
+    io.reactivesw.catalog.grpc.CatalogProductMessage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

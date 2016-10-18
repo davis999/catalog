@@ -14,7 +14,7 @@ import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
 
 class CategoryGrpcClientTest extends Specification{
-
+//
 //  def "test find all top categories"(){
 //    given:
 //    ManagedChannel channel =

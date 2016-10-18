@@ -27,7 +27,7 @@ public final class CatalogSkuService {
       "o\022$io.reactivesw.catalog.infrastructure\032" +
       "\'catalog_proto/catalog_sku_message.proto" +
       "\032(catalog_proto/catalog_data_message.pro" +
-      "to2\216\003\n\nSkuService\022t\n\021querySkuInventory\022/" +
+      "to2\210\004\n\nSkuService\022t\n\021querySkuInventory\022/" +
       ".io.reactivesw.catalog.infrastructure.Lo" +
       "ngValue\032..io.reactivesw.catalog.infrastr" +
       "ucture.IntValue\022\202\001\n\031querySkuSimpleInform" +
@@ -37,8 +37,11 @@ public final class CatalogSkuService {
       "uInformationList\022/.io.reactivesw.catalog" +
       ".infrastructure.SkuIdList\0328.io.reactives" +
       "w.catalog.infrastructure.SkuInformationL" +
-      "istB\036\n\032io.reactivesw.catalog.grpcP\001b\006pro" +
-      "to3"
+      "ist\022x\n\016querySkuDetail\0221.io.reactivesw.ca" +
+      "talog.infrastructure.StringValue\0323.io.re" +
+      "activesw.catalog.infrastructure.GrpcSkuD" +
+      "etailB\036\n\032io.reactivesw.catalog.grpcP\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

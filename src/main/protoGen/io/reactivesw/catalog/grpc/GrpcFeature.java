@@ -16,9 +16,7 @@ public  final class GrpcFeature extends
   }
   private GrpcFeature() {
     id_ = 0L;
-    name_ = "";
     description_ = "";
-    displayOrder_ = 0;
   }
 
   @java.lang.Override
@@ -54,18 +52,7 @@ public  final class GrpcFeature extends
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             description_ = s;
-            break;
-          }
-          case 32: {
-
-            displayOrder_ = input.readInt32();
             break;
           }
         }
@@ -100,44 +87,10 @@ public  final class GrpcFeature extends
     return id_;
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>optional string name = 2;</code>
-   */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string name = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DESCRIPTION_FIELD_NUMBER = 3;
+  public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
-   * <code>optional string description = 3;</code>
+   * <code>optional string description = 2;</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -152,7 +105,7 @@ public  final class GrpcFeature extends
     }
   }
   /**
-   * <code>optional string description = 3;</code>
+   * <code>optional string description = 2;</code>
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -166,15 +119,6 @@ public  final class GrpcFeature extends
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int DISPLAY_ORDER_FIELD_NUMBER = 4;
-  private int displayOrder_;
-  /**
-   * <code>optional int32 display_order = 4;</code>
-   */
-  public int getDisplayOrder() {
-    return displayOrder_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -192,14 +136,8 @@ public  final class GrpcFeature extends
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
-    }
-    if (displayOrder_ != 0) {
-      output.writeInt32(4, displayOrder_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
   }
 
@@ -212,15 +150,8 @@ public  final class GrpcFeature extends
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
-    }
-    if (displayOrder_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, displayOrder_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     memoizedSize = size;
     return size;
@@ -240,12 +171,8 @@ public  final class GrpcFeature extends
     boolean result = true;
     result = result && (getId()
         == other.getId());
-    result = result && getName()
-        .equals(other.getName());
     result = result && getDescription()
         .equals(other.getDescription());
-    result = result && (getDisplayOrder()
-        == other.getDisplayOrder());
     return result;
   }
 
@@ -259,12 +186,8 @@ public  final class GrpcFeature extends
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -385,11 +308,7 @@ public  final class GrpcFeature extends
       super.clear();
       id_ = 0L;
 
-      name_ = "";
-
       description_ = "";
-
-      displayOrder_ = 0;
 
       return this;
     }
@@ -414,9 +333,7 @@ public  final class GrpcFeature extends
     public io.reactivesw.catalog.grpc.GrpcFeature buildPartial() {
       io.reactivesw.catalog.grpc.GrpcFeature result = new io.reactivesw.catalog.grpc.GrpcFeature(this);
       result.id_ = id_;
-      result.name_ = name_;
       result.description_ = description_;
-      result.displayOrder_ = displayOrder_;
       onBuilt();
       return result;
     }
@@ -461,16 +378,9 @@ public  final class GrpcFeature extends
       if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
-      }
-      if (other.getDisplayOrder() != 0) {
-        setDisplayOrder(other.getDisplayOrder());
       }
       onChanged();
       return this;
@@ -524,78 +434,9 @@ public  final class GrpcFeature extends
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object description_ = "";
     /**
-     * <code>optional string description = 3;</code>
+     * <code>optional string description = 2;</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -610,7 +451,7 @@ public  final class GrpcFeature extends
       }
     }
     /**
-     * <code>optional string description = 3;</code>
+     * <code>optional string description = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -626,7 +467,7 @@ public  final class GrpcFeature extends
       }
     }
     /**
-     * <code>optional string description = 3;</code>
+     * <code>optional string description = 2;</code>
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -639,7 +480,7 @@ public  final class GrpcFeature extends
       return this;
     }
     /**
-     * <code>optional string description = 3;</code>
+     * <code>optional string description = 2;</code>
      */
     public Builder clearDescription() {
       
@@ -648,7 +489,7 @@ public  final class GrpcFeature extends
       return this;
     }
     /**
-     * <code>optional string description = 3;</code>
+     * <code>optional string description = 2;</code>
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -658,32 +499,6 @@ public  final class GrpcFeature extends
   checkByteStringIsUtf8(value);
       
       description_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int displayOrder_ ;
-    /**
-     * <code>optional int32 display_order = 4;</code>
-     */
-    public int getDisplayOrder() {
-      return displayOrder_;
-    }
-    /**
-     * <code>optional int32 display_order = 4;</code>
-     */
-    public Builder setDisplayOrder(int value) {
-      
-      displayOrder_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional int32 display_order = 4;</code>
-     */
-    public Builder clearDisplayOrder() {
-      
-      displayOrder_ = 0;
       onChanged();
       return this;
     }

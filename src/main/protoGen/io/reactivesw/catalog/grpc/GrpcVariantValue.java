@@ -17,8 +17,10 @@ public  final class GrpcVariantValue extends
   private GrpcVariantValue() {
     id_ = 0L;
     value_ = "";
+    isActive_ = false;
     displayOrder_ = 0;
-    priceAdjustment_ = "";
+    skuNumber_ = "";
+    selected_ = false;
   }
 
   @java.lang.Override
@@ -59,13 +61,23 @@ public  final class GrpcVariantValue extends
           }
           case 24: {
 
+            isActive_ = input.readBool();
+            break;
+          }
+          case 32: {
+
             displayOrder_ = input.readInt32();
             break;
           }
-          case 34: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            priceAdjustment_ = s;
+            skuNumber_ = s;
+            break;
+          }
+          case 48: {
+
+            selected_ = input.readBool();
             break;
           }
         }
@@ -134,47 +146,65 @@ public  final class GrpcVariantValue extends
     }
   }
 
-  public static final int DISPLAYORDER_FIELD_NUMBER = 3;
+  public static final int IS_ACTIVE_FIELD_NUMBER = 3;
+  private boolean isActive_;
+  /**
+   * <code>optional bool is_active = 3;</code>
+   */
+  public boolean getIsActive() {
+    return isActive_;
+  }
+
+  public static final int DISPLAYORDER_FIELD_NUMBER = 4;
   private int displayOrder_;
   /**
-   * <code>optional int32 displayOrder = 3;</code>
+   * <code>optional int32 displayOrder = 4;</code>
    */
   public int getDisplayOrder() {
     return displayOrder_;
   }
 
-  public static final int PRICEADJUSTMENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object priceAdjustment_;
+  public static final int SKU_NUMBER_FIELD_NUMBER = 5;
+  private volatile java.lang.Object skuNumber_;
   /**
-   * <code>optional string priceAdjustment = 4;</code>
+   * <code>optional string sku_number = 5;</code>
    */
-  public java.lang.String getPriceAdjustment() {
-    java.lang.Object ref = priceAdjustment_;
+  public java.lang.String getSkuNumber() {
+    java.lang.Object ref = skuNumber_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      priceAdjustment_ = s;
+      skuNumber_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string priceAdjustment = 4;</code>
+   * <code>optional string sku_number = 5;</code>
    */
   public com.google.protobuf.ByteString
-      getPriceAdjustmentBytes() {
-    java.lang.Object ref = priceAdjustment_;
+      getSkuNumberBytes() {
+    java.lang.Object ref = skuNumber_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      priceAdjustment_ = b;
+      skuNumber_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SELECTED_FIELD_NUMBER = 6;
+  private boolean selected_;
+  /**
+   * <code>optional bool selected = 6;</code>
+   */
+  public boolean getSelected() {
+    return selected_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -195,11 +225,17 @@ public  final class GrpcVariantValue extends
     if (!getValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
     }
-    if (displayOrder_ != 0) {
-      output.writeInt32(3, displayOrder_);
+    if (isActive_ != false) {
+      output.writeBool(3, isActive_);
     }
-    if (!getPriceAdjustmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, priceAdjustment_);
+    if (displayOrder_ != 0) {
+      output.writeInt32(4, displayOrder_);
+    }
+    if (!getSkuNumberBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, skuNumber_);
+    }
+    if (selected_ != false) {
+      output.writeBool(6, selected_);
     }
   }
 
@@ -215,12 +251,20 @@ public  final class GrpcVariantValue extends
     if (!getValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
     }
+    if (isActive_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, isActive_);
+    }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, displayOrder_);
+        .computeInt32Size(4, displayOrder_);
     }
-    if (!getPriceAdjustmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, priceAdjustment_);
+    if (!getSkuNumberBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, skuNumber_);
+    }
+    if (selected_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, selected_);
     }
     memoizedSize = size;
     return size;
@@ -242,10 +286,14 @@ public  final class GrpcVariantValue extends
         == other.getId());
     result = result && getValue()
         .equals(other.getValue());
+    result = result && (getIsActive()
+        == other.getIsActive());
     result = result && (getDisplayOrder()
         == other.getDisplayOrder());
-    result = result && getPriceAdjustment()
-        .equals(other.getPriceAdjustment());
+    result = result && getSkuNumber()
+        .equals(other.getSkuNumber());
+    result = result && (getSelected()
+        == other.getSelected());
     return result;
   }
 
@@ -261,10 +309,16 @@ public  final class GrpcVariantValue extends
         getId());
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
+    hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsActive());
     hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
-    hash = (37 * hash) + PRICEADJUSTMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getPriceAdjustment().hashCode();
+    hash = (37 * hash) + SKU_NUMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getSkuNumber().hashCode();
+    hash = (37 * hash) + SELECTED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSelected());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,9 +441,13 @@ public  final class GrpcVariantValue extends
 
       value_ = "";
 
+      isActive_ = false;
+
       displayOrder_ = 0;
 
-      priceAdjustment_ = "";
+      skuNumber_ = "";
+
+      selected_ = false;
 
       return this;
     }
@@ -415,8 +473,10 @@ public  final class GrpcVariantValue extends
       io.reactivesw.catalog.grpc.GrpcVariantValue result = new io.reactivesw.catalog.grpc.GrpcVariantValue(this);
       result.id_ = id_;
       result.value_ = value_;
+      result.isActive_ = isActive_;
       result.displayOrder_ = displayOrder_;
-      result.priceAdjustment_ = priceAdjustment_;
+      result.skuNumber_ = skuNumber_;
+      result.selected_ = selected_;
       onBuilt();
       return result;
     }
@@ -465,12 +525,18 @@ public  final class GrpcVariantValue extends
         value_ = other.value_;
         onChanged();
       }
+      if (other.getIsActive() != false) {
+        setIsActive(other.getIsActive());
+      }
       if (other.getDisplayOrder() != 0) {
         setDisplayOrder(other.getDisplayOrder());
       }
-      if (!other.getPriceAdjustment().isEmpty()) {
-        priceAdjustment_ = other.priceAdjustment_;
+      if (!other.getSkuNumber().isEmpty()) {
+        skuNumber_ = other.skuNumber_;
         onChanged();
+      }
+      if (other.getSelected() != false) {
+        setSelected(other.getSelected());
       }
       onChanged();
       return this;
@@ -593,15 +659,41 @@ public  final class GrpcVariantValue extends
       return this;
     }
 
+    private boolean isActive_ ;
+    /**
+     * <code>optional bool is_active = 3;</code>
+     */
+    public boolean getIsActive() {
+      return isActive_;
+    }
+    /**
+     * <code>optional bool is_active = 3;</code>
+     */
+    public Builder setIsActive(boolean value) {
+      
+      isActive_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool is_active = 3;</code>
+     */
+    public Builder clearIsActive() {
+      
+      isActive_ = false;
+      onChanged();
+      return this;
+    }
+
     private int displayOrder_ ;
     /**
-     * <code>optional int32 displayOrder = 3;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public int getDisplayOrder() {
       return displayOrder_;
     }
     /**
-     * <code>optional int32 displayOrder = 3;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public Builder setDisplayOrder(int value) {
       
@@ -610,7 +702,7 @@ public  final class GrpcVariantValue extends
       return this;
     }
     /**
-     * <code>optional int32 displayOrder = 3;</code>
+     * <code>optional int32 displayOrder = 4;</code>
      */
     public Builder clearDisplayOrder() {
       
@@ -619,71 +711,97 @@ public  final class GrpcVariantValue extends
       return this;
     }
 
-    private java.lang.Object priceAdjustment_ = "";
+    private java.lang.Object skuNumber_ = "";
     /**
-     * <code>optional string priceAdjustment = 4;</code>
+     * <code>optional string sku_number = 5;</code>
      */
-    public java.lang.String getPriceAdjustment() {
-      java.lang.Object ref = priceAdjustment_;
+    public java.lang.String getSkuNumber() {
+      java.lang.Object ref = skuNumber_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        priceAdjustment_ = s;
+        skuNumber_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string priceAdjustment = 4;</code>
+     * <code>optional string sku_number = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getPriceAdjustmentBytes() {
-      java.lang.Object ref = priceAdjustment_;
+        getSkuNumberBytes() {
+      java.lang.Object ref = skuNumber_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        priceAdjustment_ = b;
+        skuNumber_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>optional string priceAdjustment = 4;</code>
+     * <code>optional string sku_number = 5;</code>
      */
-    public Builder setPriceAdjustment(
+    public Builder setSkuNumber(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      priceAdjustment_ = value;
+      skuNumber_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string priceAdjustment = 4;</code>
+     * <code>optional string sku_number = 5;</code>
      */
-    public Builder clearPriceAdjustment() {
+    public Builder clearSkuNumber() {
       
-      priceAdjustment_ = getDefaultInstance().getPriceAdjustment();
+      skuNumber_ = getDefaultInstance().getSkuNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string priceAdjustment = 4;</code>
+     * <code>optional string sku_number = 5;</code>
      */
-    public Builder setPriceAdjustmentBytes(
+    public Builder setSkuNumberBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      priceAdjustment_ = value;
+      skuNumber_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean selected_ ;
+    /**
+     * <code>optional bool selected = 6;</code>
+     */
+    public boolean getSelected() {
+      return selected_;
+    }
+    /**
+     * <code>optional bool selected = 6;</code>
+     */
+    public Builder setSelected(boolean value) {
+      
+      selected_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool selected = 6;</code>
+     */
+    public Builder clearSelected() {
+      
+      selected_ = false;
       onChanged();
       return this;
     }

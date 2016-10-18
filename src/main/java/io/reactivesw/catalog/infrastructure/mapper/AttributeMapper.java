@@ -29,10 +29,7 @@ public final class AttributeMapper {
 
     builder.setId(attributeValue.getId());
     builder.setName(attribute.getName());
-    builder.setDescription(attribute.getDescription());
     builder.setValue(attributeValue.getValue());
-    builder.setType(attribute.getType());
-    builder.setDisplayOrder(attribute.getDisplayOrder());
 
     return builder.build();
   }
