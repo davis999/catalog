@@ -46,7 +46,7 @@ public class ProductApplication {
     boolean existCategory = categoryService.existCategory(categoryId);
     if (!existCategory) {
       LOG.debug("can not query product by a not exist category with id {}.", categoryId);
-      throw new NotFoundException();
+      throw new NotFoundException("Category is not exist");
     }
     final List<Product> products = productService.queryProductsByCategoryId(categoryId);
     LOG.info("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
