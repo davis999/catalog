@@ -87,7 +87,7 @@ public final class ProductTransfer {
     final Media defaultMedia = defaultSku.getMedias().iterator().next();
 
     builder.setId(product.getId());
-    builder.setDisplayOrder(product.getDisplayOrder());
+    builder.setDefaultSkuNumber(defaultSku.getSkuNumber());
     builder.setMediaURL(defaultMedia.getUrl());
     builder.setName(product.getName());
 

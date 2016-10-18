@@ -83,7 +83,7 @@ class ProductTransferTest extends Specification{
     grpcProductBrief.getId() == product.getId();
     grpcProductBrief.getPrice() == price
     grpcProductBrief.getName() == product.getName();
-    grpcProductBrief.getDisplayOrder() == product.getDisplayOrder();
+    grpcProductBrief.getDefaultSkuNumber() == product.getDefaultSku().getSkuNumber()
     grpcProductBrief.getMediaURL() == product.getDefaultSku().getMedias().iterator().next().getUrl();
   }
 
