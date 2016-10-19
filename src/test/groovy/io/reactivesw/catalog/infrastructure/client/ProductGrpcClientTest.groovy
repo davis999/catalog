@@ -17,7 +17,7 @@ class ProductGrpcClientTest extends Specification {
 //    def "test find list of product by category"() {
 //        given:
 //        ManagedChannel channel =
-//                NettyChannelBuilder.forAddress("192.168.8.115", 9096).usePlaintext(true).build();
+//                NettyChannelBuilder.forAddress("192.168.8.114", 9096).usePlaintext(true).build();
 //        ProductServiceGrpc.ProductServiceBlockingStub stub = ProductServiceGrpc.newBlockingStub(channel);
 //        LongValue.Builder builder = LongValue.newBuilder();
 //        builder.setValue(1L);

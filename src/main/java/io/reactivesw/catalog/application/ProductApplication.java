@@ -42,15 +42,30 @@ public class ProductApplication {
    */
   public List<Product> queryProductsByCategoryId(long categoryId) {
     LOG.debug("enter queryProductsByCategoryId, category id is {}.", categoryId);
-    //if category exist
     boolean existCategory = categoryService.existCategory(categoryId);
     if (!existCategory) {
       LOG.debug("can not query product by a not exist category with id {}.", categoryId);
       throw new NotFoundException("Category is not exist");
     }
-    final List<Product> products = productService.queryProductsByCategoryId(categoryId);
+    List<Product> products = productService.queryProductsByCategoryId(categoryId);
+    products = setDefaultSku(products);
     LOG.info("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
         products.size());
+    return products;
+  }
+
+  /**
+   * set first additional sku be default sku.
+   *
+   * @param products list of product
+   * @return list of product
+   */
+  private List<Product> setDefaultSku(List<Product> products) {
+    for (Product product : products) {
+      if (product.getAdditionalSkus() != null && !product.getAdditionalSkus().isEmpty()) {
+        product.setDefaultSku(product.getAdditionalSkus().iterator().next());
+      }
+    }
     return products;
   }
 }

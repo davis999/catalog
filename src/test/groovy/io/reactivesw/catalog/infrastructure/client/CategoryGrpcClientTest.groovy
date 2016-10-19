@@ -14,11 +14,11 @@ import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
 
 class CategoryGrpcClientTest extends Specification{
-//
+
 //  def "test find all top categories"(){
 //    given:
 //    ManagedChannel channel =
-//        NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build();
+//        NettyChannelBuilder.forAddress("192.168.99.100", 30096).usePlaintext(true).build();
 //    CategoryServiceGrpc.CategoryServiceBlockingStub stub = CategoryServiceGrpc.newBlockingStub(channel);
 //
 //    when:

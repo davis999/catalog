@@ -4,6 +4,7 @@ import io.reactivesw.catalog.domain.entity.Product
 import io.reactivesw.catalog.domain.service.CategoryService
 import io.reactivesw.catalog.domain.service.ProductService
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException
+import io.reactivesw.catalog.infrastructure.initial.ProductDataInitial
 import spock.lang.Specification
 
 /**
@@ -37,5 +38,33 @@ class ProductApplicationTest extends Specification{
 
         then:
         result == allProducts
+    }
+
+    def "test setDefaultSku"(){
+        given:
+        allProducts = ProductDataInitial.getProducts()
+        categoryService.existCategory(_) >> true
+        productService.queryProductsByCategoryId(_) >> allProducts
+
+        when:
+        def result = productApplication.queryProductsByCategoryId(categoryId)
+
+        then:
+        result.get(0).getDefaultSku() != null
+        result.get(0).getDefaultSku() == result.get(0).getAdditionalSkus().iterator().next()
+    }
+
+    def "test setDefaultSku without additional sku"(){
+        given:
+        allProducts = ProductDataInitial.getProducts()
+        categoryService.existCategory(_) >> true
+        productService.queryProductsByCategoryId(_) >> allProducts
+
+        when:
+        def result = productApplication.queryProductsByCategoryId(categoryId)
+
+        then:
+        result.get(0).getDefaultSku() != null
+        result.get(0).getDefaultSku() == result.get(0).getAdditionalSkus().iterator().next()
     }
 }
