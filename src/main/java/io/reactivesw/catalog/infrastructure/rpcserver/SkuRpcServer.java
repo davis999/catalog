@@ -5,12 +5,14 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.domain.service.SkuService;
+import io.reactivesw.catalog.grpc.GrpcSkuDetail;
 import io.reactivesw.catalog.grpc.IntValue;
 import io.reactivesw.catalog.grpc.LongValue;
 import io.reactivesw.catalog.grpc.SkuIdList;
 import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
 import io.reactivesw.catalog.grpc.SkuServiceGrpc;
+import io.reactivesw.catalog.grpc.StringValue;
 import io.reactivesw.catalog.infrastructure.mapper.SkuMapper;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.exception.NullParameterException;
@@ -112,6 +114,22 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
     } catch (NullParameterException exception) {
       LOG.debug("queryListSku fail. ", exception);
       final Status status = Status.DATA_LOSS.withDescription("list of id is null");
+      throw new StatusRuntimeException(status);
+    }
+  }
+
+  @Override
+  public void querySkuDetail(StringValue request, StreamObserver<GrpcSkuDetail> responseObserver) {
+    final String skuNumber = request.getValue();
+    LOG.debug("start querySkuDetail, sku number is {}.", skuNumber);
+    try {
+      final Sku sku = skuService.querySkuByNumber(skuNumber);
+      final GrpcSkuDetail reply = SkuMapper.transferToGrpcSkuDetail(sku);
+      GrpcResponseUtils.completeResponse(responseObserver, reply);
+      LOG.debug("end querySkuDetail, sku number is {}.", skuNumber);
+    } catch (NotFoundException e) {
+      LOG.debug("querySkuDetail fail.", e);
+      final Status status = Status.NOT_FOUND.withDescription("Sku is not exist");
       throw new StatusRuntimeException(status);
     }
   }

@@ -123,6 +123,7 @@ INSERT INTO sw_product_attribute_value (product_id, attribute_value_id) VALUES (
 
 --insert into sw_product_variant
 INSERT INTO sw_product_variant (product_id, variant_id) VALUES (1, 1);
+INSERT INTO sw_product_variant (product_id, variant_id) VALUES (1, 2);
 INSERT INTO sw_product_variant (product_id, variant_id) VALUES (2, 2);
 
 --insert into sw_sku
@@ -134,9 +135,17 @@ UPDATE sw_product SET DEFAULT_SKU_ID = 1 WHERE PRODUCT_ID = 1;
 UPDATE sw_product SET DEFAULT_SKU_ID = 5 WHERE PRODUCT_ID = 2;
 
 --additional sku
-INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (2, 1, 0, 19.99, 10086, 'BBK-BShirt-Color-Blue', '20101010101012', 1);
-INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (3, 1, 0, 19.99, 10086, 'BBK-BShirt-Color-Black', '20101010101013', 1);
-INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (4, 1, 0, 19.99, 10086, 'BBK-BShirt-Color-Red', '20101010101014', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (2, 1, 0, 19.99, 10086, 'BBK-BShirt-Blue-M', '20101010101012', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (3, 1, 0, 19.99, 10086, 'BBK-BShirt-Black-M', '20101010101013', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (4, 1, 0, 19.99, 10086, 'BBK-BShirt-Red-M', '20101010101014', 1);
+
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (9, 1, 0, 19.99, 10086, 'BBK-BShirt-Blue-S', '20101010101019', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (10, 1, 0, 19.99, 10086, 'BBK-BShirt-Black-S', '20101010101020', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (11, 1, 0, 19.99, 10086, 'BBK-BShirt-Red-S', '20101010101021', 1);
+
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (12, 1, 0, 19.99, 10086, 'BBK-BShirt-Blue-L', '20101010101022', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (13, 1, 0, 19.99, 10086, 'BBK-BShirt-Black-L', '20101010101023', 1);
+INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (14, 1, 0, 19.99, 10086, 'BBK-BShirt-Red-L', '20101010101024', 1);
 
 INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (6, 1, 0, 19.99, 10086, 'BBK-KShirt-Size-M', '20101010101016', 2);
 INSERT INTO sw_sku (sku_id, is_active, display_order, price, quantity, sku_number, upc, addl_product_id) VALUES (7, 1, 0, 19.99, 10086, 'BBK-KShirt-Size-S', '20101010101017', 2);
@@ -159,6 +168,30 @@ INSERT INTO sw_sku_media (sku_id, media_id) VALUES (4, 1);
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (4, 2);
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (4, 3);
 
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (9, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (9, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (9, 3);
+
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (10, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (10, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (10, 3);
+
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (11, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (11, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (11, 3);
+
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (12, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (12, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (12, 3);
+
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (13, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (13, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (13, 3);
+
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (14, 1);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (14, 2);
+INSERT INTO sw_sku_media (sku_id, media_id) VALUES (14, 3);
+
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (5, 4);
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (5, 5);
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (5, 6);
@@ -176,10 +209,32 @@ INSERT INTO sw_sku_media (sku_id, media_id) VALUES (8, 5);
 INSERT INTO sw_sku_media (sku_id, media_id) VALUES (8, 6);
 
 --insert into sw_sku_variant_value
-INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (1, 1);
 INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (2, 1);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (2, 4);
+
 INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (3, 2);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (3, 4);
+
 INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (4, 3);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (4, 4);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (9, 1);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (9, 5);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (10, 2);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (10, 5);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (11, 3);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (11, 5);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (12, 1);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (12, 6);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (13, 2);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (13, 6);
+
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (14, 3);
+INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (14, 6);
 
 INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (6, 4);
 INSERT INTO sw_sku_variant_value (sku_id, variant_value_id) VALUES (7, 5);

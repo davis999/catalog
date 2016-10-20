@@ -89,6 +89,16 @@ public class SkuService {
     return removeNotActiveSku(skus);
   }
 
+  public Sku querySkuByNumber(String number){
+    LOG.debug("enter querySkuByNumber, sku number is {}.", number);
+    Sku sku = skuRepository.findOneBySkuNumber(number);
+    if (sku == null) {
+      LOG.debug("can not find any sku by number {}.", number);
+      throw new NotFoundException("Sku is not exist");
+    }
+    return sku;
+  }
+
   /**
    * remove not active sku.
    *
@@ -98,12 +108,14 @@ public class SkuService {
   private List<Sku> removeNotActiveSku(List<Sku> skus) {
     final List<Sku> removedSkus = new ArrayList<>();
     if (skus != null) {
+      LOG.debug("start remove not active sku, {} skus.", skus.size());
       for (Sku sku : skus) {
         if (sku.isActive()) {
           removedSkus.add(sku);
         }
       }
     }
+    LOG.debug("end remove not active sku, get {} active skus.", removedSkus.size());
     return removedSkus;
   }
 }

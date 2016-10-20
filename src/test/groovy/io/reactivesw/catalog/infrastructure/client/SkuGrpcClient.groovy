@@ -2,12 +2,14 @@ package io.reactivesw.catalog.infrastructure.client
 
 import io.grpc.ManagedChannel
 import io.grpc.netty.NettyChannelBuilder
+import io.reactivesw.catalog.grpc.GrpcSkuDetail
 import io.reactivesw.catalog.grpc.IntValue
 import io.reactivesw.catalog.grpc.LongValue
 import io.reactivesw.catalog.grpc.SkuIdList
 import io.reactivesw.catalog.grpc.SkuInformation
 import io.reactivesw.catalog.grpc.SkuInformationList
 import io.reactivesw.catalog.grpc.SkuServiceGrpc
+import io.reactivesw.catalog.grpc.StringValue
 import spock.lang.Specification
 
 /**
@@ -44,5 +46,20 @@ class SkuGrpcClient extends Specification {
 //        reply != null
 //        reply.getSkuId() == skuId
 //        reply.getMediaUrl() != ""
+//    }
+//
+//    def "query sku detail by sku number"() {
+//        given:
+//        def skuNumber = "BBK-BShirt-Black-M"
+//        StringValue request = StringValue.newBuilder().setValue(skuNumber).build()
+//        ManagedChannel channel =
+//                NettyChannelBuilder.forAddress("127.0.0.1", 9096).usePlaintext(true).build()
+//        SkuServiceGrpc.SkuServiceBlockingStub stub = SkuServiceGrpc.newBlockingStub(channel)
+//
+//        when:
+//        GrpcSkuDetail skuDetail = stub.querySkuDetail(request)
+//
+//        then:
+//        skuDetail != null
 //    }
 }
