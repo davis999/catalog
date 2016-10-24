@@ -25,6 +25,7 @@ public  final class GrpcProductBrief extends
     price_ = "";
     defaultSkuNumber_ = "";
     mediaURL_ = "";
+    defaultSkuId_ = 0L;
   }
 
   @java.lang.Override
@@ -79,6 +80,11 @@ public  final class GrpcProductBrief extends
             java.lang.String s = input.readStringRequireUtf8();
 
             mediaURL_ = s;
+            break;
+          }
+          case 48: {
+
+            defaultSkuId_ = input.readInt64();
             break;
           }
         }
@@ -249,6 +255,15 @@ public  final class GrpcProductBrief extends
     }
   }
 
+  public static final int DEFAULT_SKU_ID_FIELD_NUMBER = 6;
+  private long defaultSkuId_;
+  /**
+   * <code>optional int64 default_sku_id = 6;</code>
+   */
+  public long getDefaultSkuId() {
+    return defaultSkuId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -276,6 +291,9 @@ public  final class GrpcProductBrief extends
     if (!getMediaURLBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, mediaURL_);
     }
+    if (defaultSkuId_ != 0L) {
+      output.writeInt64(6, defaultSkuId_);
+    }
   }
 
   public int getSerializedSize() {
@@ -298,6 +316,10 @@ public  final class GrpcProductBrief extends
     }
     if (!getMediaURLBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, mediaURL_);
+    }
+    if (defaultSkuId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, defaultSkuId_);
     }
     memoizedSize = size;
     return size;
@@ -325,6 +347,8 @@ public  final class GrpcProductBrief extends
         .equals(other.getDefaultSkuNumber());
     result = result && getMediaURL()
         .equals(other.getMediaURL());
+    result = result && (getDefaultSkuId()
+        == other.getDefaultSkuId());
     return result;
   }
 
@@ -346,6 +370,9 @@ public  final class GrpcProductBrief extends
     hash = (53 * hash) + getDefaultSkuNumber().hashCode();
     hash = (37 * hash) + MEDIA_URL_FIELD_NUMBER;
     hash = (53 * hash) + getMediaURL().hashCode();
+    hash = (37 * hash) + DEFAULT_SKU_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDefaultSkuId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -479,6 +506,8 @@ public  final class GrpcProductBrief extends
 
       mediaURL_ = "";
 
+      defaultSkuId_ = 0L;
+
       return this;
     }
 
@@ -506,6 +535,7 @@ public  final class GrpcProductBrief extends
       result.price_ = price_;
       result.defaultSkuNumber_ = defaultSkuNumber_;
       result.mediaURL_ = mediaURL_;
+      result.defaultSkuId_ = defaultSkuId_;
       onBuilt();
       return result;
     }
@@ -565,6 +595,9 @@ public  final class GrpcProductBrief extends
       if (!other.getMediaURL().isEmpty()) {
         mediaURL_ = other.mediaURL_;
         onChanged();
+      }
+      if (other.getDefaultSkuId() != 0L) {
+        setDefaultSkuId(other.getDefaultSkuId());
       }
       onChanged();
       return this;
@@ -890,6 +923,32 @@ public  final class GrpcProductBrief extends
   checkByteStringIsUtf8(value);
       
       mediaURL_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long defaultSkuId_ ;
+    /**
+     * <code>optional int64 default_sku_id = 6;</code>
+     */
+    public long getDefaultSkuId() {
+      return defaultSkuId_;
+    }
+    /**
+     * <code>optional int64 default_sku_id = 6;</code>
+     */
+    public Builder setDefaultSkuId(long value) {
+      
+      defaultSkuId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional int64 default_sku_id = 6;</code>
+     */
+    public Builder clearDefaultSkuId() {
+      
+      defaultSkuId_ = 0L;
       onChanged();
       return this;
     }

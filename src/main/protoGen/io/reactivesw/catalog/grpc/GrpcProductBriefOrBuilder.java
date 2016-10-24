@@ -51,4 +51,9 @@ public interface GrpcProductBriefOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMediaURLBytes();
+
+  /**
+   * <code>optional int64 default_sku_id = 6;</code>
+   */
+  long getDefaultSkuId();
 }

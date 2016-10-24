@@ -90,6 +90,7 @@ public final class ProductMapper {
     builder.setDefaultSkuNumber(defaultSku.getSkuNumber());
     builder.setMediaURL(defaultMedia.getUrl());
     builder.setName(product.getName());
+    builder.setDefaultSkuId(defaultMedia.getId());
 
     final String price = DecimalFormatUtils.transferToShortString(defaultSku.getPrice());
     builder.setPrice(price);
