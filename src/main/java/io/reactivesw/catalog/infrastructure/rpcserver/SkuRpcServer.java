@@ -118,6 +118,12 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
     }
   }
 
+  /**
+   * query sku detail by sku number
+   *
+   * @param request          sku number
+   * @param responseObserver SkuDetail
+   */
   @Override
   public void querySkuDetail(StringValue request, StreamObserver<GrpcSkuDetail> responseObserver) {
     final String skuNumber = request.getValue();

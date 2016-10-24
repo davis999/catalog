@@ -28,6 +28,7 @@ public  final class GrpcSkuDetail extends
     price_ = "";
     description_ = "";
     detail_ = "";
+    isActive_ = false;
     feature_ = java.util.Collections.emptyList();
     attribute_ = java.util.Collections.emptyList();
     variant_ = java.util.Collections.emptyList();
@@ -107,39 +108,44 @@ public  final class GrpcSkuDetail extends
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
               feature_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcFeature>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000200;
             }
             feature_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcFeature.parser(), extensionRegistry));
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
               attribute_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcAttribute>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000400;
             }
             attribute_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcAttribute.parser(), extensionRegistry));
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
               variant_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariant>();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000800;
             }
             variant_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcVariant.parser(), extensionRegistry));
             break;
           }
           case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
               media_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcMedia>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00001000;
             }
             media_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcMedia.parser(), extensionRegistry));
+            break;
+          }
+          case 104: {
+
+            isActive_ = input.readBool();
             break;
           }
         }
@@ -150,16 +156,16 @@ public  final class GrpcSkuDetail extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         feature_ = java.util.Collections.unmodifiableList(feature_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         attribute_ = java.util.Collections.unmodifiableList(attribute_);
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
         variant_ = java.util.Collections.unmodifiableList(variant_);
       }
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         media_ = java.util.Collections.unmodifiableList(media_);
       }
       makeExtensionsImmutable();
@@ -425,6 +431,15 @@ public  final class GrpcSkuDetail extends
     }
   }
 
+  public static final int IS_ACTIVE_FIELD_NUMBER = 13;
+  private boolean isActive_;
+  /**
+   * <code>optional bool is_active = 13;</code>
+   */
+  public boolean getIsActive() {
+    return isActive_;
+  }
+
   public static final int FEATURE_FIELD_NUMBER = 9;
   private java.util.List<io.reactivesw.catalog.grpc.GrpcFeature> feature_;
   /**
@@ -613,6 +628,9 @@ public  final class GrpcSkuDetail extends
     for (int i = 0; i < media_.size(); i++) {
       output.writeMessage(12, media_.get(i));
     }
+    if (isActive_ != false) {
+      output.writeBool(13, isActive_);
+    }
   }
 
   public int getSerializedSize() {
@@ -661,6 +679,10 @@ public  final class GrpcSkuDetail extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, media_.get(i));
     }
+    if (isActive_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isActive_);
+    }
     memoizedSize = size;
     return size;
   }
@@ -693,6 +715,8 @@ public  final class GrpcSkuDetail extends
         .equals(other.getDescription());
     result = result && getDetail()
         .equals(other.getDetail());
+    result = result && (getIsActive()
+        == other.getIsActive());
     result = result && getFeatureList()
         .equals(other.getFeatureList());
     result = result && getAttributeList()
@@ -728,6 +752,9 @@ public  final class GrpcSkuDetail extends
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DETAIL_FIELD_NUMBER;
     hash = (53 * hash) + getDetail().hashCode();
+    hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsActive());
     if (getFeatureCount() > 0) {
       hash = (37 * hash) + FEATURE_FIELD_NUMBER;
       hash = (53 * hash) + getFeatureList().hashCode();
@@ -887,27 +914,29 @@ public  final class GrpcSkuDetail extends
 
       detail_ = "";
 
+      isActive_ = false;
+
       if (featureBuilder_ == null) {
         feature_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         featureBuilder_.clear();
       }
       if (attributeBuilder_ == null) {
         attribute_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         attributeBuilder_.clear();
       }
       if (variantBuilder_ == null) {
         variant_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         variantBuilder_.clear();
       }
       if (mediaBuilder_ == null) {
         media_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         mediaBuilder_.clear();
       }
@@ -943,37 +972,38 @@ public  final class GrpcSkuDetail extends
       result.price_ = price_;
       result.description_ = description_;
       result.detail_ = detail_;
+      result.isActive_ = isActive_;
       if (featureBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           feature_ = java.util.Collections.unmodifiableList(feature_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.feature_ = feature_;
       } else {
         result.feature_ = featureBuilder_.build();
       }
       if (attributeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           attribute_ = java.util.Collections.unmodifiableList(attribute_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.attribute_ = attribute_;
       } else {
         result.attribute_ = attributeBuilder_.build();
       }
       if (variantBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
           variant_ = java.util.Collections.unmodifiableList(variant_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.variant_ = variant_;
       } else {
         result.variant_ = variantBuilder_.build();
       }
       if (mediaBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           media_ = java.util.Collections.unmodifiableList(media_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.media_ = media_;
       } else {
@@ -1052,11 +1082,14 @@ public  final class GrpcSkuDetail extends
         detail_ = other.detail_;
         onChanged();
       }
+      if (other.getIsActive() != false) {
+        setIsActive(other.getIsActive());
+      }
       if (featureBuilder_ == null) {
         if (!other.feature_.isEmpty()) {
           if (feature_.isEmpty()) {
             feature_ = other.feature_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureFeatureIsMutable();
             feature_.addAll(other.feature_);
@@ -1069,7 +1102,7 @@ public  final class GrpcSkuDetail extends
             featureBuilder_.dispose();
             featureBuilder_ = null;
             feature_ = other.feature_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             featureBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFeatureFieldBuilder() : null;
@@ -1082,7 +1115,7 @@ public  final class GrpcSkuDetail extends
         if (!other.attribute_.isEmpty()) {
           if (attribute_.isEmpty()) {
             attribute_ = other.attribute_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureAttributeIsMutable();
             attribute_.addAll(other.attribute_);
@@ -1095,7 +1128,7 @@ public  final class GrpcSkuDetail extends
             attributeBuilder_.dispose();
             attributeBuilder_ = null;
             attribute_ = other.attribute_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             attributeBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttributeFieldBuilder() : null;
@@ -1108,7 +1141,7 @@ public  final class GrpcSkuDetail extends
         if (!other.variant_.isEmpty()) {
           if (variant_.isEmpty()) {
             variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureVariantIsMutable();
             variant_.addAll(other.variant_);
@@ -1121,7 +1154,7 @@ public  final class GrpcSkuDetail extends
             variantBuilder_.dispose();
             variantBuilder_ = null;
             variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             variantBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getVariantFieldBuilder() : null;
@@ -1134,7 +1167,7 @@ public  final class GrpcSkuDetail extends
         if (!other.media_.isEmpty()) {
           if (media_.isEmpty()) {
             media_ = other.media_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureMediaIsMutable();
             media_.addAll(other.media_);
@@ -1147,7 +1180,7 @@ public  final class GrpcSkuDetail extends
             mediaBuilder_.dispose();
             mediaBuilder_ = null;
             media_ = other.media_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             mediaBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMediaFieldBuilder() : null;
@@ -1692,12 +1725,38 @@ public  final class GrpcSkuDetail extends
       return this;
     }
 
+    private boolean isActive_ ;
+    /**
+     * <code>optional bool is_active = 13;</code>
+     */
+    public boolean getIsActive() {
+      return isActive_;
+    }
+    /**
+     * <code>optional bool is_active = 13;</code>
+     */
+    public Builder setIsActive(boolean value) {
+      
+      isActive_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool is_active = 13;</code>
+     */
+    public Builder clearIsActive() {
+      
+      isActive_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<io.reactivesw.catalog.grpc.GrpcFeature> feature_ =
       java.util.Collections.emptyList();
     private void ensureFeatureIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         feature_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcFeature>(feature_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
        }
     }
 
@@ -1847,7 +1906,7 @@ public  final class GrpcSkuDetail extends
     public Builder clearFeature() {
       if (featureBuilder_ == null) {
         feature_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         featureBuilder_.clear();
@@ -1924,7 +1983,7 @@ public  final class GrpcSkuDetail extends
         featureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcFeature, io.reactivesw.catalog.grpc.GrpcFeature.Builder, io.reactivesw.catalog.grpc.GrpcFeatureOrBuilder>(
                 feature_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
+                ((bitField0_ & 0x00000200) == 0x00000200),
                 getParentForChildren(),
                 isClean());
         feature_ = null;
@@ -1935,9 +1994,9 @@ public  final class GrpcSkuDetail extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcAttribute> attribute_ =
       java.util.Collections.emptyList();
     private void ensureAttributeIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
         attribute_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcAttribute>(attribute_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
        }
     }
 
@@ -2087,7 +2146,7 @@ public  final class GrpcSkuDetail extends
     public Builder clearAttribute() {
       if (attributeBuilder_ == null) {
         attribute_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         attributeBuilder_.clear();
@@ -2164,7 +2223,7 @@ public  final class GrpcSkuDetail extends
         attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcAttribute, io.reactivesw.catalog.grpc.GrpcAttribute.Builder, io.reactivesw.catalog.grpc.GrpcAttributeOrBuilder>(
                 attribute_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
                 isClean());
         attribute_ = null;
@@ -2175,9 +2234,9 @@ public  final class GrpcSkuDetail extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcVariant> variant_ =
       java.util.Collections.emptyList();
     private void ensureVariantIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
         variant_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariant>(variant_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
        }
     }
 
@@ -2327,7 +2386,7 @@ public  final class GrpcSkuDetail extends
     public Builder clearVariant() {
       if (variantBuilder_ == null) {
         variant_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         variantBuilder_.clear();
@@ -2404,7 +2463,7 @@ public  final class GrpcSkuDetail extends
         variantBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcVariant, io.reactivesw.catalog.grpc.GrpcVariant.Builder, io.reactivesw.catalog.grpc.GrpcVariantOrBuilder>(
                 variant_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000800) == 0x00000800),
                 getParentForChildren(),
                 isClean());
         variant_ = null;
@@ -2415,9 +2474,9 @@ public  final class GrpcSkuDetail extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcMedia> media_ =
       java.util.Collections.emptyList();
     private void ensureMediaIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
         media_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcMedia>(media_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
        }
     }
 
@@ -2567,7 +2626,7 @@ public  final class GrpcSkuDetail extends
     public Builder clearMedia() {
       if (mediaBuilder_ == null) {
         media_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         mediaBuilder_.clear();
@@ -2644,7 +2703,7 @@ public  final class GrpcSkuDetail extends
         mediaBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcMedia, io.reactivesw.catalog.grpc.GrpcMedia.Builder, io.reactivesw.catalog.grpc.GrpcMediaOrBuilder>(
                 media_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
+                ((bitField0_ & 0x00001000) == 0x00001000),
                 getParentForChildren(),
                 isClean());
         media_ = null;

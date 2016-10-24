@@ -49,7 +49,7 @@ public class ProductApplication {
     }
     List<Product> products = productService.queryProductsByCategoryId(categoryId);
     products = setDefaultSku(products);
-    LOG.info("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
+    LOG.debug("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
         products.size());
     return products;
   }

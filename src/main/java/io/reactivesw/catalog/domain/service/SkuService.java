@@ -89,6 +89,11 @@ public class SkuService {
     return removeNotActiveSku(skus);
   }
 
+  /**
+   * query sku by sku number.
+   * @param number sku number
+   * @return sku
+   */
   public Sku querySkuByNumber(String number){
     LOG.debug("enter querySkuByNumber, sku number is {}.", number);
     Sku sku = skuRepository.findOneBySkuNumber(number);

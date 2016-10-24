@@ -83,6 +83,11 @@ public interface GrpcSkuDetailOrBuilder extends
       getDetailBytes();
 
   /**
+   * <code>optional bool is_active = 13;</code>
+   */
+  boolean getIsActive();
+
+  /**
    * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcFeature feature = 9;</code>
    */
   java.util.List<io.reactivesw.catalog.grpc.GrpcFeature> 

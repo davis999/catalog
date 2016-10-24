@@ -64,7 +64,7 @@ class SkuServiceTest extends Specification {
         thrown(SkuNotActiveException)
     }
 
-    def "test query sku by id and get result"(){
+    def "test query sku by id and get result"() {
         given:
         skuRepository.findOne(_) >> savedSku
 
@@ -75,7 +75,7 @@ class SkuServiceTest extends Specification {
         sku == savedSku
     }
 
-    def "test query sku by id and get null"(){
+    def "test query sku by id and get null"() {
         given:
         skuRepository.findOne(_) >> null
 
@@ -86,7 +86,7 @@ class SkuServiceTest extends Specification {
         thrown(NotFoundException)
     }
 
-    def "test query sku by id and get not-active sku"(){
+    def "test query sku by id and get not-active sku"() {
         given:
         savedSku.setActive(false)
         skuRepository.findOne(_) >> savedSku
@@ -98,7 +98,7 @@ class SkuServiceTest extends Specification {
         thrown(SkuNotActiveException)
     }
 
-    def "query list sku"(){
+    def "query list sku"() {
         given:
         allSkus.add(savedSku)
         skuRepository.findAll(_) >> allSkus
@@ -122,7 +122,7 @@ class SkuServiceTest extends Specification {
         thrown(NullParameterException)
     }
 
-    def "query list sku and return empty list"(){
+    def "query list sku and return empty list"() {
         given:
         skuRepository.findAll(_) >> null
 
@@ -133,7 +133,7 @@ class SkuServiceTest extends Specification {
         skus.isEmpty() == true
     }
 
-    def "query list sku and get not-active sku"(){
+    def "query list sku and get not-active sku"() {
         given:
         savedSku.setActive(false)
         allSkus.add(savedSku)
@@ -145,4 +145,29 @@ class SkuServiceTest extends Specification {
         then:
         skus.size() < allSkus.size()
     }
+
+    def "query sku by number and get list of sku"() {
+        given:
+        def skuNumber = "sku_number"
+        skuRepository.findOneBySkuNumber(_) >> allSkus
+
+        when:
+        def skus = skuService.querySkuByNumber(skuNumber)
+
+        then:
+        skus != null
+    }
+
+    def "query sku by number and get null list"(){
+        given:
+        def skuNumber = "sku_number"
+        skuRepository.findOneBySkuNumber(_) >> null
+
+        when:
+        def skus = skuService.querySkuByNumber(skuNumber)
+
+        then:
+        thrown(NotFoundException)
+    }
+
 }

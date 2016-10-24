@@ -106,7 +106,7 @@ public final class SkuMapper {
   public static GrpcSkuDetail transferToGrpcSkuDetail(Sku sku) {
     final GrpcSkuDetail.Builder builder = GrpcSkuDetail.newBuilder();
     final boolean isDefaultSku = isDefaultSku(sku);
-    Product product = new Product();
+    Product product = null;
     if (isDefaultSku) {
       product = sku.getDefaultProduct();
     } else {

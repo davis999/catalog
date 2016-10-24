@@ -9,5 +9,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  */
 public interface SkuRepository extends JpaRepository<Sku, Long> {
+  /**
+   * find a sku by sku number.
+   * @param number sku number
+   * @return sku
+   */
   Sku findOneBySkuNumber(String number);
 }
