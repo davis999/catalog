@@ -20,6 +20,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
@@ -117,6 +118,7 @@ public class Product implements Serializable {
   @OneToMany(fetch = FetchType.EAGER, targetEntity = Sku.class,
       mappedBy = "product", cascade = CascadeType.ALL)
   @BatchSize(size = 50)
+  @OrderBy("displayOrder asc")
   private Set<Sku> additionalSkus = new HashSet<>();
 
   /**
@@ -132,6 +134,7 @@ public class Product implements Serializable {
   @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_product_variant", joinColumns = @JoinColumn(name = PRODUCT_ID),
       inverseJoinColumns = @JoinColumn(name = "variant_id"))
+  @OrderBy("displayOrder asc")
   private Set<Variant> variants;
 
   /**
@@ -140,6 +143,7 @@ public class Product implements Serializable {
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_product_feature", joinColumns = @JoinColumn(name = PRODUCT_ID),
       inverseJoinColumns = @JoinColumn(name = "feature_id"))
+  @OrderBy("displayOrder asc")
   private Set<Feature> features;
 
   /**

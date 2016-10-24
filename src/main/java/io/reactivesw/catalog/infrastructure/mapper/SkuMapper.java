@@ -112,7 +112,7 @@ public final class SkuMapper {
     } else {
       product = sku.getProduct();
     }
-    builder.setId(product.getId());
+    builder.setId(sku.getId());
     builder.setManufacturer(product.getManufacturer());
     builder.setBrand(product.getBrand());
     builder.setModel(product.getModel());
@@ -126,6 +126,7 @@ public final class SkuMapper {
     builder.setPrice(DecimalFormatUtils.transferToShortString(defaultPrice));
     builder.setDescription(product.getDescription());
     builder.setDetail(product.getDetail());
+    builder.setIsActive(isActiveSku(sku));
 
     if (product.getFeatures() != null) {
       for (final Feature feature : product.getFeatures()) {
@@ -207,11 +208,20 @@ public final class SkuMapper {
     boolean result = false;
     for (Sku sku : skus) {
       if (StringUtils.equals(skuNumber, sku.getSkuNumber())) {
-        result = sku.isActive() && sku.getQuantity() > 0;
+        result = isActiveSku(sku);
         break;
       }
     }
     return result;
+  }
+
+  /**
+   * check if active sku.
+   * @param sku sku
+   * @return true if active and false if not active
+   */
+  private static boolean isActiveSku(Sku sku){
+    return sku.isActive() && sku.getQuantity() > 0;
   }
 
   /**

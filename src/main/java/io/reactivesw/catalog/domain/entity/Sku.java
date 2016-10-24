@@ -18,6 +18,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -98,6 +99,7 @@ public class Sku implements Serializable {
   @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_sku_media", joinColumns = @JoinColumn(name = "sku_id"),
       inverseJoinColumns = @JoinColumn(name = "media_id"))
+  @OrderBy("displayOrder asc")
   private Set<Media> medias;
 
   /**
