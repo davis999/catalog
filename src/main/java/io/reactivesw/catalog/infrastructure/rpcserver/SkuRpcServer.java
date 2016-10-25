@@ -134,12 +134,12 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
   @Override
   public void querySkuDetail(StringValue request, StreamObserver<GrpcSkuDetail> responseObserver) {
     final String skuNumber = request.getValue();
-    LOG.debug("start querySkuDetail, sku number is {}.", skuNumber);
+    LOG.debug("start querySkuDetail, request is {}.", request.toString());
     try {
       final SkuDetailDTO sku = skuApplication.getSkuDetailByNumber(skuNumber);
       final GrpcSkuDetail reply = SkuMapper.transferToGrpcSkuDetail(sku);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.debug("end querySkuDetail, sku number is {}.", skuNumber);
+      LOG.debug("end querySkuDetail, response is {}.", reply.toString());
     } catch (NotFoundException e) {
       LOG.debug("querySkuDetail fail.", e);
       final Status status = Status.NOT_FOUND.withDescription("Sku is not exist");

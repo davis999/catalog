@@ -40,7 +40,7 @@ public class SkuService {
     LOG.debug("query sku quantity by it's id {}.", skuId);
     final Sku sku = skuRepository.findOne(skuId);
     if (sku == null) {
-      LOG.warn("can not find sku with id {}.", skuId);
+      LOG.debug("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
     } else if (!sku.isActive()) {
       LOG.debug("sku is not active, id is {}.", skuId);
@@ -62,7 +62,7 @@ public class SkuService {
     final Sku sku = skuRepository.findOne(skuId);
 
     if (sku == null) {
-      LOG.warn("can not find sku with id {}.", skuId);
+      LOG.debug("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
     } else if (!sku.isActive()) {
       LOG.debug("sku is not active, id is {}.", skuId);
@@ -101,6 +101,7 @@ public class SkuService {
       LOG.debug("can not find any sku by number {}.", number);
       throw new NotFoundException("Sku is not exist");
     }
+    LOG.debug("end querySkuByNumber, get sku : {}.", sku.toString());
     return sku;
   }
 

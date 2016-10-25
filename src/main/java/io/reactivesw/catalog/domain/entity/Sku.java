@@ -129,7 +129,7 @@ public class Sku implements Serializable {
   /**
    * get id.
    *
-   * @return id
+   * @return id id
    */
   public long getId() {
     return id;
@@ -147,7 +147,7 @@ public class Sku implements Serializable {
   /**
    * get skuNumber.
    *
-   * @return skuNumber
+   * @return skuNumber sku number
    */
   public String getSkuNumber() {
     return skuNumber;
@@ -165,7 +165,7 @@ public class Sku implements Serializable {
   /**
    * get active.
    *
-   * @return active
+   * @return active boolean
    */
   public boolean isActive() {
     return active;
@@ -183,7 +183,7 @@ public class Sku implements Serializable {
   /**
    * get quantity.
    *
-   * @return quantity
+   * @return quantity quantity
    */
   public int getQuantity() {
     return quantity;
@@ -201,7 +201,7 @@ public class Sku implements Serializable {
   /**
    * get upc.
    *
-   * @return upc
+   * @return upc upc
    */
   public String getUpc() {
     return upc;
@@ -219,7 +219,7 @@ public class Sku implements Serializable {
   /**
    * get displayOrder.
    *
-   * @return displayOrder
+   * @return displayOrder display order
    */
   public int getDisplayOrder() {
     return displayOrder;
@@ -237,7 +237,7 @@ public class Sku implements Serializable {
   /**
    * get medias.
    *
-   * @return medias.
+   * @return medias. medias
    */
   public Set<Media> getMedias() {
     return medias;
@@ -255,7 +255,7 @@ public class Sku implements Serializable {
   /**
    * get variantValues.
    *
-   * @return variantValues
+   * @return variantValues variant values
    */
   public Set<VariantValue> getVariantValues() {
     return variantValues;
@@ -273,7 +273,7 @@ public class Sku implements Serializable {
   /**
    * get createdTime.
    *
-   * @return createdTime
+   * @return createdTime created time
    */
   public ZonedDateTime getCreatedTime() {
     return createdTime;
@@ -291,7 +291,7 @@ public class Sku implements Serializable {
   /**
    * get modifiedTime.
    *
-   * @return modifiedTime
+   * @return modifiedTime modified time
    */
   public ZonedDateTime getModifiedTime() {
     return modifiedTime;
@@ -309,7 +309,7 @@ public class Sku implements Serializable {
   /**
    * get product.
    *
-   * @return product
+   * @return product product
    */
   public Product getProduct() {
     Product result = product;
@@ -331,7 +331,7 @@ public class Sku implements Serializable {
   /**
    * get price.
    *
-   * @return price
+   * @return price price
    */
   public BigDecimal getPrice() {
     return price;
@@ -349,7 +349,7 @@ public class Sku implements Serializable {
   /**
    * get defaultProduct.
    *
-   * @return defaultProduct.
+   * @return defaultProduct. default product
    */
   public Product getDefaultProduct() {
     return defaultProduct;
@@ -362,6 +362,29 @@ public class Sku implements Serializable {
    */
   public void setDefaultProduct(Product defaultProduct) {
     this.defaultProduct = defaultProduct;
+  }
+
+  /**
+   * toString method.
+   * @return String
+   */
+  @Override
+  public String toString() {
+    return "Sku{" +
+        "id=" + id +
+        ", skuNumber='" + skuNumber + '\'' +
+        ", active=" + active +
+        ", quantity=" + quantity +
+        ", upc='" + upc + '\'' +
+        ", displayOrder=" + displayOrder +
+        ", createdTime=" + createdTime +
+        ", modifiedTime=" + modifiedTime +
+        ", price=" + price +
+        ", medias=" + medias +
+        ", variantValues=" + variantValues +
+        ", product=" + product +
+        ", defaultProduct=" + defaultProduct +
+        '}';
   }
 
   /**
