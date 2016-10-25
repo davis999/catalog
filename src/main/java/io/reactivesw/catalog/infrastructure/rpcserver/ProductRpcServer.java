@@ -3,7 +3,6 @@ package io.reactivesw.catalog.infrastructure.rpcserver;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import io.reactivesw.catalog.application.ProductApplication;
 import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.domain.service.ProductService;
 import io.reactivesw.catalog.grpc.GrpcProduct;
@@ -41,12 +40,6 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
   private transient ProductService productService;
 
   /**
-   * product application.
-   */
-  @Autowired
-  private transient ProductApplication productApplication;
-
-  /**
    * get product detail.
    */
   @Override
@@ -74,7 +67,7 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
     final long categoryId = request.getValue();
     LOG.info("enter queryProductsByCategory, category id is {}", categoryId);
     try {
-      final List<Product> products = productApplication.queryProductsByCategoryId(categoryId);
+      final List<Product> products = productService.queryProductsByCategoryId(categoryId);
       final ProductBriefList reply = ProductMapper.transferToProductBriefList(products);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());

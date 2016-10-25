@@ -28,7 +28,7 @@ public  final class GrpcSkuDetail extends
     price_ = "";
     description_ = "";
     detail_ = "";
-    isActive_ = false;
+    actived_ = false;
     feature_ = java.util.Collections.emptyList();
     attribute_ = java.util.Collections.emptyList();
     variant_ = java.util.Collections.emptyList();
@@ -145,7 +145,7 @@ public  final class GrpcSkuDetail extends
           }
           case 104: {
 
-            isActive_ = input.readBool();
+            actived_ = input.readBool();
             break;
           }
         }
@@ -431,13 +431,13 @@ public  final class GrpcSkuDetail extends
     }
   }
 
-  public static final int IS_ACTIVE_FIELD_NUMBER = 13;
-  private boolean isActive_;
+  public static final int ACTIVED_FIELD_NUMBER = 13;
+  private boolean actived_;
   /**
-   * <code>optional bool is_active = 13;</code>
+   * <code>optional bool actived = 13;</code>
    */
-  public boolean getIsActive() {
-    return isActive_;
+  public boolean getActived() {
+    return actived_;
   }
 
   public static final int FEATURE_FIELD_NUMBER = 9;
@@ -628,8 +628,8 @@ public  final class GrpcSkuDetail extends
     for (int i = 0; i < media_.size(); i++) {
       output.writeMessage(12, media_.get(i));
     }
-    if (isActive_ != false) {
-      output.writeBool(13, isActive_);
+    if (actived_ != false) {
+      output.writeBool(13, actived_);
     }
   }
 
@@ -679,9 +679,9 @@ public  final class GrpcSkuDetail extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, media_.get(i));
     }
-    if (isActive_ != false) {
+    if (actived_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(13, isActive_);
+        .computeBoolSize(13, actived_);
     }
     memoizedSize = size;
     return size;
@@ -715,8 +715,8 @@ public  final class GrpcSkuDetail extends
         .equals(other.getDescription());
     result = result && getDetail()
         .equals(other.getDetail());
-    result = result && (getIsActive()
-        == other.getIsActive());
+    result = result && (getActived()
+        == other.getActived());
     result = result && getFeatureList()
         .equals(other.getFeatureList());
     result = result && getAttributeList()
@@ -752,9 +752,9 @@ public  final class GrpcSkuDetail extends
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DETAIL_FIELD_NUMBER;
     hash = (53 * hash) + getDetail().hashCode();
-    hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+    hash = (37 * hash) + ACTIVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsActive());
+        getActived());
     if (getFeatureCount() > 0) {
       hash = (37 * hash) + FEATURE_FIELD_NUMBER;
       hash = (53 * hash) + getFeatureList().hashCode();
@@ -914,7 +914,7 @@ public  final class GrpcSkuDetail extends
 
       detail_ = "";
 
-      isActive_ = false;
+      actived_ = false;
 
       if (featureBuilder_ == null) {
         feature_ = java.util.Collections.emptyList();
@@ -972,7 +972,7 @@ public  final class GrpcSkuDetail extends
       result.price_ = price_;
       result.description_ = description_;
       result.detail_ = detail_;
-      result.isActive_ = isActive_;
+      result.actived_ = actived_;
       if (featureBuilder_ == null) {
         if (((bitField0_ & 0x00000200) == 0x00000200)) {
           feature_ = java.util.Collections.unmodifiableList(feature_);
@@ -1082,8 +1082,8 @@ public  final class GrpcSkuDetail extends
         detail_ = other.detail_;
         onChanged();
       }
-      if (other.getIsActive() != false) {
-        setIsActive(other.getIsActive());
+      if (other.getActived() != false) {
+        setActived(other.getActived());
       }
       if (featureBuilder_ == null) {
         if (!other.feature_.isEmpty()) {
@@ -1725,28 +1725,28 @@ public  final class GrpcSkuDetail extends
       return this;
     }
 
-    private boolean isActive_ ;
+    private boolean actived_ ;
     /**
-     * <code>optional bool is_active = 13;</code>
+     * <code>optional bool actived = 13;</code>
      */
-    public boolean getIsActive() {
-      return isActive_;
+    public boolean getActived() {
+      return actived_;
     }
     /**
-     * <code>optional bool is_active = 13;</code>
+     * <code>optional bool actived = 13;</code>
      */
-    public Builder setIsActive(boolean value) {
+    public Builder setActived(boolean value) {
       
-      isActive_ = value;
+      actived_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool is_active = 13;</code>
+     * <code>optional bool actived = 13;</code>
      */
-    public Builder clearIsActive() {
+    public Builder clearActived() {
       
-      isActive_ = false;
+      actived_ = false;
       onChanged();
       return this;
     }

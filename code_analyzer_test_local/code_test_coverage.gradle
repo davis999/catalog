@@ -15,7 +15,8 @@ jacocoTestReport {
                     'io/reactivesw/catalog/infrastructure/exception/*',
                     'io/reactivesw/catalog/infrastructure/mapper/*',
                     'io/reactivesw/catalog/infrastructure/utils/*',
-                    'io/reactivesw/catalog/infrastructure/rpcserver/*'
+                    'io/reactivesw/catalog/infrastructure/rpcserver/*',
+                    'io/reactivesw/catalog/infrastructure/dto/*'
             ])
         })
     }

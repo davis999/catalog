@@ -17,7 +17,7 @@ public  final class GrpcVariantValue extends
   private GrpcVariantValue() {
     id_ = 0L;
     value_ = "";
-    isActive_ = false;
+    actived_ = false;
     displayOrder_ = 0;
     skuNumber_ = "";
     selected_ = false;
@@ -61,7 +61,7 @@ public  final class GrpcVariantValue extends
           }
           case 24: {
 
-            isActive_ = input.readBool();
+            actived_ = input.readBool();
             break;
           }
           case 32: {
@@ -146,13 +146,13 @@ public  final class GrpcVariantValue extends
     }
   }
 
-  public static final int IS_ACTIVE_FIELD_NUMBER = 3;
-  private boolean isActive_;
+  public static final int ACTIVED_FIELD_NUMBER = 3;
+  private boolean actived_;
   /**
-   * <code>optional bool is_active = 3;</code>
+   * <code>optional bool actived = 3;</code>
    */
-  public boolean getIsActive() {
-    return isActive_;
+  public boolean getActived() {
+    return actived_;
   }
 
   public static final int DISPLAYORDER_FIELD_NUMBER = 4;
@@ -225,8 +225,8 @@ public  final class GrpcVariantValue extends
     if (!getValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
     }
-    if (isActive_ != false) {
-      output.writeBool(3, isActive_);
+    if (actived_ != false) {
+      output.writeBool(3, actived_);
     }
     if (displayOrder_ != 0) {
       output.writeInt32(4, displayOrder_);
@@ -251,9 +251,9 @@ public  final class GrpcVariantValue extends
     if (!getValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
     }
-    if (isActive_ != false) {
+    if (actived_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, isActive_);
+        .computeBoolSize(3, actived_);
     }
     if (displayOrder_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -286,8 +286,8 @@ public  final class GrpcVariantValue extends
         == other.getId());
     result = result && getValue()
         .equals(other.getValue());
-    result = result && (getIsActive()
-        == other.getIsActive());
+    result = result && (getActived()
+        == other.getActived());
     result = result && (getDisplayOrder()
         == other.getDisplayOrder());
     result = result && getSkuNumber()
@@ -309,9 +309,9 @@ public  final class GrpcVariantValue extends
         getId());
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
-    hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+    hash = (37 * hash) + ACTIVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsActive());
+        getActived());
     hash = (37 * hash) + DISPLAYORDER_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayOrder();
     hash = (37 * hash) + SKU_NUMBER_FIELD_NUMBER;
@@ -441,7 +441,7 @@ public  final class GrpcVariantValue extends
 
       value_ = "";
 
-      isActive_ = false;
+      actived_ = false;
 
       displayOrder_ = 0;
 
@@ -473,7 +473,7 @@ public  final class GrpcVariantValue extends
       io.reactivesw.catalog.grpc.GrpcVariantValue result = new io.reactivesw.catalog.grpc.GrpcVariantValue(this);
       result.id_ = id_;
       result.value_ = value_;
-      result.isActive_ = isActive_;
+      result.actived_ = actived_;
       result.displayOrder_ = displayOrder_;
       result.skuNumber_ = skuNumber_;
       result.selected_ = selected_;
@@ -525,8 +525,8 @@ public  final class GrpcVariantValue extends
         value_ = other.value_;
         onChanged();
       }
-      if (other.getIsActive() != false) {
-        setIsActive(other.getIsActive());
+      if (other.getActived() != false) {
+        setActived(other.getActived());
       }
       if (other.getDisplayOrder() != 0) {
         setDisplayOrder(other.getDisplayOrder());
@@ -659,28 +659,28 @@ public  final class GrpcVariantValue extends
       return this;
     }
 
-    private boolean isActive_ ;
+    private boolean actived_ ;
     /**
-     * <code>optional bool is_active = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public boolean getIsActive() {
-      return isActive_;
+    public boolean getActived() {
+      return actived_;
     }
     /**
-     * <code>optional bool is_active = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public Builder setIsActive(boolean value) {
+    public Builder setActived(boolean value) {
       
-      isActive_ = value;
+      actived_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool is_active = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public Builder clearIsActive() {
+    public Builder clearActived() {
       
-      isActive_ = false;
+      actived_ = false;
       onChanged();
       return this;
     }

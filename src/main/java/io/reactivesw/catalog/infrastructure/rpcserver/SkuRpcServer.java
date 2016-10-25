@@ -3,6 +3,7 @@ package io.reactivesw.catalog.infrastructure.rpcserver;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
+import io.reactivesw.catalog.application.SkuApplication;
 import io.reactivesw.catalog.domain.entity.Sku;
 import io.reactivesw.catalog.domain.service.SkuService;
 import io.reactivesw.catalog.grpc.GrpcSkuDetail;
@@ -13,6 +14,7 @@ import io.reactivesw.catalog.grpc.SkuInformation;
 import io.reactivesw.catalog.grpc.SkuInformationList;
 import io.reactivesw.catalog.grpc.SkuServiceGrpc;
 import io.reactivesw.catalog.grpc.StringValue;
+import io.reactivesw.catalog.infrastructure.dto.SkuDetailDTO;
 import io.reactivesw.catalog.infrastructure.mapper.SkuMapper;
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException;
 import io.reactivesw.catalog.infrastructure.exception.NullParameterException;
@@ -42,6 +44,11 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
   @Autowired
   private transient SkuService skuService;
 
+  /**
+   * sku application.
+   */
+  @Autowired
+  private transient SkuApplication skuApplication;
   /**
    * query sku inventory by sku id.
    *
@@ -122,14 +129,14 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
    * query sku detail by sku number
    *
    * @param request          sku number
-   * @param responseObserver SkuDetail
+   * @param responseObserver SkuDetailDTO
    */
   @Override
   public void querySkuDetail(StringValue request, StreamObserver<GrpcSkuDetail> responseObserver) {
     final String skuNumber = request.getValue();
     LOG.debug("start querySkuDetail, sku number is {}.", skuNumber);
     try {
-      final Sku sku = skuService.querySkuByNumber(skuNumber);
+      final SkuDetailDTO sku = skuApplication.getSkuDetailByNumber(skuNumber);
       final GrpcSkuDetail reply = SkuMapper.transferToGrpcSkuDetail(sku);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
       LOG.debug("end querySkuDetail, sku number is {}.", skuNumber);

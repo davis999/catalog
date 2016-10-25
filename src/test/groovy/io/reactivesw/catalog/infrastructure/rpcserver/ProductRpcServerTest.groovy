@@ -2,7 +2,7 @@ package io.reactivesw.catalog.infrastructure.rpcserver
 
 import io.grpc.StatusRuntimeException
 import io.grpc.stub.StreamObserver
-import io.reactivesw.catalog.application.ProductApplication
+
 import io.reactivesw.catalog.domain.entity.Attribute
 import io.reactivesw.catalog.domain.entity.AttributeValue
 import io.reactivesw.catalog.domain.entity.Feature
@@ -16,8 +16,7 @@ import spock.lang.Specification
 
 class ProductRpcServerTest extends Specification{
   def productService = Mock(ProductService)
-  def productApplication = Mock(ProductApplication)
-  def productRpcServer = new ProductRpcServer(productService:productService, productApplication: productApplication)
+  def productRpcServer = new ProductRpcServer(productService:productService)
   Set<Product> products
   def product
   Sku sku
@@ -87,7 +86,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query products by category id"(){
     given:
-    productApplication.queryProductsByCategoryId(_) >> products
+    productService.queryProductsByCategoryId(_) >> products
 
     when:
     productRpcServer.getProductsByCategory(inputData, outputData)
@@ -97,7 +96,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query products by category id and no result"(){
     given:
-    productApplication.queryProductsByCategoryId(_) >> {throw new NotFoundException()}
+    productService.queryProductsByCategoryId(_) >> {throw new NotFoundException()}
 
     when:
     productRpcServer.getProductsByCategory(inputData, outputData)

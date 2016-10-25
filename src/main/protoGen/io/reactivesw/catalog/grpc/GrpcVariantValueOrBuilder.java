@@ -23,9 +23,9 @@ public interface GrpcVariantValueOrBuilder extends
       getValueBytes();
 
   /**
-   * <code>optional bool is_active = 3;</code>
+   * <code>optional bool actived = 3;</code>
    */
-  boolean getIsActive();
+  boolean getActived();
 
   /**
    * <code>optional int32 displayOrder = 4;</code>
