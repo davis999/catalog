@@ -1,6 +1,5 @@
 package io.reactivesw.catalog.application
 
-import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.service.SkuService
 import io.reactivesw.catalog.infrastructure.dto.SkuDetailDTO
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException
@@ -51,7 +50,7 @@ class SkuApplicationTest extends Specification {
         given:
         def product = ProductDataInitial.getProduct()
         sku = product.getAdditionalSkus().iterator().next()
-        sku.setActive(false)
+        sku.setActived(false)
         skuRepository.findOneBySkuNumber(_) >> sku
 
         when:
@@ -66,7 +65,7 @@ class SkuApplicationTest extends Specification {
         def product = ProductDataInitial.getProduct()
         sku = product.getAdditionalSkus().iterator().next()
         sku.setDefaultProduct(product)
-        sku.setActive(false)
+        sku.setActived(false)
         skuRepository.findOneBySkuNumber(_) >> sku
 
         when:

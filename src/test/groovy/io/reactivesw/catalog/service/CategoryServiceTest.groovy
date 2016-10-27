@@ -86,7 +86,7 @@ class CategoryServiceTest extends Specification {
         given:
         categoryRepository.findAllCategoryByOrderByDisplayOrderAsc() >> allCategories
         when:
-        List<Category> categories = categoryService.findAllCategories()
+        List<Category> categories = categoryService.getAllCategories()
         then:
         categories == allCategories;
         categories.size() == allCategories.size()
@@ -97,7 +97,7 @@ class CategoryServiceTest extends Specification {
         categoryRepository.findAll() >> null
 
         when:
-        categoryService.findAllCategories()
+        categoryService.getAllCategories()
 
         then:
         thrown(NotFoundException)
@@ -108,7 +108,7 @@ class CategoryServiceTest extends Specification {
         categoryRepository.findAll() >> new ArrayList<Category>()
 
         when:
-        categoryService.findAllCategories()
+        categoryService.getAllCategories()
 
         then:
         thrown(NotFoundException)

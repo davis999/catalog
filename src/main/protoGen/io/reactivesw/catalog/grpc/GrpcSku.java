@@ -17,8 +17,8 @@ public  final class GrpcSku extends
   private GrpcSku() {
     id_ = 0L;
     skuNumber_ = "";
-    isActive_ = false;
-    quatity_ = 0;
+    actived_ = false;
+    quantity_ = 0;
     upc_ = "";
     displayOrder_ = 0;
     media_ = java.util.Collections.emptyList();
@@ -63,12 +63,12 @@ public  final class GrpcSku extends
           }
           case 24: {
 
-            isActive_ = input.readBool();
+            actived_ = input.readBool();
             break;
           }
           case 32: {
 
-            quatity_ = input.readInt32();
+            quantity_ = input.readInt32();
             break;
           }
           case 42: {
@@ -173,22 +173,22 @@ public  final class GrpcSku extends
     }
   }
 
-  public static final int ISACTIVE_FIELD_NUMBER = 3;
-  private boolean isActive_;
+  public static final int ACTIVED_FIELD_NUMBER = 3;
+  private boolean actived_;
   /**
-   * <code>optional bool isActive = 3;</code>
+   * <code>optional bool actived = 3;</code>
    */
-  public boolean getIsActive() {
-    return isActive_;
+  public boolean getActived() {
+    return actived_;
   }
 
-  public static final int QUATITY_FIELD_NUMBER = 4;
-  private int quatity_;
+  public static final int QUANTITY_FIELD_NUMBER = 4;
+  private int quantity_;
   /**
-   * <code>optional int32 quatity = 4;</code>
+   * <code>optional int32 quantity = 4;</code>
    */
-  public int getQuatity() {
-    return quatity_;
+  public int getQuantity() {
+    return quantity_;
   }
 
   public static final int UPC_FIELD_NUMBER = 5;
@@ -322,11 +322,11 @@ public  final class GrpcSku extends
     if (!getSkuNumberBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skuNumber_);
     }
-    if (isActive_ != false) {
-      output.writeBool(3, isActive_);
+    if (actived_ != false) {
+      output.writeBool(3, actived_);
     }
-    if (quatity_ != 0) {
-      output.writeInt32(4, quatity_);
+    if (quantity_ != 0) {
+      output.writeInt32(4, quantity_);
     }
     if (!getUpcBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upc_);
@@ -354,13 +354,13 @@ public  final class GrpcSku extends
     if (!getSkuNumberBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skuNumber_);
     }
-    if (isActive_ != false) {
+    if (actived_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, isActive_);
+        .computeBoolSize(3, actived_);
     }
-    if (quatity_ != 0) {
+    if (quantity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, quatity_);
+        .computeInt32Size(4, quantity_);
     }
     if (!getUpcBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upc_);
@@ -397,10 +397,10 @@ public  final class GrpcSku extends
         == other.getId());
     result = result && getSkuNumber()
         .equals(other.getSkuNumber());
-    result = result && (getIsActive()
-        == other.getIsActive());
-    result = result && (getQuatity()
-        == other.getQuatity());
+    result = result && (getActived()
+        == other.getActived());
+    result = result && (getQuantity()
+        == other.getQuantity());
     result = result && getUpc()
         .equals(other.getUpc());
     result = result && (getDisplayOrder()
@@ -424,11 +424,11 @@ public  final class GrpcSku extends
         getId());
     hash = (37 * hash) + SKUNUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getSkuNumber().hashCode();
-    hash = (37 * hash) + ISACTIVE_FIELD_NUMBER;
+    hash = (37 * hash) + ACTIVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsActive());
-    hash = (37 * hash) + QUATITY_FIELD_NUMBER;
-    hash = (53 * hash) + getQuatity();
+        getActived());
+    hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuantity();
     hash = (37 * hash) + UPC_FIELD_NUMBER;
     hash = (53 * hash) + getUpc().hashCode();
     hash = (37 * hash) + DISPLAY_ORDER_FIELD_NUMBER;
@@ -565,9 +565,9 @@ public  final class GrpcSku extends
 
       skuNumber_ = "";
 
-      isActive_ = false;
+      actived_ = false;
 
-      quatity_ = 0;
+      quantity_ = 0;
 
       upc_ = "";
 
@@ -611,8 +611,8 @@ public  final class GrpcSku extends
       int to_bitField0_ = 0;
       result.id_ = id_;
       result.skuNumber_ = skuNumber_;
-      result.isActive_ = isActive_;
-      result.quatity_ = quatity_;
+      result.actived_ = actived_;
+      result.quantity_ = quantity_;
       result.upc_ = upc_;
       result.displayOrder_ = displayOrder_;
       if (mediaBuilder_ == null) {
@@ -682,11 +682,11 @@ public  final class GrpcSku extends
         skuNumber_ = other.skuNumber_;
         onChanged();
       }
-      if (other.getIsActive() != false) {
-        setIsActive(other.getIsActive());
+      if (other.getActived() != false) {
+        setActived(other.getActived());
       }
-      if (other.getQuatity() != 0) {
-        setQuatity(other.getQuatity());
+      if (other.getQuantity() != 0) {
+        setQuantity(other.getQuantity());
       }
       if (!other.getUpc().isEmpty()) {
         upc_ = other.upc_;
@@ -869,54 +869,54 @@ public  final class GrpcSku extends
       return this;
     }
 
-    private boolean isActive_ ;
+    private boolean actived_ ;
     /**
-     * <code>optional bool isActive = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public boolean getIsActive() {
-      return isActive_;
+    public boolean getActived() {
+      return actived_;
     }
     /**
-     * <code>optional bool isActive = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public Builder setIsActive(boolean value) {
+    public Builder setActived(boolean value) {
       
-      isActive_ = value;
+      actived_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool isActive = 3;</code>
+     * <code>optional bool actived = 3;</code>
      */
-    public Builder clearIsActive() {
+    public Builder clearActived() {
       
-      isActive_ = false;
+      actived_ = false;
       onChanged();
       return this;
     }
 
-    private int quatity_ ;
+    private int quantity_ ;
     /**
-     * <code>optional int32 quatity = 4;</code>
+     * <code>optional int32 quantity = 4;</code>
      */
-    public int getQuatity() {
-      return quatity_;
+    public int getQuantity() {
+      return quantity_;
     }
     /**
-     * <code>optional int32 quatity = 4;</code>
+     * <code>optional int32 quantity = 4;</code>
      */
-    public Builder setQuatity(int value) {
+    public Builder setQuantity(int value) {
       
-      quatity_ = value;
+      quantity_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 quatity = 4;</code>
+     * <code>optional int32 quantity = 4;</code>
      */
-    public Builder clearQuatity() {
+    public Builder clearQuantity() {
       
-      quatity_ = 0;
+      quantity_ = 0;
       onChanged();
       return this;
     }

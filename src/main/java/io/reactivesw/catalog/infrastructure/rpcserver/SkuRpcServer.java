@@ -139,7 +139,7 @@ public class SkuRpcServer extends SkuServiceGrpc.SkuServiceImplBase {
       final SkuDetailDTO sku = skuApplication.getSkuDetailByNumber(skuNumber);
       final GrpcSkuDetail reply = SkuMapper.transferToGrpcSkuDetail(sku);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.debug("end querySkuDetail, response is {}.", reply.toString());
+      LOG.debug("end querySkuDetail");
     } catch (NotFoundException e) {
       LOG.debug("querySkuDetail fail.", e);
       final Status status = Status.NOT_FOUND.withDescription("Sku is not exist");

@@ -88,25 +88,27 @@ public final class CatalogProductMessage {
       "\001(\005\022\022\n\nsku_number\030\005 \001(\t\022\020\n\010selected\030\006 \001(" +
       "\010\"8\n\rGrpcAttribute\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002" +
       " \001(\t\022\r\n\005value\030\003 \001(\t\"\376\001\n\007GrpcSku\022\n\n\002id\030\001 ",
-      "\001(\003\022\021\n\tskuNumber\030\002 \001(\t\022\020\n\010isActive\030\003 \001(\010" +
-      "\022\017\n\007quatity\030\004 \001(\005\022\013\n\003upc\030\005 \001(\t\022\025\n\rdispla" +
+      "\001(\003\022\021\n\tskuNumber\030\002 \001(\t\022\017\n\007actived\030\003 \001(\010\022" +
+      "\020\n\010quantity\030\004 \001(\005\022\013\n\003upc\030\005 \001(\t\022\025\n\rdispla" +
       "y_order\030\006 \001(\005\022>\n\005media\030\007 \003(\0132/.io.reacti" +
       "vesw.catalog.infrastructure.GrpcMedia\022M\n" +
       "\rvariant_value\030\010 \003(\01326.io.reactivesw.cat" +
-      "alog.infrastructure.GrpcVariantValue\"\326\003\n" +
+      "alog.infrastructure.GrpcVariantValue\"\232\004\n" +
       "\013GrpcProduct\022\n\n\002id\030\001 \001(\003\022\024\n\014manufacturer" +
       "\030\002 \001(\t\022\r\n\005brand\030\003 \001(\t\022\r\n\005model\030\004 \001(\t\022\014\n\004" +
       "name\030\005 \001(\t\022\r\n\005price\030\006 \001(\t\022\025\n\rdisplay_ord" +
       "er\030\007 \001(\005\022\023\n\013description\030\010 \001(\t\022\016\n\006detail\030",
-      "\t \001(\t\022\021\n\tdisplayed\030\n \001(\010\022\017\n\007deleted\030\013 \001(" +
-      "\010\022F\n\tattribute\030\014 \003(\01323.io.reactivesw.cat" +
-      "alog.infrastructure.GrpcAttribute\022:\n\003sku" +
-      "\030\r \003(\0132-.io.reactivesw.catalog.infrastru" +
-      "cture.GrpcSku\022B\n\007variant\030\016 \003(\01321.io.reac" +
-      "tivesw.catalog.infrastructure.GrpcVarian" +
-      "t\022B\n\007feature\030\017 \003(\01321.io.reactivesw.catal" +
-      "og.infrastructure.GrpcFeatureB!\n\032io.reac" +
-      "tivesw.catalog.grpcP\001\240\001\001b\006proto3"
+      "\t \001(\t\022\021\n\tdisplayed\030\n \001(\010\022B\n\013default_sku\030" +
+      "\020 \001(\0132-.io.reactivesw.catalog.infrastruc" +
+      "ture.GrpcSku\022\017\n\007deleted\030\013 \001(\010\022F\n\tattribu" +
+      "te\030\014 \003(\01323.io.reactivesw.catalog.infrast" +
+      "ructure.GrpcAttribute\022:\n\003sku\030\r \003(\0132-.io." +
+      "reactivesw.catalog.infrastructure.GrpcSk" +
+      "u\022B\n\007variant\030\016 \003(\01321.io.reactivesw.catal" +
+      "og.infrastructure.GrpcVariant\022B\n\007feature" +
+      "\030\017 \003(\01321.io.reactivesw.catalog.infrastru" +
+      "cture.GrpcFeatureB!\n\032io.reactivesw.catal",
+      "og.grpcP\001\240\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -167,13 +169,13 @@ public final class CatalogProductMessage {
     internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcSku_descriptor,
-        new java.lang.String[] { "Id", "SkuNumber", "IsActive", "Quatity", "Upc", "DisplayOrder", "Media", "VariantValue", });
+        new java.lang.String[] { "Id", "SkuNumber", "Actived", "Quantity", "Upc", "DisplayOrder", "Media", "VariantValue", });
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_reactivesw_catalog_infrastructure_GrpcProduct_descriptor,
-        new java.lang.String[] { "Id", "Manufacturer", "Brand", "Model", "Name", "Price", "DisplayOrder", "Description", "Detail", "Displayed", "Deleted", "Attribute", "Sku", "Variant", "Feature", });
+        new java.lang.String[] { "Id", "Manufacturer", "Brand", "Model", "Name", "Price", "DisplayOrder", "Description", "Detail", "Displayed", "DefaultSku", "Deleted", "Attribute", "Sku", "Variant", "Feature", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

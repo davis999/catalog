@@ -93,6 +93,19 @@ public interface GrpcProductOrBuilder extends
   boolean getDisplayed();
 
   /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  boolean hasDefaultSku();
+  /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  io.reactivesw.catalog.grpc.GrpcSku getDefaultSku();
+  /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  io.reactivesw.catalog.grpc.GrpcSkuOrBuilder getDefaultSkuOrBuilder();
+
+  /**
    * <code>optional bool deleted = 11;</code>
    */
   boolean getDeleted();

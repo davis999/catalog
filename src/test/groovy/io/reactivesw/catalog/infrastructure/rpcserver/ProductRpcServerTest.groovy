@@ -86,7 +86,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query products by category id"(){
     given:
-    productService.queryProductsByCategoryId(_) >> products
+    productService.queryProductsByCategory(_) >> products
 
     when:
     productRpcServer.getProductsByCategory(inputData, outputData)
@@ -96,7 +96,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query products by category id and no result"(){
     given:
-    productService.queryProductsByCategoryId(_) >> {throw new NotFoundException()}
+    productService.queryProductsByCategory(_) >> {throw new NotFoundException()}
 
     when:
     productRpcServer.getProductsByCategory(inputData, outputData)
@@ -106,7 +106,7 @@ class ProductRpcServerTest extends Specification{
 
   def "test query product by product id"(){
     given:
-    productService.queryProductById(_) >> product
+    productService.getProductDetail(_) >> product
 
     when:
     productRpcServer.getProductDetial(inputData, outputData)
@@ -117,7 +117,7 @@ class ProductRpcServerTest extends Specification{
   
   def "test query product by product id and no result return"(){
     given:
-    productService.queryProductById(_) >> {throw new NotFoundException()}
+    productService.getProductDetail(_) >> {throw new NotFoundException()}
 
     when:
     productRpcServer.getProductDetial(inputData, outputData)

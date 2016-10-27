@@ -1,6 +1,5 @@
 package io.reactivesw.catalog.service
 
-import io.reactivesw.catalog.domain.entity.Category
 import io.reactivesw.catalog.domain.entity.Sku
 import io.reactivesw.catalog.domain.service.SkuService
 import io.reactivesw.catalog.infrastructure.exception.NotFoundException
@@ -8,9 +7,6 @@ import io.reactivesw.catalog.infrastructure.exception.NullParameterException
 import io.reactivesw.catalog.infrastructure.exception.SkuNotActiveException
 import io.reactivesw.catalog.infrastructure.repository.SkuRepository
 import spock.lang.Specification
-
-import java.time.ZoneOffset
-import java.time.ZonedDateTime
 
 class SkuServiceTest extends Specification {
 
@@ -23,7 +19,7 @@ class SkuServiceTest extends Specification {
     def setup() {
         savedSku.setId(1L)
         savedSku.setSkuNumber("BBK-001")
-        savedSku.setActive(true)
+        savedSku.setActived(true)
         savedSku.setPrice(new BigDecimal("19.99"))
         savedSku.setQuantity(10086)
 
@@ -54,7 +50,7 @@ class SkuServiceTest extends Specification {
 
     def "test query quantity and get not-active sku"() {
         given:
-        savedSku.setActive(false)
+        savedSku.setActived(false)
         skuRepository.findOne(_) >> savedSku
 
         when: "save category"
@@ -88,7 +84,7 @@ class SkuServiceTest extends Specification {
 
     def "test query sku by id and get not-active sku"() {
         given:
-        savedSku.setActive(false)
+        savedSku.setActived(false)
         skuRepository.findOne(_) >> savedSku
 
         when:
@@ -135,7 +131,7 @@ class SkuServiceTest extends Specification {
 
     def "query list sku and get not-active sku"() {
         given:
-        savedSku.setActive(false)
+        savedSku.setActived(false)
         allSkus.add(savedSku)
         skuRepository.findAll(_) >> allSkus
 

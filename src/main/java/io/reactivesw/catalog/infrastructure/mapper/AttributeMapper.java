@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is transfer class for Vttribute and AttributeValue.
@@ -24,6 +25,19 @@ public final class AttributeMapper {
    * private constructor.
    */
   private AttributeMapper() {
+  }
+
+  /**
+   * transfer set of AttributeValue to list of GrpcAttribute.
+   * @param attributeValues set of AttributeValue
+   * @return list of GrpcAttribute
+   */
+  public static List<GrpcAttribute> transferToGrpcAttributeList(Set<AttributeValue> attributeValues){
+    List<GrpcAttribute> grpcAttributes = new ArrayList<>();
+    for (AttributeValue attributeValue : attributeValues) {
+      grpcAttributes.add(transferToAttributeInfo(attributeValue));
+    }
+    return grpcAttributes;
   }
 
   /**
@@ -61,6 +75,7 @@ public final class AttributeMapper {
 
   /**
    * transfer AttributeDTO to GrpcAttribute.
+   *
    * @param attribute AttributeDTO
    * @return GrpcAttribute
    */

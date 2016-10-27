@@ -45,12 +45,12 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
   @Override
   public void getProductDetial(LongValue request, StreamObserver<GrpcProduct> responseObserver) {
     final long productId = request.getValue();
-    LOG.info("enter queryProductDetial, product id is {}", productId);
+    LOG.debug("enter queryProductDetial, product id is {}", productId);
     try {
-      final Product product = productService.queryProductById(productId);
+      final Product product = productService.getProductDetail(productId);
       final GrpcProduct reply = ProductMapper.transferToGrpcProduct(product);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end queryProductDetial, product is {}.", reply.toString());
+      LOG.debug("end queryProductDetial, product is {}.", reply.toString());
     } catch (NotFoundException exception) {
       LOG.debug("product is null, id is {}", productId);
       final Status status = Status.NOT_FOUND.withDescription("query product fail, not found");
@@ -65,12 +65,12 @@ public class ProductRpcServer extends ProductServiceGrpc.ProductServiceImplBase 
   public void getProductsByCategory(LongValue request,
       StreamObserver<ProductBriefList> responseObserver) {
     final long categoryId = request.getValue();
-    LOG.info("enter queryProductsByCategory, category id is {}", categoryId);
+    LOG.debug("enter queryProductsByCategory, category id is {}", categoryId);
     try {
-      final List<Product> products = productService.queryProductsByCategoryId(categoryId);
+      final List<Product> products = productService.queryProductsByCategory(categoryId);
       final ProductBriefList reply = ProductMapper.transferToProductBriefList(products);
       GrpcResponseUtils.completeResponse(responseObserver, reply);
-      LOG.info("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
+      LOG.debug("end queryProductsByCategory, get {} products", reply.getProductBriefCount());
     } catch (NotFoundException exception) {
       LOG.debug("can not query product by a not exist category with id {}.", categoryId);
       final Status status = Status.NOT_FOUND.withDescription("category is not exist");

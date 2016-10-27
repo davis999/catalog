@@ -42,7 +42,7 @@ public class SkuService {
     if (sku == null) {
       LOG.debug("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
-    } else if (!sku.isActive()) {
+    } else if (!sku.isActived()) {
       LOG.debug("sku is not active, id is {}.", skuId);
       throw new SkuNotActiveException("sku is not active");
     }
@@ -64,7 +64,7 @@ public class SkuService {
     if (sku == null) {
       LOG.debug("can not find sku with id {}.", skuId);
       throw new NotFoundException("sku is not exist.");
-    } else if (!sku.isActive()) {
+    } else if (!sku.isActived()) {
       LOG.debug("sku is not active, id is {}.", skuId);
       throw new SkuNotActiveException("sku is not active");
     }
@@ -101,7 +101,7 @@ public class SkuService {
       LOG.debug("can not find any sku by number {}.", number);
       throw new NotFoundException("Sku is not exist");
     }
-    LOG.debug("end querySkuByNumber, get sku : {}.", sku.toString());
+    LOG.debug("end querySkuByNumber");
     return sku;
   }
 
@@ -116,7 +116,7 @@ public class SkuService {
     if (skus != null) {
       LOG.debug("start remove not active sku, {} skus.", skus.size());
       for (Sku sku : skus) {
-        if (sku.isActive()) {
+        if (sku.isActived()) {
           removedSkus.add(sku);
         }
       }

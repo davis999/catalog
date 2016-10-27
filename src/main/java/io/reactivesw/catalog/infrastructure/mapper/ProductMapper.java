@@ -1,7 +1,5 @@
 package io.reactivesw.catalog.infrastructure.mapper;
 
-import io.reactivesw.catalog.domain.entity.AttributeValue;
-import io.reactivesw.catalog.domain.entity.Feature;
 import io.reactivesw.catalog.domain.entity.Media;
 import io.reactivesw.catalog.domain.entity.Product;
 import io.reactivesw.catalog.domain.entity.Sku;
@@ -17,6 +15,7 @@ import java.util.Set;
 
 /**
  * this is transfer class for product.
+ *
  * @author Davis
  */
 public final class ProductMapper {
@@ -29,6 +28,7 @@ public final class ProductMapper {
 
   /**
    * transfer Product to GrpcProduct.
+   *
    * @param product src product
    * @return GrpcProduct
    */
@@ -39,20 +39,19 @@ public final class ProductMapper {
     final Sku defaultSku = product.getDefaultSku();
     final String price = DecimalFormatUtils.transferToShortString(defaultSku.getPrice());
     builder.setPrice(price);
+    builder.setDefaultSku(SkuMapper.transferToGrpcSku(defaultSku));
     if (skus != null) {
-      for (final Sku sku : skus) {
-        builder.addSku(SkuMapper.transferToGrpcSku(sku));
-      }
+      builder.addAllSku(SkuMapper.transferToGrpcSkuList(skus));
     }
     if (product.getFeatures() != null) {
-      for (final Feature feature : product.getFeatures()) {
-        builder.addFeature(FeatureMapper.transferToFeatureInfo(feature));
-      }
+      builder.addAllFeature(FeatureMapper.transferToGrpcFeatureList(product.getFeatures()));
     }
     if (product.getAttributeValues() != null) {
-      for (final AttributeValue attributeValue : product.getAttributeValues()) {
-        builder.addAttribute(AttributeMapper.transferToAttributeInfo(attributeValue));
-      }
+      builder.addAllAttribute(AttributeMapper.transferToGrpcAttributeList(product
+          .getAttributeValues()));
+    }
+    if (product.getVariants() != null) {
+      builder.addAllVariant(VariantMapper.transferToGrpcVariantList(product.getVariants()));
     }
 
     return builder.build();
@@ -60,6 +59,7 @@ public final class ProductMapper {
 
   /**
    * transfer list of products to ProductBriefList.
+   *
    * @param products src products.
    * @return ProductBriefList
    */
@@ -77,6 +77,7 @@ public final class ProductMapper {
 
   /**
    * transfer Product to GrpcProductBrief.
+   *
    * @param product src product
    * @return GrpcProductBrief GrpcProductBrief
    */

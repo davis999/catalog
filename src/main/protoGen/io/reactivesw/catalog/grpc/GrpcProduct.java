@@ -120,39 +120,52 @@ public  final class GrpcProduct extends
             break;
           }
           case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
               attribute_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcAttribute>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00001000;
             }
             attribute_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcAttribute.parser(), extensionRegistry));
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
               sku_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcSku>();
-              mutable_bitField0_ |= 0x00001000;
+              mutable_bitField0_ |= 0x00002000;
             }
             sku_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcSku.parser(), extensionRegistry));
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
               variant_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariant>();
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00004000;
             }
             variant_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcVariant.parser(), extensionRegistry));
             break;
           }
           case 122: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
               feature_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcFeature>();
-              mutable_bitField0_ |= 0x00004000;
+              mutable_bitField0_ |= 0x00008000;
             }
             feature_.add(
                 input.readMessage(io.reactivesw.catalog.grpc.GrpcFeature.parser(), extensionRegistry));
+            break;
+          }
+          case 130: {
+            io.reactivesw.catalog.grpc.GrpcSku.Builder subBuilder = null;
+            if (defaultSku_ != null) {
+              subBuilder = defaultSku_.toBuilder();
+            }
+            defaultSku_ = input.readMessage(io.reactivesw.catalog.grpc.GrpcSku.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(defaultSku_);
+              defaultSku_ = subBuilder.buildPartial();
+            }
+
             break;
           }
         }
@@ -163,16 +176,16 @@ public  final class GrpcProduct extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         attribute_ = java.util.Collections.unmodifiableList(attribute_);
       }
-      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
         sku_ = java.util.Collections.unmodifiableList(sku_);
       }
-      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
         variant_ = java.util.Collections.unmodifiableList(variant_);
       }
-      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
         feature_ = java.util.Collections.unmodifiableList(feature_);
       }
       makeExtensionsImmutable();
@@ -456,6 +469,27 @@ public  final class GrpcProduct extends
     return displayed_;
   }
 
+  public static final int DEFAULT_SKU_FIELD_NUMBER = 16;
+  private io.reactivesw.catalog.grpc.GrpcSku defaultSku_;
+  /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  public boolean hasDefaultSku() {
+    return defaultSku_ != null;
+  }
+  /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  public io.reactivesw.catalog.grpc.GrpcSku getDefaultSku() {
+    return defaultSku_ == null ? io.reactivesw.catalog.grpc.GrpcSku.getDefaultInstance() : defaultSku_;
+  }
+  /**
+   * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+   */
+  public io.reactivesw.catalog.grpc.GrpcSkuOrBuilder getDefaultSkuOrBuilder() {
+    return getDefaultSku();
+  }
+
   public static final int DELETED_FIELD_NUMBER = 11;
   private boolean deleted_;
   /**
@@ -662,6 +696,9 @@ public  final class GrpcProduct extends
     for (int i = 0; i < feature_.size(); i++) {
       output.writeMessage(15, feature_.get(i));
     }
+    if (defaultSku_ != null) {
+      output.writeMessage(16, getDefaultSku());
+    }
   }
 
   public int getSerializedSize() {
@@ -722,6 +759,10 @@ public  final class GrpcProduct extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, feature_.get(i));
     }
+    if (defaultSku_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getDefaultSku());
+    }
     memoizedSize = size;
     return size;
   }
@@ -758,6 +799,11 @@ public  final class GrpcProduct extends
         .equals(other.getDetail());
     result = result && (getDisplayed()
         == other.getDisplayed());
+    result = result && (hasDefaultSku() == other.hasDefaultSku());
+    if (hasDefaultSku()) {
+      result = result && getDefaultSku()
+          .equals(other.getDefaultSku());
+    }
     result = result && (getDeleted()
         == other.getDeleted());
     result = result && getAttributeList()
@@ -800,6 +846,10 @@ public  final class GrpcProduct extends
     hash = (37 * hash) + DISPLAYED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDisplayed());
+    if (hasDefaultSku()) {
+      hash = (37 * hash) + DEFAULT_SKU_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultSku().hashCode();
+    }
     hash = (37 * hash) + DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDeleted());
@@ -961,29 +1011,35 @@ public  final class GrpcProduct extends
 
       displayed_ = false;
 
+      if (defaultSkuBuilder_ == null) {
+        defaultSku_ = null;
+      } else {
+        defaultSku_ = null;
+        defaultSkuBuilder_ = null;
+      }
       deleted_ = false;
 
       if (attributeBuilder_ == null) {
         attribute_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         attributeBuilder_.clear();
       }
       if (skuBuilder_ == null) {
         sku_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         skuBuilder_.clear();
       }
       if (variantBuilder_ == null) {
         variant_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
       } else {
         variantBuilder_.clear();
       }
       if (featureBuilder_ == null) {
         feature_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       } else {
         featureBuilder_.clear();
       }
@@ -1021,38 +1077,43 @@ public  final class GrpcProduct extends
       result.description_ = description_;
       result.detail_ = detail_;
       result.displayed_ = displayed_;
+      if (defaultSkuBuilder_ == null) {
+        result.defaultSku_ = defaultSku_;
+      } else {
+        result.defaultSku_ = defaultSkuBuilder_.build();
+      }
       result.deleted_ = deleted_;
       if (attributeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           attribute_ = java.util.Collections.unmodifiableList(attribute_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.attribute_ = attribute_;
       } else {
         result.attribute_ = attributeBuilder_.build();
       }
       if (skuBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
           sku_ = java.util.Collections.unmodifiableList(sku_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.sku_ = sku_;
       } else {
         result.sku_ = skuBuilder_.build();
       }
       if (variantBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
           variant_ = java.util.Collections.unmodifiableList(variant_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.variant_ = variant_;
       } else {
         result.variant_ = variantBuilder_.build();
       }
       if (featureBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
           feature_ = java.util.Collections.unmodifiableList(feature_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.feature_ = feature_;
       } else {
@@ -1137,6 +1198,9 @@ public  final class GrpcProduct extends
       if (other.getDisplayed() != false) {
         setDisplayed(other.getDisplayed());
       }
+      if (other.hasDefaultSku()) {
+        mergeDefaultSku(other.getDefaultSku());
+      }
       if (other.getDeleted() != false) {
         setDeleted(other.getDeleted());
       }
@@ -1144,7 +1208,7 @@ public  final class GrpcProduct extends
         if (!other.attribute_.isEmpty()) {
           if (attribute_.isEmpty()) {
             attribute_ = other.attribute_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureAttributeIsMutable();
             attribute_.addAll(other.attribute_);
@@ -1157,7 +1221,7 @@ public  final class GrpcProduct extends
             attributeBuilder_.dispose();
             attributeBuilder_ = null;
             attribute_ = other.attribute_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             attributeBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAttributeFieldBuilder() : null;
@@ -1170,7 +1234,7 @@ public  final class GrpcProduct extends
         if (!other.sku_.isEmpty()) {
           if (sku_.isEmpty()) {
             sku_ = other.sku_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSkuIsMutable();
             sku_.addAll(other.sku_);
@@ -1183,7 +1247,7 @@ public  final class GrpcProduct extends
             skuBuilder_.dispose();
             skuBuilder_ = null;
             sku_ = other.sku_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             skuBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSkuFieldBuilder() : null;
@@ -1196,7 +1260,7 @@ public  final class GrpcProduct extends
         if (!other.variant_.isEmpty()) {
           if (variant_.isEmpty()) {
             variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureVariantIsMutable();
             variant_.addAll(other.variant_);
@@ -1209,7 +1273,7 @@ public  final class GrpcProduct extends
             variantBuilder_.dispose();
             variantBuilder_ = null;
             variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             variantBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getVariantFieldBuilder() : null;
@@ -1222,7 +1286,7 @@ public  final class GrpcProduct extends
         if (!other.feature_.isEmpty()) {
           if (feature_.isEmpty()) {
             feature_ = other.feature_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureFeatureIsMutable();
             feature_.addAll(other.feature_);
@@ -1235,7 +1299,7 @@ public  final class GrpcProduct extends
             featureBuilder_.dispose();
             featureBuilder_ = null;
             feature_ = other.feature_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             featureBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFeatureFieldBuilder() : null;
@@ -1832,6 +1896,123 @@ public  final class GrpcProduct extends
       return this;
     }
 
+    private io.reactivesw.catalog.grpc.GrpcSku defaultSku_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder> defaultSkuBuilder_;
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public boolean hasDefaultSku() {
+      return defaultSkuBuilder_ != null || defaultSku_ != null;
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public io.reactivesw.catalog.grpc.GrpcSku getDefaultSku() {
+      if (defaultSkuBuilder_ == null) {
+        return defaultSku_ == null ? io.reactivesw.catalog.grpc.GrpcSku.getDefaultInstance() : defaultSku_;
+      } else {
+        return defaultSkuBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public Builder setDefaultSku(io.reactivesw.catalog.grpc.GrpcSku value) {
+      if (defaultSkuBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultSku_ = value;
+        onChanged();
+      } else {
+        defaultSkuBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public Builder setDefaultSku(
+        io.reactivesw.catalog.grpc.GrpcSku.Builder builderForValue) {
+      if (defaultSkuBuilder_ == null) {
+        defaultSku_ = builderForValue.build();
+        onChanged();
+      } else {
+        defaultSkuBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public Builder mergeDefaultSku(io.reactivesw.catalog.grpc.GrpcSku value) {
+      if (defaultSkuBuilder_ == null) {
+        if (defaultSku_ != null) {
+          defaultSku_ =
+            io.reactivesw.catalog.grpc.GrpcSku.newBuilder(defaultSku_).mergeFrom(value).buildPartial();
+        } else {
+          defaultSku_ = value;
+        }
+        onChanged();
+      } else {
+        defaultSkuBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public Builder clearDefaultSku() {
+      if (defaultSkuBuilder_ == null) {
+        defaultSku_ = null;
+        onChanged();
+      } else {
+        defaultSku_ = null;
+        defaultSkuBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public io.reactivesw.catalog.grpc.GrpcSku.Builder getDefaultSkuBuilder() {
+      
+      onChanged();
+      return getDefaultSkuFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    public io.reactivesw.catalog.grpc.GrpcSkuOrBuilder getDefaultSkuOrBuilder() {
+      if (defaultSkuBuilder_ != null) {
+        return defaultSkuBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultSku_ == null ?
+            io.reactivesw.catalog.grpc.GrpcSku.getDefaultInstance() : defaultSku_;
+      }
+    }
+    /**
+     * <code>optional .io.reactivesw.catalog.infrastructure.GrpcSku default_sku = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder> 
+        getDefaultSkuFieldBuilder() {
+      if (defaultSkuBuilder_ == null) {
+        defaultSkuBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder>(
+                getDefaultSku(),
+                getParentForChildren(),
+                isClean());
+        defaultSku_ = null;
+      }
+      return defaultSkuBuilder_;
+    }
+
     private boolean deleted_ ;
     /**
      * <code>optional bool deleted = 11;</code>
@@ -1861,9 +2042,9 @@ public  final class GrpcProduct extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcAttribute> attribute_ =
       java.util.Collections.emptyList();
     private void ensureAttributeIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
         attribute_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcAttribute>(attribute_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
        }
     }
 
@@ -2013,7 +2194,7 @@ public  final class GrpcProduct extends
     public Builder clearAttribute() {
       if (attributeBuilder_ == null) {
         attribute_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         attributeBuilder_.clear();
@@ -2090,7 +2271,7 @@ public  final class GrpcProduct extends
         attributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcAttribute, io.reactivesw.catalog.grpc.GrpcAttribute.Builder, io.reactivesw.catalog.grpc.GrpcAttributeOrBuilder>(
                 attribute_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
+                ((bitField0_ & 0x00001000) == 0x00001000),
                 getParentForChildren(),
                 isClean());
         attribute_ = null;
@@ -2101,9 +2282,9 @@ public  final class GrpcProduct extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcSku> sku_ =
       java.util.Collections.emptyList();
     private void ensureSkuIsMutable() {
-      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
         sku_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcSku>(sku_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
        }
     }
 
@@ -2253,7 +2434,7 @@ public  final class GrpcProduct extends
     public Builder clearSku() {
       if (skuBuilder_ == null) {
         sku_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         skuBuilder_.clear();
@@ -2330,7 +2511,7 @@ public  final class GrpcProduct extends
         skuBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcSku, io.reactivesw.catalog.grpc.GrpcSku.Builder, io.reactivesw.catalog.grpc.GrpcSkuOrBuilder>(
                 sku_,
-                ((bitField0_ & 0x00001000) == 0x00001000),
+                ((bitField0_ & 0x00002000) == 0x00002000),
                 getParentForChildren(),
                 isClean());
         sku_ = null;
@@ -2341,9 +2522,9 @@ public  final class GrpcProduct extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcVariant> variant_ =
       java.util.Collections.emptyList();
     private void ensureVariantIsMutable() {
-      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
         variant_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcVariant>(variant_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
        }
     }
 
@@ -2493,7 +2674,7 @@ public  final class GrpcProduct extends
     public Builder clearVariant() {
       if (variantBuilder_ == null) {
         variant_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         variantBuilder_.clear();
@@ -2570,7 +2751,7 @@ public  final class GrpcProduct extends
         variantBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcVariant, io.reactivesw.catalog.grpc.GrpcVariant.Builder, io.reactivesw.catalog.grpc.GrpcVariantOrBuilder>(
                 variant_,
-                ((bitField0_ & 0x00002000) == 0x00002000),
+                ((bitField0_ & 0x00004000) == 0x00004000),
                 getParentForChildren(),
                 isClean());
         variant_ = null;
@@ -2581,9 +2762,9 @@ public  final class GrpcProduct extends
     private java.util.List<io.reactivesw.catalog.grpc.GrpcFeature> feature_ =
       java.util.Collections.emptyList();
     private void ensureFeatureIsMutable() {
-      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
         feature_ = new java.util.ArrayList<io.reactivesw.catalog.grpc.GrpcFeature>(feature_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
        }
     }
 
@@ -2733,7 +2914,7 @@ public  final class GrpcProduct extends
     public Builder clearFeature() {
       if (featureBuilder_ == null) {
         feature_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         featureBuilder_.clear();
@@ -2810,7 +2991,7 @@ public  final class GrpcProduct extends
         featureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.reactivesw.catalog.grpc.GrpcFeature, io.reactivesw.catalog.grpc.GrpcFeature.Builder, io.reactivesw.catalog.grpc.GrpcFeatureOrBuilder>(
                 feature_,
-                ((bitField0_ & 0x00004000) == 0x00004000),
+                ((bitField0_ & 0x00008000) == 0x00008000),
                 getParentForChildren(),
                 isClean());
         feature_ = null;

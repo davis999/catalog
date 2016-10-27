@@ -12,6 +12,7 @@ import io.reactivesw.catalog.infrastructure.dto.SkuDetailDTO;
 import io.reactivesw.catalog.infrastructure.utils.DecimalFormatUtils;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -30,6 +31,19 @@ public final class SkuMapper {
    * private constructro.
    */
   private SkuMapper() {
+  }
+
+  /**
+   * transfer set of Sku to list of GrpcSku.
+   * @param skus set of Sku
+   * @return list of GrpcSku
+   */
+  public static List<GrpcSku> transferToGrpcSkuList(Set<Sku> skus) {
+    List<GrpcSku> grpcSkus = new ArrayList<>();
+    for (Sku sku : skus) {
+      grpcSkus.add(transferToGrpcSku(sku));
+    }
+    return grpcSkus;
   }
 
   /**

@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * this is transfer class for feature.
@@ -25,6 +26,19 @@ public final class FeatureMapper {
    * private constructor.
    */
   private FeatureMapper() {
+  }
+
+  /**
+   * transfer set of Feature to list of GrpcFeature.
+   * @param features set of Feature
+   * @return list of GrpcFeature
+   */
+  public static List<GrpcFeature> transferToGrpcFeatureList(Set<Feature> features) {
+    List<GrpcFeature> grpcFeatures = new ArrayList<>();
+    for (Feature feature : features) {
+      grpcFeatures.add(transferToFeatureInfo(feature));
+    }
+    return grpcFeatures;
   }
 
   /**
@@ -54,6 +68,7 @@ public final class FeatureMapper {
 
   /**
    * transfer FeatureDTO to GrpcFeature.
+   *
    * @param feature FeatureDTO
    * @return GrpcFeature
    */

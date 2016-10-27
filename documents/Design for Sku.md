@@ -11,7 +11,7 @@ The request and response message are in [catalog_sku_message.proto
 exception status | message | Customerized exception | description
 -----------------|---------|------------------------|--------------
 NOT_FOUND  | "sku is not exit" | NotFoundException | "sku is not exit"
-UNAVAILABLE | "sku is not active" | SkuNotActiveException | "sku is not active"
+UNAVAILABLE | "sku is not actived" | SkuNotActiveException | "sku is not actived"
 
 ### 1.2 query sku simple information
 * description : query sku simple information.
@@ -22,7 +22,7 @@ UNAVAILABLE | "sku is not active" | SkuNotActiveException | "sku is not active"
 exception status | message | Customerized exception | description
 -----------------|---------|------------------------|--------------
 NOT_FOUND  | "sku is not exit" | NotFoundException | "sku is not exit"
-UNAVAILABLE | "sku is not active" | SkuNotActiveException | "sku is not active"
+UNAVAILABLE | "sku is not actived" | SkuNotActiveException | "sku is not actived"
 
 ### 1.3 query list of sku information by list of id
 * description : use list of sku id to query list of sku information

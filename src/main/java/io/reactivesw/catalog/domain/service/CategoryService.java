@@ -46,14 +46,14 @@ public class CategoryService {
    *
    * @return set of categories
    */
-  public List<Category> findAllCategories() {
-    LOG.info("find all category.");
+  public List<Category> getAllCategories() {
+    LOG.debug("find all category.");
     final List<Category> categories = categoryRepository.findAllCategoryByOrderByDisplayOrderAsc();
     if (categories == null || categories.isEmpty()) {
       LOG.debug("query all categories fail, no result");
       throw new NotFoundException("Not Category Exist");
     }
-    LOG.info("end find all category, get {} category.", categories.size());
+    LOG.debug("end find all category, get {} category.", categories.size());
     return categories;
   }
 
@@ -84,13 +84,13 @@ public class CategoryService {
    * @return Category category.
    */
   public Category findCategoryById(long categoryId) {
-    LOG.info("enter findCategoryById, id is {}.", categoryId);
+    LOG.debug("enter findCategoryById, id is {}.", categoryId);
     final Category category = categoryRepository.findOne(categoryId);
     if (category == null) {
       LOG.debug("find category by id fail, not such category with id {}", categoryId);
       throw new NotFoundException("No Category Exist");
     }
-    LOG.info("end findCategoryById, id is {}.", categoryId);
+    LOG.debug("end findCategoryById, id is {}.", categoryId);
     return category;
   }
 }

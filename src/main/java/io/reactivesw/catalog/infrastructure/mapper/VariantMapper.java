@@ -1,11 +1,13 @@
 package io.reactivesw.catalog.infrastructure.mapper;
 
+import io.reactivesw.catalog.domain.entity.Variant;
 import io.reactivesw.catalog.grpc.GrpcVariant;
 import io.reactivesw.catalog.infrastructure.dto.VariantDTO;
 import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Mapper for Variant.
@@ -20,7 +22,8 @@ public final class VariantMapper {
   /**
    * private constructor.
    */
-  private VariantMapper(){}
+  private VariantMapper() {
+  }
 
   /**
    * transfer list of VariantDTO to list of GrpcVariant.
@@ -45,6 +48,31 @@ public final class VariantMapper {
   public static GrpcVariant transferToGrpcVariant(VariantDTO variant) {
     final GrpcVariant.Builder builder = modelMapper.map(variant, GrpcVariant.Builder.class);
     builder.addAllVariantValue(VariantValueMapper.transferToGrpcVariantValueList(variant
+        .getVariantValues()));
+    return builder.build();
+  }
+
+  /**
+   * transfer set of Variant to list of GrpcVariant.
+   * @param variants set of Variant
+   * @return list of GrpcVariant
+   */
+  public static List<GrpcVariant> transferToGrpcVariantList(Set<Variant> variants) {
+    List<GrpcVariant> grpcVariants = new ArrayList<>();
+    for (Variant variant : variants) {
+      grpcVariants.add(transferToGrpcVariant(variant));
+    }
+    return grpcVariants;
+  }
+
+  /**
+   * transfer Variant to GrpcVaraint.
+   * @param variant Varaint
+   * @return GrpcVaraint
+   */
+  public static GrpcVariant transferToGrpcVariant(Variant variant) {
+    final GrpcVariant.Builder builder = modelMapper.map(variant, GrpcVariant.Builder.class);
+    builder.addAllVariantValue(VariantValueMapper.transferToVariantValueList(variant
         .getVariantValues()));
     return builder.build();
   }

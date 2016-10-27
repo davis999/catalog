@@ -18,7 +18,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -51,10 +50,10 @@ public class Sku implements Serializable {
   private String skuNumber;
 
   /**
-   * active for sku.
+   * actived for sku.
    */
   @Column(name = "is_active")
-  private boolean active;
+  private boolean actived;
 
   /**
    * quantity for sku.
@@ -99,7 +98,7 @@ public class Sku implements Serializable {
   @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
   @JoinTable(name = "sw_sku_media", joinColumns = @JoinColumn(name = "sku_id"),
       inverseJoinColumns = @JoinColumn(name = "media_id"))
-  @OrderBy("displayOrder asc")
+//  @OrderBy("displayOrder asc")
   private Set<Media> medias;
 
   /**
@@ -163,21 +162,21 @@ public class Sku implements Serializable {
   }
 
   /**
-   * get active.
+   * get actived.
    *
-   * @return active boolean
+   * @return actived boolean
    */
-  public boolean isActive() {
-    return active;
+  public boolean isActived() {
+    return actived;
   }
 
   /**
-   * set active.
+   * set actived.
    *
-   * @param active active
+   * @param actived actived
    */
-  public void setActive(boolean active) {
-    this.active = active;
+  public void setActived(boolean actived) {
+    this.actived = actived;
   }
 
   /**
@@ -373,7 +372,7 @@ public class Sku implements Serializable {
     return "Sku{" +
         "id=" + id +
         ", skuNumber='" + skuNumber + '\'' +
-        ", active=" + active +
+        ", actived=" + actived +
         ", quantity=" + quantity +
         ", upc='" + upc + '\'' +
         ", displayOrder=" + displayOrder +
@@ -392,7 +391,7 @@ public class Sku implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id, skuNumber, active, quantity, upc, displayOrder);
+    return Objects.hash(id, skuNumber, actived, quantity, upc, displayOrder);
   }
 
   /**
@@ -406,7 +405,7 @@ public class Sku implements Serializable {
     } else if (obj instanceof Sku) {
       final Sku other = (Sku) obj;
       equalsResult = Objects.equals(id, other.id) && Objects.equals(skuNumber, other.skuNumber)
-          && Objects.equals(active, other.active) && Objects.equals(quantity, other.quantity)
+          && Objects.equals(actived, other.actived) && Objects.equals(quantity, other.quantity)
           && Objects.equals(upc, other.upc) && Objects.equals(displayOrder, other.displayOrder);
     }
     return equalsResult;

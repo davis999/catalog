@@ -24,7 +24,7 @@ class ProductServiceTest extends Specification{
     given:
     productRepository.findOne(_) >> savedProduct
     when:
-    Product product = productService.queryProductById(10086L)
+    Product product = productService.getProductDetail(10086L)
     then:
     product == savedProduct
   }
@@ -34,7 +34,7 @@ class ProductServiceTest extends Specification{
     productRepository.findOne(_) >> null
 
     when:
-    productService.queryProductById(10086L)
+    productService.getProductDetail(10086L)
 
     then:
     thrown(NotFoundException)
@@ -44,7 +44,7 @@ class ProductServiceTest extends Specification{
     given:
     productRepository.findProductByCategoryId(_) >> allPoducts
     when:
-    List<Product> products = productService.queryProductsByCategoryId(10086L)
+    List<Product> products = productService.queryProductsByCategory(10086L)
     then:
     products == allPoducts
   }
@@ -54,7 +54,7 @@ class ProductServiceTest extends Specification{
     productRepository.findProductByCategoryId(_) >> null
 
     when:
-    List<Product> products = productService.queryProductsByCategoryId(10086L)
+    List<Product> products = productService.queryProductsByCategory(10086L)
 
     then:
     products != null
@@ -66,7 +66,7 @@ class ProductServiceTest extends Specification{
     productRepository.findProductByCategoryId(_) >> new ArrayList<Product>()
 
     when:
-    List<Product> products = productService.queryProductsByCategoryId(10086L)
+    List<Product> products = productService.queryProductsByCategory(10086L)
 
     then:
     products != null

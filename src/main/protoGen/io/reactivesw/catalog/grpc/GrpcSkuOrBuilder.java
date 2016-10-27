@@ -23,14 +23,14 @@ public interface GrpcSkuOrBuilder extends
       getSkuNumberBytes();
 
   /**
-   * <code>optional bool isActive = 3;</code>
+   * <code>optional bool actived = 3;</code>
    */
-  boolean getIsActive();
+  boolean getActived();
 
   /**
-   * <code>optional int32 quatity = 4;</code>
+   * <code>optional int32 quantity = 4;</code>
    */
-  int getQuatity();
+  int getQuantity();
 
   /**
    * <code>optional string upc = 5;</code>

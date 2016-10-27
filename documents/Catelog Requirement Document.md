@@ -15,7 +15,7 @@ Including modules as follows:
 The module is responsible for managing category.
 Category has following attributes:
 * general:
-  name,url,long description,active start date,active end date,tax code
+  name,url,long description,actived start date,actived end date,tax code
 * marketing:
   featured products,cross sale products,upsale products
 * media:

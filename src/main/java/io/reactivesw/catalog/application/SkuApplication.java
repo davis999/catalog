@@ -61,7 +61,7 @@ public class SkuApplication {
     LOG.debug("enter getSkuDetailByNumber, sku number is {}.", skuNumber);
     Sku sku = skuService.querySkuByNumber(skuNumber);
     SkuDetailDTO skuDetailDTO = transferSkuToDTO(sku);
-    LOG.debug("end getSkuDetailByNumber, get detail is {}.", skuDetailDTO.toString());
+    LOG.debug("end getSkuDetailByNumber");
     return skuDetailDTO;
   }
 
@@ -72,7 +72,7 @@ public class SkuApplication {
    * @return SkuDetailDTO
    */
   private SkuDetailDTO transferSkuToDTO(Sku sku) {
-    LOG.debug("enter transferSkuToDTO, sku is {}.", sku.toString());
+    LOG.debug("enter transferSkuToDTO");
 
     final boolean isDefaultSku = isDefaultSku(sku);
 
@@ -88,7 +88,7 @@ public class SkuApplication {
 
     skuDetailDTO.setVariants(getVariants(sku, isDefaultSku, product));
 
-    LOG.debug("end transferSkuToDTO, skuDetailDTO is {}.", skuDetailDTO.toString());
+    LOG.debug("end transferSkuToDTO");
     return skuDetailDTO;
   }
 
@@ -331,7 +331,7 @@ public class SkuApplication {
    * @return true if active and false if not active
    */
   private boolean isActiveSku(Sku sku) {
-    return sku.isActive() && sku.getQuantity() > 0;
+    return sku.isActived() && sku.getQuantity() > 0;
   }
 
   /**

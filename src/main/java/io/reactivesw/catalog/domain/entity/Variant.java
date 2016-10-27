@@ -13,7 +13,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 /**
@@ -54,7 +53,7 @@ public class Variant implements Serializable {
    * values for variant.
    */
   @OneToMany(mappedBy = "variant", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-  @OrderBy("displayOrder asc")
+//  @OrderBy("displayOrder asc")
   private Set<VariantValue> variantValues;
 
   /**

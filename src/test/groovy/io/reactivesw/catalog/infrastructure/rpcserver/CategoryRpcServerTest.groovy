@@ -40,7 +40,7 @@ class CategoryRpcServerTest extends Specification{
   def "test get all top category"(){
 
     given:
-    categoryService.findAllCategories() >> categories
+    categoryService.getAllCategories() >> categories
 
     when:
     categoryRpcServer.getCategories(emptyInput, outputData)
@@ -50,7 +50,7 @@ class CategoryRpcServerTest extends Specification{
 
   def "test get all top category and no result"(){
     given:
-    categoryService.findAllCategories() >> { throw new NotFoundException() }
+    categoryService.getAllCategories() >> { throw new NotFoundException() }
 
     when:
     categoryRpcServer.getCategories(emptyInput, outputData)

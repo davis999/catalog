@@ -36,14 +36,14 @@ public class ProductService {
    * @param productId id.
    * @return product.
    */
-  public Product queryProductById(long productId) {
-    LOG.info("enter queryProductById, id is {}.", productId);
+  public Product getProductDetail(long productId) {
+    LOG.debug("enter getProductDetail, id is {}.", productId);
     final Product product = productRepository.findOne(productId);
     if (product == null) {
       LOG.debug("query product fail, no such product with id {}", productId);
-      throw new NotFoundException("Product Not Exist.");
+      throw new NotFoundException("Product Not Exist");
     }
-    LOG.info("end queryProductById, id is {}.", productId);
+    LOG.debug("end getProductDetail, id is {}.", productId);
     return product;
   }
 
@@ -54,15 +54,15 @@ public class ProductService {
    * @param categoryId category id
    * @return list of Product
    */
-  public List<Product> queryProductsByCategoryId(long categoryId) {
-    LOG.info("enter queryProductByCategoryId, id is {}.", categoryId);
+  public List<Product> queryProductsByCategory(long categoryId) {
+    LOG.debug("enter queryProductByCategoryId, id is {}.", categoryId);
     List<Product> products = productRepository.findProductByCategoryId(categoryId);
     if (products == null) {
       LOG.debug("fail to query product by catagory id {}, no result.", categoryId);
       products = new ArrayList<>();
     }
     products = setDefaultSku(products);
-    LOG.info("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
+    LOG.debug("end queryProductByCategoryId, category id is {}, get {} products", categoryId,
         products.size());
     return products;
   }
