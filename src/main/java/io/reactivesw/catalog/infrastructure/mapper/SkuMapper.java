@@ -54,7 +54,7 @@ public final class SkuMapper {
    */
   public static GrpcSku transferToGrpcSku(Sku sku) {
     final GrpcSku.Builder builder = modelMapper.map(sku, GrpcSku.Builder.class);
-
+    builder.setPrice(DecimalFormatUtils.transferToShortString(sku.getPrice()));
     final Set<Media> medias = sku.getMedias();
     for (final Media media : medias) {
       builder.addMedia(MediaMapper.transferToMediaInfo(media));

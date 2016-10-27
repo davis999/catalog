@@ -48,6 +48,16 @@ public interface GrpcSkuOrBuilder extends
   int getDisplayOrder();
 
   /**
+   * <code>optional string price = 9;</code>
+   */
+  java.lang.String getPrice();
+  /**
+   * <code>optional string price = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getPriceBytes();
+
+  /**
    * <code>repeated .io.reactivesw.catalog.infrastructure.GrpcMedia media = 7;</code>
    */
   java.util.List<io.reactivesw.catalog.grpc.GrpcMedia> 
