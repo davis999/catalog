@@ -16,14 +16,8 @@
 		</encoder>
 	</appender>
 	<root>
-		<level value="INFO" />
+		<level value="DEBUG" />
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>
-	<logger name="org.hibernate" level="INFO"/>
-	<logger name="org.springframework" level="INFO"/>
-	<logger name="io.grpc.netty" level="INFO"/>
-	<logger name="o.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl" level="INFO"/>
-	<logger name="org.hibernate.loader.plan.exec.process.internal" level="INFO"/>
-	<logger name="io.netty.util.Recycler" level="INFO"/>
 </configuration>
